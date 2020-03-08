@@ -1,7 +1,7 @@
 # --- General options --- #
 
 # Name of website
-title: My NUS CS Mods
+title: NUS CS Mods
 
 # Short description of your site
 description: Shhh.. I just want to take notes okay
@@ -93,7 +93,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
+#url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 
