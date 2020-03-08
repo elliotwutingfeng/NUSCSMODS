@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'CS2103T: Lecture 4'
+date: '2020-02-07T01:36:00.000-08:00'
+author: Charlotte Deunitato
+tags: 
+modified_time: '2020-02-07T01:36:26.946-08:00'
+blogger_id: tag:blogger.com,1999:blog-4520250687931855860.post-1221585559021129229
+blogger_orig_url: https://nusmods.blogspot.com/2020/02/cs2103t-lecture-4.html
+---
+
+<h2 style="height: 0px;">UML Diagrams</h2><div><br /></div><div><b>Multiplicities</b></div><div><b><br /></b></div><div>0..1 = if its there then it is there, else it is not.</div><div><br /></div><div><br /></div><div><b>Navigability</b></div><div>In the class diagram,&nbsp;</div><div>[] ------- []</div><div>does not show who knows who</div><div>thus we use arrows</div><div><br /></div><div>[a]------&gt;[b]</div><div><br /></div><div>class a{</div><div>b someObj = new b();</div><div>}</div><div><br /></div><div>class a knows about b but&nbsp;</div><div>b does not know about a</div><div><br /></div><div>[A] ---</div><div>&nbsp; |&nbsp; &nbsp; &nbsp; &nbsp;|</div><div>&nbsp; |&nbsp; &nbsp; &nbsp; &nbsp;| longest</div><div>[B]&nbsp; &lt;-</div><div><br /></div><div>A is maintaining B</div><div>longest is the role for B</div><div><br /></div><div>The object structures can change at runtime,</div><div>the association cannot change out of what is specified in the class diagram</div><div><br /></div><div>[:foo] -&gt; instance object</div><div>[foo] -&gt; class object</div><div><br /></div><div><br /></div><div><b>Inheritance</b></div><div>Inheritance can be represented by a triangle.</div><div><br /></div> Continue:  <iframe src="https://drive.google.com/file/d/1AmuR-R4ptR71zzQOkOqXYNsKSLMyZVmx/preview" width="600" height="600"></iframe>

@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'CS2040s : Tutorial 3: BST'
+date: '2019-09-19T22:04:00.000-07:00'
+author: Charlotte Deunitato
+tags: 
+modified_time: '2019-09-19T22:04:28.980-07:00'
+blogger_id: tag:blogger.com,1999:blog-4520250687931855860.post-7280757868781230448
+blogger_orig_url: https://nusmods.blogspot.com/2019/09/cs2040s-tutorial-3-bst.html
+---
+
+Q1<br />Worst Time Case:<br />n^4<br />search all 4 cases<br /><br />Improved:<br /><br />iterate a<br />iterate b<br />list sum<br /><br />iterate c<br />Iterate d<br />list sum<br /><br />Search for a possible 100<br /><br />O(n^2)<br /><br />Q2<br />a)<br />- Easiest: O(n) time and space<br />We do a inorder traversal, and put it in the linked list<br /><br />- Improved: Rotate right, till theres no left child<br />&nbsp;if theres no left child, go to the right child and rotate<br />O(n) //traversal, rotation O(1)<br />O(1) //space<br /><br />b)<br />- Easiest :<br />Recursion, find median and continue<br />O(nlogn)<br />Space(logn) //recursion stack<br /><br />- Improved:<br /><br />2T(n/2) + o(1)<br />Make a function that will take in a List and n<br />The function will return connect the mid with the left tree and right tree recursively while passing n which is taking the number of elements of the list<br /><br />Find mid, do a recursive step of building the left and right tree.<br />To build left,<br />Take first n/2 elements and put in function<br />To build right.<br />Take the n- n/2 - 1 elements of the right and put in function<br /><br />The base case is when n =0 , return value iteself<br />recursive step<br />add(left) , add(mid) , add(right)<br /><br /><br /><br /><br />

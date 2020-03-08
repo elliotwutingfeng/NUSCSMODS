@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'CS2100: Tutorial 2'
+date: '2019-09-05T20:42:00.000-07:00'
+author: Charlotte Deunitato
+tags: 
+modified_time: '2019-09-05T20:54:45.724-07:00'
+blogger_id: tag:blogger.com,1999:blog-4520250687931855860.post-7125217622673110804
+blogger_orig_url: https://nusmods.blogspot.com/2019/09/cs2100-tutorial-2.html
+---
+
+Tutorial 1<br />1.<br />int readArray(int arr[], int limit){&nbsp; <br />&nbsp; &nbsp; int input = 0;<br />&nbsp; &nbsp; for(int i = 0 ;i &lt; limit ; i++){<br />&nbsp; &nbsp; &nbsp;scanf("%d", &amp;input );<br />&nbsp; &nbsp; if(input&gt; = 0)<br />&nbsp; &nbsp; &nbsp;arr[i] = input;<br />&nbsp; &nbsp; &nbsp;else<br />&nbsp; &nbsp; &nbsp;break;<br />&nbsp; &nbsp; }<br />}<br /><br /><br />void reverseArray(int arr[], int size)<br />{<br />&nbsp; &nbsp; int temp , i , j<br />&nbsp; &nbsp; i =0;<br />&nbsp; &nbsp; j = size - 1;<br />&nbsp; &nbsp;while (i&lt;j){<br />&nbsp; &nbsp; &nbsp;temp = arr[i]<br />&nbsp; &nbsp; &nbsp;arr[i] = arr [ j]<br />&nbsp; &nbsp; &nbsp;arr[j] = temp;<br />&nbsp; &nbsp; &nbsp;i++;<br />&nbsp; &nbsp; &nbsp;j --;<br /><br />&nbsp; &nbsp;}<br /><br />}<br /><br />c)<br />i) Recursion<br />ii) To make it easier, make it nice nice,<br />&nbsp;"Make people less stupid" - Joshua wee shing hao<br /><br />d)<br />1. if (size&lt; = 1) return;<br />else<br />2. temp = arr[0]<br />arr[0] = arr[size - 1]<br />arr[size-1] = temp;<br />rev(arr+1,size - 2)<br /><br />Q2.<br />int has 4 bytes and double is 8 bytes<br /><br />Q3.<br />a)<br />8 boxes in consequitive with the first and 5th box being num and dec<br />b)<br />Swap by value:<br /><br />Won't change the address nor swap the memory<br />c)<br />temp = *a<br />*a = *b<br />* b=temp<br />Will swap<br /><br />// this is true swap<br /><br />Q4.<br />mult $s1, $s2<br />mflo $to<br />add $s3, $s0, $t0&nbsp; #d = a+b*<br />addi $t0 , $0 , 3 #store 3 into the register<br />DIV $s3, $t0 #d/3<br />MFLO $s4<br /><br /><br /><b>Division</b><br />lo -&gt; Quotient<br />Hi -&gt; remainder<br /><br /><b>Multiplication</b><br />Lo -&gt; Lower 32 bits<br />Hi -&gt; Upper 32 bits<br />(Sometimes when we multiply may overshot 32 bits so there's two registers to handle it)

@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'CS2040s: Tutorial 2'
+date: '2019-09-05T21:39:00.000-07:00'
+author: Charlotte Deunitato
+tags: 
+modified_time: '2019-09-05T21:39:18.835-07:00'
+blogger_id: tag:blogger.com,1999:blog-4520250687931855860.post-2165966171682559549
+blogger_orig_url: https://nusmods.blogspot.com/2019/09/cs2040s-tutorial-2.html
+---
+
+c)/d)<br />1. Select pivot<br />2. Partition<br />3. Get index of pivot in new partition (i)<br />4. If smaller k, loop to left, else right<br />5. Partition again and repeat<br />6. Stop when i = k<br /><br />This is O(n) in average<br />Is a summation = n + n/2 + n/4 + ... n/2^k<br />Because we are only doing one side each time<br /><br />But O(n^2) in worst case<br />If we choose wrong pivot<br /><br /><br />e)<br />1. Select pivot<br />2. Partition<br />3. Get index of pivot in new partition (i)<br />4. If smaller than k, go to the right else left<br />6. Partition again until i = k<br /><br />Is the same as d)/c)<br /><br />It matters, time complexity, n + klogk<br /><br />

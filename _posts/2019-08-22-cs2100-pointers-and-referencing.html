@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'CS2100: Pointers and referencing'
+date: '2019-08-22T20:45:00.000-07:00'
+author: Charlotte Deunitato
+tags: 
+modified_time: '2019-09-24T23:51:12.519-07:00'
+blogger_id: tag:blogger.com,1999:blog-4520250687931855860.post-4764858804862719885
+blogger_orig_url: https://nusmods.blogspot.com/2019/08/cs2100-pointers-and-referencing.html
+---
+
+<h3>Declaration</h3><div>- The &amp; operator gives the address of a variable</div><div>- The *ptr means that ptr is a pointer variable and anything thats assigned to ptr is a mem location</div><div>- Memory is integer</div><div>Note: Memory is not always consecutive</div><div><br /></div><h3>Usage</h3><div>Declaring x:<br />int x;<br /><br /></div><div>Declaring pointer:<br />int *ptr, *ptr2<br /><br /></div><div>Point ptr to x's address:<br />ptr = &amp;x<br />//*ptr is pointing to the x, ptr contains the address of x<br /><br /></div><div>Copying:<br />ptr2 = ptr<br />//ptr2 is copying ptr, it has the mem add of x</div><div><br /></div><h3>Dereferencing</h3><div>We use the * infront of the pointer to manipulate the destination</div><div>ie.</div><div><br /></div><div>ptr = &amp;x&nbsp;</div><div>// ptr contains the mem add of x and points to x</div><div><br /></div><div>*ptr = 1234&nbsp;</div><div>//we changed the value of x to 1234</div><div><br /></div><div>ptr = 1234 // ptr is now pointing at the mem address of 1234 not x</div><div><br /></div><div>Note: using *ptr = &amp;x is wrong!!</div><div><br /></div><h3>Application</h3><div>scanf("%lf", &amp;input)</div><div>// We assign the value into the address &amp;input</div><div><br /></div><div>We can also use it through function</div><div>e.g:</div><div>swap_Add(&amp;i,&amp;j);</div><div><br /></div><div>void swap_Add(int* a, int* b){</div><div>&nbsp; int temp;</div><div>&nbsp;&nbsp;</div><div>&nbsp; temp = *a;</div><div>&nbsp; *a = *b;</div><div>&nbsp; *b&nbsp; = temp;</div><div>}<br /><br /><a href="https://nusmods.blogspot.com/2019/08/cs2100-number-representation.html">&lt;Prev</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="https://nusmods.blogspot.com/2019/08/cs2100-structure-and-array.html">Next&gt;</a></div><div><br /></div>

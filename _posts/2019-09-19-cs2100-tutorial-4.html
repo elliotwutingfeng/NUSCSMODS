@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'CS2100: Tutorial 4'
+date: '2019-09-19T21:00:00.000-07:00'
+author: Charlotte Deunitato
+tags: 
+modified_time: '2019-09-20T00:30:17.094-07:00'
+thumbnail: https://1.bp.blogspot.com/-OJK0LHRXL1E/XYR_igcdiII/AAAAAAAACHk/i71iGU9TuaUSfbMrdqxVGS1w4lDTgrhIgCLcBGAsYHQ/s72-c/1.png
+blogger_id: tag:blogger.com,1999:blog-4520250687931855860.post-2836508794575354996
+blogger_orig_url: https://nusmods.blogspot.com/2019/09/cs2100-tutorial-4.html
+---
+
+Q1<br />0x20110000<br /><br />beq $t0, $zero, exit<br />000100| 01000| 00000| 0000000000000010<br />opcode&nbsp; &nbsp;RS(t0)&nbsp; &nbsp;$zero&nbsp; &nbsp; Immediate<br /><br />addi, $s1, $1, 1<br />001000| 10001| 10001| 000...0001<br />opcode&nbsp; &nbsp; $s1&nbsp; &nbsp; &nbsp; $s1&nbsp; &nbsp; &nbsp; Imme<br /><br />0x08100050<br /><br />For jump/ I format:<br />We remove the last 2 bits for jump because all instructions ends with 00<br />For only J format:<br />and we remove 4 bits in front as well<br /><br />Q2<br />We switch the two input ports for the REGDST<br />That means the value for the read register is always going into the write register<br /><br />a) add<br />right execution -&gt; add $s1 , $zero, $s1<br />As long as the first and last is the same<br />Wrong -&gt; add $s1 , $zero, $s2<br />because we are writing s2 into s2<br /><br />b) LW<br />wrong -&gt; lq $t0, 0($zero)<br />the immediate goes into the write instead of the address<br />right -&gt; lw $t0, 0(0x4000)<br />because the immediate first 4 bits is the same as the address of t0<br /><br />c) same<br />beq does not need to write<br /><br />Q3<br /><br />i) 0x8df80000: lw $24, 0($15)<br /><br />ii) 0x1023000C: beq $1, $3, 12<br /><br />iii) 0x0285c822: sub $25, $20, $5<br /><br /><br /><br />lw no branching<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-OJK0LHRXL1E/XYR_igcdiII/AAAAAAAACHk/i71iGU9TuaUSfbMrdqxVGS1w4lDTgrhIgCLcBGAsYHQ/s1600/1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="451" data-original-width="793" height="361" src="https://1.bp.blogspot.com/-OJK0LHRXL1E/XYR_igcdiII/AAAAAAAACHk/i71iGU9TuaUSfbMrdqxVGS1w4lDTgrhIgCLcBGAsYHQ/s640/1.png" width="640" /></a></div><br /><br /><br />Q4<br /><br />b) LW instruction<br />400 (Instr meme) + 200(reg)&nbsp; + 120 (ALU) + 350 (Data mem) + 30 (memtoreg mux) + 200 (write reg)<br />ALU is use to add the result<br /><br />c) BEQ<br />200(Reg) + 400 (Instr) + 120 (ALU) + 30 (alu MUX)<br /><br />Not using regdst<br />Use alu to minus<br />We don't know if WR will be $1 or $3<br /><br /><br /><br /><br />

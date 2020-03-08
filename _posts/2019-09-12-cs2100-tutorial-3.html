@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'CS2100: Tutorial 3'
+date: '2019-09-12T20:03:00.002-07:00'
+author: Charlotte Deunitato
+tags: 
+modified_time: '2019-09-12T20:51:15.117-07:00'
+blogger_id: tag:blogger.com,1999:blog-4520250687931855860.post-4015062889602991229
+blogger_orig_url: https://nusmods.blogspot.com/2019/09/cs2100-tutorial-3.html
+---
+
+<h2>Tutorial 3</h2><div><b>Q1</b></div><div>a)</div><div>Load Upper immediate (LUI) $t0, 0xFF</div><div>OR $s0, $s0 , $t0</div><div><br /></div><div>We load upper immediate because we cannot apply ori on the first 16 bits. Ori is i format and only takes 16 bits but the one we want is 32 bits.</div><div><br /></div><div>b)</div><div>XORI $s0, $s0, 0xFF00</div><div>If its different, its true&nbsp;</div><div>if its the same, its false</div><div><br /></div><div>c)</div><div>andi $t0, $s0, 0xFF</div><div>//this is to mask it first because to shift we dont want to affect the other bits when we shift it</div><div>xor $s0, $s0, $t0 //we can clear the zero bits here because its the same</div><div>srl $t0, 1</div><div>//We can shift right shift left to clear the bits but its too much step&nbsp;</div><div>or $s0,$s0,$t0</div><div><br /></div><div><b>Q2</b></div><div>a)</div><div>addi $t2, $zero,2</div><div>div $t1, $r2</div><div>MFLO $t1&nbsp;</div><div><br /></div><div>b)</div><div>srl $t1,$t1,1</div><div>For signed, if there's a 4 bit number (1110) and we shift right, it will extend the sign</div><div><br /></div><div>c)</div><div>Yes.</div><div><br /></div><div><b>Q3</b></div><div>a) srl $s4, $s4, 1</div><div>b) lw $t1, 0($t0)</div><div>c) slt $t9, $t1, $s1 //sne $t9,$s1,$t1 (Check if its equal)</div><div>beq $t9, $zero, equal</div><div>d) j end</div><div>e) j loop</div><div><br /></div><div><b>Q4</b></div><div>a)</div><div>1. $t1 = 108</div><div>$s1 = 108</div><div>$t0 = 124</div><div><br /></div><div>2. $t1 = 104</div><div>$s1 = 108 + 104 =212</div><div>$t0 = 100</div><div><br /></div><div>3. $t1 = 120</div><div>$s1= 212 + 120 = 332</div><div>$t0 = 132</div><div><br /></div><div>//we jump one blcok each time</div><div>b) memory address for 104 should change to 0</div><div>c) Linked list</div>
