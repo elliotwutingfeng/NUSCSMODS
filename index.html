@@ -4,6 +4,11 @@ title: MY NUS CS MODS
 subtitle: Shhhh.. I just want to take notes okay...
 use-site-title: true
 ---
+<form action="search.html" method="get">
+  <label for="search-box">Search</label>
+  <input type="text" id="search-box" name="query">
+  <input type="submit" value="search">
+</form>
 
 <div class="posts-list">
   {% for post in paginator.posts %}
