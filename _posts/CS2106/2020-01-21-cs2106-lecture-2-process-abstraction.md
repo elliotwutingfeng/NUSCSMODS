@@ -346,7 +346,7 @@ Issues:
 Scalability - How many concurrent process can we have?
 Efficiency - Minimum space wastage
 
-![2-57](NUSCSMODS/img/CS2106/2-57.png)
+![2-57](/NUSCSMODS/img/CS2106/2-57.png)
 
 The process block have
 - GPR
