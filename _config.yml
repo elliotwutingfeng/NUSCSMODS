@@ -18,6 +18,7 @@ description: Shhh.. I just want to take notes okay
 
 include:
   - "_img"
+  - "img"
 
 # --- Navigation bar options --- #
 
