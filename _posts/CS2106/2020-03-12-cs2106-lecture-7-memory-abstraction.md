@@ -64,6 +64,7 @@ However, this idea is very useful
   - Segmentation mechanism
   - Provides a crude memory abstraction
 * Address 4096 in process A and B are no longer the same physical location *
+  
 
 ## Logical Address
 - Embedding actual physical address in program is a bad idea
@@ -73,6 +74,7 @@ We want to involve the operating system but we do not want to pay the price of i
 
 
 # Contiguous memory abstraction
+  
 ## Assumptions
 - Process must be in memory during execution
    -  Store memory concept
