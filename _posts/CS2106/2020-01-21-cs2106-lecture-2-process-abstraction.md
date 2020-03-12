@@ -263,7 +263,7 @@ P1's context is saved and stored somewhere before p2 is runned.
 
 Generic 5 state process model
 
-![5 stage](\img\CS2106\2-48.png)
+![5 stage](/NUSCSMODS/img/CS2106/2-48.png)
 
 
 This is a textbook model but is not generally used.
@@ -335,7 +335,7 @@ Represent the process when it is admitted, goes into the queue.
 When process released the CPU, it can either go into block, return to queue or terminate.
 The block itself is a queue.
 
-![2-53](\img\CS2106\2-53.png)
+![2-53](/NUSCSMODS/img/CS2106/2-53.png)
 
 # Process table and Process control block
 
@@ -346,7 +346,7 @@ Issues:
 Scalability - How many concurrent process can we have?
 Efficiency - Minimum space wastage
 
-![2-57](\img\CS2106\2-57.png)
+![2-57](NUSCSMODS/img/CS2106/2-57.png)
 
 The process block have
 - GPR
@@ -620,9 +620,9 @@ e.g What if parent does not call wait when child finish
 - One process exit: Becomes zombie
 - Cannot kill something that is already killed
 
-![slide 23](img\CS2106\2-23.png)
+![slide 23](/NUSCSMODS/img/CS2106/2-23.png)
 
-![slide 27](\img\CS2106\2-27.png)
+![slide 27](/NUSCSMODS/img/CS2106/2-27.png)
 
 Process state diagram in UNIX
 

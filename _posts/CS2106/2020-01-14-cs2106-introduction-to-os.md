@@ -112,13 +112,13 @@ How extensive
 
 *Dimensions, the number of memory of number of threads supported.*
 
-![Slide 27](/img/CS2106/1-27.png)
+![Slide 27](/NUSCSMODS/img/CS2106/1-27.png)
 
 *The kernal is the core of the OS that exposes some of the interface to the underlying hardware and the interfaces. There are some important system softwares that are not part of the kernel.*
 *Running in kernal mode means to have all the privileges.*
 
 
-![Slide 28](/img/CS2106/1-28.png)
+![Slide 28](/NUSCSMODS/img/CS2106/1-28.png)
 
 *The User programs itself have its own API so the user can call, the library in return talk to other library. The library is a software and is a piece of precompiled code. Some lib needs to do a system call and talk to the os and in turn talk to the hardware. These calls are called syscalls.*
 
