@@ -518,8 +518,10 @@ Common usage is to use the parent/child process differently
 e.g Parent spawn child to carry out some work
 e.g Parent is ready to take another order
 
-result = fork() //the result is 0, then u are a child, else u are parent
-If we use an if/else we can  determine who is child and seperate the code accordingly
+childPID= fork() 
+
+//the childPID is 0, then the current running program is the child, else u are parent
+If we use an if/else we can  determine who is child and separate the code accordingly
 
 ## Independent memory space
 
@@ -535,6 +537,16 @@ Fork() itself is not useful, we still need provide the full code for the child p
 We can make use of the exec() system calls family to execute another existing program.
 One program to invoke the other. Exec replaces the process it is running with whatever you are running.
 
+### Command Line Arguments
+
+Command line is pass to main class when we declare
+
+`int main(argc, argv[]){}`
+
+ArgC is the number of arguments pass inclusive of program name
+
+Argv[] is an array of commands in string
+
 ### Fork() + Exec()
 Let me create a new parent/process and then create a copy. Replace the child with some other process. My parent can then wait for child to finish.
 *The parent is responsible for the child cleanup.*
@@ -542,7 +554,7 @@ Let me create a new parent/process and then create a copy. Replace the child wit
 ### The master Process
 
 - Every process have parent
-- What is the last ancestors? - INIT
+- What is the last ancestors? - INIT is the root process
 
 - Special init:
    - init process
@@ -574,7 +586,7 @@ In main, it will implicitly calls exit()
 0 - normal term
 0! - to indicate problematic execution
 
-### Parent child Synch
+### Parent child Synchronisation
 Parent create child A, it then can
 
 - Wait for it to terminate 
@@ -586,7 +598,7 @@ Parent create child A, it then can
 - The call is blocking
 
 
-1. Call fok
+1. Call fork
 2. Call exec to replace child's code
 3. Some point the child exit
 
@@ -608,13 +620,16 @@ e.g What if parent does not call wait when child finish
 - One process exit: Becomes zombie
 - Cannot kill something that is already killed
 
-INsert slide 23
+![slide 23](img\CS2106\2-23.png)
 
-Insert slide 27
-
+![slide 27](\img\CS2106\2-27.png)
 
 Process state diagram in UNIX
+
+
+
 Fork() -> Creates ready process
+
 - Kicks current process or current process is suspended (block)
 - send signal that it can be ready
 
@@ -647,14 +662,14 @@ This is very expensive
 7. Acquired shares resources
 e.g Open files and dir
 8. Init hardware context
-Copy reg
+Copy registers and init it
 9. Child can run now
 
 ### Memory operation copy
 Why are we copying these memory space if we are not going to use it? (child)
 But it is not guaranteed that we will call exec after fork.
 These are two system calls and are independent.
-How do i deal with this problem of wastefully calling operation.
+*How do I deal with this problem of wastefully calling operation.*
 
 The child is not able to access the whole memory range right away.
 They do not need the data.
@@ -665,9 +680,9 @@ Perhaps we can trick the child? Trick the child that it is its own data but actu
 **Copy on write**
 
 - Duplicate a memory location when it is written to
-IF i have a parent data, and i want to copy the child data but do not actually want to copy. I want the child pointer to point to the same location. I am going to share this obj until one of them tries to modify. ONLY then, they will have individual copies.
+*IF i have a parent data, and i want to copy the child data but do not actually want to copy. I want the child pointer to point to the same location. I am going to share this obj until one of them tries to modify. ONLY then, they will have individual copies.*
 
-This is to make fork a lightweight process
+This is to make fork a lightweight process (Attempt)
 
 Note:
 - Memory is org into mem pages
