@@ -50,7 +50,8 @@ Problems:
 Write my code such that every code is relative from the starting point of my code
 - Base register: Stores starting address of my program
 
-<The address is computed at runtime>
+
+>The address is computed at runtime
 
 - Limit register : tells if the address generated is outside of my range (Compiler can do)
 
@@ -58,7 +59,7 @@ Problems:
   - Memory has to be one big chunk (Contiguous)
   - Every memory access is an addition and comparison
 
-<Limitation can be bypass if there are more registers>
+>Limitation can be bypass if there are more registers
 
 However, this idea is very useful
   - Segmentation mechanism
