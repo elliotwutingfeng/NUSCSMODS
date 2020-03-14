@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CS2106 - Lecture 2
-image: 
+published: true
 ---
 
 # CS2106: Lecture 2 - Process Abstraction
@@ -148,12 +148,19 @@ Stack can grow towards higher or lower addresses
 - Main diff:
 
 Prepare to make function call
+
 Caller: Pass para with register and /or stack 
+
 Caller: Save PC on stack 
 
+
+
 Transfer control from caller to callee
+
 Callee: Save the old stack pointer (SP)
+
 Callee: Allocate space for local variable of callee on stack
+
 Callee: Adjust SP to point to new stack top
 
 
@@ -161,11 +168,16 @@ Who does the setup?
 => The compiler
 
 On returning from function call:
+
 Callee: Place return result on stack
+
 Callee: Restore saved stack pointer
 
+
 Transfer Control back to caller using saved PC
+
 Caller: Utilize return result
+
 Caller: Continues execution in caller
 
 Just decrement the stack pointer. 
@@ -178,6 +190,23 @@ Just decrement the stack pointer.
 *It is to access something that is in the middle of the stack. At some point, we will remember the value of the stack pointer and the frame pointer so we can remember values of other variables via referencing.*
 *The stack is part of the memory!!!*
 The usage of these is platform dependent
+
+## When do we use the stack or frame pointer?
+Frame pointer points to the bottom half of the stack frame. FP does not move
+
+Stack pointer points to the top of the stack frame. SP moves.
+
+Stack Pointer: 
+- When more values are added/popped
+- Referencing values at the top of the stack
+- Changing values on the top of the stack
+- Returning the FP back to the original position
+- Setting the FP to the middle of the stack
+
+Frame Pointer:
+- Accessing values
+- Accessing parameters
+
 
 ## Saved Registers
 The number of GPR on most processor are limited.
