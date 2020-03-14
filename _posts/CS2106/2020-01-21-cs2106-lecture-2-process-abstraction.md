@@ -204,8 +204,14 @@ Stack Pointer:
 - Setting the FP to the middle of the stack
 
 Frame Pointer:
-- Accessing values
+- Accessing values from the middle of the stack
 - Accessing parameters
+- Can be use to store
+
+FP and SP can be use interchangably providing considering the limitation that is given for each of the pointers:
+- Pointers must be pointing to somewhere on the stack frame
+- The values are closer to that pointer
+- FP is fixed, SP can move upwards
 
 
 ## Saved Registers
