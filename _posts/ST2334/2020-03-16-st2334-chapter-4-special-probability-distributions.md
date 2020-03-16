@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'ST2334: Chapter 4 - Special probability distributions'
 ---
 # Discrete Distributions
