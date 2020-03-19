@@ -86,3 +86,78 @@ We want to involve the operating system but we do not want to pay the price of i
 
 
 ## Memory partitioning
+Contiguous memory region allocated to a single process
+
+### Fixed size partition
+   - Physical memory is split into fixed number of partitions
+   - Process will occupy one of the partitions
+
+*Chunk the memory into partitions of equal size, we can fit a process into any of the partitions with no differentiation*
+*A process however, may not be able to fit in due to the fix size or it might waste some space*
+*This is a waste problem called internal fragmentation*
+
+Advantage:
+- Easy managed
+- Fast to allocate
+    - Due to fixed size, there is no need to choose (No algo run)
+
+Disadvantage
+- Internal fragmentation (Smaller process will waste memory space)
+- Partition size need to be large to accommodate the process
+
+### Dynamic Partitioning
+
+
+   - Partition is created based on the actual size of process
+   - OS keep track of the occupied and free memory regions
+      - Perform splitting and merging when necessary
+
+- Dividing the memory to different sizes
+- Assign the needed memory for the processes
+- This resolves the problem of internal fragmentation
+
+>However, if a process frees a space, the memory that it frees + the leftover memory is enough to accommodate a process but due to the fragmentation, it is not useable (External Fragmentation)
+
+Pros:
+- No internal fragmentation
+- Flexible
+
+Cons:
+- There might be secondary external fragmentation
+- Need to maintain more info in the OS
+- Takes more time to locate appropriate region
+
+*It is much more challenging for OS to manage partitions of many sizes*
+
+
+*We can have almost infinite number of partitions but it is very hard for the OS to manage. It has to store the partition into a linked list.*
+
+
+#### Allocation algorithms
+
+- Assuming the OS maintains a list of partitions and holes
+- Algo to locate partition of size N
+- Variants:
+  - First Fit
+   
+    Pick the first hole that is large enough
+   - Best fit
+
+    FInd the smallest Hole that is large enough
+   - Worst fit
+    
+    Find the largest hole
+- Split the hole into N and M-N
+    - N will be the new partition
+    - M-N will be left over space -> a new hole
+
+#### Merging and Compaction
+
+> This are ways to solve external fragmentation after dynamically allocating
+
+When an occupied partition is freed:
+  - Merge with adjacent hole if possible
+
+Compaction:
+  - Move the occupied partition around to create consolidate holes
+  - Cannot be invoked to frequently as it is time consuming
