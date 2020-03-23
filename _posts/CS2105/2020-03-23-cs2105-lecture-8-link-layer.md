@@ -1,7 +1,8 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS2105: Lecture 8 - Link Layer'
+subtitle: Link Layer
 ---
 
 ## Introduction to link layer
@@ -230,12 +231,15 @@ Transmission is aborted quickly as soon as collision is detect
 - This leads to no retransmssion
 > This is why there is a certain limit to the frame size to ensure that CSMA/DA collision can be detected (Ethernet = 64 bytes min)
 
+#### CSMA/CA (Collision Avoidance)
+Collision detect is easy in wired LAN but difficult in wireless
 
+A signal has a fixed range which can only be detected if within that range. Outside that range, it will become weaker.
 
--
+![Hidden Node problem]({{site.baseurl}}/img/cap5.PNG)
+The two laptop cannot detect each other thus it might collide
 
-
-
+> 802.11 (WIFI) use CSMA/CS Protocol instead, receiver needs to return ACK if a frame is recieved OK.
 
 
 ## Switch Local Area Networks
