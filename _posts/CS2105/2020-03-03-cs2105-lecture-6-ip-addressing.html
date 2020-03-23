@@ -3,10 +3,731 @@ layout: post
 title: 'CS2105: Lecture 6 - IP Addressing'
 date: '2020-03-03T06:16:00.002-08:00'
 author: Charlotte Deunitato
-tags: 
+tags: null
 modified_time: '2020-03-03T06:16:32.616-08:00'
-blogger_id: tag:blogger.com,1999:blog-4520250687931855860.post-3181862443335134265
-blogger_orig_url: https://nusmods.blogspot.com/2020/03/cs2105-lecture-6-ip-addressing.html
+blogger_id: 'tag:blogger.com,1999:blog-4520250687931855860.post-3181862443335134265'
+blogger_orig_url: 'https://nusmods.blogspot.com/2020/03/cs2105-lecture-6-ip-addressing.html'
+published: true
 ---
-
-<h2>Overview of network layer</h2><div>Transport segments from sending to receiving host</div><div>- On sending side encapsulate segments into datagrams</div><div>- On receiving side, delivers segment to transport layer</div><div><br /></div><div><i>Difference with network and the rest is that this protocol is the core of the internet</i></div><div><i>Every single component in the network has this layer</i></div><div><i><br /></i></div><div>- Router examines header fields in all IP datagrams passing though it</div><div><br /></div><h3>Two key network layer</h3><div><b>Forwarding:</b></div><div>Moves packets from router input to appropriate router output</div><div><br /></div><div>e.g Process of getting though single interchange</div><div><br /></div><div><b>Routing:</b><br />Determine route taken by packets from source to destination</div><div><i>This is for a single router to determine where to go</i></div><div><i>It will look at the packet header, extract the ip address</i></div><div><i>Through the forwarding table, it tries to match the ip address&nbsp;with the destination to see which&nbsp;output link to output to</i></div><div><i>It is determine by the routing algorithm inside the router</i></div><div><i>The routing algo determines the value in the routing table</i></div><div><i><br /></i></div><div>e.g process of planning trip from source to destination</div><div><br /></div><h3>Data plane</h3><div>- Local, per router function</div><div>- Determines how datagram arriving on router input port is forward to router output port</div><div>- Forwarding function</div><h3>Control Plane</h3><div>- Network wide logic</div><div>- Determines how datagram is routed among routers along end to end path from source host to destination host</div><div>- To control plane:</div><div>Traditional (In routers) or software defined networking (Remote server)</div><div><br /></div><div><br /></div><div>&lt;Insert 9&gt;</div><div><br /></div><div><i>Network layer have different protocols, there are different type of routing protocols</i></div><div><i>This is use to determine the content of the forwarding table</i></div><div><i>The single IP protocol is the most important</i></div><div><i><br /></i></div><div><b>IP protocol</b></div><div>- Addressing convention</div><div>- Datagram format</div><div>- Packet handling convention</div><h2>IP: Internet protocol</h2><div>IP address: 32 bit identifier for host, router interface</div><div>e.g 233.1.1.1</div><div><br /></div><div><br /></div><div>Interface: Connection between host/router and physical link</div><div><i>The ip address is associated with the interface</i></div><div>- Router typically have multiple interfaces</div><div>- Hosts has one or two interface (Ethernet or wireless 802.11)</div><div><br /></div><div>IPaddress associated with each interface not with a host</div><div>A host can have multiple interfaces</div><div><br /></div><div>Q How are these interfaces actually connected?</div><div>A: Wired ethernet interfaces connected by ethernet switches</div><div>This is for local internet</div><div>A: Wireless WIFI interfaces</div><div>//DO not need to worry about how are they connected&nbsp;</div><div><br /></div><div><b>Subnets</b></div><div><br /></div><div>Subnet is a network formed by a group of directly connected hosts</div><div>- Hosts in the same subnet can physically reach each other without intervening router&nbsp;</div><div>(Physically: Communication between the interfaces does not need a router)</div><div>- They can connect to the outside world through a router</div><div>- Hosts in the same subnet must have the same network prefix of IP address (the left most bits)</div><div><br /></div><div><br /></div><div>To determine the subnets, detach each interface from its host or router, creating island of isolated networks.</div><div><br /></div><div><br /></div><div><b>CIDR (Classless interdomain Routing)</b></div><div><br /></div><div>&lt;SLide 15&gt;</div><div><br /></div><div>Ip address comprises of two parts</div><div>- Network subnet prefix</div><div>- Host ID</div><div><br /></div><div>Address format: a.b.c.d/x where x is the number of bits in subnet/network portion of address</div><div><br /></div><div>The routers if they want to route to the host, they only need the first x bits to be able to forward.</div><div>The network inside this network will be able to use the host part to identify the host needed to forward.</div><div>This helps reduces the number of contents in the routing list.</div><div><br /></div><div><b>Subnet mask</b></div><div><br /></div><div>Is made by setting all network prefix bits to 1 and host ID bits to 0s&nbsp;</div><div>e.g For IP address 200.23.16.42/23</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;|&nbsp; &nbsp; &nbsp; &nbsp;Host&nbsp; &nbsp; &nbsp; &nbsp; |&gt;</div><div>11001000&nbsp; &nbsp; 00010111&nbsp; &nbsp;00010000&nbsp; &nbsp; &nbsp;00101010</div><div>11111111&nbsp; &nbsp; &nbsp;11111111&nbsp; &nbsp; 11111110&nbsp; &nbsp; &nbsp;00000000&nbsp; &nbsp;&lt;= subnet mask</div><br /><br />Q: How does ISP gets block of address<br /><br />A: ICANN (Internet corporation for assigned Names and Numbers)<br />- Allocates address<br />- Manages DNS<br />- Assigns domains names, resolves disputes<br /><br /><div>&lt;SLide 18 special IP address&gt;<br /></div><div>Q: How does an organisation obtain a block of IP address</div><div><br /></div><div>A: Buy from registry or rent from ISP address space</div><div><br /></div><h4>Hierarchical Address: Route aggregation</h4><div>Each ISP controls a block of IP addresses</div><div>Allows efficient advertisment of routing infomation</div><div>Within organisation</div><div><br /></div><div>The ISP can differentiate which orgnaisation to forward their packet to</div><div><br /></div><div>&lt;Slide 20&gt;</div><div><br /></div><div>They use bit by bit to identify which network to forward</div><div><br /></div><div>What is they want to change one block to another from ISP 1 to ISP2</div><div><i>Under the current internet, ISP 2 will simply add one more entry to the neighbouring routers and update the x.</i></div><div><i>This is called <b>Longest prefix matching.</b></i></div><div><i>It advertises to nearby routers the block of ip address it is handling.</i></div><div><i>Nearby routers will then route to them instead</i></div><div><i><br /></i></div><div>The entries must match up to x bits starting from the left.</div><div>This will let it determine which is the next hop</div><div><br /></div><div><br /></div><div>Q: How does a host get a IP address</div><div><br /></div><div>- Hard coded by system admin in a file</div><div>Windows: control-panel&gt;network&gt; configuration &gt; tcp/ip &gt;properties</div><div>Unix: /etc/rc.config</div><div>- DHCP</div><div><br /></div><div><b>DHCP: Dynamic Host Configuration Protocol</b></div><div>Dynamically get address from as server</div><div>"Plug and Play"</div><div><br /></div><div>Goal: Allow host to obtain IP address when it joins a network</div><div>- Can renew its lease on address in use</div><div>- Allow reuse of address (only holds address while connected)</div><div>- Support for mobile users who want to join network</div><div><br /></div><div>DHCP runs using UDP</div><div>= DHCP server port number: 67</div><div>= DHCP client port number: 68</div><div>It does not need to be reliable</div><div><br /></div><div>DHCP can return:<br />- Address of first hop router for client</div><div>- Name and ipaddress of server</div><div><br /></div><div><i>We can use one DHCP server to serve multiple subnets.</i></div><div><i>These request can be forwarded through the routers.</i></div><div><br /></div><div>1. Arriving client construct a new DHCP message</div><div>- special IP thats all 0</div><div>Destination: 255.255.255.255 (Broadcast)</div><div>yiaddr: 0.0.0.0 This field will be filled by servers</div><div>Trans ID: For client to differentiates the reply from other clients and its server</div><div><br /></div><div>2. DHCP offer</div><div>If its within the subnet, it is easy.</div><div>But if it is in another subnet, the broadcast message have to be broadcast to a router which will then relay the message to another subnet</div><div>The DHCP will make the allocation</div><div>- Echos the ID</div><div>- Life time</div><div>- Assigns a address (But it is not used yet)</div><div>- Srcs (Its server address)</div><div>Server will broadcast it back</div><div><br /></div><div>3. Receiving the message</div><div>Check if the Trans ID is mine, else drop</div><div>- Make a formal request to the DHCP server&nbsp;</div><div>But there might be multiple DHCP server, might get multiple offers,</div><div>Client choose one and echo back to that DHCP server</div><div>- New trans ID</div><div>- Source IP still 0</div><div><br /></div><div>4. DHCP ACK<br />Confirms by sending an ack back</div><div>- Echo the yiaddr back</div><div><br /></div><div><br /></div><div>- The first two times might be optional</div><div>- The client does not know the existence of a dhcp server</div><div>- The client can skip step 1 and jump to 2 if it already knows where to get the request from</div><div>(returning)</div><h3>Datagram format</h3><h3>Fragmentation</h3><h3>IPv4 Addressing</h3><div><br /></div><h3>Network address translation</h3>
+<h2>
+Overview of network layer</h2>
+<div>
+Transport segments from sending to receiving host</div>
+<div>
+- On sending side encapsulate segments into datagrams</div>
+<div>
+- On receiving side, delivers segment to transport layer</div>
+<div>
+<br /></div>
+<div>
+<i>Difference with network and the rest is that this protocol is the core of the internet</i></div>
+<div>
+<i>Every single component in the network has this layer</i></div>
+<div>
+<i><br /></i></div>
+<div>
+- Router examines header fields in all IP datagrams passing though it</div>
+<div>
+<br /></div>
+<h3>
+Two key network layer</h3>
+<div>
+<b>Forwarding:</b></div>
+<div>
+Moves packets from router input to appropriate router output</div>
+<div>
+<br /></div>
+<div>
+e.g Process of getting though single interchange</div>
+<div>
+<br /></div>
+<div>
+<b>Routing:</b><br />
+Determine route taken by packets from source to destination</div>
+<div>
+<i>This is for a single router to determine where to go</i></div>
+<div>
+<i>It will look at the packet header, extract the ip address</i></div>
+<div>
+<i>Through the forwarding table, it tries to match the ip address&nbsp;with the destination to see which&nbsp;output link to output to</i></div>
+<div>
+<i>It is determine by the routing algorithm inside the router</i></div>
+<div>
+<i>The routing algo determines the value in the routing table</i></div>
+<div>
+<i><br /></i></div>
+<div>
+e.g process of planning trip from source to destination</div>
+<div>
+<br /></div>
+<h3>
+Data plane</h3>
+<div>
+- Local, per router function</div>
+<div>
+- Determines how datagram arriving on router input port is forward to router output port</div>
+<div>
+- Forwarding function</div>
+<h3>
+Control Plane</h3>
+<div>
+- Network wide logic</div>
+<div>
+- Determines how datagram is routed among routers along end to end path from source host to destination host</div>
+<div>
+- To control plane:</div>
+<div>
+Traditional (In routers) or software defined networking (Remote server)</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<div>
+&lt;Insert 9&gt;</div>
+<div>
+<br /></div>
+<div>
+<i>Network layer have different protocols, there are different type of routing protocols</i></div>
+<div>
+<i>This is use to determine the content of the forwarding table</i></div>
+<div>
+<i>The single IP protocol is the most important</i></div>
+<div>
+<i><br /></i></div>
+<div>
+<b>IP protocol</b></div>
+<div>
+- Addressing convention</div>
+<div>
+- Datagram format</div>
+<div>
+- Packet handling convention</div>
+<h2>
+IP: Internet protocol</h2>
+<div>
+IP address: 32 bit identifier for host, router interface</div>
+<div>
+e.g 233.1.1.1</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<div>
+Interface: Connection between host/router and physical link</div>
+<div>
+<i>The ip address is associated with the interface</i></div>
+<div>
+- Router typically have multiple interfaces</div>
+<div>
+- Hosts has one or two interface (Ethernet or wireless 802.11)</div>
+<div>
+<br /></div>
+<div>
+IPaddress associated with each interface not with a host</div>
+<div>
+A host can have multiple interfaces</div>
+<div>
+<br /></div>
+<div>
+Q How are these interfaces actually connected?</div>
+<div>
+A: Wired ethernet interfaces connected by ethernet switches</div>
+<div>
+This is for local internet</div>
+<div>
+A: Wireless WIFI interfaces</div>
+<div>
+//DO not need to worry about how are they connected&nbsp;</div>
+<div>
+<br /></div>
+<div>
+<b>Subnets</b></div>
+<div>
+<br /></div>
+<div>
+Subnet is a network formed by a group of directly connected hosts</div>
+<div>
+- Hosts in the same subnet can physically reach each other without intervening router&nbsp;</div>
+<div>
+(Physically: Communication between the interfaces does not need a router)</div>
+<div>
+- They can connect to the outside world through a router</div>
+<div>
+- Hosts in the same subnet must have the same network prefix of IP address (the left most bits)</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<div>
+To determine the subnets, detach each interface from its host or router, creating island of isolated networks.</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<div>
+<b>CIDR (Classless interdomain Routing)</b></div>
+<div>
+<br /></div>
+<div>
+&lt;SLide 15&gt;</div>
+<div>
+<br /></div>
+<div>
+Ip address comprises of two parts</div>
+<div>
+- Network subnet prefix</div>
+<div>
+- Host ID</div>
+<div>
+<br /></div>
+<div>
+Address format: a.b.c.d/x where x is the number of bits in subnet/network portion of address</div>
+<div>
+<br /></div>
+<div>
+The routers if they want to route to the host, they only need the first x bits to be able to forward.</div>
+<div>
+The network inside this network will be able to use the host part to identify the host needed to forward.</div>
+<div>
+This helps reduces the number of contents in the routing list.</div>
+<div>
+<br /></div>
+<div>
+<b>Subnet mask</b></div>
+<div>
+<br /></div>
+<div>
+Is made by setting all network prefix bits to 1 and host ID bits to 0s&nbsp;</div>
+<div>
+e.g For IP address 200.23.16.42/23</div>
+<div>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;|&nbsp; &nbsp; &nbsp; &nbsp;Host&nbsp; &nbsp; &nbsp; &nbsp; |&gt;</div>
+<div>
+11001000&nbsp; &nbsp; 00010111&nbsp; &nbsp;00010000&nbsp; &nbsp; &nbsp;00101010</div>
+<div>
+11111111&nbsp; &nbsp; &nbsp;11111111&nbsp; &nbsp; 11111110&nbsp; &nbsp; &nbsp;00000000&nbsp; &nbsp;&lt;= subnet mask</div>
+<br />
+<br />
+Q: How does ISP gets block of address<br />
+<br />
+A: ICANN (Internet corporation for assigned Names and Numbers)<br />
+- Allocates address<br />
+- Manages DNS<br />
+- Assigns domains names, resolves disputes<br />
+<br />
+<div>
+&lt;SLide 18 special IP address&gt;</div>
+<div>
+Q: How does an organisation obtain a block of IP address</div>
+<div>
+<br /></div>
+<div>
+A: Buy from registry or rent from ISP address space</div>
+<div>
+<br /></div>
+<h4>
+Hierarchical Address: Route aggregation</h4>
+<div>
+Each ISP controls a block of IP addresses</div>
+<div>
+Allows efficient advertisment of routing infomation</div>
+<div>
+Within organisation</div>
+<div>
+<br /></div>
+<div>
+The ISP can differentiate which orgnaisation to forward their packet to</div>
+<div>
+<br /></div>
+<div>
+&lt;Slide 20&gt;</div>
+<div>
+<br /></div>
+<div>
+They use bit by bit to identify which network to forward</div>
+<div>
+<br /></div>
+<div>
+What is they want to change one block to another from ISP 1 to ISP2</div>
+<div>
+<i>Under the current internet, ISP 2 will simply add one more entry to the neighbouring routers and update the x.</i></div>
+<div>
+<i>This is called <b>Longest prefix matching.</b></i></div>
+<div>
+<i>It advertises to nearby routers the block of ip address it is handling.</i></div>
+<div>
+<i>Nearby routers will then route to them instead</i></div>
+<div>
+<i><br /></i></div>
+<div>
+The entries must match up to x bits starting from the left.</div>
+<div>
+This will let it determine which is the next hop</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<div>
+Q: How does a host get a IP address</div>
+<div>
+<br /></div>
+<div>
+- Hard coded by system admin in a file</div>
+<div>
+Windows: control-panel&gt;network&gt; configuration &gt; tcp/ip &gt;properties</div>
+<div>
+Unix: /etc/rc.config</div>
+<div>
+- DHCP</div>
+<div>
+<br /></div>
+<div>
+<b>DHCP: Dynamic Host Configuration Protocol</b></div>
+<div>
+Dynamically get address from as server</div>
+<div>
+"Plug and Play"</div>
+<div>
+<br /></div>
+<div>
+Goal: Allow host to obtain IP address when it joins a network</div>
+<div>
+- Can renew its lease on address in use</div>
+<div>
+- Allow reuse of address (only holds address while connected)</div>
+<div>
+- Support for mobile users who want to join network</div>
+<div>
+<br /></div>
+<div>
+DHCP runs using UDP</div>
+<div>
+= DHCP server port number: 67</div>
+<div>
+= DHCP client port number: 68</div>
+<div>
+It does not need to be reliable</div>
+<div>
+<br /></div>
+<div>
+DHCP can return:<br />
+- Address of first hop router for client</div>
+<div>
+- Name and ipaddress of server</div>
+<div>
+<br /></div>
+<div>
+<i>We can use one DHCP server to serve multiple subnets.</i></div>
+<div>
+<i>These request can be forwarded through the routers.</i></div>
+<div>
+<br /></div>
+<div>
+1. Arriving client construct a new DHCP message</div>
+<div>
+- special IP thats all 0</div>
+<div>
+Destination: 255.255.255.255 (Broadcast)</div>
+<div>
+yiaddr: 0.0.0.0 This field will be filled by servers</div>
+<div>
+Trans ID: For client to differentiates the reply from other clients and its server</div>
+<div>
+<br /></div>
+<div>
+2. DHCP offer</div>
+<div>
+If its within the subnet, it is easy.</div>
+<div>
+But if it is in another subnet, the broadcast message have to be broadcast to a router which will then relay the message to another subnet</div>
+<div>
+The DHCP will make the allocation</div>
+<div>
+- Echos the ID</div>
+<div>
+- Life time</div>
+<div>
+- Assigns a address (But it is not used yet)</div>
+<div>
+- Srcs (Its server address)</div>
+<div>
+Server will broadcast it back</div>
+<div>
+<br /></div>
+<div>
+3. Receiving the message</div>
+<div>
+Check if the Trans ID is mine, else drop</div>
+<div>
+- Make a formal request to the DHCP server&nbsp;</div>
+<div>
+But there might be multiple DHCP server, might get multiple offers,</div>
+<div>
+Client choose one and echo back to that DHCP server</div>
+<div>
+- New trans ID</div>
+<div>
+- Source IP still 0</div>
+<div>
+<br /></div>
+<div>
+4. DHCP ACK<br />
+Confirms by sending an ack back</div>
+<div>
+- Echo the yiaddr back</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<div>
+- The first two times might be optional</div>
+<div>
+- The client does not know the existence of a dhcp server</div>
+<div>
+- The client can skip step 1 and jump to 2 if it already knows where to get the request from</div>
+<div>
+(returning)<br />
+<br />
+<h2>
+IPV4</h2>
+</div>
+<h3>
+Network layer services</h3>
+<div>
+- Network layer delivers packets to receiving host</div>
+<div>
+- router examine header fields of IP datagrams passing it</div>
+<div>
+- Use of many protocols</div>
+<h3>
+Datagram format</h3>
+<div>
+The socket is represented by a set of API. The transport layer add a header which include the destination and src port. In the network layer, the ip address will be added to the header.</div>
+<div>
+<br /></div>
+<div>
+IP header is 20 bytes and has 5 rows in total.</div>
+<div>
+<br /></div>
+<div>
+Fields:<br />- IP protocol version number (IPV4)</div>
+<div>
+- IP datagram length - the length of the entire packet including the header</div>
+<div>
+- Headerchecksum -&nbsp; only for header</div>
+<div>
+- Source IP address - sending host</div>
+<div>
+- Destin IP - receiving host</div>
+<div>
+- upper layer protocol - udp/tcp</div>
+<div>
+-ttl - Time to live (Specified by the sender)</div>
+<div>
+&nbsp; &nbsp;Each router decrease the TTL as it received it.</div>
+<div>
+&nbsp; &nbsp;This is to ensure that the packet will not circulate the network forever.</div>
+<div>
+- Flags/Frag offset - IP fragmentation</div>
+<div>
+<br /></div>
+<h3>
+Fragmentation</h3>
+<div>
+- Packet might pass through different routers before reaching destination and different links may have different MTU (Max transfer Unit) - The maximum size of the ip packet that the link level frame can carry</div>
+<div>
+<br /></div>
+<div>
+- To large IP datagrams will be fragmented by routers</div>
+<div>
+<br /></div>
+<div>
+- Fragmented packets will be reassembled by destination host</div>
+<div>
+when all fragmented packets are received. It needs to know</div>
+<div>
+&nbsp; &nbsp;- How to reassembled</div>
+<div>
+&nbsp; &nbsp;- How many packets are there</div>
+<div>
+&nbsp; &nbsp;- The order</div>
+<div>
+&nbsp; &nbsp;- What is the length</div>
+<div>
+<br /></div>
+<div>
+- Each Fragmented packet will have its own header (20byte),</div>
+<div>
+&nbsp; &nbsp;- length of packet</div>
+<div>
+&nbsp; &nbsp;- ID&nbsp; (Same for all fragments)</div>
+<div>
+&nbsp; &nbsp;- Flag to state how many trailing packets are there (0 if its the last)</div>
+<div>
+&nbsp; &nbsp;- offset (show the relative order of the packets from the first packet in units of 8 bytes)&nbsp; &nbsp; &nbsp;&nbsp;</div>
+<div>
+&nbsp; &nbsp;We only have 13 bits for offset thus we have to represent in 8 bytes in order to be able to&nbsp;</div>
+<div>
+<br /></div>
+<h2>
+Network address translation</h2>
+<div>
+<u>Recap</u></div>
+<div>
+- 32 bits -&gt; a.b.c.d/x (where x is the prefix and a,b,c,d are 8 bits each)</div>
+<div>
+- Subnets -&gt; A set of directly connected host</div>
+<div>
+- Addressing -&gt; CIDR (A fix subnets with the use of prefix)</div>
+<div>
+- Getting IP address -&gt; Get a block from ICANN/IANA; get from ISP; DHCP</div>
+<div>
+- Hierarchical addressing&nbsp; -&gt; Longest prefix matching</div>
+<div>
+<br /></div>
+<div>
+Router -&nbsp; Function as an DHCP server and a client</div>
+<div>
+DHCP server: To our home devices</div>
+<div>
+DHCP client : To the ISP provider</div>
+<div>
+<br /></div>
+<div>
+Non unique IP address is not routable</div>
+<div>
+<br /></div>
+<div>
+<b>LAN</b></div>
+<div>
+- Local area network</div>
+<div>
+e.g school network</div>
+<div>
+<br /></div>
+<div>
+<b>WAN</b><br />- Public IP</div>
+<div>
+<br /></div>
+<h3>
+Implementation</h3>
+<div>
+- Replace the source Ip and port of every <b>outgoing datagram</b> to (Nat IP and new port)<br />- Remember the mapping of the source ip to port number of NAT Ip and new port</div>
+<div>
+- Replace in destination fields of every <b>incoming datagram</b> with corresponding source IP and port number stored in NAT translation table</div>
+<h3>
+Sending a packet to a server in WAN from LAN</h3>
+<div>
+<b>Translation</b></div>
+<div>
+1. The router will replace the IP of the received packet with the public IP (Usually the IP of the NAT router).</div>
+<div>
+2, Translate the port number to another port number</div>
+<div>
+3. Sends the packet to the outside server</div>
+<div>
+<br /></div>
+<div>
+- All datagrams leaving the local network will have the same source NAT ip address</div>
+<div>
+- There cannot be a collision of port number within the LAN</div>
+<h3>
+Receiving a packet from WAN to a host in LAN</h3>
+<div>
+<br /></div>
+<div>
+<b>Translation</b></div>
+<div>
+1. Reverse translation</div>
+<div>
+2. Send to the original host</div>
+<div>
+<br /></div>
+<h3>
+Motivation and Benefits</h3>
+<div>
+- Do not need a range of public ip address from IP, just one public for NAT router</div>
+<div>
+- All host use private IP address, can change address of host in the local network without notifying the outside word</div>
+<div>
+- Change ISP without changing addresses of host in local network</div>
+<div>
+- Host inside the local network are not explicitly addressable and visible by outside world (security plus)</div>
+<div>
+<br /></div>
+<h3>
+Challengers</h3>
+<div>
+- Peer to peer does not work directly</div>
+<div>
+&nbsp; &nbsp;The receiving Nat device does not have the information of the peer it suppose to send to in its LAN</div>
+<div>
+- This can be countered by using a 3rd party&nbsp;</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<h2>
+Routing Algorithms</h2>
+<div>
+The internet is a networks of networks, there is no single organisation that own every single router</div>
+<div>
+THus routing is done hierachyally</div>
+<div>
+<br /></div>
+<div>
+AS - Automonous system</div>
+<h3>
+Routing in the internet</h3>
+<div>
+<br /></div>
+<div>
+<b>Intra- AS routing</b></div>
+<div>
+<br /></div>
+<div>
+- Finds a good path between two routers within an AS</div>
+<div>
+- Commonly use protocols: RIP, OSPF</div>
+<div>
+<br /></div>
+<div>
+- Single admin, no policy decisions are neeeded</div>
+<div>
+- Routing focus on performance</div>
+<div>
+<br /></div>
+<div>
+<b>Inter-AS routing (Not covered)</b></div>
+<div>
+<br /></div>
+<div>
+- Handles the interfaces between ASs</div>
+<div>
+- The standard protocol: BGP</div>
+<div>
+<br /></div>
+<div>
+- different admin to control traffic and who routes</div>
+<div>
+- Policy may dominate over performance</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<h3>
+Abstract view of Intra AS routing</h3>
+<div>
+- Graph</div>
+<div>
+- Vertices: routers</div>
+<div>
+- Edges: Physical links</div>
+<div>
+<br /></div>
+<h3>
+Routing algo classification (Not tested)</h3>
+<div>
+- All routers have the complete knowledge of network topology and link cost</div>
+<div>
+- Periodically send link cost</div>
+<div>
+<br /></div>
+<h4>
+Distance Vector algorithms</h4>
+<div>
+- Router know physically connected neighbours and link cost to neighbours</div>
+<div>
+- Router exchange 'local views' with neighbours and update own 'local views' (based on neighbor' view)</div>
+<div>
+<br /></div>
+<div>
+- Iteraative process of computation</div>
+<div>
+&nbsp; &nbsp;- Swap local view with direct neighbours</div>
+<div>
+&nbsp; &nbsp;- Update own local view</div>
+<div>
+&nbsp; &nbsp;- Repeat till no more change to local view</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<div>
+KEY POINT: It will only contact neighbours and not indirect neighbours</div>
+<div>
+Pros: Will not be overflooded</div>
+<div>
+Cons: Longer</div>
+<div>
+<br /></div>
+<div>
+c(x,y) is the cost of link between routers x and y</div>
+<div>
+<br /></div>
+<div>
+- =infinite if x and y are not direct neighbours</div>
+<div>
+<br /></div>
+<div>
+dx(y): the cost of the least cost path from x to y from x's view</div>
+<div>
+<br /></div>
+<h4>
+Bellman ford equation</h4>
+<div>
+dx(y) = minv{c(x,v) + dv(y)}</div>
+<div>
+where the min is taken over all direct neighbours of v of x</div>
+<div>
+<br /></div>
+<div>
+Refer to CS2040 &gt; Graph Theory</div>
+<div>
+<br /></div>
+<div>
+- Every router send it distance vector to its directly connected neighbor</div>
+<div>
+-&nbsp; x finds out that y is advertising</div>
+<div>
+- Update its distance to z accordingly</div>
+<div>
+- Not down that all packets for z should be sent to y, This info will be use to create forwarding table of the router x</div>
+<div>
+<br /></div>
+<div>
+- After every router exchange several rounds of update with its direct neighbours, all router will know the least cost path to all the other router.</div>
+<div>
+<br /></div>
+<h3>
+RIP</h3>
+<div>
+Routing information protocol implements the DV algorithms. It use hop count as the cost metric and is insensitive to network congestion</div>
+<div>
+<br /></div>
+<h3>
+ICMP<br /></h3>
+<div>
+Internet control message protocol is use by host</div>
+<div>
+ICMP type and Code</div>
+<div>
+Ping and traceroute:<br />The command ping sees if a remote host will respond -&gt; is there a connection</div>
+<div>
+<br /></div>
+<div>
+The command traceroute sends a series of small packets across a network and attempts to display the route that the message will take to get to a remote host.</div>
+<div>
+Traceroute will show all the path, it sends the packet using ttl incremementally since the router have to forward back its own ip address if ttl reaches 0.</div>
+<div>
+<br /></div>
+<div>
+ICMP is use to send error message and to trouble shoot networks.</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<div>
+<br /></div>
