@@ -161,3 +161,60 @@ When an occupied partition is freed:
 Compaction:
   - Move the occupied partition around to create consolidate holes
   - Cannot be invoked to frequently as it is time consuming
+  
+  
+##### Considering the 3 algorhtims
+
+FF:
+Allocation can be constant
+Deallocation: Linear
+
+BF:
+Go through entire list
+Deallocation: Linear
+
+WF:
+Go through entire list
+Deallocation: Linear
+
+#### Multiple Free List
+- Seperate free list of free holes from list of occupied partitions
+- Keep multiple list of different hole sizes
+- Take hole from list that most closely matches size of request
+   - Faster allocation
+
+> We can directly locate the size needed without needing to search the entire list. It is in power of 2 usually using a hashmap
+
+#### Buddy Blocks
+- Every partition is a power of 2
+- Each partition in the system has a buddy due to the way it is created recursively
+- For each row of address, we will partition it.
+- If the partition is still big, we can further partition it.
+
+**Freeing**
+- Merge buddy blocks if they are both free
+
+
+- A block that is too small is not cost effective to manage
+
+**Algorithm**
+1. To allocate a block of size N
+2. Access A[S] for a free block
+3. If its too big, split it more
+
+
+** Free**
+1. Check if buddy free
+2. If it is free and exist, remove B and C from the list
+3. Merge the two buddies into a bigger partition
+
+> Note that buddy blocks would always have one binary digit difference between each other
+
+
+Allocation: O(k), where the system has 2^k memory
+Deallocation:
+O(k) - Finding the buddy
+Merging:
+O(n) -  Figure out if they are buddies
+
+> However, we do not use this allocation now
