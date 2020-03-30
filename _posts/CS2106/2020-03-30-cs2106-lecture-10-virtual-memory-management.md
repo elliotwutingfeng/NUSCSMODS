@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS2106 - Lecture 10: Virtual Memory management'
 ---
 # Motiavation
@@ -137,10 +137,79 @@ e.g Copy on write
    - Page replacement algo
 - Limited physical memory frames
    - Frame allocation policies
-   
-f
 
-## Aspects of virtual memory management:
-# Page Table Structure
-# Page Replacement Algorithms
-# Frame Allocation
+# Aspects of virtual memory
+## Page Table Structure
+Page table infomation is kept with the process infomation and takes up physical memory space
+
+
+If we have 2^p pages in logical memory space
+- P bits to specify one unique page
+- 2^p page table entries (PTE) with:
+   - Physical frame number + additional infomation bits
+   
+### 2 Level paging
+- Have a number of page tables that response to differenrt regions of the physical memory
+
+![2.PNG]({{site.baseurl}}/img/2.PNG)
+
+- Reduce size of page tables
+- Useful page must remain the space
+- Reduce useless page
+
+Split the virtual address into:
+1. Base address
+
+- Kept in register
+- Use it to index the first structure
+
+2. Pointer to page table
+- Use to get the page frame number
+- Index based on the base address
+- Use the offset to get physical address
+
+> there is no external frag and internal is inherited from pages
+
+Cons:
+- Need for 3 memory accesses
+  - Page director
+  - Page table
+  - Physical
+
+> The tree will grow and we have to traverse the tree until we find the page table. However, our TLB can bypass this. The one that is important is that the process must have a valid pointer.
+
+*MMU caches are a complement to TLB which cache some part of the directory*
+
+
+Pros:
+- Less size used (from MB -> KB)
+
+> Each page must be fit exactly correct, an invalid entry means that the entire subtree does not exist
+
+We keep the infomation of how to translate from virtual to physical in the TLB
+
+
+### Inverted Page Table
+
+Given that we have a giant virtual address space compared to the physical. What if we have a structure that can tell us who occupies which virtual address givene the physical address and has a lesser overhead
+
+- Page table is a per process infomation
+- For every frame, remember who has access.
+
+** Why do we need a process ID**
+
+> We can have multiple process residing in the same page frame, this means they are sharing the same memory. We use the PID as an index in the inverted page table. We can use hash table to convert the physical address and guess from the inverted page table. 
+
+- Verify the PID
+- Verify the Page
+
+**Are there any checks on the integrity of the page table?**
+
+> The cache structure will have a valid bit that checks if the page entry is relevant or not.
+
+
+
+
+
+## Page Replacement Algorithms
+## Frame Allocation
