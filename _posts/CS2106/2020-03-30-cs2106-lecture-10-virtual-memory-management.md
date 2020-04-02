@@ -19,8 +19,6 @@ Secondary storage capacity >> Physical
   - Others are store in secondary
 - This is like an extension of the paging scheme
 
-![1.PNG]({{site.baseurl}}/img/1.PNG)
-
 ### Extended page scheme
 - Use page table: Virtual -> physical
 
@@ -41,7 +39,8 @@ Page - fault: When CPU tries to access non memory resident page
 1. Check page table
    - Page x is a memory resident
    
-   -> Yes: Access physical 
+   -> Yes: Access physical
+   
    -> No : Continue
 2. Page fault
 3. Locate page in sec storage
@@ -49,7 +48,6 @@ Page - fault: When CPU tries to access non memory resident page
 5. Update page table
 6. Reexecute the same instruction and go step 1
 
-![1.PNG]({{site.baseurl}}/img/1.PNG)
 
 > ** In an multi-threaded system with many cores, when there is a trap to the OS, can some other thread run at the time. **
 
@@ -150,9 +148,6 @@ If we have 2^p pages in logical memory space
    
 ### 2 Level paging
 - Have a number of page tables that response to differenrt regions of the physical memory
-
-![2.PNG]({{site.baseurl}}/img/2.PNG)
-
 - Reduce size of page tables
 - Useful page must remain the space
 - Reduce useless page
