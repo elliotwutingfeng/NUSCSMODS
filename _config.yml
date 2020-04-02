@@ -27,6 +27,7 @@ navbar-links:
   CS Mods:
     - CS2106: "CS2106"
     - CS2105: "CS2105"
+    - CS2103T: "CS2103T"
     - CS1231: "CS1231"
   Others:
     - ST2334: "ST2334"
