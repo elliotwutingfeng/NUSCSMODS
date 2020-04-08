@@ -202,9 +202,270 @@ Given that we have a giant virtual address space compared to the physical. What 
 
 > The cache structure will have a valid bit that checks if the page entry is relevant or not.
 
+### More
+
+- How to structure the page table for efficientcy
+-> Page table structures
+
+- Each proccess has limited number of resident memory pages
+- > Page replacement algo
+
+- Limited physical memory frames
+-> frame allocation policies
 
 
 
 
 ## Page Replacement Algorithms
+
+No free physical memory frame during a page fault:
+- need to evict (free) a memory page
+
+Things to consider:
+- Is the page clean or dirty
+> Clean = not modified -> no need write back
+
+> Dirty = Modified -> need to write back
+
+- Is the page shared?
+> A shared page is not a good candidate to replace
+> A shared page also means that it is in multiple tables
+
+### Modeling memory references
+- In actual memory references:
+
+Logical address = page number + offset
+
+> The algo usually do not care about the offset
+
+- Only page number is important to page replacement algo
+
+> The page fault includes 
+a) access/latency to storage (Disk) [Dominant]
+b) ALG
+c) Contention in OS
+
+![2106_10_3.PNG]({{site.baseurl}}/img/2106_10_3.PNG)
+
+However, our assumption that the latency might be the bottleneck might be wrong.
+Sometimes it can be the contention in the OS
+
+### Optimum Page Replacement (OPT)
+- Beladys algorithms
+
+Assumes that we know the future, replace the page that will not be used again for the longest period of time.
+
+-> Guarentees the minimum number of page faults
+
+**But we do not know the future**
+
+Still useful
+- As a base comparison for other algorithms
+- THe closer to OPT == better algo
+
+1. Assumes we know the order of references
+2. WE also know the next time it is needed
+3. We will track the number of page faults
+
+Basis:
+- Everytime we load a frame, we will check if we have space and need it the next time in the future.
+- If we do not need, we can take a note.
+
+![2106_10_4.PNG]({{site.baseurl}}/img/2106_10_4.PNG)
+
+
+
+### FIFO
+
+Memory are evicted based on their loading time
+-> Evict the oldest memory page
+
+Implementation:
+- Maintain a queue of page
+- Remove the first page if replacement is eneded
+- Update the queue during a page fault
+
+This is simple as it does not need a hardware support. It also require simple OS structure.
+
+1. Track the loading time
+2. We need keep a time stamp for every page
+3. Maintain a queue
+
+![2106_10_5.PNG]({{site.baseurl}}/img/2106_10_5.PNG)
+
+- We replace page 2 with page 5 since page 2 was first in the queue
+
+Problems:
+- Increased of memory capacity should means that fewer page fault. But FIFO doesnt work for this case
+
+e.g 1 2 3 4 1 2 5 1 2 3 4 5 use 3,4 frames
+
+- 3 frames -> 9 faults and 3 hits
+- 4 frames -> There is more faults compared to 3 frames
+
+This opposes the idea from Belady's algo
+
+Reason:
+- FIFO does not explout temporal locality 
+> Does not prioritise pages that has been recently accessess. Pages are chosen base on the order that they arrive
+
+### LRU
+
+Makes use of temporal locality
+- Replace the page that has not been use in a longest time
+
+> Accesses in the future are going to be the same as the access in the past.
+Have not use for sometime -> most likely will not be used again
+
+- Does not suffer from belady anomaly
+
+Problems:
+- Hard to implement
+- Requires timer to keep track of last access time
+- Need to look at every page's time stamp
+- **Need substantial hardware support**
+
+
+
+> We can use an approximate version rather than looking through every single page. We just ensure that the page we are evicting is not recently accessed
+
+1. Do not track time loading of page
+2. Track the latest access time
+3. Update the last use each time it is used again
+
+
+![2106_10_6.PNG]({{site.baseurl}}/img/2106_10_6.PNG)
+
+We need space for page 5, since page 3 is the last recently used, we replace page 3 with 5
+
+#### Implementation
+
+1. Keep a counter
+
+Increment each time when access memory. Remember the counter in some structure.
+
+- Requires some hardware support to update
+- Need to search the entire list of candidates
+- We might cause a counter overflow
+
+
+2. Use a stack
+
+Maintain a stack of page numbers. The top is the most recently access and the last one was the least recently access. Each time there is a page fault, we will look at the bottom of the stack and we will know which is the one to replace.
+
+- Need to reshuffle the stack each time we access
+- Impractical
+- Hard to implement for page 
+
+
+### Second-Chance page replacement (clock)
+
+Modified version of FIFO, gives a second chance to pages that are accessed.
+
+Keeping track of the PTE using a reference bit
+
+1 = accessed
+0 = not accessed
+
+It is set by the hardware to 1 each time the page is accessed
+
+1. Look at the oldest page
+2. If bit is 0, replace it
+3. If it is 0, page is given a second chance
+   - Reference bit will be set to 0
+   - Move on to the next page
+   -  Continue step 1 with the next page in the FIFO
+   
+If all pages has bit ==1, it degenerates into a FIFO algo
+
+> It is not a widely used algo now
+
+- We do not keep the exact time stamps
+
 ## Frame Allocation
+
+There are N physical memory frames
+
+There are M processs competing for frames.
+
+**What is the best way to distribute frames?**
+
+- Equal
+
+N/m frames
+
+- Proportional
+
+SizeP = size of process p,  sizeTotal = total size of all processes
+
+Each proccess get sizep/sizetotal* N frames
+
+### Frame allocation and page replacement
+Local replacement: Victim page are selected among pages of the proccess that cause page fault
+
+Pros:
+- Performance is stable
+- Does not interfere with other process
+
+Cons:
+- if frames not enough, hinder the process progress
+
+
+Global replacement: Proccess P can take a frame from proccess Q
+
+Pros:
+- Allow self-adjustment 
+
+Cons:
+- Does not gurantees performance isolation
+- Frames allocated to a proccess can be different from run to run
+
+
+### Frame allocation and thrashing
+> If the number of page fault is more than page hits, this is thrashing
+
+- Heavy I/o to bring non resident pages into RAM
+- Thus we can limit the number of processes to sustain the system
+
+- Hard to find the right number of frames:
+
+Global:
+- Thrashing steals page
+- Cause other process to trhash (cascading thrashing)
+
+Local:
+- Thrashing is limited to one proccess
+- Single proccess can hog I/O and 
+
+1. The set of pages referenced by a process is relatively constant in a period of time -> Known as working set
+
+2. Set of pages can change
+-> Different programs phases required different data
+
+
+#### Working set model
+
+- Trying to capture what the process needs
+- Well defined number of pages
+- Most of the replacement algo will result in low page fault
+
+Defines a working set window v
+
+- W(t,v) = active pages in interval at time t
+- Allocate enough frames in pages in W(t,v) to reduce possibility of page fault
+
+- Each new phase swap will show an increase in page fault
+- After a new phase switch, there will be a stable region where to working set is the same for a long time
+
+Choosing v:
+
+- Too small: May miss pages in current
+- Too big: May contains pages from different working set
+
+> It is hard to find which v that will work for everybody
+
+![2106_10_7.PNG]({{site.baseurl}}/img/2106_10_7.PNG)
+
+
+
+
