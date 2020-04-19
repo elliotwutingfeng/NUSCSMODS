@@ -124,9 +124,10 @@ Each byte has a unique set of data
  - Read (offset): Every read operation explicitly state the position to be access
  - Seek(offset): A special operation is provided to move to a new location in file
  
- e.g Unix and Window uses seek()
+ e.g Unix and Window uses seek
  
- #### Direct Access
+ 
+#### Direct Access
  - Use for file contains fixed length record
  - Allow random access to any record direclty
  
