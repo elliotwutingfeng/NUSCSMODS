@@ -110,16 +110,15 @@ Each byte has a unique set of data
  
  > Fix = internal, variable = external fragmentation
  
+## Access Methods
  
- ## Access Methods
- 
- #### Sequential access
+#### Sequential access
  - Data is read in order, staring from the beginning
  - Cannot skip but can be rewound
  
  > This is like a tape, in order to get to a location n, you have to start from the beginning 
  
- #### Random Access
+#### Random Access
  - Data can be read in any order
  - Read (offset): Every read operation explicitly state the position to be access
  - Seek(offset): A special operation is provided to move to a new location in file
