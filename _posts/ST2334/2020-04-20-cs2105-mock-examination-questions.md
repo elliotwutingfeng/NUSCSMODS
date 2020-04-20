@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: CS2105 - Mock Examination questions
 ---
 ## Mock Examination Questions
