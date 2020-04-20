@@ -139,8 +139,150 @@ We try to get the width of confidence interval small.
 > If we repeat it many times, about 95 percent of the time, it will cover
 
 
-
 # Confidence interval for the mean
-# Sample size
+
+## Known variance case
+Confidence interval for mean with
+
+- Known variance case
+
+![2334_6_12.PNG]({{site.baseurl}}/img/2334_6_12.PNG)
+![2334_6_13.PNG]({{site.baseurl}}/img/2334_6_13.PNG)
+
+
+# Sample size for estimating mean
+
+> How big the sample must i get in order to get inference? -> Depends
+
+![2334_6_14.PNG]({{site.baseurl}}/img/2334_6_14.PNG)
+
+![2334_6_15.PNG]({{site.baseurl}}/img/2334_6_15.PNG)
+
+> This is to get the sample size
+
+![2334_6_16.PNG]({{site.baseurl}}/img/2334_6_16.PNG)
+
+
+- If e is small, then n will be big.
+- if n is big, e will be big
+
+
+> This is the same as saying that if the variance is big, we need a larger sample size in order to achieve a higher level of confidence
+
+*E.g 1*
+
+- Mean of CAP of random sample of 36 seniors is 3.5
+- muel is 0.3 
+i) find the confidence interval for the mean of the entire seniors
+
+> We can just sub in the fomula
+
+![]({{site.baseurl}}/img/2334_6_17.PNG)![2334_6_17.PNG]({{site.baseurl}}/img/2334_6_17.PNG)
+
+
+ii) How large a sample is required if we want to be 95 percent confidence that our estimate of u is off by less than 0.05?
+
+![2334_6_18.PNG]({{site.baseurl}}/img/2334_6_18.PNG)
+
+## Unknown Variance case
+
+![2334_6_19.PNG]({{site.baseurl}}/img/2334_6_19.PNG)
+![2334_6_20.PNG]({{site.baseurl}}/img/2334_6_20.PNG)
+
+- We are thinking of small sample size (n<30)
+
+![2334_6_21.PNG]({{site.baseurl}}/img/2334_6_21.PNG)
+
+1. Point estimate
+2. Construct an interval: some multiple of the sd
+
+
+For large n,
+![2334_6_22.PNG]({{site.baseurl}}/img/2334_6_22.PNG)
+
+*E.g 1*
+![2334_6_23.PNG]({{site.baseurl}}/img/2334_6_23.PNG)
+
+*E.g 2*
+
+![2334_6_24.PNG]({{site.baseurl}}/img/2334_6_24.PNG)
+![2334_6_25.PNG]({{site.baseurl}}/img/2334_6_25.PNG)
+
+- The population is the customers that uses credit card
+- u, the avf amount spent on their first visit to the chain's new store in the mall
+
+> We are interested in certain characteristic of the individual which is the amount spent
+
+-> We assume that they follow a normal distribution
+
+- Since n is large, we use z value instead of t-value
+
+A 90 percent confidence interval for the mean is given by:
+
+![2334_6_26.PNG]({{site.baseurl}}/img/2334_6_26.PNG)
+
+![2334_6_27.PNG]({{site.baseurl}}/img/2334_6_27.PNG)
+
+
 # Confidence intervals for the difference between two means
+
+We normally like to look at the difference. It does not matter which mean is one or two, we can swap accordingly
+
+- Assume have 2 population with u1 and u2 and varaince a1 and a2
+
+Then 
+
+     Xspa1 - Xspa2
+
+is the point estimator of u1 - u2
+
+## Known variances
+
+![2334_6_30.PNG]({{site.baseurl}}/img/2334_6_30.PNG)
+
+
+![2334_6_28.PNG]({{site.baseurl}}/img/2334_6_28.PNG)
+
+![2334_6_29.PNG]({{site.baseurl}}/img/2334_6_29.PNG)
+
+## Large Sample C.L for unknwon variance
+![2334_6_31.PNG]({{site.baseurl}}/img/2334_6_31.PNG)
+![2334_6_32.PNG]({{site.baseurl}}/img/2334_6_32.PNG)
+
+> We use s1^2 because we trying to use the best known
+
+
+*E.g 2*
+
+![2334_6_33.PNG]({{site.baseurl}}/img/2334_6_33.PNG)
+![2334_6_34.PNG]({{site.baseurl}}/img/2334_6_34.PNG)
+![2334_6_35.PNG]({{site.baseurl}}/img/2334_6_35.PNG)
+
+
+## Unknown but equal variances
+
+> We can still apply the t distribution
+
+![2334_6_36.PNG]({{site.baseurl}}/img/2334_6_36.PNG)
+![2334_6_37.PNG]({{site.baseurl}}/img/2334_6_37.PNG)
+![]({{site.baseurl}}/img/2334_6_38.PNG)
+
+> We can use chi - square (they are independent)
+
+![2334_6_39.PNG]({{site.baseurl}}/img/2334_6_39.PNG)
+![2334_6_40.PNG]({{site.baseurl}}/img/2334_6_40.PNG)
+
+
+### Unknwon but equal variance for large sample
+
+![2334_6_41.PNG]({{site.baseurl}}/img/2334_6_41.PNG)
+
+
+Just check these conditions:
+
+1) Approximately normal
+2) Equal variance
+
+> This will give us a range for u1 - u2
+
 # Confidence interval for variance and ratio of variance
