@@ -188,9 +188,106 @@ Cons:
 This help us to tell us how the files are stored
 
 - Keep track of files in directory
-- Rememeber this in some structure way
+- Map the file name to the file infomation
+
+Remember:
+- Open file before using
+- Locate the file infomation using the pathname + filename
+
+
+> Figure out the root and the structure
+
+
+`/dir2/dir3/data.text` - this is a full path name
+
+Subdirectory is usually stored at a file entry with special type in a directory
+
+> Subdirectory will have a special bit in its meta data
+
+## Linear List
+- Directory consist of a list
+  - File name
+  - Pointer to file infomation
+  - File infomation
+  - Possible other meta data
+
+> We can use an hashtable to improve the linear search [O1]
+
+## HashTable
+- Each directory contains a Hashtable of size N
+- To locate file by name, file name is hashed into index K from 0 to N-1
+- HashTable[k] is inspected to match file name
+
+> In general, we will try to improve the search
+
+Pros: 
+- Fast look up
+
+Cons:
+- Limited size (some)
+- Collision
+
+## File infomation
+- Do we want to store the meta data in the directory or have it seperate outside the file
+
+![2106_11_13.PNG]({{site.baseurl}}/img/2106_11_13.PNG)
+
+1. Store Everything in directory entry
+2. Store only file name and points to some data structure for other info
 
 
 # File System in Action
+![2106_11_14.PNG]({{site.baseurl}}/img/2106_11_14.PNG)
+![2106_11_15.PNG]({{site.baseurl}}/img/2106_11_15.PNG)
+![2106_11_16.PNG]({{site.baseurl}}/img/2106_11_16.PNG)
+
+> If the file is already open already, it does not matter, we just get a new entry in the file table
+(However, there are file systems where only one process can open)
+
+How can we use the same entry in the open file table within the same process
+1. Dup
+2. fork
+
+How will the OS know that you have 2 fd pointing?
+> There is a reference count in the file table. If one process closes the fd and another uses, the reference count decreases only and it continue to exist
+
+How will file know that you have the file link in multiple directory
+> Reference count that say how many process have access to this. Reference count is in the file info meta data
+
+
+- File table: Dynamic
+- Secondary storage: Static
+
 
 # Disk I/O Scheduling
+
+- Magnetic disk
+
+The problem:
+- Waiting time
+- Seeking time
+- Balance
+
+We must have responsiveness
+
+## Algorithms
+- FCFS
+- SSF (Shortest seek first): Base on the position of the head
+- Scan
+- Deadline
+   - Sorted
+   - FIFO (R/W)
+- noop: No sorting
+- cfq (Completely fair queueing)
+
+Base on time slice or per process sorted queues
+- bfq (Budget fair queueing) (Multiqueue)
+Based on number of sectors requested
+
+
+
+
+### Scan: Disk head movement
+Read blocks on the way base on the direction
+![2106_11_17.PNG]({{site.baseurl}}/img/2106_11_17.PNG)
+
