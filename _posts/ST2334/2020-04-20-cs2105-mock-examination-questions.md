@@ -44,7 +44,6 @@ Private addresses include:
 
 note that the sequence number in a TCP segment is the byte id of the first byte in the segment.
 every payload is 100 bytes, so no matter what you should not get S=71.
-![tcp_acks.png]({{site.baseurl}}/img/tcp_acks.png)
 
 Also note that Y is also sending 100 bytes in each of its replies.
 
