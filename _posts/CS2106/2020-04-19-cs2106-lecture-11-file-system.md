@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: 'CS2106 - Lecture 11: File System'
+title: 'CS2106 - Lecture 11: File System (User)'
 ---
 
 # File System
@@ -246,5 +246,6 @@ Cons:
 
 In Unix:
 - Symbolic link is allowed to link to directory
+
 
 
