@@ -340,5 +340,14 @@ Let u1 and u2 be mean strength
 ![2334_7_31.PNG]({{site.baseurl}}/img/2334_7_31.PNG)
 ![2334_7_32.PNG]({{site.baseurl}}/img/2334_7_32.PNG)
 
+![2334_7_33.PNG]({{site.baseurl}}/img/2334_7_33.PNG)
+
+> Thus it is rejected
+
+## Large sample testing with unknown variances
+- Because it is large, instead of sigma1 ^ 2, we replace by s1^2
+- We can see that it is approximate normal
+
+
 
 # Hypothesis testing concerning variances
