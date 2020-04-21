@@ -273,7 +273,7 @@ is the point estimator of u1 - u2
 ![2334_6_40.PNG]({{site.baseurl}}/img/2334_6_40.PNG)
 
 
-### Unknwon but equal variance for large sample
+### Unknown but equal variance for large sample
 
 ![2334_6_41.PNG]({{site.baseurl}}/img/2334_6_41.PNG)
 
@@ -285,4 +285,107 @@ Just check these conditions:
 
 > This will give us a range for u1 - u2
 
+### C.L for the difference between two means for paired data (Dependent data)
+
+We want to find out if there are difference in the means but what we are looking for if there are difference in the two variables.
+
+> How to find the confidence interval for this difference
+
+We are trying to find the avg of these two differenes.
+
+1) Consider before and after
+
+2) Both u is taken from the same individual (pair)
+
+3) 
+
+Consider these questions:
+1. Normally distributed? => yes
+2. Do we know the variance (population)? => no
+> we are looking at d + k sqrt(
+3. Sample size is known => yes
+
+> V(xspa) = a^2/n
+
+> the xi and yi is related
+
+> Big sample does not mean that the sample follow the normal distribution!!!!!! It is the average (xspa) which follow normal distribution if our sample size is big enough, central limit theorem only apply to xspa
+
+### Small sample and approximate normal population
+
+![2334_6_42.PNG]({{site.baseurl}}/img/2334_6_42.PNG)
+
+### For large sample (n>30)
+
+![2334_6_43.PNG]({{site.baseurl}}/img/2334_6_43.PNG)
+
+> The numbers are close to 1.96, therefore we can just replace it.
+
+![2334_6_44.PNG]({{site.baseurl}}/img/2334_6_44.PNG)
+
+*E.g 4*
+- 10 pairs of 20 students
+- Each member of pair is approx the same IQ
+- One of each pair was selected at random and is assign to a math section using program materials only
+- The other member of each pair is assign to professor lecture 
+- Given same exam there result recorded
+
+![2334_6_45.PNG]({{site.baseurl}}/img/2334_6_45.PNG)
+
+> d is x-y
+
+![2334_6_46.PNG]({{site.baseurl}}/img/2334_6_46.PNG)
+![2334_6_47.PNG]({{site.baseurl}}/img/2334_6_47.PNG)
+
+> We can use this formula because the sample size is not big, in order to known, we assumed that the d follow a normal distribution. 
+
+> This also means that x (p.m) and y (Lecture) are normally distributed, therefore d is also normally distributed
+
+
 # Confidence interval for variance and ratio of variance
+
+> This is sigma square and sigma1^2 / Signam2^2 square
+
+Consider:
+
+1) Normal distribution?
+
+2) Parameters u is it known? => Yes
+
+3) Large sample size?
+
+> We replace the xpsa with u in the fomular of T^2 and S^2
+![2334_6_48.PNG]({{site.baseurl}}/img/2334_6_48.PNG)
+
+If u is known, we should use it, xspa is an estimate. Choose the accurate one over the estimate.
+
+### u is known
+![2334_6_49.PNG]({{site.baseurl}}/img/2334_6_49.PNG)
+
+> We are just doing chi square distribution.
+
+![2334_6_50.PNG]({{site.baseurl}}/img/2334_6_50.PNG)
+
+> 1-a confidence
+
+![2334_6_51.PNG]({{site.baseurl}}/img/2334_6_51.PNG)
+![2334_6_52.PNG]({{site.baseurl}}/img/2334_6_52.PNG)
+
+
+-> Get from chi square table
+
+![2334_6_53.PNG]({{site.baseurl}}/img/2334_6_53.PNG)
+
+- Where s^2 is the sample varaince
+
+*E.g 1*
+
+- 10 cans of peaches in volume are:
+![2334_6_54.PNG]({{site.baseurl}}/img/2334_6_54.PNG)
+
+- Assume x follow normal distribution
+
+Because we do not know u, we will have to use another formula
+
+![2334_6_55.PNG]({{site.baseurl}}/img/2334_6_55.PNG)
+
