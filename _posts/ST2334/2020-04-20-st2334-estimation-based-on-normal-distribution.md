@@ -388,4 +388,40 @@ If u is known, we should use it, xspa is an estimate. Choose the accurate one ov
 Because we do not know u, we will have to use another formula
 
 ![2334_6_55.PNG]({{site.baseurl}}/img/2334_6_55.PNG)
+![2334_6_56.PNG]({{site.baseurl}}/img/2334_6_56.PNG)
+
+## The ratio of two cariances with unknown means
+
+1) normal => yes
+
+2) u known? => No
+
+3) sample size => this doesnt matter anymore 
+
+
+![2334_6_57.PNG]({{site.baseurl}}/img/2334_6_57.PNG)
+
+> This is a ratio of two chi square distribution.
+
+![2334_6_58.PNG]({{site.baseurl}}/img/2334_6_58.PNG)
+![2334_6_59.PNG]({{site.baseurl}}/img/2334_6_59.PNG)
+
+> We can see we just swap the degrees of freedom
+![2334_6_60.PNG]({{site.baseurl}}/img/2334_6_60.PNG)
+
+The reciprocol of F 2,4,0.95 => F 4,2,0.05
+
+*E.g 2*
+
+![2334_6_61.PNG]({{site.baseurl}}/img/2334_6_61.PNG)
+
+![]({{site.baseurl}}/img/2334_6_62.PNG)
+
+![2334_6_62.PNG]({{site.baseurl}}/img/2334_6_62.PNG)
+
+> Sometimes we cannot get the exact value from the table, thus we need can get the average of the values that are closer to the one we want.
+
+
+![2334_6_64.PNG]({{site.baseurl}}/img/2334_6_64.PNG)
+
 
