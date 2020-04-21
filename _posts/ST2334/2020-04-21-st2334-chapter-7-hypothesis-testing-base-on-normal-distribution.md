@@ -92,12 +92,91 @@ This is equivalent to test H0 = p = 1/4 and h1 = p >1/4
 We reject H0 when X > 8 when p = 1/4
 
 > Follow binomial distribution of X~B(20,1/4)
+
+
 ![2334_7_6.PNG]({{site.baseurl}}/img/2334_7_6.PNG)
 
+This means that chance of getting type 1 is 4 percent
 
 
-# Level of significance
+But we want to ask what is the probability of committing of type 2 error?
+
+- We cannot compute unless we have a *Specific* alternative hypothesis
+
+If let say p = 1/2
+
+![2334_7_7.PNG]({{site.baseurl}}/img/2334_7_7.PNG)
+
+Chance of not committing an error is 1-beta = 1 - 0.2517 = 0.7483
+
+This is vert good because the chance of not commiting the error is very big
+
 # Hypotheses testing concerning mean
+
+Consider the problem of testing the hypo concerning the mean.
+
+Considerations:
+1. Variance is known
+2. Underlying distribution is normal or n is very large (>30)
+
+We are going to look at the difference to tell if its big or not. 
+
+![2334_7_8.PNG]({{site.baseurl}}/img/2334_7_8.PNG)
+
+## Two sided test
+![2334_7_9.PNG]({{site.baseurl}}/img/2334_7_9.PNG)
+
+### Critical value approach
+We will try for the interval of Xspa
+where
+
+         x1spa < Xspa < x2spa
+defines the acceptance test
+
+![2334_7_10.PNG]({{site.baseurl}}/img/2334_7_10.PNG)
+
+p(x1spa < Xspa < x2spa) = 1-a
+
+> We will put xspa at one side of the inequality
+
+![2334_7_11.PNG]({{site.baseurl}}/img/2334_7_11.PNG)
+
+
+- Reject when Xspa is between x2spa and x1spa
+- Critical region is usually stated in terms of Z rather then Xspa
+
+
+![2334_7_12.PNG]({{site.baseurl}}/img/2334_7_12.PNG)
+
+> However, we can represent it as a t distribution
+
+
+*E.g 1*
+- Breaking strength 35 kg
+- SD is 1.5 kg
+- Determine if breaking machine has those stats
+- Random sample of 49 piece
+- Mean breaking strength of 34.5
+
+-is there evidence that the machine is not meeting the specification for mean breaking strenrh
+
+Letting u be the mean breaking strength by the machine
+
+1)
+
+h0: u =35
+h1: u !=35
+
+2)
+Set a = 0.05 (Not stated in question)
+
+3)
+![2334_7_13.PNG]({{site.baseurl}}/img/2334_7_13.PNG)
+
+![2334_7_14.PNG]({{site.baseurl}}/img/2334_7_14.PNG)
+
+![2334_7_15.PNG]({{site.baseurl}}/img/2334_7_15.PNG)
+
 # Critical value approach and p-value approach
 # Hypotheses testing concerning difference between two means
 # Hypothesis testing concerning variances
