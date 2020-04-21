@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 title: 'ST2334 - Chapter 7: Hypothesis testing base on normal distribution'
 ---
 # Hypotheses testing base on normal distribution
