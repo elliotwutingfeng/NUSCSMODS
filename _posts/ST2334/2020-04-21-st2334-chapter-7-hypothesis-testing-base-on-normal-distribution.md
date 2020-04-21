@@ -348,6 +348,56 @@ Let u1 and u2 be mean strength
 - Because it is large, instead of sigma1 ^ 2, we replace by s1^2
 - We can see that it is approximate normal
 
+*E.g 2*
+![2334_7_34.PNG]({{site.baseurl}}/img/2334_7_34.PNG)
+
+![2334_7_35.PNG]({{site.baseurl}}/img/2334_7_35.PNG)
+
+> Anything bigger than Z is rejected
+
+![2334_7_36.PNG]({{site.baseurl}}/img/2334_7_36.PNG)
+
+
+Therefore we reject since z = 3.335 falls inside the critical region.
+
+## Unknown but equal variances
+
+What if we do not know what they are but we know that they are equal?
+
+If the sample is big, we have a better estimate, therefore we take the bigger.
+
+1) Variances are equal but unknown
+
+2) Pop are normal
+
+3) Small sample size
+
+> If the sample size is big,
+
+*E.g 3*
+- Math was taught to 12 students for one group
+- Anotehr group of 10 students same course by program materials
+- At the end, they all sat same exam
+
+- Test the hypo that the two learning methods are equal using 0.1 level of sig
+
+- 12 students avg 85 sd 4
+- 10 students avg 81 and sd 5
+
+H0: u1 - u2 =0 against H1:u1-u2 !=0
+
+![2334_7_38.PNG]({{site.baseurl}}/img/2334_7_38.PNG)
+
+![2334_7_41.PNG]({{site.baseurl}}/img/2334_7_41.PNG)
+
+![2334_7_42.PNG]({{site.baseurl}}/img/2334_7_42.PNG)
+
+![2334_7_40.PNG]({{site.baseurl}}/img/2334_7_40.PNG)
+
+
+> We reject the null hypo since t is 2.086 which falls inside the critical regiion
+
+H0 : u0 = u2 is rejected 
 
 
 # Hypothesis testing concerning variances
