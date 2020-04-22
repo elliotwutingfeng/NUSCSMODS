@@ -429,8 +429,11 @@ We do not have the exact value for 2.156 but we have 1.796 and 2.201 using stati
 ## One variance case
 
 Assumption: It is normal
+![2334_7_45.PNG]({{site.baseurl}}/img/2334_7_45.PNG)
+
 
 ![2334_7_47.PNG]({{site.baseurl}}/img/2334_7_47.PNG)
+
 ![]({{site.baseurl}}/img/2334_7_46.PNG)
 
 *E.g 1*
@@ -438,4 +441,38 @@ Assumption: It is normal
 - Random sample of 10 of these batt have sd of 1.2 years
 - Do u think that sigma > 0.9
 
+## H.T Concerning ratio of variances
+
+Assume:
+1. Underlying is normal
+2. Means are unknown
+
+![2334_7_52.PNG]({{site.baseurl}}/img/2334_7_52.PNG)
+![2334_7_53.PNG]({{site.baseurl}}/img/2334_7_53.PNG)
+
+*e.g 2*
+- Mat 1 has 11 (Level of freedom)
+- Mat 2 has 9 (Level of freedom)
+- Mat 1 avg 85 and sd 4
+- Mat 2 avg 81 and sd 5
+- Test two variance are equal using 0.1 sig
+
+![2334_7_48.PNG]({{site.baseurl}}/img/2334_7_48.PNG)
+![2334_7_49.PNG]({{site.baseurl}}/img/2334_7_49.PNG)
+![2334_7_51.PNG]({{site.baseurl}}/img/2334_7_51.PNG)
+
+
+1) 
+
+Test sig1 = sig2
+
+3) n1 = 11 n2 =9
+implies that F10,8,0.05 = 3.35
+
+- F 8,10;0.05 = 1/3.07 = 0.326
+
+> Note: F distribution is a ratio of 2 chi square distribution 
+
+![2334_7_54.PNG]({{site.baseurl}}/img/2334_7_54.PNG)
+![2334_7_55.PNG]({{site.baseurl}}/img/2334_7_55.PNG)
 
