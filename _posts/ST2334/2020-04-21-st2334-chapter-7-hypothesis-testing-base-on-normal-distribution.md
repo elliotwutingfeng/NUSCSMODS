@@ -399,5 +399,43 @@ H0: u1 - u2 =0 against H1:u1-u2 !=0
 
 H0 : u0 = u2 is rejected 
 
+### Paired data
+
+*E.g 4*
+- Do data provide sufficient evidence that method 2 yields a higher avergae percentage than method 1?
+- Assume difference are normally distributed
+- Use a = 0.05
+
+> We are looking for big difference (T>t)
+
+1) H0: ud = 0 against h1: ud<0
+
+> The reason for this is because we are d = x-y = u1 - u2
+
+3)
+![2334_7_43.PNG]({{site.baseurl}}/img/2334_7_43.PNG)
+
+4)
+![2334_7_44.PNG]({{site.baseurl}}/img/2334_7_44.PNG)
+
+We do not have the exact value for 2.156 but we have 1.796 and 2.201 using statistical table.
+
+
+5) 
+> Rejected
 
 # Hypothesis testing concerning variances
+
+## One variance case
+
+Assumption: It is normal
+
+![2334_7_47.PNG]({{site.baseurl}}/img/2334_7_47.PNG)
+![]({{site.baseurl}}/img/2334_7_46.PNG)
+
+*E.g 1*
+- Batt has a sd 0.9 year
+- Random sample of 10 of these batt have sd of 1.2 years
+- Do u think that sigma > 0.9
+
+
