@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'ST2334 - Chapter 7: Hypothesis testing base on normal distribution'
 ---
 # Hypotheses testing base on normal distribution
@@ -475,4 +475,3 @@ implies that F10,8,0.05 = 3.35
 
 ![2334_7_54.PNG]({{site.baseurl}}/img/2334_7_54.PNG)
 ![2334_7_55.PNG]({{site.baseurl}}/img/2334_7_55.PNG)
-
