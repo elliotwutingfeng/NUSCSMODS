@@ -10,3 +10,7 @@ title: CS2103T - Past year paper
 # 18/19 - Sem 1 (Answer)
 
 <iframe src="https://drive.google.com/file/d/1nEX15psv93nxaiUGWOF6uEwUi3r0SuJ0/preview" width="640" height="680"></iframe>
+
+
+# Practice paper - AY18/19 Mock (Answer)
+<iframe src="https://drive.google.com/file/d/1z2Auub6kklGXf2JAeOEAx_4D4RTivwok/preview" width="640" height="680"></iframe>
