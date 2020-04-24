@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'ST2334 - Tutorial 9:  Sampling and distribution'
 ---
 ## Chapter 5 and 6
