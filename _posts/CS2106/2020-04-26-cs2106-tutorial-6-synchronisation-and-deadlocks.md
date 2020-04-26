@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS2106 - Tutorial 6: Synchronisation and deadlocks'
 ---
 ## Synchronisation and deadlocks
