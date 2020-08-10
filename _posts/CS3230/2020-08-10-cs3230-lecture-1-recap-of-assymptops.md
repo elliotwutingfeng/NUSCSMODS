@@ -31,4 +31,33 @@ e.g f(n) = 39m^2 +16n +5
 
 ![3230-1-2.PNG]({{site.baseurl}}/img/3230-1-2.PNG)
 
+# Recursive
+
+## Induction
+Try to guess a close form solution
+1. Compute value of the function at a few points
+2. Unfold the recurrence a few steps
+
+Try to prove by induction.
+
+![3230-1-3.PNG]({{site.baseurl}}/img/3230-1-3.PNG)
+![3230-1-4.PNG]({{site.baseurl}}/img/3230-1-4.PNG)
+
+> We have to proof k+1
+
+![3230-1-5.PNG]({{site.baseurl}}/img/3230-1-5.PNG)
+
+> We can open up to find the pattern
+
+## Master theorem
+
+![3230-1-6.PNG]({{site.baseurl}}/img/3230-1-6.PNG)
+
+>f(n) is a function
+
+# Transformations
+- Domain
+- Range
+
+
 
