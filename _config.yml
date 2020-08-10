@@ -25,6 +25,9 @@ include:
 # List of links in the navigation bar
 navbar-links:
   CS Mods:
+    - CS2107: "CS2107"
+    - CS3103: "CS3103"
+    - CS3230: "CS3230"
     - CS2106: "CS2106"
     - CS2105: "CS2105"
     - CS2103T: "CS2103T"
