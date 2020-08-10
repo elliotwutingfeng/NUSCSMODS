@@ -28,6 +28,7 @@ navbar-links:
     - CS2107: "CS2107"
     - CS3103: "CS3103"
     - CS3230: "CS3230"
+    - CS3237: "CS3237"
     - CS2106: "CS2106"
     - CS2105: "CS2105"
     - CS2103T: "CS2103T"
@@ -35,6 +36,7 @@ navbar-links:
   Others:
     - ST2334: "ST2334"
     - LAJ1201: "LAJ1201"
+    - LAJ2201: "LAJ2201"
   Original Site: "https://nusmods.blogspot.com/"
   Installation of Software: "https://nusmods.blogspot.com/p/installation-of-software.html"
   About Me: "aboutme"
