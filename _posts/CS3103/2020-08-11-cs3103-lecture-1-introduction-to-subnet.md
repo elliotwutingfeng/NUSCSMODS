@@ -99,6 +99,57 @@ This is for ethernet
 
 > The boradcast have limited else the whole internet would be flooded
 
+![CS3103-1-7.PNG]({{site.baseurl}}/img/CS3103-1-7.PNG)
+
+
+# Ip subnet addressing
+- Organisation owning laarge address blocks have too many host on a single networks
+- Thus we might divide 
+
+Reason:
+- Less congestion
+- Secure
+
+
+![CS3103-1-8.PNG]({{site.baseurl}}/img/CS3103-1-8.PNG)
+
+>The number of available assignment in this subnet is 256-2 = 254
+
+Within each subnet, the first and last of the block cannot be used as well. 
+
+> We are using switch networks thus there is no need to worry about seperate collision domains
+
+
+# Supernetting
+- Class C is too small for many organisation and companies
+- CIDR also allows
+	- merging small networks like CLass C networks into a larger network with single prefix
+
+> Problem with small address block
+- There might be alot of small address, routing table will explode
+
+Thus we use supernetting such that the routing table can group the entire subnet as one
+
+
+# Private IP address
+- Not gloabbaly routable 
+- Available freely
+- Use: For private use within homes etc
+
+# NAT
+![CS3103-1-9.PNG]({{site.baseurl}}/img/CS3103-1-9.PNG)
+
+To route the private ip address to the internet.
+The router will swap the source of the outgoing packet and swap the destination of the incoming packet.
+
+LAN manages the simple table, the table shows the WAN side address and LAN side address.
+
+
+![CS3103-1-10.PNG]({{site.baseurl}}/img/CS3103-1-10.PNG)
+
+
+## NAT table
+![CS3103-1-11.PNG]({{site.baseurl}}/img/CS3103-1-11.PNG)
 
 
 
