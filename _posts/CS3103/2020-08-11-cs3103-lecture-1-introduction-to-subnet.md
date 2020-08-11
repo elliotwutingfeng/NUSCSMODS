@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3103 - Lecture 1:  Introduction to subnet'
 ---
 # Internet Today
@@ -150,9 +150,3 @@ LAN manages the simple table, the table shows the WAN side address and LAN side 
 
 ## NAT table
 ![CS3103-1-11.PNG]({{site.baseurl}}/img/CS3103-1-11.PNG)
-
-
-
-
-
-
