@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3230 - Lecture 1: Recap of Assymptops'
 ---
 # Time complexity
