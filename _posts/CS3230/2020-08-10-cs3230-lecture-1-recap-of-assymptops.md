@@ -110,8 +110,11 @@ Try to fit the recurrence into this fomula
 > Using geometric series of a/1-r where 1-r is constant, we can ignore the 1-r and we will just get a -> O(a)
 
 
-
-
 # Transformations
 - Domain
 - Range
+
+
+# Slides
+
+<iframe src="https://drive.google.com/file/d/1GrCi4ztMtBAO_VU1nrR-xY19V5B_G_2s/preview" width="640" height="680"></iframe>
