@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3237 - Lecture 1: Introduction'
 ---
 # Internet of things
