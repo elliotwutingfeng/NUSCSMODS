@@ -131,7 +131,8 @@ Apply fucntion to introduce non-linearity
 2. Deep learning and analytics can be put on this data
 3. Try to predict the future base on the data
 
-
+# Slides
+<iframe src="https://drive.google.com/file/d/1eyRrqFoCHXz2iWVJWxs4f39JxIhlIlzb/preview" width="640" height="680"></iframe>
 
 
 
