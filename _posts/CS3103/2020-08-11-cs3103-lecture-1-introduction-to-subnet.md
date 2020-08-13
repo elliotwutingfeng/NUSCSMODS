@@ -150,3 +150,6 @@ LAN manages the simple table, the table shows the WAN side address and LAN side 
 
 ## NAT table
 ![CS3103-1-11.PNG]({{site.baseurl}}/img/CS3103-1-11.PNG)
+
+# Slides
+<iframe src="https://drive.google.com/file/d/1Bz7EOKNTjdbIYqBoN9m2pP1bGkkk8CtY/preview" width="640" height="680"></iframe>
