@@ -4,6 +4,11 @@ published: true
 title: 'CS2107 - Lecture 1: Encryption'
 ---
 
+- Confidentiality - The infomation of the users
+- Integrity -  Modification of process/infomation
+- Availability - Availability of the services for the user
+- non-repudiation - Gurantees only the specific person can access 
+
 # Definition
 An encryption scheme also known as cipher consist of envryption and decryption.
 ![]({{site.baseurl}}/img/CS2107-1-1.PNG)
@@ -45,4 +50,3 @@ Applications:
 ### Vigenere Cipher
 ### Permutation Cipher
 ### One time Pad
-
