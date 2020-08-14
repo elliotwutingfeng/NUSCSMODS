@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS2107 - Lecture 1: Encryption'
 ---
 
