@@ -176,3 +176,22 @@ It is a UDP base application
 - DHCP server recognises this request is coming from router and not client
 	- Sends unicast reply to router
     - router replies to client
+### Non-router
+A relay agent can also be other nodes other than a router
+
+![CS3103-2-16.PNG]({{site.baseurl}}/img/CS3103-2-16.PNG)
+
+    
+## Implementing multiple DHCP servers
+![CS3103-2-15.PNG]({{site.baseurl}}/img/CS3103-2-15.PNG)
+
+- Serves a specific network range
+- this is for redundancy if there multiple
+
+
+## DHCP Packet format
+![CS3103-2-17.PNG]({{site.baseurl}}/img/CS3103-2-17.PNG)
+
+- Hop count: Start from 0
+- flags
+- Gateway Ip address: for relay agent to put its ip address
