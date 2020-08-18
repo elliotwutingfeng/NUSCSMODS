@@ -240,6 +240,81 @@ A relay agent can also be other nodes other than a router
 ## DHCP - Client Design
 ![CS3103-2-21.PNG]({{site.baseurl}}/img/CS3103-2-21.PNG)
 
+> Why use DHCP? WHy not use MAC since its unique
+	- IP is hierieical
+    - Routing table would be huge
+    - MAC is manufacturer dependent, hence no grouping for routing
+
+> What is DHCP FORCERENEW? (sent by server)
+	- RFC 3203
+
+# VLAN
+
+#### Motivation
+![CS3103-2-22.PNG]({{site.baseurl}}/img/CS3103-2-22.PNG)
+
+- Two departments want to connect to each other, so we use a router
+- We have this table
+
+![CS3103-2-23.PNG]({{site.baseurl}}/img/CS3103-2-23.PNG)
+
+> What would happen if the company want to increase the number of host?
+
+If lets say we increase, we need to make more ipaddress for the new host. It (IPADDRESS blocks) wont be continous and very hard to manage
+
+This archietecture is also very static, thus when someone wants to change to another subnet (change office location), it is very hard to change to the other subnet
+
+
+#### Example
+
+![CS3103-2-24.PNG]({{site.baseurl}}/img/CS3103-2-24.PNG)
+
+- Segment without physically being in the same network (Which is required by subnet)
+- Facilitate easy administration
+- Better security and improve performance
+- Move anywhere easily and still be in the same VLAN
+
+> Switch when you can, route when you must
+
+#### Vlan - In single switch
+
+![CS3103-2-25.PNG]({{site.baseurl}}/img/CS3103-2-25.PNG)
+
+
+## Lan VS VLAN
+
+LAN/SUBNET:
+- Lan is a broadcast domain under single switch
+- Group based on switch/hub (physically)
+- Traffic between LAN is routed using a router
+
+VLAN:
+- Broadcasr domain created by one or more switches
+- Group based on logical function, department or application
+- 20 percent to 40 percent of work force mvoes every year
+- Traffic can be routed between VLAN with a router
+
+![CS3103-2-26.PNG]({{site.baseurl}}/img/CS3103-2-26.PNG)
+
+> Communicating across networks still needs a router
+
+- Trunking is used for VLAN communication between switches
+
+## VLAN table and switching
+- VLAN id
+- Switch interface/port
+
+![CS3103-2-27.PNG]({{site.baseurl}}/img/CS3103-2-27.PNG)
+
+## Vlan across backbone
+- Frame filtering: Examines particular infomaation about each frame (MAC address or layer 3 protocol type)
+- Frame Tagging: Places a unique indentifier in the header of each frame as it is being forwarded throughout the network backbone
+
+### Frame Tagging
+![CS3103-2-28.PNG]({{site.baseurl}}/img/CS3103-2-28.PNG)
+
+
+
 
 
 
