@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3103 - Lecture 2: ARP, DHCP, VLAN'
 ---
 # ARP - Address Resolution Protocol
