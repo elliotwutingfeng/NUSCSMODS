@@ -193,5 +193,55 @@ A relay agent can also be other nodes other than a router
 ![CS3103-2-17.PNG]({{site.baseurl}}/img/CS3103-2-17.PNG)
 
 - Hop count: Start from 0
-- flags
+- flags: Indicating broadcast
 - Gateway Ip address: for relay agent to put its ip address
+- Field OP: Specifies if its request or reply
+- Htype and Hlen: Type of network hardware (ie ethernet) 
+
+
+> Question: Why are there fields for client IP and your IP, when is it used?
+	- Client IP: When client renew its own ipaddress
+    - Server IP address: renewing, gateway might know the ipaddress
+    - Your IP: Filled by the server
+### Flag
+- Unicast or broadcast: When the client cannot accept unicast (When it is not configured yet), it can ask the server to broadcast reply by setting this bit to 1
+- The remaining bit is 0
+
+
+### Option format
+- Most used in reply message
+- Additional infomation sent to the client
+![CS3103-2-18.PNG]({{site.baseurl}}/img/CS3103-2-18.PNG)
+
+- we can send things like subnet mask, default gateway etc..
+	- Tag = 0 : Use for padding purpose
+	- Tag = 255 : Indicates end of option list
+
+![CS3103-2-20.PNG]({{site.baseurl}}/img/CS3103-2-20.PNG)
+
+## DHCP -server design
+- Stores a key value pai for each client
+- Key use to identify a client
+- Default key = IP submet number, hardware - address
+
+- Address conflict avoidance
+	- Servers choose the least recently used address
+    - Server should perform conflict detection using ICMP echo request (ping)
+    - Client shld probe before accepting the ip address
+    
+ ![CS3103-2-19.PNG]({{site.baseurl}}/img/CS3103-2-19.PNG)
+
+
+- Time 
+	- Time represents in seconds
+    - Time express in relation to clients clock
+    - Client lease expiration time = time when client sent DHCPREQUEST + Least duration in DHCPAck
+    
+## DHCP - Client Design
+![CS3103-2-21.PNG]({{site.baseurl}}/img/CS3103-2-21.PNG)
+
+
+
+
+
+
