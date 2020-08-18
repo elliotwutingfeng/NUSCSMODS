@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: 'CS3103 - Lecture 2: ARP, DHCP, VLAN'
+title: 'CS3103 - Lecture 2/3: ARP, DHCP, VLAN'
 ---
 # ARP - Address Resolution Protocol
 ![CS3103-2-1.PNG]({{site.baseurl}}/img/CS3103-2-1.PNG)
@@ -313,7 +313,9 @@ VLAN:
 ### Frame Tagging
 ![CS3103-2-28.PNG]({{site.baseurl}}/img/CS3103-2-28.PNG)
 
-
+- First switch (Ingress) adds tag containing VLAN id to all incoming packets
+- Intermediate switches do not recompute the VLAN id 
+- Ladt switch (Egress switch) removes tags from all outgoing packet
 
 
 
