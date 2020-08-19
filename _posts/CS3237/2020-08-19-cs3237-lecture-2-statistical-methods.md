@@ -84,8 +84,53 @@ yi = a . xi + b + ei
 - To minimize Q(a,b), we take:
 ![CS3237-2-6.PNG]({{site.baseurl}}/img/CS3237-2-6.PNG)
 
+- Doing the second equation
+![CS3237-2-7.PNG]({{site.baseurl}}/img/CS3237-2-7.PNG)
 
+
+> Solve for b
+
+- Setting it to 0 and solving for b we have
+	- b = ySIGMA - a . xSIGMA
+
+> This makes sense because our avg are going to be dependent on both x and y. Therefore the avg will restrict on where the intercept is
+
+![CS3237-2-8.PNG]({{site.baseurl}}/img/CS3237-2-8.PNG)
+
+#### Example
+
+![CS3237-2-9.PNG]({{site.baseurl}}/img/CS3237-2-9.PNG)
+
+> Even thou we got 255.1 unit, this is just a rough estimation due to the noise
 
 # Naive Bayes Classification
+Given a set of data X and a set of class C, we want to compute the likelihood of some x in X belongs to some class in C
+
+#### Examples
+- X is a set of news article and x is a article
+- C is a set of news article types e.g sports, politics
+- Our task is then to decide what kind of article x is
+
+## Assumption
+
+![CS3237-2-10.PNG]({{site.baseurl}}/img/CS3237-2-10.PNG)
+
+- Each vector represent a word.. we want to see the frequency of the words. 
+- But theres a problem because it does not consider the order of words
+- This could cause error because sometiems order of words are important > This is where we get classiification error
+
+
+Using Chain rule:
+![CS3237-2-11.PNG]({{site.baseurl}}/img/CS3237-2-11.PNG)
+> we are looking at the probability of some xi given xi+1...etc
+> 
+> 
+
+
+![CS3237-2-12.PNG]({{site.baseurl}}/img/CS3237-2-12.PNG)
+
+
+
+
 # Decision trees
 # Support Vector Machines
