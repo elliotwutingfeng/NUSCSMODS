@@ -124,13 +124,94 @@ Using Chain rule:
 ![CS3237-2-11.PNG]({{site.baseurl}}/img/CS3237-2-11.PNG)
 > we are looking at the probability of some xi given xi+1...etc
 > 
-> 
-
+> We take the naive assumption that all these values occur independent of each other. (This does not make sense in normal english) e.g "Joint probability" happens more often compared to "final joint"
 
 ![CS3237-2-12.PNG]({{site.baseurl}}/img/CS3237-2-12.PNG)
 
+## Parameter estimation
+- Uniform: For n classes, the probability is simply 1/n
+- Base on training set: There is a total of S training samples and sk samples for class ck, then p(ck) = sk/S
 
+Estimation assumption:
+- Gaussian: Assumes that the probaility of a feature xi taking a particular value v in class c follows a normal distribution
+	- Good for linear values
+- Multinomial: Assumes 
+	- Good for frequency
+- Bernoulli:
+	- Good for binary
+
+## Continous variables 
+- Classes contains continous variables
+	- E.g when classifying male and female, we may just consider height, weight etc
+
+![CS3237-2-14.PNG]({{site.baseurl}}/img/CS3237-2-14.PNG)
+
+#### Example
+![CS3237-2-13.PNG]({{site.baseurl}}/img/CS3237-2-13.PNG)
+![CS3237-2-15.PNG]({{site.baseurl}}/img/CS3237-2-15.PNG)
+
+> We use a gaussian distribution here. 
+
+- Since our training set has 4 male and 4 females, p(male) = 0.5
+
+![CS3237-2-16.PNG]({{site.baseurl}}/img/CS3237-2-16.PNG)
+![CS3237-2-17.PNG]({{site.baseurl}}/img/CS3237-2-17.PNG)
+
+> Because the p(female|...) > p(male|..), we can conclude that this person is "female"
+
+## Naive Bayes - Multinomial 
+![CS3237-2-18.PNG]({{site.baseurl}}/img/CS3237-2-18.PNG)
+
+### Issues
+
+1. Raw frequencies in document classification face some problems
+	- Bias towards longer documents
+    - Bias towards connector words such as "the" because they occur more frequently
+
+We try to fix this by using tf.idf (term frequency inverse document frequency):
+![CS3237-2-19.PNG]({{site.baseurl}}/img/CS3237-2-19.PNG)
+
+> Adds a small number to it such that the word that occur many times in document will get a punishing term. (Total number of documents / Documents containing the word i)
+
+2. Zero frequency
+	- Pik = 0 and P(x|ck) becomes 0
+    - Laplace smoothing: Add 1 to every xi so that it wont be 0
+
+### Naive Bayes - Bernoulli
+
+Sometimes we are interested if the event even occurs at all.
+
+![CS3237-2-20.PNG]({{site.baseurl}}/img/CS3237-2-20.PNG)
+
+> No. of times it occurs / Samples
 
 
 # Decision trees
+Classification to be explainable or calculate on the expectant values
+
+![CS3237-2-21.PNG]({{site.baseurl}}/img/CS3237-2-21.PNG)
+
+
+Appealing because: 
+- easy make decisions
+- Provides a way to explain decisions
+
+#### Example
+![CS3237-2-22.PNG]({{site.baseurl}}/img/CS3237-2-22.PNG)
+
+- If too much water, plant die
+- If too little, plant die
+- Just nice.. good for farmer
+
+#### Deriving trees
+
+- Guesswork based on expert opinion
+- Based on historical data
+
+
+Entropy: Amount of uncertainty in a data
+
+![CS3237-2-23.PNG]({{site.baseurl}}/img/CS3237-2-23.PNG)
+
+
 # Support Vector Machines
