@@ -135,9 +135,9 @@ Using Chain rule:
 Estimation assumption:
 - Gaussian: Assumes that the probaility of a feature xi taking a particular value v in class c follows a normal distribution
 	- Good for linear values
-- Multinomial: Assumes 
+- Multinomial: Assumes thaat the frequency of a feature xi occuring in a class is govenred by a multinormial distribution
 	- Good for frequency
-- Bernoulli:
+- Bernoulli: Assumes that the boolean occurance of a feature xi occuring in class ck is govenerment by a Bernoulli distribution
 	- Good for binary
 
 ## Continous variables 
@@ -298,3 +298,54 @@ A hyperplan is a d dimennsional plane defined by its normal vector w
     > To fix this we add a d-dimesnion bias b
     
 ![CS3237-2-37.PNG]({{site.baseurl}}/img/CS3237-2-37.PNG)
+
+
+## Assumption
+![CS3237-2-38.PNG]({{site.baseurl}}/img/CS3237-2-38.PNG)
+
+> The lines will pass through points closerst to the center, whihc is why they are called support vectors
+
+![CS3237-2-39.PNG]({{site.baseurl}}/img/CS3237-2-39.PNG)
+
+- These two hyperplanes must be far apart as possible
+
+## Non linearly sperable points
+
+Some times we cannot draw a line no matter what you do:
+![CS3237-2-40.PNG]({{site.baseurl}}/img/CS3237-2-40.PNG)
+
+So we run a kernal trick which change to a 3D plane which becomes a decision surface.
+
+## Configuration
+
+Loss function:
+- Hinge loss: Useful for linearly sepearble classes
+- Logisitcs: Probability estimates
+- Perceptron: Uses loss function
+- Modified Huber: Outliers
+
+Training rate: Controls how fast the svm learns
+- High value: Fast but poor learning outcome
+- Low: Slow training
+
+
+Regularization: Controls how we penalized misclassified
+	- Higher penalty:  Underfitting : SVM performs poorly even on training data
+    - Lower Penalty: Possibly more overfitting: SVM can only understand and correclty classify training data
+
+> The more para, the hgiher chance of getting overfitting
+
+![CS3237-2-41.PNG]({{site.baseurl}}/img/CS3237-2-41.PNG)
+
+![CS3237-2-42.PNG]({{site.baseurl}}/img/CS3237-2-42.PNG)
+
+![CS3237-2-43.PNG]({{site.baseurl}}/img/CS3237-2-43.PNG)
+
+
+- L1 : Adds a penalty term that use the Absolute value of the model parameters, results in model with fewer parameters
+- L2: Adds a penalty term that uses the square of the value of the model parameters, results in Compact denser models
+- Elastic: Both L1 and L2 combine
+
+# Slides
+
+<iframe src="https://drive.google.com/file/d/1FSTO5yT-mdrNQ9hsGCjyGL0MHs8EP9L3/preview" width="640" height="680"></iframe>
