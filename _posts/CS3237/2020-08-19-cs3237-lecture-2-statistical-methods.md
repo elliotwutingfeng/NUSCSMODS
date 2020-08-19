@@ -287,3 +287,14 @@ The final tree after finding all:
 
 
 # Support Vector Machines
+![CS3237-2-36.PNG]({{site.baseurl}}/img/CS3237-2-36.PNG)
+
+A hyperplan is a d dimennsional plane defined by its normal vector w
+	- in 2D, a hyperplan is a strightline
+    - normal w is orthogonal to all points on the plane
+    - The hyper plan seperates the d dimensional space into two halves
+    - Hyperplanes always pass through the origin
+    > This restricts its ability to partiiton the space
+    > To fix this we add a d-dimesnion bias b
+    
+![CS3237-2-37.PNG]({{site.baseurl}}/img/CS3237-2-37.PNG)
