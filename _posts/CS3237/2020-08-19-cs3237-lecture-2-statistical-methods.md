@@ -290,12 +290,13 @@ The final tree after finding all:
 ![CS3237-2-36.PNG]({{site.baseurl}}/img/CS3237-2-36.PNG)
 
 A hyperplan is a d dimennsional plane defined by its normal vector w
-	- in 2D, a hyperplan is a strightline
+	
+    - in 2D, a hyperplan is a strightline
     - normal w is orthogonal to all points on the plane
     - The hyper plan seperates the d dimensional space into two halves
     - Hyperplanes always pass through the origin
-    > This restricts its ability to partiiton the space
-    > To fix this we add a d-dimesnion bias b
+    	> This restricts its ability to partiiton the space
+    	> To fix this we add a d-dimesnion bias b
     
 ![CS3237-2-37.PNG]({{site.baseurl}}/img/CS3237-2-37.PNG)
 
@@ -330,6 +331,7 @@ Training rate: Controls how fast the svm learns
 
 
 Regularization: Controls how we penalized misclassified
+
 	- Higher penalty:  Underfitting : SVM performs poorly even on training data
     - Lower Penalty: Possibly more overfitting: SVM can only understand and correclty classify training data
 
