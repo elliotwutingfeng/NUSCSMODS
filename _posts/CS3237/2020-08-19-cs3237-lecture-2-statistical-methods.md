@@ -63,11 +63,26 @@ We know that there is a correlation but we dont know if the relation is strong.
 
 ### Correlation
 
-
+![CS3237-2-4.PNG]({{site.baseurl}}/img/CS3237-2-4.PNG)
 
 Correlation will give us a better idea of the relationship. Correlation will scale our values from -1 to 1. This will allow us to determine the strenth of the relationship
 
+- If the value is close to 1, we can see that the figures are strongly related
+
 ### Parameter estimation
+
+yi = a . xi + b + ei
+
+- The error is therefore:
+   - ei = yi -a . xi - b
+
+- Lost function:
+![CS3237-2-5.PNG]({{site.baseurl}}/img/CS3237-2-5.PNG)
+
+> This gives us an idea on how good our model is.
+
+- To minimize Q(a,b), we take:
+![CS3237-2-6.PNG]({{site.baseurl}}/img/CS3237-2-6.PNG)
 
 
 
