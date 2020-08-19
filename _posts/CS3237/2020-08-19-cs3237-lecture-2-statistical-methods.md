@@ -283,14 +283,7 @@ The final tree after finding all:
 
 > C4.5 actually addresses it by take the discontinous ranges and chunks them into bins
 
-
-
-
-
-
-
-
-
+> Decision trees can also be use for regression
 
 
 # Support Vector Machines
