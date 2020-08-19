@@ -29,27 +29,43 @@ We have data that shows the relationship between a dependent variable and one or
 
 
 ### Assumptions
+
+![CS3237-2-2.PNG]({{site.baseurl}}/img/CS3237-2-2.PNG)
+
+
 - There exist a correlation between dependent (y) and independent (x) variables
 - y depends on x through a linear equation:
-	yi = a . xi + b
+	`yi = a . xi + b` (Blue line)
 - We add a random noise e in the observation 
-	yi = a . xi + b + ei
+	`yi = a . xi + b + ei`
 - Our task
 	- Test if there is a relationship between x and y
     - Find a and b
 
+> We are trying to make a relationship so that we are able to predict the future
+
+### Covariance 
+
+If there is a change in one variable when the other variable change, this is a covariance
+
 #### Example
+![CS3237-2-3.PNG]({{site.baseurl}}/img/CS3237-2-3.PNG)
+
+- (Xi - X) shows the difference between both pointss value will be large 
+
 Calculating the avg for the GDP and Sales figures:
 - Avg(GDP)
 - AVG(sales)
 - Cov(Sales, GDP)
 > If COV is positive, sales figure grow in the same direction as GDP
 
-### Covariance 
-
-If there is a change in one variable when the other variable change, this is a covariance
+We know that there is a correlation but we dont know if the relation is strong. 
 
 ### Correlation
+
+
+
+Correlation will give us a better idea of the relationship. Correlation will scale our values from -1 to 1. This will allow us to determine the strenth of the relationship
 
 ### Parameter estimation
 
