@@ -213,5 +213,84 @@ Entropy: Amount of uncertainty in a data
 
 ![CS3237-2-23.PNG]({{site.baseurl}}/img/CS3237-2-23.PNG)
 
+> The entrophy is 1 which is the worse case if its evenly distributed
+
+![CS3237-2-24.PNG]({{site.baseurl}}/img/CS3237-2-24.PNG)
+
+> We will use ID3 algo to generate the tree
+
+
+### ID3 algo
+
+- Choose a decison criterial that reduce uncertainty as much as possible
+
+![CS3237-2-25.PNG]({{site.baseurl}}/img/CS3237-2-25.PNG)
+
+- p(x) = nx / n and H(S|A) is the entropy
+
+#### Example
+
+- We want play tennis
+- We need to see weather outlook, temp, humidty and wind to decide
+- Looking at bob;s pattern of decision making and try to learn
+
+![CS3237-2-26.PNG]({{site.baseurl}}/img/CS3237-2-26.PNG)
+![CS3237-2-27.PNG]({{site.baseurl}}/img/CS3237-2-27.PNG)
+
+> We have to go through each of the decision factors in turn
+
+p(x|Wind=weak) : Probability of yes or no given wind is weak
+
+![CS3237-2-28.PNG]({{site.baseurl}}/img/CS3237-2-28.PNG)
+
+> We can find our entrophy base on the decision made after making the graph smaller.
+
+![CS3237-2-29.PNG]({{site.baseurl}}/img/CS3237-2-29.PNG)
+> The entrophy here is 1
+
+*Therefore*
+
+
+![CS3237-2-30.PNG]({{site.baseurl}}/img/CS3237-2-30.PNG)
+
+
+We have to do this for the other graph and pick the highest gain
+
+
+![CS3237-2-31.PNG]({{site.baseurl}}/img/CS3237-2-31.PNG)
+
+We will get the tree:
+
+![CS3237-2-32.PNG]({{site.baseurl}}/img/CS3237-2-32.PNG)
+
+> Repeat this for the other variables such as humidity/Wind/Outlook
+
+
+Look at wind:
+
+![CS3237-2-33.PNG]({{site.baseurl}}/img/CS3237-2-33.PNG)
+
+![CS3237-2-34.PNG]({{site.baseurl}}/img/CS3237-2-34.PNG)
+
+The final tree after finding all:
+
+![CS3237-2-35.PNG]({{site.baseurl}}/img/CS3237-2-35.PNG)
+
+> We start from the largest gain and go downwards
+
+### Drawbacks
+- It only works with nominal values (factors has values that are clear categories)
+
+> C4.5 actually addresses it by take the discontinous ranges and chunks them into bins
+
+
+
+
+
+
+
+
+
+
 
 # Support Vector Machines
