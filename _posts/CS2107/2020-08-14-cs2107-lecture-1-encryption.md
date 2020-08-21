@@ -271,10 +271,14 @@ Designs of modern cipher consider known sttacks:
 - A5/1
 - AES
 
-[18]
-[19]
+![CS2107-1-18.PNG]({{site.baseurl}}/img/CS2107-1-18.PNG)
 
-[20]
+![CS2107-1-19.PNG]({{site.baseurl}}/img/CS2107-1-19.PNG)
+
+
+#### Steam vs Block
+![CS2107-1-20.PNG]({{site.baseurl}}/img/CS2107-1-20.PNG)
+
 
 ## Steam cipher
 Inspired by one type pad
@@ -328,8 +332,8 @@ With IV:
 - 2 Pseudorandom sequences are thus likely to be different
 - The ciphertexts are also likely to be different
 
-
-
+# Slide
+<iframe src="https://drive.google.com/file/d/1w9_U1X_QcAy3_v76xJ4_yYMt49Liv3Nh/preview" width="640" height="680"></iframe>
 
 
 
