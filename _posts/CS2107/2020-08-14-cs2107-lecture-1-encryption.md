@@ -47,6 +47,26 @@ Applications:
 
 ## Classical cipher
 ### Substitute Cipher
+![CS2107-1-5.PNG]({{site.baseurl}}/img/CS2107-1-5.PNG)
+
+Its just mapping a value to another value
+
+Some terms:
+- The key space: The set of possible keys
+- Key space size: The total number of possible keys
+- The key size or key length: The number of bits required to reperesent a particular key
+- For subsitution ciper:
+	- The key space
+    - The space size : 27!
+    - The key size : log2(27!) = 94 bits
+
+> The key is the a,b,c
+
+> This is called a trivial key, it is a trivial permutaion
+
+
+
+
 ### Vigenere Cipher
 ### Permutation Cipher
 ### One time Pad
