@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: 'CS2107 - Lecture 1: Encryption'
+title: 'CS2107 - Lecture 1/2: Encryption'
 ---
 
 - Confidentiality - The infomation of the users
@@ -334,9 +334,3 @@ With IV:
 
 # Slide
 <iframe src="https://drive.google.com/file/d/1w9_U1X_QcAy3_v76xJ4_yYMt49Liv3Nh/preview" width="640" height="680"></iframe>
-
-
-
-
-
-
