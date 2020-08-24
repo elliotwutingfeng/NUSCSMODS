@@ -42,6 +42,64 @@ Alice and bob play 2 player game
 
 ![CS3230-3-2.PNG]({{site.baseurl}}/img/CS3230-3-2.PNG)
 
+> The state is bad when the move player P makes results in the opponents next move state to be good
 
+![CS3230-3-3.PNG]({{site.baseurl}}/img/CS3230-3-3.PNG)
+
+#### Example: Fibonacchi
+![CS3230-3-4.PNG]({{site.baseurl}}/img/CS3230-3-4.PNG)
+
+
+BUT:
+![CS3230-3-5.PNG]({{site.baseurl}}/img/CS3230-3-5.PNG)
+
+SOLUTION:
+- Use memorisation
+
+![CS3230-3-6.PNG]({{site.baseurl}}/img/CS3230-3-6.PNG)
+
+Proof by induction:
+![CS3230-3-7.PNG]({{site.baseurl}}/img/CS3230-3-7.PNG)
+
+![CS3230-3-8.PNG]({{site.baseurl}}/img/CS3230-3-8.PNG)
+
+### Memorisation is DFS
+- DFS doesn't re visit the old paths 
+- Fibo:
+	- For every i there is an edge from i to i-1 and from i to i-2
+    - the vertices are 1..n
+    - We can construct the graph with source vertex s being n. Before finishing a particulare vertex.. compute the FIB (Fi = Fi-1 +Fi-2)
+
+Compare:
+![CS3230-3-9.PNG]({{site.baseurl}}/img/CS3230-3-9.PNG)
 
 # Dynamic Programming
+
+## Bottom-up
+- We can fill up the array iteratvely
+![CS3230-3-10.PNG]({{site.baseurl}}/img/CS3230-3-10.PNG)
+
+## Example: Subset sum
+Given a sets of positive integer X and a number S. Determine if there exist a subset of X that sums to S
+
+- If there exist a subset, return TRUE else FALSE
+
+### Recurrence
+![CS3230-3-11.PNG]({{site.baseurl}}/img/CS3230-3-11.PNG)
+
+> We subtract the number from T each time we did the recusion
+### Base case
+- SubSUM(X,0,T) = 1 if T = 0 and 0 otherwise
+
+We realised that we can immediately return if
+- T = 0 for any i: Return true
+- T < 0 for any i return 0
+
+### Remark
+We can treat X as an global variable so we can decrease the number of parameter
+
+### Algorith
+- if T<0, return 0 //SUBTRACTION FAIL
+- if T = 0, return 1 // T is exactly X[i]
+- if i = 0 and T > 0 , return 0 // T is too big such that there is no values that can be added 
+- Else return SubSUm(i-1,T) OR SubSum(i-1,T-X[i])
