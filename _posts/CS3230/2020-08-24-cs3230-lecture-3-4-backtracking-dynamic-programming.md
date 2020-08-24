@@ -98,8 +98,51 @@ We realised that we can immediately return if
 ### Remark
 We can treat X as an global variable so we can decrease the number of parameter
 
-### Algorith
+### Algorithm
 - if T<0, return 0 //SUBTRACTION FAIL
 - if T = 0, return 1 // T is exactly X[i]
 - if i = 0 and T > 0 , return 0 // T is too big such that there is no values that can be added 
 - Else return SubSUm(i-1,T) OR SubSum(i-1,T-X[i])
+
+#### Analysis and remarks
+- Correctness: Induction
+- Complexity: T(n) = 2T(n-1) + C which solves to O(2^n)
+
+### Algorithm with memorisation
+- Initialise array SS[0..n][0..T] all to (False/NULL)
+
+SubSum(i,T):
+- IF T<0, return 0
+- if T = 0, return SS[i][T] = 1
+- If i = 0, and T > 0 , then SS[i][T] = 0
+- If SS[i][T] is null then
+	- SS[i][T] = Subsum{i-1, T) OR subSUM(i-1, T-X[i])
+- Return SS[i][T]
+
+#### Analysis and remarks
+- The time is O(nS) 
+- The analysis is the same as the fibonnachi sequence.
+
+> It is dynamic programming because we are breaking the larger problem into a smaller problem before solving it
+
+
+## Example: Longest Common Subsequence
+A string of X is said to be a subsequence of another string if there exist some distint integers such that X[j] = Y[ij]
+![CS3230-3-12.PNG]({{site.baseurl}}/img/CS3230-3-12.PNG)
+
+For example:
+- X = "ABSGED"
+- Y = "AFERGDW"
+> The subsequence is "AGD", Note that the position matters
+
+### Recursive solution
+- Let C[1..k] be an LCS of A[1..m] and B[1..n]
+- If A[m] = B[n], then
+	- C[k] = A[m] = B[n]
+    - C[1..k-1] is an LCS of A[1..m-1] and B[1..n-1]
+- If A[m] is not equal B[n]
+	- C[k] != A[m] implies that C[1..k] is an LCS of A[1..m-1] and B[1..n]
+    - C[k] != B[n] implies that C[1..k] is an LCS of A[1..m] and B[1..n-1]
+
+
+
