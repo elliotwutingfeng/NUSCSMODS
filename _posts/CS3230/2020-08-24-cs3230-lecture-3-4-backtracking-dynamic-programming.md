@@ -136,6 +136,8 @@ For example:
 > The subsequence is "AGD", Note that the position matters
 
 ### Recursive solution
+
+Theorem:
 - Let C[1..k] be an LCS of A[1..m] and B[1..n]
 - If A[m] = B[n], then
 	- C[k] = A[m] = B[n]
@@ -143,6 +145,37 @@ For example:
 - If A[m] is not equal B[n]
 	- C[k] != A[m] implies that C[1..k] is an LCS of A[1..m-1] and B[1..n]
     - C[k] != B[n] implies that C[1..k] is an LCS of A[1..m] and B[1..n-1]
+
+#### Proof
+- Proof by contradiction
+![CS3230-3-13.PNG]({{site.baseurl}}/img/CS3230-3-13.PNG)
+
+> Idont get this 
+
+![CS3230-3-14.PNG]({{site.baseurl}}/img/CS3230-3-14.PNG)
+
+
+#### Algorithm
+- Let LCS(i,j) denote LCS of A[1..i] and B[1..j] where x||j denote the concat of string x and y
+
+From the previous theorem we get recursive solution for LCS(i,j)
+- LCS(i,j) = LCS(i-1, j-1) || A[j] if A[i] = B[j]
+- LCS(i,j) is the longer of the LCS(i, j-1) and LCS(i-1, j) if A[i]!=B[j]
+
+Recurrance:
+![CS3230-3-15.PNG]({{site.baseurl}}/img/CS3230-3-15.PNG)
+
+> Do not solve this complicated recurrance but rather use dynamic programming to solve
+
+Bottom-up:
+![CS3230-3-16.PNG]({{site.baseurl}}/img/CS3230-3-16.PNG)
+
+> -  everytime we see that the characters are equal, we add them together
+> - Set the current LCS to the greater of the previous answer
+
+Running time: O(nm)
+
+
 
 
 
