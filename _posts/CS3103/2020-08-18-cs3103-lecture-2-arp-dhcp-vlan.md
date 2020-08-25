@@ -351,4 +351,63 @@ Switches do not bridge traffic between different VLAN as this violates the integ
 
 > They will classify the different address based on different things. Ie Similiar mac address will be connected to VLAN 1
 
+## Port Centric VLAN (Static)
+
+![CS3103-2-34.PNG]({{site.baseurl}}/img/CS3103-2-34.PNG)
+
+Disadvantages:
+- Need to label the switches
+
+![CS3103-2-35.PNG]({{site.baseurl}}/img/CS3103-2-35.PNG)
+
+The default VLAN for every port in the switch is the management VLAN. The management is always VLAN 1 and may not be deleted. All ports on the switch may be reassigned to alternate VLANS
+
+
+Benefits:
+- easy configure 
+- Easy moniter
+
+
+Probelm:
+- User movement in the network shld be controlled
+
+> With a router, we can connect two pc with differnet subnets
+
+### Configuring using CLI
+
+![CS3103-2-356.PNG]({{site.baseurl}}/img/CS3103-2-356.PNG)
+
+![CS3103-2-37.PNG]({{site.baseurl}}/img/CS3103-2-37.PNG)
+![CS3103-2-38.PNG]({{site.baseurl}}/img/CS3103-2-38.PNG)
+
+## Dynamic VLAN
+- LAN defined by list of MAC address
+- Centralised database 
+- Every switch will have the database
+- Provides full user movement
+	- Client and servers always on the same VLAN
+- Requires computers to be preregister
+
+
+Problems: Too many address needs to be managaed
+
+
+![CS3103-2-39.PNG]({{site.baseurl}}/img/CS3103-2-39.PNG)
+
+We can manage the database by using CLI or some datamanagement software that comes with it
+
+1. Connect to a port
+2. Send some Packet to the switch
+3. Switch sees the packet and will know the MAC address. queries the configuration server
+4. Server returns the VLAN ID
+5. Switch will store the mapping of the VLAN ID
+
+> This mapping stays until the device is disconnected
+
+### Layer-3 Based
+- Vlan membership implied by MAC layer protocol type field and subnet field
+- VLAN config is learn by switches
+- Stations do not belong to VLAN, packets do
+- Multiprotocol station are put intp multiple VLAN
+
 
