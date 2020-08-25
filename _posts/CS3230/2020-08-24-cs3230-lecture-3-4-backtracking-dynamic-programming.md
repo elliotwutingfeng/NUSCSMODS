@@ -116,6 +116,8 @@ Bottom up has the same time complexity for MEMODP up to a constant factor.
 
 > Question: Can all problems if is solvable top down means that it can be solve bottom up vice versa:
 > Yes
+>
+> ![CS3230-3-22.PNG]({{site.baseurl}}/img/CS3230-3-22.PNG)
 
 
 
