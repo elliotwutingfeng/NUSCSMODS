@@ -218,15 +218,20 @@ SubSum(i,T):
 
 ### Bottom Up 
 
-
+![CS3230-3-25.PNG]({{site.baseurl}}/img/CS3230-3-25.PNG)
 
 - Init SS[i][0] to 1
 - Try every possible values from T = 1 to S
 	- If T < X[i]: Then just set the value
     - Else:  Do the recusive call
 
+In the bottom up algo, we computed some extra values such as SS[0..n][0..S] while in the recusive.. we calculate only the required values. But the time complexity is only slightly different.
+
+
 ## Example: Longest Common Subsequence
 A string of X is said to be a subsequence of another string if there exist some distint integers such that X[j] = Y[ij]
+**The order matters but it does not have to be continuous.**
+
 ![CS3230-3-12.PNG]({{site.baseurl}}/img/CS3230-3-12.PNG)
 
 For example:
@@ -245,21 +250,45 @@ Theorem:
 	- C[k] != A[m] implies that C[1..k] is an LCS of A[1..m-1] and B[1..n]
     - C[k] != B[n] implies that C[1..k] is an LCS of A[1..m] and B[1..n-1]
 
+
+
+There are two cases, when A[m] = B[n] and when it is not. If the last character is the same..then it **is** in the subsequence. 
+
+
+Additionally, if A[m]!=B[n], then clearly we can elimnate the last element from consideration. 
+
 #### Proof
+
+
+Suppose C[k]!= A[m], in this case.. C[1..k] is a subsequence of A[1.m-1] because the last element is definetely not included into this subsequence.
+This is similiar situation for B
+
+> This proofs the part of the theorem that 
+> - C[k] = A[m] = B[n] 
+> - or C[1..k-1] is an LCS of A[1..m-1] and B[1..n-1]
+
+Suppose that A[m]!=B[n],
+![CS3230-3-26.PNG]({{site.baseurl}}/img/CS3230-3-26.PNG)
+
+> The proof here is almost identical to the previous one. 
+
+
 - Proof by contradiction
 ![CS3230-3-13.PNG]({{site.baseurl}}/img/CS3230-3-13.PNG)
 
-> Idont get this 
 
 ![CS3230-3-14.PNG]({{site.baseurl}}/img/CS3230-3-14.PNG)
 
 
 #### Algorithm
-- Let LCS(i,j) denote LCS of A[1..i] and B[1..j] where x||j denote the concat of string x and y
+- Let LCS(i,j) denote LCS (Longest common subsequnce) of A[1..i] and B[1..j] where x||j denote the concat of string x and y
+
 
 From the previous theorem we get recursive solution for LCS(i,j)
 - LCS(i,j) = LCS(i-1, j-1) || A[j] if A[i] = B[j]
 - LCS(i,j) is the longer of the LCS(i, j-1) and LCS(i-1, j) if A[i]!=B[j]
+
+Base case: If any i or j is 0, it means its an empty strings.. so we can return 0
 
 Recurrance:
 ![CS3230-3-15.PNG]({{site.baseurl}}/img/CS3230-3-15.PNG)
@@ -268,6 +297,9 @@ Recurrance:
 
 Bottom-up:
 ![CS3230-3-16.PNG]({{site.baseurl}}/img/CS3230-3-16.PNG)
+
+We will always have the answer for the previous recusive calls due to the double for loops.
+
 
 > -  everytime we see that the characters are equal, we add them together
 > - Set the current LCS to the greater of the previous answer
