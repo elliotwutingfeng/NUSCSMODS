@@ -84,6 +84,13 @@ SOLUTION:
 We store the value into an array such that when we need it again, we just have to retreive it from the array. Thus we eliminate the need to recalculate the past.
 
 #### Analyis of algorithm
+Recursive algoirthms have 3 steps:
+1. Divide into subproblems
+2. Recusively Solve Subproblems
+3. Combine the solution of the subproblem to solve the larger problem
+
+But the for this algorim, we do not need to recurively solve the subproblem...
+
 
 We will classify the recusive calls:
 ![CS3230-3-18.PNG]({{site.baseurl}}/img/CS3230-3-18.PNG)
@@ -100,6 +107,7 @@ Consider all possible recusive calls Fn, we know that it will all end up in the 
 > No time is taken for calling a recusion ie F(n-1)
 
 ![CS3230-3-20.PNG]({{site.baseurl}}/img/CS3230-3-20.PNG)
+
 
 
 Proof by induction:
@@ -121,9 +129,6 @@ Bottom up has the same time complexity for MEMODP up to a constant factor.
 
 
 
-
-
-
 ## Memorisation is DFS
 - DFS doesn't re visit the old paths 
 - Fibo:
@@ -135,10 +140,15 @@ Compare:
 ![CS3230-3-9.PNG]({{site.baseurl}}/img/CS3230-3-9.PNG)
 
 # Dynamic Programming
-
+Bottom up and memorisation are both part of DP
 ## Bottom-up
 - We can fill up the array iteratvely
 ![CS3230-3-10.PNG]({{site.baseurl}}/img/CS3230-3-10.PNG)
+
+
+Bottom up:
+- Many correct orders possible
+- Subproblems solve before the probelms
 
 ## Example: Subset sum
 Given a sets of positive integer X and a number S. Determine if there exist a subset of X that sums to S
@@ -148,9 +158,27 @@ Given a sets of positive integer X and a number S. Determine if there exist a su
 ### Recurrence
 ![CS3230-3-11.PNG]({{site.baseurl}}/img/CS3230-3-11.PNG)
 
-> We subtract the number from T each time we did the recusion
+
+
+![CS3230-3-23.PNG]({{site.baseurl}}/img/CS3230-3-23.PNG)
+
+> We subtract the number from T each time we did the recusion, this if the last element belong to a valid subset that adds to T. 
+
+![CS3230-3-24.PNG]({{site.baseurl}}/img/CS3230-3-24.PNG)
+
+For each layer, check if the number T gets minus by some X[i] or not, hence the 2 children for each parent
+
+
+
 ### Base case
 - SubSUM(X,0,T) = 1 if T = 0 and 0 otherwise
+
+
+
+We are trying all possibilities here:
+- T < 0 : Output 0
+- T = 0 : Output 1
+- T > 0 and i = 0 : Output 0, We have exhasted all possible elements 
 
 We realised that we can immediately return if
 - T = 0 for any i: Return true
@@ -170,7 +198,9 @@ We can treat X as an global variable so we can decrease the number of parameter
 - Complexity: T(n) = 2T(n-1) + C which solves to O(2^n)
 
 ### Algorithm with memorisation
-- Initialise array SS[0..n][0..T] all to (False/NULL)
+We realised that some of the resultant T is the same in the tree, we could use the memorisation to make this tree faster.
+
+- Initialise array SS[0..n][0..T] all to NULL
 
 SubSum(i,T):
 - IF T<0, return 0
@@ -186,6 +216,14 @@ SubSum(i,T):
 
 > It is dynamic programming because we are breaking the larger problem into a smaller problem before solving it
 
+### Bottom Up 
+
+
+
+- Init SS[i][0] to 1
+- Try every possible values from T = 1 to S
+	- If T < X[i]: Then just set the value
+    - Else:  Do the recusive call
 
 ## Example: Longest Common Subsequence
 A string of X is said to be a subsequence of another string if there exist some distint integers such that X[j] = Y[ij]
