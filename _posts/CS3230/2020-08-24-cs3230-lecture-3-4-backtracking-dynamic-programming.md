@@ -9,10 +9,24 @@ subtitle: Lecture 3 and 4
 - Algo recursively evaluates all alrernatives and chooses the best one
 - Algo exp amount of time in the recursion depth
 
-#### Example: N queens problem
+## Example: N queens problem
 We want to put n queens on n*n chessboard such that no queens are in attacking position (row/column/diagonal)
 
 ![CS3230-3-1.PNG]({{site.baseurl}}/img/CS3230-3-1.PNG)
+
+-  For the first layer of the tree, we will only place the queens on the first row 
+- subsequent children will try to put the next queen on the next row if it is possible
+- Else it will backtrack till a possible path is allowed
+
+Looking at the graph stucture, we will see that the order that the configuration are visited is similiar to [DFS](https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/). 
+
+#### DFS:
+- Subproblem = Vertices
+- There is an edge from p1 to p2 if p1 makes a recusive call to p2
+
+
+![CS3230-3-17.PNG]({{site.baseurl}}/img/CS3230-3-17.PNG)
+
 
 Algorthims:
 
@@ -34,7 +48,7 @@ One can construct the graph and run DFS on it with the source vertex s being (1,
 
 Backtracking algorthim doesnt build the graph in advance but does it on the fly.
 
-#### Example: Game tree
+## Example: Game tree
 Alice and bob play 2 player game
 - Alice can move one piece east each step
 - Bob can move one piece south each step
@@ -46,8 +60,14 @@ Alice and bob play 2 player game
 
 ![CS3230-3-3.PNG]({{site.baseurl}}/img/CS3230-3-3.PNG)
 
-#### Example: Fibonacchi
+## Example: Fibonacchi
 ![CS3230-3-4.PNG]({{site.baseurl}}/img/CS3230-3-4.PNG)
+
+- F0 = 0 
+- F1 = 1
+- Fn = Fn-1 + Fn-2 for n>=2
+
+
 
 
 BUT:
@@ -58,12 +78,51 @@ SOLUTION:
 
 ![CS3230-3-6.PNG]({{site.baseurl}}/img/CS3230-3-6.PNG)
 
-Proof by induction:
-![CS3230-3-7.PNG]({{site.baseurl}}/img/CS3230-3-7.PNG)
 
 ![CS3230-3-8.PNG]({{site.baseurl}}/img/CS3230-3-8.PNG)
 
-### Memorisation is DFS
+We store the value into an array such that when we need it again, we just have to retreive it from the array. Thus we eliminate the need to recalculate the past.
+
+#### Analyis of algorithm
+
+We will classify the recusive calls:
+![CS3230-3-18.PNG]({{site.baseurl}}/img/CS3230-3-18.PNG)
+
+> - Memorised recusive calls takes O(1) time
+> - Recusive calls executed for the first time executes only once
+>		> This means that Fib(7) only calculates ones
+
+
+Consider all possible recusive calls Fn, we know that it will all end up in the base case. Since we do not know which is recusive and which is memorise.. we will just analysis each of the recursive calls not counting the recursive calls that runs for the first time 
+
+![CS3230-3-19.PNG]({{site.baseurl}}/img/CS3230-3-19.PNG)
+
+> No time is taken for calling a recusion ie F(n-1)
+
+![CS3230-3-20.PNG]({{site.baseurl}}/img/CS3230-3-20.PNG)
+
+
+Proof by induction:
+![CS3230-3-7.PNG]({{site.baseurl}}/img/CS3230-3-7.PNG)
+
+#### Bottom Up version
+Bottom up has the same time complexity for MEMODP up to a constant factor.
+
+![CS3230-3-21.PNG]({{site.baseurl}}/img/CS3230-3-21.PNG)
+
+> Bottom up is similiar to memo except that bottom up start from the leaf rather than the top and does not use recusion
+
+
+
+> Question: Can all problems if is solvable top down means that it can be solve bottom up vice versa:
+> Yes
+
+
+
+
+
+
+## Memorisation is DFS
 - DFS doesn't re visit the old paths 
 - Fibo:
 	- For every i there is an edge from i to i-1 and from i to i-2
@@ -174,8 +233,3 @@ Bottom-up:
 > - Set the current LCS to the greater of the previous answer
 
 Running time: O(nm)
-
-
-
-
-
