@@ -304,11 +304,15 @@ VLAN:
 - VLAN id
 - Switch interface/port
 
+Switchs maintain a bridging table or VLAN table for each VLAN.
+
 ![CS3103-2-27.PNG]({{site.baseurl}}/img/CS3103-2-27.PNG)
 
 ## Vlan across backbone
 - Frame filtering: Examines particular infomaation about each frame (MAC address or layer 3 protocol type)
 - Frame Tagging: Places a unique indentifier in the header of each frame as it is being forwarded throughout the network backbone
+![CS3103-2-29.PNG]({{site.baseurl}}/img/CS3103-2-29.PNG)
+
 
 ### Frame Tagging
 ![CS3103-2-28.PNG]({{site.baseurl}}/img/CS3103-2-28.PNG)
@@ -319,8 +323,32 @@ VLAN:
 - Intermediate switches do not recompute the VLAN id 
 - Last switch (Egress switch) removes tags from all outgoing packet
 
+![CS3103-2-30.PNG]({{site.baseurl}}/img/CS3103-2-30.PNG)
+
+> Vlan is only handled by the switches
 
 
+#### 802.1q
 
+![CS3103-2-31.PNG]({{site.baseurl}}/img/CS3103-2-31.PNG)
+
+- Ethertype: Tells what the payload is about and what type.. it is useful for decapsulating the packet.
+- CRC: Error checking
+
+
+PCP is the quality of service and tells the switches the priority of this frame. Drop indicater can be use in conjestion with the pcp to decide on the treatment of the frames. VID identify the VLAN
+
+> Sometimes there might be double tags.
+
+
+### VLAN Routing
+Switches do not bridge traffic between different VLAN as this violates the integrity of the VLAN braodcast domain.
+- Traffic must be routed between VLAN
+
+### VLAN implementation
+
+![CS3103-2-32.PNG]({{site.baseurl}}/img/CS3103-2-32.PNG)
+
+> They will classify the different address based on different things. Ie Similiar mac address will be connected to VLAN 1
 
 
