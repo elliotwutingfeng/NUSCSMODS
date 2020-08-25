@@ -409,5 +409,45 @@ We can manage the database by using CLI or some datamanagement software that com
 - VLAN config is learn by switches
 - Stations do not belong to VLAN, packets do
 - Multiprotocol station are put intp multiple VLAN
+![CS3103-2-41.PNG]({{site.baseurl}}/img/CS3103-2-41.PNG)
 
+### Manage VLAN network wide
+
+- VLAN trunking protocol: Layer 2, maintains VLAN configuration consistency by managing the addition, deletion and renaming of VLANs. This protocol helps synchronise the database
+- AVTP domain: Vlan setting, managed by a single entities (e.g NUS), the protocol is only for within this domain
+- Switches can be VTP server or client or VTP transparent
+	- VTP server can modify the database
+    - If its a client, it can only read but not change
+    - VTP transparent switches do not participate in VTP but do forward VTP advertisment recieved through their trunk ports
+
+
+> Question: Is VTP server same as VMPS (VLAN Membership server?
+> - VMPS server can be implemented anywhere, it is just a database software that stores the mapping of the MAC address to the VLAN
+> - VTP on the other hand, is use to synhronise the data 
+
+
+> Does it work with same vlan but differnet subnet but with router?
+> - Check in the lab
+
+
+Questions to ponder:
+- What is the highest VLAN number : 2^12 = 4090
+- What is the max vlan per VTP domain
+- What is VxLan?
+- What is SDN (Software defined networking)
+- What is leaf spine architecture? Compare 3 tier architecture vs leaf spine architecture
+
+> 4090 switches are not really enough for large cloud datacenter database. There are millions and miliions of VM and many of these VM belongs to diffrent companies that want to be in different VLAN. 
+
+Architecture:
+![CS3103-2-42.PNG]({{site.baseurl}}/img/CS3103-2-42.PNG)
+
+Most common architecture:
+![CS3103-2-43.PNG]({{site.baseurl}}/img/CS3103-2-43.PNG)
+- The spine acts as a backbone
+- Normally the leaf switches do not transfer data between each other only sometimes
+- The transfer is mostly through the backbone
+
+
+# Slides
 
