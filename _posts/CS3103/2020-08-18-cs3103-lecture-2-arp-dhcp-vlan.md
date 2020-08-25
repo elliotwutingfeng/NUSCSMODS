@@ -431,7 +431,7 @@ We can manage the database by using CLI or some datamanagement software that com
 
 
 Questions to ponder:
-- What is the highest VLAN number : 2^12 = 4090
+- What is the highest VLAN number : 2^12 = 4090 (12 bits in ethernet frame)
 - What is the max vlan per VTP domain
 - What is VxLan?
 - What is SDN (Software defined networking)
