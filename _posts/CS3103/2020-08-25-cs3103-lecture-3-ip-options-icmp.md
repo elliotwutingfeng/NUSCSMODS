@@ -47,6 +47,8 @@ TCP:
 - Divides them into segment base on the link layer 
 - To avoid Fragmentation in the other layers
 
+> Avoid fragmentation because if one fragment is corrupted, the entire thing must be retransmitted
+
 ![CS3103-3-6.PNG]({{site.baseurl}}/img/CS3103-3-6.PNG)
 
 UDP:
@@ -57,6 +59,17 @@ UDP:
 
 
 > Length of the data in each fragment must be in multiple 8 (except for the last packet)
-> - 
+> - It is the size of a word
+
+#### Question
+1) If a packet has arrived with an M bit value of 2 and a fragmentation offset of 0. Is this first feag, last or middle?
+> Middle, tseen through offset  = 0
+
+2) A packet has arrived in which offset is 100, the value of Hlen is 5 and value of the total length field is 100. What is the number of first byte and last byte of the IP payload
+
+>  Start: 8*100
+> Offset : 100 - 20 = 80 [Total length - Header size]
+> End bit: 800 + 87 -1 = 879 (start from 0)
+
 
 # ICMP (IPV4)
