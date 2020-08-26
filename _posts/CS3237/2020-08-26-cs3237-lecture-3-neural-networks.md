@@ -116,3 +116,19 @@ Gradient decend:
 
 ![CS3237-3-13.PNG]({{site.baseurl}}/img/CS3237-3-13.PNG)
 
+### Non linearity
+
+> Neural network:
+> - Classification: Classify the input into some label
+> - regression: Predict xn given x0 to xn-1  
+
+#### Activation fucnction
+
+#### Loss function
+A loss function measures the error between function learnt by the NN and the actual target value yi
+[19]
+
+#### Optimiser
+
+- In NN Optimiser are algo that derive the best set of parameter values that minimise the loss function
+
