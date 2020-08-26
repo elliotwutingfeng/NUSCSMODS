@@ -154,6 +154,8 @@ A loss function measures the error between function learnt by the NN and the act
 
 - In NN Optimiser are algo that derive the best set of parameter values that minimise the loss function
 
+![CS3237-3-20.PNG]({{site.baseurl}}/img/CS3237-3-20.PNG)
+
 #### Overfitting
 When the model only react well to the training data but not test data.
 
@@ -165,3 +167,7 @@ Noise is what cause overfitting since noise is very specific to the data fitted 
 
 
 > We can prevent this by having a simple model with fewer parameters or having more training data
+
+
+
+A good way to fix 
