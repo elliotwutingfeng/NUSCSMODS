@@ -116,6 +116,10 @@ Gradient decend:
 
 ![CS3237-3-13.PNG]({{site.baseurl}}/img/CS3237-3-13.PNG)
 
+![CS3237-3-14.PNG]({{site.baseurl}}/img/CS3237-3-14.PNG)
+
+![CS3237-3-15.PNG]({{site.baseurl}}/img/CS3237-3-15.PNG)
+
 ### Non linearity
 
 > Neural network:
@@ -131,4 +135,9 @@ A loss function measures the error between function learnt by the NN and the act
 #### Optimiser
 
 - In NN Optimiser are algo that derive the best set of parameter values that minimise the loss function
+
+#### Overfitting
+- Data is Consist of two things
+	- Some sort of generator process where the input goes into
+    - Noise
 
