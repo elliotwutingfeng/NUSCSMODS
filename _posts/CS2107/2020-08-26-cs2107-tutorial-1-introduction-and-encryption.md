@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS2107 - Tutorial 1: Introduction and Encryption'
 subtitle: Introduction and Encryption
 ---
