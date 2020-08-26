@@ -126,6 +126,9 @@ Gradient decend:
 > - Classification: Classify the input into some label
 > - regression: Predict xn given x0 to xn-1  
 
+Unlike the xor which we can sovle by drawing another line, we cannot do so for every data:
+![CS3237-3-16.PNG]({{site.baseurl}}/img/CS3237-3-16.PNG)
+
 #### Activation function
 
 Weights = Parameters
