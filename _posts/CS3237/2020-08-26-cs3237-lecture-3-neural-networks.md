@@ -161,7 +161,8 @@ Examples:
 
 #### Loss function
 A loss function measures the error between function learnt by the NN and the actual target value yi
-[19]
+![CS3237-3-19.PNG]({{site.baseurl}}/img/CS3237-3-19.PNG)
+
 
 #### Optimiser
 
