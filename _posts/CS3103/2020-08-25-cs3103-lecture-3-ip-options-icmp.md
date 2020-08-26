@@ -69,7 +69,7 @@ UDP:
 
 >  Start: 8*100
 > Offset : 100 - 20 = 80 [Total length - Header size]
-> End bit: 800 + 87 -1 = 879 (start from 0)
+> End bit: 800 + 80 -1 = 879 (start from 0)
 
 
 # ICMP (IPV4)
