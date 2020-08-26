@@ -126,7 +126,22 @@ Gradient decend:
 > - Classification: Classify the input into some label
 > - regression: Predict xn given x0 to xn-1  
 
-#### Activation fucnction
+#### Activation function
+
+Weights = Parameters
+NN = Parameterised models
+
+
+
+Neural Network hyper parameters factors:
+- Number of input nodes
+- Architecture
+- Size of each hidden layer
+- Number of hidden layer
+- Loss function
+- Transfer function
+- Optimisation function adn their parameters
+- dropouts and regulaizer
 
 #### Loss function
 A loss function measures the error between function learnt by the NN and the actual target value yi
@@ -137,7 +152,13 @@ A loss function measures the error between function learnt by the NN and the act
 - In NN Optimiser are algo that derive the best set of parameter values that minimise the loss function
 
 #### Overfitting
+When the model only react well to the training data but not test data.
+
 - Data is Consist of two things
 	- Some sort of generator process where the input goes into
     - Noise
 
+Noise is what cause overfitting since noise is very specific to the data fitted in.
+
+
+> We can prevent this by having a simple model with fewer parameters or having more training data
