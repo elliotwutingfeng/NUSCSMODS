@@ -119,6 +119,7 @@ Gradient decend:
 ![CS3237-3-14.PNG]({{site.baseurl}}/img/CS3237-3-14.PNG)
 
 ![CS3237-3-15.PNG]({{site.baseurl}}/img/CS3237-3-15.PNG)
+> this could be use to solve our xor problem
 
 ### Non linearity
 
@@ -129,8 +130,8 @@ Gradient decend:
 Unlike the xor which we can sovle by drawing another line, we cannot do so for every data:
 ![CS3237-3-16.PNG]({{site.baseurl}}/img/CS3237-3-16.PNG)
 
-#### Activation function
 
+#### Neura; network Hyper parameters
 Weights = Parameters
 NN = Parameterised models
 
@@ -145,6 +146,18 @@ Neural Network hyper parameters factors:
 - Transfer function
 - Optimisation function adn their parameters
 - dropouts and regulaizer
+#### Activation function
+An activation fucntion transforms the dot products of the weights and inputs.
+
+Uses of activation functions:
+- Scaling
+- Destroy linearity of output
+- Shapuing it to statistcial distribution
+
+
+Examples:
+![CS3237-3-17.PNG]({{site.baseurl}}/img/CS3237-3-17.PNG)
+
 
 #### Loss function
 A loss function measures the error between function learnt by the NN and the actual target value yi
@@ -168,6 +181,13 @@ Noise is what cause overfitting since noise is very specific to the data fitted 
 
 > We can prevent this by having a simple model with fewer parameters or having more training data
 
+![CS3237-3-21.PNG]({{site.baseurl}}/img/CS3237-3-21.PNG)
+- Blue: training
+- Green: Actual data
+
+A good way to fix is to partition the data.
+
+> Random noise introduce to the data makes the data looks like other data. (See noise layers)
 
 
-A good way to fix 
+
