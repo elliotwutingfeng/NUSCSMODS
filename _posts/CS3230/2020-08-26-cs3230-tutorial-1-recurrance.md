@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3230 - Tutorial 1: Recurrance'
 subtitle: Assignment 1 homework
 ---
