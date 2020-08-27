@@ -68,8 +68,16 @@ UDP:
 2) A packet has arrived in which offset is 100, the value of Hlen is 5 and value of the total length field is 100. What is the number of first byte and last byte of the IP payload
 
 >  Start: 8*100
-> Offset : 100 - 20 = 80 [Total length - Header size]
+> Offset from the start : 100 - 20 = 80 [Total length - Header size]
 > End bit: 800 + 80 -1 = 879 (start from 0)
 
-
+- The size of header is 5*4 where 5 is the value given in the header and 4 is the number of bytes
+- Get the size of each payload by using MTU (Maximum Transmission Unit) - Header size
+- Since offset bit is suppose to represent the fragment, we realised that the size of each payload might be too big for the offset (13 bits) to represent.. Thus we make it a multiple of 8 
+	- e.g MTU: 1500 bytes
+    - Total size of ip packet: 65536
+    - Fragmets: 0, 1480, 2960...65120 as offset
+    - 65120 cannot be represent as offset due to the lack of bits
+    - Make it a multiple of 8: 1480/8 = 185
+    - We have 0,185,330 instead
 # ICMP (IPV4)
