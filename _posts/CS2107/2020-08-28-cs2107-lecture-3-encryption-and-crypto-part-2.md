@@ -62,10 +62,19 @@ Consider alice and bob, they are honest parties. We have 27! possible keys. Lets
 
 
 # Modern Ciphers: Block Ciphers
+
+![CS2107-2-3.PNG]({{site.baseurl}}/img/CS2107-2-3.PNG)
+![CS2107-2-4.PNG]({{site.baseurl}}/img/CS2107-2-4.PNG)
+
+
+Block cipher is an important cyrpto primitive: used in several schemes
 Example block ciphers:
 - DES: n - 64 bits, s = 56 bits
 - 3DES: n - 64 bits, s = up to 168 bits
 - AES: n = 128 bits, s = 128, 192, 256 bits
+
+> For AES shld be at least 128
+
 
 The longer the key is:
 - More secure
