@@ -203,4 +203,85 @@ A good cipher:
 - Has complex functional relationship between the plaintext/key pair and the ciphertext
 
 ## Block cipher modes of operation
+- Block cipher can encrypt n bit plain text with n as the cipher block size
+- Mode of operation: A method of encrypting messages of arbitrary size using block cipher
+
+#### Insecure
+- Just apply and concat
+![CS2107-2-13.PNG]({{site.baseurl}}/img/CS2107-2-13.PNG)
+
+
+BUT
+
+- What if mi = mj?
+- Attacker can tell that ci = cj
+- Info is leaked 
+
+![CS2107-2-14.PNG]({{site.baseurl}}/img/CS2107-2-14.PNG)
+
+WHY?
+- Suppose image below is divided into blocks
+- Encrupted with some "Determinsitc encryption scheme" using same key
+- Since deterministic: Any two plaintext blocks that are the same will encrupt into **same ciphertext**
+
+> The white background is the same
+
+
+This is because of "two key problem":
+- Same key used
+- Same plaintext block always give the same cpher block
+- Due to deterministic encryptioj process
+
+
+> We cant choose random IV for each block as the size of final cipher will increase
+
+### Mode of operation: CBC (Cipher block chaining) on AES
+- Mode of operation describes how the blocks are to be linked so that diff blocks at diff location would give diff cipher text even if the blocks have same content
+
+![CS2107-2-15.PNG]({{site.baseurl}}/img/CS2107-2-15.PNG)
+
+- Borrow the output from the previous round as the IV for the next round
+
+### Mode of operation: CTC (counter)
+![CS2107-2-16.PNG]({{site.baseurl}}/img/CS2107-2-16.PNG)
+
+### Double DES and meet in the middle attack
+- 2DES: 2 keys
+	- Encrupt key one and then kley 2
+    - Key length: 112 bits (Hard to brute force)
+
+BUT, there is the meet in the middle attack
+
+### Triple DES
+- 3 keys use: 3 independent keys
+- double keys: 2 independent keys
+
+![CS2107-2-17.PNG]({{site.baseurl}}/img/CS2107-2-17.PNG)
+
+Compared to AES: The 3DES is less efficient:
+	- Sluggish in software
+    - Can only encrypt 64 bit blocks at time
+
+### Padding Oracle attack
+Attacker can send queries and Orcle will output the answer
+- Encruption oracle: On query containing plaintext x, oracle output ciphertext
+- Decryption: Query with plaintext c
+
+
+The attacker have:
+- A cipher text with IV and c
+- Access to padding poracle
+
+Goal:
+- 
+
+Notes about secret key:
+
+Padding otacle:
+- Query: A ciphertext
+- Output: yes or no
+![CS2107-2-18.PNG]({{site.baseurl}}/img/CS2107-2-18.PNG)
+
+
+
 ## Examples of attacks on block ciphers
