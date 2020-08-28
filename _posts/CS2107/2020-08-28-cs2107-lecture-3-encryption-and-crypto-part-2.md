@@ -128,11 +128,79 @@ Block cipher rounds:
 - The key might have gone trhough some preprocessing (expansion) before putting into round function
 - Key scehdule function:
 ![CS2107-2-5.PNG]({{site.baseurl}}/img/CS2107-2-5.PNG)
+Produce a sequence of round keys(subkeys)
 
+> Even thou the round fucntion is the same, the key is different due to the subkey
+
+SPN with three rounds:
+![CS2107-2-6.PNG]({{site.baseurl}}/img/CS2107-2-6.PNG)
 
 
 
 ## Popular block cipher
+### DES
+- Block length: 64 bits
+- Key length: 56
+- Replace by AES
+- Round function: Feistel function forming the FIESTAL NETWORK
+
+Operations in the fiestel function:
+- S box perform substitution: For confusion
+- P box performing permuttition: for diffusion
+
+
+![CS2107-2-7.PNG]({{site.baseurl}}/img/CS2107-2-7.PNG)
+![CS2107-2-8.PNG]({{site.baseurl}}/img/CS2107-2-8.PNG)
+
+> Exhasitive search of DES is easily done in todays time
+
+### AES (Advance encruption system)
+![CS2107-2-9.PNG]({{site.baseurl}}/img/CS2107-2-9.PNG)
+
+- Block size: 128 bits
+- Key size: 128, 192, 256 bits 9the longer, the more secure but the slower)
+- SPN: Substitution and permutation networks and not fiestel:
+	- In each round: Sub layer then perm layer
+	- Substitition layer: BYTESUB operation
+    - Permutation: ShiftRow and MixColumn operations
+
+![CS2107-2-10.PNG]({{site.baseurl}}/img/CS2107-2-10.PNG)
+
+
+
 ## Properties
+
+
+Terms meaning:
+- Low error propahation: If one bit is flipped accidentally, it wont affect much
+- low diffusion: Differences
+- Insertion and modification: Easily inserted values and modified
+- Padding: Not enough characters so need padding
+
+
+### Diffusion
+- two properties: Diffusion and confusion
+Diffusion: A change in plaintext will affect many parts of ciphertext
+	- Info from plaintext is spread over entire cipher
+    - Transformation depends equally on all bits of the input
+
+![CS2107-2-11.PNG]({{site.baseurl}}/img/CS2107-2-11.PNG)
+
+A cipher with good diffusion:
+- Attacker need to access more of the cipher text
+- Block cipher: high diffusion
+- Stream: Low diffusion - Due to just xor
+
+### Confusion
+An attacker shld not be able to predict what happen to the cipher when **one character** in the plain text or key changes
+
+![CS2107-2-12.PNG]({{site.baseurl}}/img/CS2107-2-12.PNG)
+
+The input undergoes complex transformation during encryption
+
+
+A good cipher: 
+- Has complex functional relationship between the plaintext/key pair and the ciphertext
+
 ## Block cipher modes of operation
 ## Examples of attacks on block ciphers
