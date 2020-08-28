@@ -273,15 +273,46 @@ The attacker have:
 - Access to padding poracle
 
 Goal:
-- 
+- Get the plaintext
 
 Notes about secret key:
+- The ciphertext is encrupted with k
+- Padding oracles knows k
+- The attacker does not know k
 
 Padding otacle:
 - Query: A ciphertext
 - Output: yes or no
+	- Yes, if the plaintext is in correct padding format
+    - No, otherwise
+
+#### Padding format
 ![CS2107-2-18.PNG]({{site.baseurl}}/img/CS2107-2-18.PNG)
 
+### PKCS#7
+[19]
 
+### AES CBC Mode
+- Not secure agaisnt padding oracle attack
+- Attacker has IV\\C: 1 block of IV and 1 block of c
+![CS2107-2-21.PNG]({{site.baseurl}}/img/CS2107-2-21.PNG)
+
+### Why it works
+![CS2107-2-22.PNG]({{site.baseurl}}/img/CS2107-2-22.PNG)
+![CS2107-2-23.PNG]({{site.baseurl}}/img/CS2107-2-23.PNG)
+
+- Attack modifies iv to iv`
+
+Lets say oracle say yes.
+
+- What is the produce accepted plaintext?
+	- X` = I xor IV`
+- We can find the X5 by working backwards
+	- Given the padding oracle
+
+
+#### Important lessons from padding oracle attack
+- There are ways for attacker to exploit seemingly useless infomation
+- Wrong use of encryption: encryption is used to protect integrity
 
 ## Examples of attacks on block ciphers
