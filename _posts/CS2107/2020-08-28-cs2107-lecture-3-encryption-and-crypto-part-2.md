@@ -87,34 +87,47 @@ The longer the key is:
 Requirements:
 - G( Key gen algo) that generates k
 - Need to abstract what a block cipher really does: A math model of a block cipher
-- Keyed PRP:
+- Keyed PRP (Pseudorandom permutation): E: K.X -> X
 	- There exist an efficient deterministic algo to eval E(k,x)
-    - The output looks random such that it is indistinguisable from random function
-    - The function E is bijective (1-to-1), and thus is length preserving
-- There exist an efficient inversion D(k,y), which thus satisfies the correctness requirement: for all m in M and k in K, Dk(Ek(m)) = m
+    - The output **looks random** such that it is indistinguisable from random function
+    - The function E is **bijective (1-to-1)**, and thus is **length preserving**
+- There exist an **efficient** inversion D(k,y), which thus satisfies the correctness requirement: for all m in M and k in K, Dk(Ek(m)) = m
 
 ### Pseudorandom Permutation
 
 > Do not confuse PRP with PRG 
-	- PRG: (Pseudorandom generator): Takes a short random seed and output a long pseudorandom sequence
+	- PRG: (Pseudorandom generator): **Takes a short random seed and output a long pseudorandom sequence**
     - Permutation cipher: A cipher using letter index permutaion operation
 
 - In general, permutation of a set: Rearrangement of its elements
 
-Blcok ciper as a permutation function:
+Block ciper as a permutation function:
 	- A fix key, its a function that maps 2^n plaintext to 2^n ciphertexts (With unique inverse for each ciphertext)
     - In other words: C is a rearrangment of M (of itself, since M = C)
 - To be a block cipher, we need a keyed pseudorandom (secure) permutation, so that:
 	- The permutation should be determined by the key
     - Different keys must result into different permutations
-    - The permutation should "look random"
-- The key random mapping: Between plaintext and ciphertexts
+    - The permutation should **"look random"**
+- The **key random mapping**: Between plaintext and ciphertexts
+
+> This is differnet from PRG as PRG works by using some small seed and xoring it with the key to output a Pseudorandom sequence
+
+- Randomness: This means that cipher text should look different from random string.
+- Hypothetical game: If attacker picks 2 plaintext and then recieve a ciphertext of 1 of the two, they shld not be able to distinguised which plain text was encrupted
+
 
 ### How it works
 - Typically its not a single gigantic algorithms, but **an iteration of rounds**:
 	- DES = 16 rounds, 3DES = 48 rounds, AES-128  = 10 rounds
 - Two main techniques for each round: Substituition permutition network (as in AES) and Fiestel scheme (as in DES)
 
+Block cipher rounds:
+- Simpler operation
+- Easy specify
+- Round function f(x,k)
+- The key might have gone trhough some preprocessing (expansion) before putting into round function
+- Key scehdule function:
+![CS2107-2-5.PNG]({{site.baseurl}}/img/CS2107-2-5.PNG)
 
 
 
@@ -123,4 +136,3 @@ Blcok ciper as a permutation function:
 ## Properties
 ## Block cipher modes of operation
 ## Examples of attacks on block ciphers
-
