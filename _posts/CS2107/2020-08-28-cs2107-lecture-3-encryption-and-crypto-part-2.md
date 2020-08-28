@@ -11,8 +11,10 @@ subtitle: Continue from lecture 2
 - Diagraphs: to, it, is , do , on, in, at, of, or, an, he...
 - Trigraphs: the, and, for, had, one
 
+Commonly used letters:
+![CS2107-2-1.PNG]({{site.baseurl}}/img/CS2107-2-1.PNG)
 
-### Security of vigenere cipher
+### Security of vigenere cipher	
 - Vinener cipher is an improvement over shift
 - Different occurance of same letter have differnet mapp letters
 > Is it secure agaisnt known plaintext attack? 
@@ -31,7 +33,10 @@ Observation: all letters of the plaintext whose index is i(mod k) for i =0 to k-
 
 ### Security Guarantee: Perfect secrecy
 - "Regardless of any prior info that the attackers has about plaintext, the cipher text shld leak no additional info about the plaintext"
-- can be defined in terms of conditional probabiltiy
+- can be defined in terms of conditional probabiltiy: 
+	- P[M=m]: Attacker prior knowledge of unknwon plaintext m
+	- P[M=m given C =c]: Attacker updated knowledge of the unknown plaintext m after the attacker has seen the ciphetext x
+![CS2107-2-2.PNG]({{site.baseurl}}/img/CS2107-2-2.PNG)
 
 
 Issue: The key must be at least as long as the message itself
