@@ -230,7 +230,7 @@ WHY?
 This is because of "two key problem":
 - Same key used
 - Same plaintext block always give the same cpher block
-- Due to deterministic encryptioj process
+- Due to deterministic encryption process
 
 
 > We cant choose random IV for each block as the size of final cipher will increase
@@ -289,18 +289,30 @@ Padding otacle:
 #### Padding format
 ![CS2107-2-18.PNG]({{site.baseurl}}/img/CS2107-2-18.PNG)
 
-### PKCS#7
-[19]
+### Padding using PKCS#7
+![CS2107-2-19.PNG]({{site.baseurl}}/img/CS2107-2-19.PNG)
+
+> The number of blocks of padding is encoded as the value for that blocks
 
 ### AES CBC Mode
 - Not secure agaisnt padding oracle attack
 - Attacker has IV\\C: 1 block of IV and 1 block of c
 ![CS2107-2-21.PNG]({{site.baseurl}}/img/CS2107-2-21.PNG)
 
+
 ### Why it works
+Attacker wants to find the value of X5:
+
 ![CS2107-2-22.PNG]({{site.baseurl}}/img/CS2107-2-22.PNG)
 ![CS2107-2-23.PNG]({{site.baseurl}}/img/CS2107-2-23.PNG)
 
+> Rexoring the padding gives us a fix value
+	- Imagine the padding is 03
+    - Encrypting this padding with the key 04 gives 07
+    - if the attacker tries to get the key,
+    they can make the inference that 07 = 04 xor 03
+
+#### Additional remarks
 - Attack modifies iv to iv`
 
 Lets say oracle say yes.
