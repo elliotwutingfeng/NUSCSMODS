@@ -38,11 +38,28 @@ Observation: all letters of the plaintext whose index is i(mod k) for i =0 to k-
 	- P[M=m given C =c]: Attacker updated knowledge of the unknown plaintext m after the attacker has seen the ciphetext x
 ![CS2107-2-2.PNG]({{site.baseurl}}/img/CS2107-2-2.PNG)
 
+> For AES, just need to stuff the title into AES Scheme and match the corresponding cryptotext
 
 Issue: The key must be at least as long as the message itself
 
 > - Is it unnecessarily strong for practical usage
 > - Any security notoion that is more relax and practical
+
+#### Substitition cipher Questions
+- Key space: Set of possible keys
+- Key space size: total number of possible keys
+- Key size of key length: the number of bits required to represent a particular key
+
+
+**Why is log2(27!) the lower bound of key size / length**
+> - Possible Key representation:
+>	- 1 byte per symbole: 27*1 byte = 27 bytes = 216 bits
+> 	- 5 bits per sumbol/character: 27*5bits = 135 bita
+
+Consider alice and bob, they are honest parties. We have 27! possible keys. Lets assume both alice and bob can manage to keep a key table where we have a list of exhastive list of keys in the same order. Given index, some how alice and bob can generate the key representation.
+- How many entries: 27!
+- We just need to encode the index: one index is just log2(27!)
+
 
 # Modern Ciphers: Block Ciphers
 Example block ciphers:
