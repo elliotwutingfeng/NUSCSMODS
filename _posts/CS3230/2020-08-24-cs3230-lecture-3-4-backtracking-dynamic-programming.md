@@ -309,6 +309,7 @@ Running time: O(nm)
 # Lecture 4
 
 #### Memorisation vs Bottom up
+
 Bottom up DP | Memorisation
 ------------- | -------------
 One should be careful of th3e order in which the array/table is filled | Don't need worry about order
