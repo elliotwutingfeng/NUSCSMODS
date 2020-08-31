@@ -281,11 +281,11 @@ Suppose that A[m]!=B[n],
 
 
 #### Algorithm
-- Let LCS(i,j) denote LCS (Longest common subsequnce) of A[1..i] and B[1..j] where x\j denote the concat of string x and y
+- Let LCS(i,j) denote LCS (Longest common subsequnce) of A[1..i] and B[1..j] where x\\j denote the concat of string x and y
 
 
 From the previous theorem we get recursive solution for LCS(i,j)
-- LCS(i,j) = LCS(i-1, j-1) \ A[j] if A[i] = B[j]
+- LCS(i,j) = LCS(i-1, j-1) \\ A[j] if A[i] = B[j]
 - LCS(i,j) is the longer of the LCS(i, j-1) and LCS(i-1, j) if A[i]!=B[j]
 
 Base case: If any i or j is 0, it means its an empty strings.. so we can return 0
