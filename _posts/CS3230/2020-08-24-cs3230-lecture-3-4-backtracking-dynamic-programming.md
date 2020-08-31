@@ -305,3 +305,103 @@ We will always have the answer for the previous recusive calls due to the double
 > - Set the current LCS to the greater of the previous answer
 
 Running time: O(nm)
+
+# Lecture 4
+
+#### Memorisation vs Bottom up
+| Bottom up DP | Memorisation |
+|-------------| -------------|
+| One should be careful of th3e order in which the array/table is filled | Don't need worry about order|
+| The recursion graph cannot have cycles or the algo will loop forever. | The recursion graph cannot have cycles or else the algo will loop forever |
+| Once the order has been correctly determined, the proof of correctness is straightforward from recursion | For a proof of correctness, one must make sure that the recursion graph does not contain cycles and has a bath going to base case | 
+| The algo might solve sub problems that are not necessary | Algo solve only necessary subproblems|
+| Visit the entire recursion graph in reverse topological order | Visit only vertices reachable from start vertex |
+| Complexity analysis is straightforward | Need upper bound on total num of entries to be filled. The only upper bound that can be obtatin is the same as DP |
+
+
+## Text segmentation problem
+Given a string of text in unknow language without space of punctuation, split this string into its words from a dictionary
+
+- Asume given access to boolean function that returns 1 if X[i..j] is a word
+
+E.g, BLUESTEM
+return BLUE STEM
+
+### Recursive solution
+- Find function splitable that returns 1 if its splitable
+	- Splitatbale: Word given can be split into smaller words
+	- Satisfy recurrance: Splitable(i) = 1 if there exist a j>=i such that isWord(i,j) = 1 and Splitable(j+1) = 1
+    - Base case: splitable(n+1) = 1
+
+
+#### Backtrack
+Splitable(i):
+- If i>n: Return 1
+- Let B = 0 be a boolean variable
+- For j = i to n
+	- B= B OR (isWord(i,j) AND Splitable(j+1))
+- Return B
+
+
+Analysis:
+- T(n) = O(2^n)
+
+
+### Memorisation solution
+- Init array
+
+Splitable(i):
+- if i = n+1, then S[i] = 0 
+- if S[i] = init,
+	- S[i] = 0
+    - for j = i to n
+    	- S[i] = s[i] OR (isWord(i,j) AND Splittable(j+1))
+- Return S[i]
+
+
+#### Analysis
+- There are n subprob
+- Each subprob makes at most n additional calls to IsWord (Not coutning the calls from its subpron)
+- Calls: O(n^2)
+
+## Smallest Edit Distance
+- Def: Edit distance is the smallest number of letter insertion, letter deletions or letter substituition required to convert X to Y
+- Give two string X and Y, we want to find the edit distance between the strings
+
+
+For example: 
+AL GOR I THM -> AL TRUISTIC would take 6
+
+### Recursive
+- consider any sequence of min num of insertion/del/sub (IDS) steps
+- Conclude that operation done left to right
+- Theory: If there exist a sequence of min num of IDS steps that results in modifying string x to y such that each steps
+	- X[i] is deleted, the Edit(i,j) = Edit(i-1,j) + 1
+    -  Y[i] is inserted, the Edit(i,j) = Edit(i,j-1) + 1
+    - Neither X[i] is deleted nor Y[j] is inserted then
+    	- if X[i] = Y[j] then edit(i,j) = edit(i-1,j-1)
+        - if X[i] != Y[j] then edit(i,j) = edit(i-1,j-1) + 1
+### Bottom up
+- Eval: Increasing i, increasing j
+
+Complexity: O(mn)
+
+
+
+## Matrix chain multiplication
+- Multiplying m*n matric with an n*p mtrix to get an m*p matrix
+- Requires n multiplication for computing each entry
+- Total of mnp multiplications
+- Given sequence of n+1 numbers as input X where the ith matrix has dimensions X[i-1]*X[i] for i = 1 to n 
+- Find optimal parathesization fo the matrixes
+
+> Solve the simpler problem of finding min number of multiplcation requried
+
+### Recursive
+- Let C(i,j) be min num of multiplcation for an optimal paranthesisation
+- What is the cost of these partitons?
+
+
+## Greedy algo
+- make the choice locally without having to solve the subproblem
+- Looks at one branch of the recursion tree
