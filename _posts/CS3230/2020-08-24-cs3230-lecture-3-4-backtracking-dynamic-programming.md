@@ -309,14 +309,14 @@ Running time: O(nm)
 # Lecture 4
 
 #### Memorisation vs Bottom up
-| Bottom up DP | Memorisation |
-|-------------| -------------|
-| One should be careful of th3e order in which the array/table is filled | Don't need worry about order|
-| The recursion graph cannot have cycles or the algo will loop forever. | The recursion graph cannot have cycles or else the algo will loop forever |
-| Once the order has been correctly determined, the proof of correctness is straightforward from recursion | For a proof of correctness, one must make sure that the recursion graph does not contain cycles and has a bath going to base case | 
-| The algo might solve sub problems that are not necessary | Algo solve only necessary subproblems|
-| Visit the entire recursion graph in reverse topological order | Visit only vertices reachable from start vertex |
-| Complexity analysis is straightforward | Need upper bound on total num of entries to be filled. The only upper bound that can be obtatin is the same as DP |
+Bottom up DP | Memorisation
+------------- | -------------
+One should be careful of th3e order in which the array/table is filled | Don't need worry about order
+The recursion graph cannot have cycles or the algo will loop forever. | The recursion graph cannot have cycles or else the algo will loop forever
+Once the order has been correctly determined, the proof of correctness is straightforward from recursion | For a proof of correctness, one must make sure that the recursion graph does not contain cycles and has a bath going to base case
+The algo might solve sub problems that are not necessary | Algo solve only necessary subproblems
+Visit the entire recursion graph in reverse topological order | Visit only vertices reachable from start vertex 
+Complexity analysis is straightforward | Need upper bound on total num of entries to be filled. The only upper bound that can be obtatin is the same as DP 
 
 
 ## Text segmentation problem
