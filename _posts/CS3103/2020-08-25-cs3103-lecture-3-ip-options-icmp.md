@@ -270,6 +270,39 @@ ICMP can also diagnose some network problems through query messages, a group of 
 
 ### ICMP query messages - Examples
 
+##### Timestamps:
+![CS3103-3-23.PNG]({{site.baseurl}}/img/CS3103-3-23.PNG)
+
+Sends a packet and ask reciever to timestamp when it recieves. It is basically a request reply.
+
+Sequence number: When sending multiple packets together 
+
+![CS3103-3-24.PNG]({{site.baseurl}}/img/CS3103-3-24.PNG)
+
+
+**RTT = (return - trans) + (receive - original)**
+
+
+> Question: If one way time is known (original to receive), how would will cal the clock drift in the receiving node to synch the clocks?
+>
+> - Yes, after the sender has send, the reciever can set its clock and simply c = c + OTT (one way trip time)
+
+One way trip time: Transmit to return
+
+
+> If the two clocks are not in synch, will the RTT be correct
+> 
+> - Yes, the differences will cancel out
+
+
+Sequence number is needed in case there are multiple packets and we ned to know which response is to be mapped to which request.
+
+
+#### Echo Request and Echo reply message
+Echo request and echo reply messages can test the reachibilitiy of the host. This is usally done by invoke the ping command.
+![CS3103-3-25.PNG]({{site.baseurl}}/img/CS3103-3-25.PNG)
+
+
 
 ## Traceroute program
 Allow us to see the route that IP datagrams follow from one host to another
