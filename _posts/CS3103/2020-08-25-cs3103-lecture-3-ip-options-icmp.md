@@ -320,30 +320,43 @@ Allow us to see the route that IP datagrams follow from one host to another
 
 
 ##### Example
+![CS3103-3-30.PNG]({{site.baseurl}}/img/CS3103-3-30.PNG)
+
 - Router recieves the UDP apclets
 - Decrements the ttl
 - Becomes 0 = Exceeded
 
 Hosts:
 - Port unreachable with IP
-- Stops sending
+- Stops sending anymore packets and display
 
-- Sends UDP datagram to destination with TTL field in IP Header set to value 1
+> server 4 will only know the router incoming ip address and not the outgoing one (35 not 66)
+
+This under assumption that the port that is send is not open, it will fail if the port is open
+
+## Operation
+- Sends UDP datagrams to destination with TTL field in IP Header set to value 1
 	- Datagram = 40bytes
     - 12 bytes data = seq no, time sent
+    - Sends more then one to get avg
 - Causes router to generate "time exceeded" ICMP error
 - Increment TTL progressively until final destination is reach
 - Terminating:
 	- UDP port chosen is a non existence port
     - Destination sends ICMP "Port unreachable" error
-- For each TTL value, 3 datagra,s (probes) are sent
+- For each TTL value, 3 datagrams (probes) are sent
 
 > Question: Some firewalls disable UDP messages, is there an alt method?
 >
-> - 
-
+> - Use TCP with the RTT
 
 
 > Question : Is there any diff between route info shown by Traceroute and IP record route?
 >
-> -
+> - 
+
+
+#### Extra topics (Activly weekling)
+- Vlan Streeting - PCI DSS
+- DNS poisoning 
+- 5G
