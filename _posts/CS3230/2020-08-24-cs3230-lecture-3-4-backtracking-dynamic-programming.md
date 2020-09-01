@@ -463,29 +463,37 @@ AL GOR I THM -> AL TRUISTIC would take 6
 
 
 ### Recursive
-- consider any sequence of min num of insertion/del/sub (IDS) steps
+Let Edit(i,j) be the edit distance between X[1..i] and Y[1..j]
+
+- Consider any sequence of min num of insertion/del/sub (IDS) steps
 - Conclude that operation done left to right
-- Theory: If there exist a sequence of min num of IDS steps that results in modifying string x to y such that each steps
-	- X[i] is deleted, the Edit(i,j) = Edit(i-1,j) + 1
-    -  Y[i] is inserted, the Edit(i,j) = Edit(i,j-1) + 1
+- Theory: If there exist a sequence of min num of IDS steps that results in modifying string X[1..i] to Y such that in the last steps,
+	- X[i] is deleted, the `Edit(i,j) = Edit(i-1,j) + 1`
+    -  Y[i] is inserted, the `Edit(i,j) = Edit(i,j-1) + 1`
     - Neither X[i] is deleted nor Y[j] is inserted then
-    	- if X[i] = Y[j] then edit(i,j) = edit(i-1,j-1)
-        - if X[i] != Y[j] then edit(i,j) = edit(i-1,j-1) + 1
-        
+    	- if `X[i] = Y[j]` then `edit(i,j) = edit(i-1,j-1)`
+        - if X[i] != Y[j] then `edit(i,j) = edit(i-1,j-1) + 1`
+
+
         
 ![CS3230-4-10.PNG]({{site.baseurl}}/img/CS3230-4-10.PNG)
  
 >  + 1 is an insertion / deletion
 > Z(i,j) means substituition is required
 
+We dont know what the last step of an optimal sequence is but we can get the reccurance by trying all the option
 
 
 ### Bottom up
-- Eval: Increasing i, increasing j
+- Dependenecies: Each entry Edit[i,j], we need Edit[i-1,j], Edit[i,j-1] and Edit[i-1.j-1]
+- Eval: Increasing i, increasing j (Other order also work for example increasng i+j)
+
+
+![CS3230-4-19.PNG]({{site.baseurl}}/img/CS3230-4-19.PNG)
+
+![CS3230-4-20.PNG]({{site.baseurl}}/img/CS3230-4-20.PNG)
 
 Complexity: O(mn)
-
-
 
 ## Matrix chain multiplication
 - Multiplying m*n matric with an n*p mtrix to get an m*p matrix
