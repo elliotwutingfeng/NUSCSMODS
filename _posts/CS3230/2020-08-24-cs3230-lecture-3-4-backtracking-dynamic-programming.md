@@ -572,7 +572,8 @@ E.g
 ![CS3230-4-9.PNG]({{site.baseurl}}/img/CS3230-4-9.PNG)
 
 ### Self - study
-[Video Link](https://youtu.be/vgLJZMUfnsU)
+- [Video Link](https://youtu.be/vgLJZMUfnsU)
+- [GFG VID](https://www.youtube.com/watch?v=gwmitwgz87s)
 
 Memorisation:
 - Draw a 2x2 matrix where the x and y col boxes each denotes the each matrix
@@ -591,7 +592,7 @@ Memorisation:
 3 | | | 0 
 
 - For this matrix example where M denotes the array as shown above, A[0][3] means that the matrix multiplcation in order of 0 * 1 * 2 * 3, where each number represents a certain matrix
-- After filling up , find the value that is smallest in the last col
+- After filling up , the answer would be at A[1][n-1], where n is the max value
 - Track back
 	- For a value in A[0][3], means that the multiplcation is(0..2)(3)
     - Backtrack to A[0][2] and so on and so forth
