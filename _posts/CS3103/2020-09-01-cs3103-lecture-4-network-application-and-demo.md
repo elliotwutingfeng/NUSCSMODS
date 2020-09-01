@@ -13,6 +13,22 @@ Properties of server:
 - Uses ephemeral ports
 - Uses perm IP address
 - init communication
-- Uses well known ports
 - Waits to be contacted
 
+#### P2P
+- No always on server
+- Arbituary end systems directly communication and serve each other
+	- Each host runs both server and client processes
+
+
+> Question: What is the advantage of P2P
+>
+> - Everything is client and everything is server
+
+
+> Question: How does host find the ip address of each other?
+>
+> - Easy to scale
+
+
+#### Socket
