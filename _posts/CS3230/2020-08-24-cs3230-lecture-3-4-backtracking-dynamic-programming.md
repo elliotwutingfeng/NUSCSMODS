@@ -491,11 +491,16 @@ We dont know what the last step of an optimal sequence is but we can get the rec
 
 ![CS3230-4-19.PNG]({{site.baseurl}}/img/CS3230-4-19.PNG)
 
+##### ALGORTHIM
 ![CS3230-4-20.PNG]({{site.baseurl}}/img/CS3230-4-20.PNG)
 
-Complexity: O(mn)
+> Compare the 3 and take the minimum
+
+Complexity: O(mn) => the num entries we need compute
 
 ## Matrix chain multiplication
+![CS3230-4-21.PNG]({{site.baseurl}}/img/CS3230-4-21.PNG)
+
 - Multiplying m*n matric with an n*p mtrix to get an m*p matrix
 - Requires n multiplication for computing each entry
 - Total of mnp multiplications
@@ -503,6 +508,18 @@ Complexity: O(mn)
 - Find optimal parathesization fo the matrixes
 
 > Solve the simpler problem of finding min number of multiplcation requried
+
+Consider a sequence of matrix:
+- A: 10*2
+- B: 2*20
+- C: 20*5
+
+Then (AB)C is a computatuion that requires 
+			10 * 2 * 20 + 10 * 20 * 5 = 1400 multiplication
+
+
+A(BC) requires
+			10*2*5 + 2*20*5 = 600 multiplications
 
 
 ![CS3230-4-4.PNG]({{site.baseurl}}/img/CS3230-4-4.PNG)
@@ -512,13 +529,25 @@ Complexity: O(mn)
 Trying out all possibilities:
 - Calculate the smallest cost for each time
 
+
+Given a sequence of n+1 numbers as input X[0..n+1] where the ith matrix has dimesnsion X[i-1] * X[i] for i = 1 to n, find an optimal paranthesization of the matrices
+
+We will solve a simpler problem of finding the min number of multiplication required
+
 ![CS3230-4-5.PNG]({{site.baseurl}}/img/CS3230-4-5.PNG)
 
 
-
 ### Recursive
-- Let C(i,j) be min num of multiplcation for an optimal paranthesisation
+- Let C(i,j) be min num of multiplcation for an optimal paranthesisation of Ai, Ai+1... Aj
 - What is the cost of these partitons?
+
+To obtain the recursive algo, consider how the chain can be parathesize
+
+1. Look at where we place the first para
+2. Partition into two parts and compute each parathensis recursively
+
+![CS3230-4-22.PNG]({{site.baseurl}}/img/CS3230-4-22.PNG)
+
 
 
 ### Bottom up 
