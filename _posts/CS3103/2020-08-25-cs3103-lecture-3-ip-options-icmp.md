@@ -303,7 +303,8 @@ Echo request and echo reply messages can test the reachibilitiy of the host. Thi
 ![CS3103-3-25.PNG]({{site.baseurl}}/img/CS3103-3-25.PNG)
 
 #### Example
-[26]
+![CS3103-3-32.PNG]({{site.baseurl}}/img/CS3103-3-32.PNG)
+
 ![CS3103-3-27.PNG]({{site.baseurl}}/img/CS3103-3-27.PNG)
 
 
