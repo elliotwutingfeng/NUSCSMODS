@@ -412,9 +412,34 @@ Complexity: O(mn)
 
 > Solve the simpler problem of finding min number of multiplcation requried
 
+
+![CS3230-4-4.PNG]({{site.baseurl}}/img/CS3230-4-4.PNG)
+> If you multiply at certain timing, can get diff num of multiplcation
+
+
+Trying out all possibilities:
+- Calculate the smallest cost for each time
+
+![CS3230-4-5.PNG]({{site.baseurl}}/img/CS3230-4-5.PNG)
+
+
+
 ### Recursive
 - Let C(i,j) be min num of multiplcation for an optimal paranthesisation
 - What is the cost of these partitons?
+
+
+### Bottom up 
+Base Case: C[i][j] = 0
+- We can consider length as
+	- j - i > k - i
+    - j - i > j-(k+1)
+- C[i][k] and C[k+1][j] should be completed before c[i][j]
+- i <= k <= j-1
+- Note that increasing i and j does not work thus we can go with increasing length
+
+![CS3230-4-6.PNG]({{site.baseurl}}/img/CS3230-4-6.PNG)
+![CS3230-4-7.PNG]({{site.baseurl}}/img/CS3230-4-7.PNG)
 
 
 ## Greedy algo
