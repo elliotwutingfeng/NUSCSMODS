@@ -580,6 +580,8 @@ Memorisation:
 - Let length denote the number of matrixes used to multiply
 - Fill up the matrix starting from
 	- When length = 1, multiplication is 0
+    - When len = 2 , we consider a multiplcation of 2 matrix, in the mem array, calculate values for 2 array and store in mem arry
+    - When len = 3, make use of the previous calculation of matrix (len = 2) and multiply the valus for that matrix. Then sum up the number of multiplcation for the resulting matrixs and store into mem array
 
 0 | 1 | 2 | 3
 --- | --- | --- | ---
@@ -588,8 +590,11 @@ Memorisation:
 2 | | 0 |
 3 | | | 0 
 
-- After filling up , find the value that is smallest
-- 
+- For this matrix example where M denotes the array as shown above, A[0][3] means that the matrix multiplcation in order of 0 * 1 * 2 * 3, where each number represents a certain matrix
+- After filling up , find the value that is smallest in the last col
+- Track back
+	- For a value in A[0][3], means that the multiplcation is(0..2)(3)
+    - Backtrack to A[0][2] and so on and so forth
 
 
 
