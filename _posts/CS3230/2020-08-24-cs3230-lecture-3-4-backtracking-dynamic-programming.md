@@ -333,11 +333,14 @@ Complexity analysis is straightforward | Need upper bound on total num of entrie
 e.g LCS
 ![CS3230-4-3.PNG]({{site.baseurl}}/img/CS3230-4-3.PNG)
 
+> Bottom up it matters because values might not be computed before the next value happens.
+> For top down, the value will be recursively calculated.
+
 
 ## Text segmentation problem
-Given a string of text in unknow language without space of punctuation, split this string into its words from a dictionary
+Given a string of text in unknown language without space of punctuation, split this string into its words from a dictionary
 
-- Asume given access to boolean function `isWord(i,j)` that returns 1 if X[i..j] is a word
+- Assume given access to boolean function `isWord(i,j)` that returns 1 if X[i..j] is a word
 
 E.g, BLUESTEM
 return BLUE STEM
@@ -346,12 +349,13 @@ BUT
 
 ![CS3230-4-11.PNG]({{site.baseurl}}/img/CS3230-4-11.PNG)
 
-> We try everything in dynamic programming
+> We try everything in dynamic programming and recurse (backtrack)
 
 - Pick first one and make recursive call to the next one
 
 For this question, as long as we get valid splitting
 
+**SubString X[i..n], is it splitable?** 
 
 ### Recursive solution
 - Find function splitable that returns 1 if its splitable
@@ -360,6 +364,8 @@ For this question, as long as we get valid splitting
     - Base case: `splitable(n+1) = 1`
     - Final one: `splitable(1)`
     - i is the index of the pointer
+    - j is some random index
+    - empty string is splitable
 
 > Pick the first word, and look at the remaining string: `isWord(i,j) = 1 and Splitable(j+1) = 1`
 
@@ -370,17 +376,18 @@ For this question, as long as we get valid splitting
 
 We have to build a solution from n down to 1. Our recursive call that we are making from (i to i + 1, i + 2 ... n). For computing S[i], we need S[i+1] .. S[n]
 
+![CS3230-4-15.PNG]({{site.baseurl}}/img/CS3230-4-15.PNG)
 
-**Time complex: O(n^2) calls to isWord**
 
-We are only calculating for the subproblem S[i] so we ask if X[i..n] is splitable. We dont need to iterate from 1 to n
+##### Analysis
+T(n) denotes the number of calls to isWord.
 
-#### Example: Min num of words
-- Set S(i) = inf for all i
-- If its a word, + 1
-- Recursively look at the min numb of words for S(j+1)
-![CS3230-4-14.PNG]({{site.baseurl}}/img/CS3230-4-14.PNG)
+Recurance: ![CS3230-4-16.PNG]({{site.baseurl}}/img/CS3230-4-16.PNG)
 
+This implies:
+![CS3230-4-17.PNG]({{site.baseurl}}/img/CS3230-4-17.PNG)
+
+**Time complex: O(2^n) calls to isWord**
 
 #### Backtrack
 Splitable(i):
@@ -396,6 +403,14 @@ Analysis:
 - T(n) = O(2^n)
 
 
+#### Example: Min num of words
+- Set S(i) = inf for all i
+- If its a word, + 1
+- Recursively look at the min numb of words for S(j+1)
+![CS3230-4-14.PNG]({{site.baseurl}}/img/CS3230-4-14.PNG)
+
+
+
 ### Memorisation solution
 - Init array
 - S[n+1] set to 0 instead of 1
@@ -408,11 +423,24 @@ Splitable(i):
     	- S[i] = s[i] OR (isWord(i,j) AND Splittable(j+1))
 - Return S[i]
 
+> Do that for every j and if there exist a j that is a word
 
-#### Analysis
+
+
+##### Analysis
+
+![CS3230-4-18.PNG]({{site.baseurl}}/img/CS3230-4-18.PNG)
+We only calculate S[i] onely **ONCE**
+
 - There are n subprob
 - Each subprob makes at most n additional calls to IsWord (Not coutning the calls from its subpron)
 - Calls: O(n^2)
+
+> Call to S[i] is at most n * subproblem (n)
+
+**Time complex: O(n^2) calls to isWord**
+
+We are only calculating for the subproblem S[i] so we ask if X[i..n] is splitable. We dont need to iterate from 1 to n
 
 ## Smallest Edit Distance
 - Def: Edit distance is the smallest number of letter insertion, letter deletions or letter substituition required to convert X to Y
@@ -421,13 +449,17 @@ Splitable(i):
 	- remove chara
     - Add chara
     - Substitute
-To  solve edit distance:
+To solve edit distance:
 - Focus on last col
 - Try all possibilities
-- Remember: Smarter brute force
+- Remember: DP = Smarter brute force
 
 For example: 
 AL GOR I THM -> AL TRUISTIC would take 6
+
+> - Remove G
+> - Sub O,H, M
+> - Insert U, S
 
 
 ### Recursive
