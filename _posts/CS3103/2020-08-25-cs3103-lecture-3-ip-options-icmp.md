@@ -302,9 +302,14 @@ Sequence number is needed in case there are multiple packets and we ned to know 
 Echo request and echo reply messages can test the reachibilitiy of the host. This is usally done by invoke the ping command.
 ![CS3103-3-25.PNG]({{site.baseurl}}/img/CS3103-3-25.PNG)
 
+#### Example
+[26]
+[27]
 
 
 ## Traceroute program
+![CS3103-3-28.PNG]({{site.baseurl}}/img/CS3103-3-28.PNG)
+
 Allow us to see the route that IP datagrams follow from one host to another
 
 > Question: Based on what we known about ICMP, how should traceroute work?
