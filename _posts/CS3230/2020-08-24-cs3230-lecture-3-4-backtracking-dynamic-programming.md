@@ -548,7 +548,7 @@ To obtain the recursive algo, consider how the chain can be parathesize
 
 ![CS3230-4-22.PNG]({{site.baseurl}}/img/CS3230-4-22.PNG)
 
-
+> Goal is to find a recurrance
 
 ### Bottom up 
 Base Case: C[i][j] = 0
@@ -570,6 +570,27 @@ Split the matrix into smaller parts and solve for those
 
 E.g
 ![CS3230-4-9.PNG]({{site.baseurl}}/img/CS3230-4-9.PNG)
+
+### Self - study
+[Video Link](https://youtu.be/vgLJZMUfnsU)
+
+Memorisation:
+- Draw a 2x2 matrix where the x and y col boxes each denotes the each matrix
+- Each box in the matrix denotes the num of multiplication needed for muliplying those 2
+- Let length denote the number of matrixes used to multiply
+- Fill up the matrix starting from
+	- When length = 1, multiplication is 0
+
+0 | 1 | 2 | 3
+--- | --- | --- | ---
+0 | 0 | |
+1 | | 0  |
+2 | | 0 |
+3 | | | 0 
+
+- After filling up , find the value that is smallest
+- 
+
 
 
 ## Greedy algo
