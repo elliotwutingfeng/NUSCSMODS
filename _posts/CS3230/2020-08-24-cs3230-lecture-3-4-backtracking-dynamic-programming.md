@@ -382,6 +382,11 @@ Splitable(i):
 ## Smallest Edit Distance
 - Def: Edit distance is the smallest number of letter insertion, letter deletions or letter substituition required to convert X to Y
 - Give two string X and Y, we want to find the edit distance between the strings
+- Moves:
+	- rmove chara
+    - Add chara
+    - Substitute
+
 
 
 For example: 
