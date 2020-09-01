@@ -228,12 +228,30 @@ ICMP error messages are use by router and host to tell a device that sent a data
 > - 0.0.0.0 : for starting out
 
 ![CS3103-3-19.PNG]({{site.baseurl}}/img/CS3103-3-19.PNG)
+> Protocol: The transport layer is not there
+
+
+> Question: Who generates these ICMP error messages, host or routers?
+>
+> - Both, depending on the codes
+
+
 
 ### ICMP error messages - Examples
+Source quench:
+![CS3103-3-20.PNG]({{site.baseurl}}/img/CS3103-3-20.PNG)
+- Send back to the source
+
 
 - Source quench message: Informs the source that a datagram has been discarded due to congestion in router or the destination host
 - Source must slow down sending of datagrams until congestion is relieved
 - One message sent for each datagram discarded
+
+Time exceeded:
+![CS3103-3-21.PNG]({{site.baseurl}}/img/CS3103-3-21.PNG)
+
+- When every a router decremenets a datagram with a TTL value to zero, it discard the datagram and sesnds the time exceeded message to original source
+- When final destination does not recieved all the frag in a set time, discards the received frag and sends the ttl exceed message
 
 ## Query
 
