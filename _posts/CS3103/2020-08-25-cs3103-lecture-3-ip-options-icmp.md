@@ -238,7 +238,8 @@ ICMP error messages are use by router and host to tell a device that sent a data
 
 
 ### ICMP error messages - Examples
-Source quench:
+
+##### Source quench:
 ![CS3103-3-20.PNG]({{site.baseurl}}/img/CS3103-3-20.PNG)
 - Send back to the source
 
@@ -247,15 +248,25 @@ Source quench:
 - Source must slow down sending of datagrams until congestion is relieved
 - One message sent for each datagram discarded
 
-Time exceeded:
+##### Time exceeded:
 ![CS3103-3-21.PNG]({{site.baseurl}}/img/CS3103-3-21.PNG)
 
 - When every a router decremenets a datagram with a TTL value to zero, it discard the datagram and sesnds the time exceeded message to original source
 - When final destination does not recieved all the frag in a set time, discards the received frag and sends the ttl exceed message
 
+> A host usually starts with a small routing table that is gradually updated and augmented. 
+
+##### Redirction:
+![CS3103-3-22.PNG]({{site.baseurl}}/img/CS3103-3-22.PNG)
+
+The first router normally recieves a packet from an interface and sends it in another interfacfe. If the recieves the same packet from the same interface it recently sents.. it will sent redirection "RM", the host will then update its table base on this infomation
+
+
 ## Query
 
 ICMP can also diagnose some network problems through query messages, a group of four different pair of messages. In this type of ICMP message, a node sends a message that is answered in a specific format by the destination node
+
+
 
 ### ICMP query messages - Examples
 
@@ -287,7 +298,3 @@ Allow us to see the route that IP datagrams follow from one host to another
 > Question : Is there any diff between route info shown by Traceroute and IP record route?
 >
 > -
-
-
-
-
