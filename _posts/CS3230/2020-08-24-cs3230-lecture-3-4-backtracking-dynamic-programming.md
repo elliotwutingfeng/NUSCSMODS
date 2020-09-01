@@ -337,16 +337,49 @@ e.g LCS
 ## Text segmentation problem
 Given a string of text in unknow language without space of punctuation, split this string into its words from a dictionary
 
-- Asume given access to boolean function that returns 1 if X[i..j] is a word
+- Asume given access to boolean function `isWord(i,j)` that returns 1 if X[i..j] is a word
 
 E.g, BLUESTEM
 return BLUE STEM
 
+BUT
+
+![CS3230-4-11.PNG]({{site.baseurl}}/img/CS3230-4-11.PNG)
+
+> We try everything in dynamic programming
+
+- Pick first one and make recursive call to the next one
+
+For this question, as long as we get valid splitting
+
+
 ### Recursive solution
 - Find function splitable that returns 1 if its splitable
-	- Splitatbale: Word given can be split into smaller words
-	- Satisfy recurrance: Splitable(i) = 1 if there exist a j>=i such that isWord(i,j) = 1 and Splitable(j+1) = 1
-    - Base case: splitable(n+1) = 1
+	- Splitable(i): Word given can be split into smaller words, 1 if X[i..n] is splitable
+	- Satisfy recurrance:`Splitable(i) = 1` if there exist a `j>=i` such that `isWord(i,j) = 1` and `Splitable(j+1) = 1`
+    - Base case: `splitable(n+1) = 1`
+    - Final one: `splitable(1)`
+    - i is the index of the pointer
+
+> Pick the first word, and look at the remaining string: `isWord(i,j) = 1 and Splitable(j+1) = 1`
+
+![CS3230-4-13.PNG]({{site.baseurl}}/img/CS3230-4-13.PNG)
+
+
+> Set it to 0 if not valid and 1 if its a valid splitting
+
+We have to build a solution from n down to 1. Our recursive call that we are making from (i to i + 1, i + 2 ... n). For computing S[i], we need S[i+1] .. S[n]
+
+
+**Time complex: O(n^2) calls to isWord**
+
+We are only calculating for the subproblem S[i] so we ask if X[i..n] is splitable. We dont need to iterate from 1 to n
+
+#### Example: Min num of words
+- Set S(i) = inf for all i
+- If its a word, + 1
+- Recursively look at the min numb of words for S(j+1)
+![CS3230-4-14.PNG]({{site.baseurl}}/img/CS3230-4-14.PNG)
 
 
 #### Backtrack
@@ -354,9 +387,10 @@ Splitable(i):
 - If i>n: Return 1
 - Let B = 0 be a boolean variable
 - For j = i to n
-	- B= B OR (isWord(i,j) AND Splitable(j+1))
+	- B = B OR (isWord(i,j) AND Splitable(j+1))
 - Return B
 
+> B = B means that you loop from 0 all the way ip
 
 Analysis:
 - T(n) = O(2^n)
@@ -383,14 +417,17 @@ Splitable(i):
 - Def: Edit distance is the smallest number of letter insertion, letter deletions or letter substituition required to convert X to Y
 - Give two string X and Y, we want to find the edit distance between the strings
 - Moves:
-	- rmove chara
+	- remove chara
     - Add chara
     - Substitute
-
-
+To  solve edit distance:
+- Focus on last col
+- Try all possibilities
+- Remember: Smarter brute force
 
 For example: 
 AL GOR I THM -> AL TRUISTIC would take 6
+
 
 ### Recursive
 - consider any sequence of min num of insertion/del/sub (IDS) steps
@@ -401,6 +438,15 @@ AL GOR I THM -> AL TRUISTIC would take 6
     - Neither X[i] is deleted nor Y[j] is inserted then
     	- if X[i] = Y[j] then edit(i,j) = edit(i-1,j-1)
         - if X[i] != Y[j] then edit(i,j) = edit(i-1,j-1) + 1
+        
+        
+![CS3230-4-10.PNG]({{site.baseurl}}/img/CS3230-4-10.PNG)
+ 
+>  + 1 is an insertion / deletion
+> Z(i,j) means substituition is required
+
+
+
 ### Bottom up
 - Eval: Increasing i, increasing j
 
