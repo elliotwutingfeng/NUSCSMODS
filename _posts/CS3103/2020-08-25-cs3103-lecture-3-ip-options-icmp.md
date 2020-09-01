@@ -314,8 +314,19 @@ Allow us to see the route that IP datagrams follow from one host to another
 
 > Question: Based on what we known about ICMP, how should traceroute work?
 > 
-> - 
+> - TTL
 
+[29]
+
+
+##### Example
+- Router recieves the UDP apclets
+- Decrements the ttl
+- Becomes 0 = Exceeded
+
+Hosts:
+- Port unreachable with IP
+- Stops sending
 
 - Sends UDP datagram to destination with TTL field in IP Header set to value 1
 	- Datagram = 40bytes
