@@ -439,7 +439,16 @@ Base Case: C[i][j] = 0
 - Note that increasing i and j does not work thus we can go with increasing length
 
 ![CS3230-4-6.PNG]({{site.baseurl}}/img/CS3230-4-6.PNG)
-![CS3230-4-7.PNG]({{site.baseurl}}/img/CS3230-4-7.PNG)
+![CS3230-4-8.PNG]({{site.baseurl}}/img/CS3230-4-8.PNG)
+
+
+Time complexity: O(n^3)
+
+
+Split the matrix into smaller parts and solve for those
+
+E.g
+![CS3230-4-9.PNG]({{site.baseurl}}/img/CS3230-4-9.PNG)
 
 
 ## Greedy algo
