@@ -398,6 +398,7 @@ Analysis:
 
 ### Memorisation solution
 - Init array
+- S[n+1] set to 0 instead of 1
 
 Splitable(i):
 - if i = n+1, then S[i] = 0 
