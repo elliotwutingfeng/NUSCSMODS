@@ -164,13 +164,70 @@ Network layer:
 > ICMP message is encapsulate in the ip header which is why it is at the top of the network layer. 
 
 #### Format
+
+![CS3103-3-16.PNG]({{site.baseurl}}/img/CS3103-3-16.PNG)
+
 - 8 byte header, variable size data section
 - Format for first 4 bytes of header is common to all ICMP packets
-- Type: ICMP messgae type
+- Type: ICMP message type
 - Code: Reason for the message type generated
+
+## ICMP MESSAGES
+- Error reporting message
+- Query
+![CS3103-3-17.PNG]({{site.baseurl}}/img/CS3103-3-17.PNG)
 
 
 ## ICMP error messages
+
+![CS3103-3-18.PNG]({{site.baseurl}}/img/CS3103-3-18.PNG)
+
+Recieve datagram: 
+- Might be final or not
+- Some error happens, i need to report back
+- Create ICMP packet
+
+
+ICMP Packet:
+- Payload: The received datagram header (inc ip address) and first 8 byte of payload copied
+- Adds whole thing into ip packet
+- Sends back to source
+
+
+> Question: Why is IP header of recieved datagram included in error message
+> 
+> - IP header in the IP datagram has the source and dest of the router which is sending the error message. 
+> - The sender needs to know who is the prev destination which the failed packet suppose to be send to
+> - Check that you are the correct recipient of the ICMP. Along the way.. the source might be corrupted
+
+
+
+> Question: Why 8 bytes of the recieved datagram is included in the reply?
+>
+> - TCP IP  (not full) / UDP header
+> - Know which packet cause the error
+
+
+
+#### Example
+ICMP error messages are use by router and host to tell a device that sent a datagram about problems
+
+1) What if datagram carring ICMP cause another error
+> Nothing happne, it wont be sent again
+
+2) Do we need ICMP error messages for each fragment of a fragmented datagram that cause the error
+> Only for first
+
+3) ICMP will not be generated for a datagram having a multicast or broadcast add in destination add field. Why?
+> Broadcast storm, one messaege will be split into many and routers would have made multiple copies of the packets. (Lots of destination)
+
+4) ICMP error messages will not be for a datagram whose source address is not a single host, 0.0.0.0, 127.X.X.X , broadcast or multicast add. why?
+> If source is any of those, it not meaningful
+>
+> - Broadcast/multicast: Not meaningfukl
+> - 0.0.0.0 : for starting out
+
+![CS3103-3-19.PNG]({{site.baseurl}}/img/CS3103-3-19.PNG)
 
 ### ICMP error messages - Examples
 
