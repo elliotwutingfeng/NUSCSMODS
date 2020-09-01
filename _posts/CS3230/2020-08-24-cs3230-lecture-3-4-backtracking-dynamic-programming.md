@@ -304,6 +304,17 @@ We will always have the answer for the previous recusive calls due to the double
 > -  everytime we see that the characters are equal, we add them together
 > - Set the current LCS to the greater of the previous answer
 
+![CS3230-4-1.PNG]({{site.baseurl}}/img/CS3230-4-1.PNG)
+
+
+
+> Basically, we imagine the Values to be in a 2x2 matrix where the top row and left column represents one of the strings
+> Each slot of the matrix represents the largest possible subsequence for that letter
+
+![CS3230-4-2.PNG]({{site.baseurl}}/img/CS3230-4-2.PNG)
+
+The arrow points to which direction the recursion shld go.
+
 Running time: O(nm)
 
 # Lecture 4
@@ -318,6 +329,9 @@ Once the order has been correctly determined, the proof of correctness is straig
 The algo might solve sub problems that are not necessary | Algo solve only necessary subproblems
 Visit the entire recursion graph in reverse topological order | Visit only vertices reachable from start vertex 
 Complexity analysis is straightforward | Need upper bound on total num of entries to be filled. The only upper bound that can be obtatin is the same as DP 
+
+e.g LCS
+![CS3230-4-3.PNG]({{site.baseurl}}/img/CS3230-4-3.PNG)
 
 
 ## Text segmentation problem
