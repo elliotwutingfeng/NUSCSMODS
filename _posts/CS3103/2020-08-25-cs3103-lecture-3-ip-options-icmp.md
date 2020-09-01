@@ -304,7 +304,8 @@ Echo request and echo reply messages can test the reachibilitiy of the host. Thi
 
 #### Example
 [26]
-[27]
+![CS3103-3-27.PNG]({{site.baseurl}}/img/CS3103-3-27.PNG)
+
 
 
 ## Traceroute program
@@ -316,7 +317,8 @@ Allow us to see the route that IP datagrams follow from one host to another
 > 
 > - TTL
 
-[29]
+![CS3103-3-29.PNG]({{site.baseurl}}/img/CS3103-3-29.PNG)
+
 
 
 ##### Example
