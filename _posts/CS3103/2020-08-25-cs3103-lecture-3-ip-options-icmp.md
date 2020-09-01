@@ -80,4 +80,79 @@ UDP:
     - 65120 cannot be represent as offset due to the lack of bits
     - Make it a multiple of 8: 1480/8 = 185
     - We have 0,185,330 instead
+    
+## Options
+
+### Record Route Option
+Concept:
+### Strict source route Option
+
+### Loose source route option
+
+### IP components
+
 # ICMP (IPV4)
+- What if router cannot route to deliever datagram
+- What if a router experience a congesting
+- What TTL expire
+
+
+Router needs to inform source to take action to avoid or correct problem. 
+ICMP:
+	- Allows router and hosts to send error or control messages to other routers or hosts
+    - Error reporting mechanism and can only report condition back to the original source
+    - ICMP is specified in RFC 792
+
+#### Format
+- 8 byte header, variable size data section
+- Format for first 4 bytes of header is common to all ICMP packets
+- Type: ICMP messgae type
+- Code: Reason for the message type generated
+
+
+## ICMP error messages
+
+### ICMP error messages - Examples
+
+- Source quench message: Informs the source that a datagram has been discarded due to congestion in router or the destination host
+- Source must slow down sending of datagrams until congestion is relieved
+- One message sent for each datagram discarded
+
+## Query
+
+ICMP can also diagnose some network problems through query messages, a group of four different pair of messages. In this type of ICMP message, a node sends a message that is answered in a specific format by the destination node
+
+### ICMP query messages - Examples
+
+
+## Traceroute program
+Allow us to see the route that IP datagrams follow from one host to another
+
+> Question: Based on what we known about ICMP, how should traceroute work?
+> 
+> - 
+
+
+- Sends UDP datagram to destination with TTL field in IP Header set to value 1
+	- Datagram = 40bytes
+    - 12 bytes data = seq no, time sent
+- Causes router to generate "time exceeded" ICMP error
+- Increment TTL progressively until final destination is reach
+- Terminating:
+	- UDP port chosen is a non existence port
+    - Destination sends ICMP "Port unreachable" error
+- For each TTL value, 3 datagra,s (probes) are sent
+
+> Question: Some firewalls disable UDP messages, is there an alt method?
+>
+> - 
+
+
+
+> Question : Is there any diff between route info shown by Traceroute and IP record route?
+>
+> -
+
+
+
+
