@@ -82,14 +82,60 @@ UDP:
     - We have 0,185,330 instead
     
 ## Options
+![CS3103-3-7.PNG]({{site.baseurl}}/img/CS3103-3-7.PNG)
+
+#### Format
+![CS3103-3-8.PNG]({{site.baseurl}}/img/CS3103-3-8.PNG)
+
+We want to copy all the options from the first fragment to all the fragment
+
 
 ### Record Route Option
+Record the route in which the packet is moving.
+
+![CS3103-3-9.PNG]({{site.baseurl}}/img/CS3103-3-9.PNG)
+
+- 40 bytes
+- 9 address only
+
+
 Concept:
+A packet from network `67.0.0.0/24` to `138.6.0.0/16`
+
+- Type field is set to 7 initially
+- Pointer points to the byte in which the next empty address block is at
+
+![CS3103-3-10.PNG]({{site.baseurl}}/img/CS3103-3-10.PNG)
+
+The pointer might exceed, but the reciever will check the length to ensure that it doesnt go beyond what is needed
+
+> If it exceeds 9 address, it cannot record the 10th add
+
 ### Strict source route Option
+Follow the path defined by the sender which is denoted by the ipaddresses
+
+![CS3103-3-11.PNG]({{site.baseurl}}/img/CS3103-3-11.PNG)
+
+- Notice how it will swap the address of the destination and the list of ip address each time in moves forward to the next router
+
+![CS3103-3-12.PNG]({{site.baseurl}}/img/CS3103-3-12.PNG)
+
+
+> Normally ip packet will have final destination, but then in this case.. the destination packet is just the next hop that is stored in the list.
+
+
+Purpose: We might want to check if a certain path exist, we can use this to test if such a path exist
+
+
 
 ### Loose source route option
+![CS3103-3-13.PNG]({{site.baseurl}}/img/CS3103-3-13.PNG)
 
-### IP components
+The packet can go to many other router before going to the ip written in this list
+
+
+#### IP components
+![CS3103-3-14.PNG]({{site.baseurl}}/img/CS3103-3-14.PNG)
 
 # ICMP (IPV4)
 - What if router cannot route to deliever datagram
@@ -100,8 +146,22 @@ Concept:
 Router needs to inform source to take action to avoid or correct problem. 
 ICMP:
 	- Allows router and hosts to send error or control messages to other routers or hosts
-    - Error reporting mechanism and can only report condition back to the original source
+    - Error reporting mechanism and can only report condition **back to the original source**
     - ICMP is specified in RFC 792
+    
+SDN: Software defined network, let the programmer decide the software stuff so remove all the software within the switch and the routers
+e.g Everything is dynamically programmed
+
+
+
+Network layer:
+![CS3103-3-15.PNG]({{site.baseurl}}/img/CS3103-3-15.PNG)
+
+- ARP is not really used
+- ICMP message goes into IP data
+- It is then put into ethernet frame and then tranmitted
+
+> ICMP message is encapsulate in the ip header which is why it is at the top of the network layer. 
 
 #### Format
 - 8 byte header, variable size data section
