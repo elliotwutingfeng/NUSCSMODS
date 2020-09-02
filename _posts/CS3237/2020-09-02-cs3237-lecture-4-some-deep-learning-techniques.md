@@ -142,7 +142,8 @@ We will get this very long equation.. The problem here is that when we do our le
 
 To Solve this, we introduce a special RNN called long short term memory
 
-[10]
+![CS3237-4-10.PNG]({{site.baseurl}}/img/CS3237-4-10.PNG)
+
 
 ### Input stage
 - The inputs are multiplied by weights and put through a tanh function to squeeze it to betweem -1 and 1
@@ -162,12 +163,31 @@ To Solve this, we introduce a special RNN called long short term memory
 - The number of nodes in each gate is called the hideen layer size
 
 Using the LSTM Cells:
-[13]
+![CS3237-4-13.PNG]({{site.baseurl}}/img/CS3237-4-13.PNG)
+
 
 The network is one column, at the horizontal axis is the netowork over time. 
+
+- Takes the input
+- Trains the LSTM
+- Takes the memroy from prev time steps and train again and so on and so forth
+
+
+Time distributed layer:
+Take the output over time and perform a classification or regression.
+
+> We can stack LSTM but
+>
+> - More complex: More parameters
+
+
+#### Using LSTM in Keras
+{Check notes/slides 15 - 32}
 
 
 
 ## Architecture: Autoencoders (AEs)
 ## Architecture: Generative Adversarial Netowrks (GANs)
 ## Architecture: Convulutional Neural Networks (CNNs)
+
+# Slides
