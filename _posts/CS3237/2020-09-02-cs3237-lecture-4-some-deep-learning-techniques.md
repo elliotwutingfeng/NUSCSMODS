@@ -39,6 +39,36 @@ Catch:
 
 ![CS3237-4-1.PNG]({{site.baseurl}}/img/CS3237-4-1.PNG)
 
+> An epoch is one cycle through the training data
+
+Problems:
+- Drop too many neurons in each epoch: Underfit
+
+
+## Noise layers
+Add Gaussian noise to change the data to look like new data
+
+![CS3237-4-2.PNG]({{site.baseurl}}/img/CS3237-4-2.PNG)
+
+[Keras link](https://keras.io/layers/noise)
+
+## Regularisers
+A penalty that is applied to the loss function of a layer
+
+For example, in regresss our loss function may look like RSS (Square error loss):
+![CS3237-4-3.PNG]({{site.baseurl}}/img/CS3237-4-3.PNG)
+
+> This will give us seuqared error
+
+
+Our optimisation algo will find the values of params to minimise the loss function
+
+- If there are too many para: the models starts to learn the unique noise of the training data -- Overfitting or memorising
+- Force a reduction -> Simplication -> In parameters
+
+We can add in a penalty that is proportional to my parameters
+
+
 
 
 # Long Short Term memories (LSTM)
