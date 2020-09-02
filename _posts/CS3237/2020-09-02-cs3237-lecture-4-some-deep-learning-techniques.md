@@ -66,7 +66,22 @@ Our optimisation algo will find the values of params to minimise the loss functi
 - If there are too many para: the models starts to learn the unique noise of the training data -- Overfitting or memorising
 - Force a reduction -> Simplication -> In parameters
 
-We can add in a penalty that is proportional to my parameters
+We can add in a penalty that is proportional to my parameters (l1 regulisation ) or Sequares of parameters (l2 Regulisation) to loss fnction:
+![CS3237-4-4.PNG]({{site.baseurl}}/img/CS3237-4-4.PNG)
+
+
+The hyperparameter lamda controls how much flexibility we give to the parameters, a higher lamba means more strict control
+
+- L1: Eliminates less important parameters and simplifies the output
+- L2: More effective in severe overfitting since it squares the parameters
+
+> If lambda is too high, the model will underfit
+
+### Regularizers
+- kernal: Controls main weights (Lines connecting the green nodes)
+- Bias: Controls the bias weights (Lines connecting the orange nodes)
+- Activity: Controls based on layer outputs (o1 and o2)
+
 
 
 
