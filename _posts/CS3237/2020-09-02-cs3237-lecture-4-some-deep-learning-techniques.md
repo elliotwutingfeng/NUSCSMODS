@@ -82,9 +82,59 @@ The hyperparameter lamda controls how much flexibility we give to the parameters
 - Bias: Controls the bias weights (Lines connecting the orange nodes)
 - Activity: Controls based on layer outputs (o1 and o2)
 
+![CS3237-4-5.PNG]({{site.baseurl}}/img/CS3237-4-5.PNG)
+
+
+# Deep learning
+In the previous lecture we look at neural networks: 
+- Unsupervised and supervised techniques
+- Selection of hyperparameters
+- Overfitting
+
+
+The neural networks of the previous lectures has an issue:
+- There will be many parameters to train
+- Complex layers
+- Curse of dimensionality
+
+> Trade of from learning ability and space
+
+
+This is a motivation for deep learning
+- consist of many layer
+- Layers are not uniform
+- Layers can have differnet function
+- Transform and simplify the data so that networks at the end will be less dense and easier to use to train
 
 
 
 
-# Long Short Term memories (LSTM)
+## Architecture: Long Short Term memories (LSTM)
+Key issue with MLP:
+- Assumption that samples are independent
+	e.g the word 'often' usually follows 'is' or 'are'. Words are not indepednent
+- Solution: Use pas and sometimes future info to learn about current data
 
+In RNNs we feed the output of the MLP back to the hidden layer and maybe backwards to previous layers
+
+![CS3237-4-6.PNG]({{site.baseurl}}/img/CS3237-4-6.PNG)
+
+> The prev output becomes the input for the hidden layer.
+
+- Training is carried out using standard gradient descent that we talk abt
+- If we unroll an RNN in time, we get:
+![CS3237-4-7.PNG]({{site.baseurl}}/img/CS3237-4-7.PNG)
+- We see that learning each new piece of data is now affected by past pieces
+
+- Recurrent neural networks are good at learning from patterns in past data:
+	- Predicting next words in sentence
+    - Predict stock performance base on past data
+    - Trajectory prediction forrobot
+- Standard RNNS have probelm:
+![CS3237-4-8.PNG]({{site.baseurl}}/img/CS3237-4-8.PNG)
+
+
+
+## Architecture: Autoencoders (AEs)
+## Architecture: Generative Adversarial Netowrks (GANs)
+## Architecture: Convulutional Neural Networks (CNNs)
