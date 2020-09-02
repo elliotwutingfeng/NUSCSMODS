@@ -133,6 +133,21 @@ In RNNs we feed the output of the MLP back to the hidden layer and maybe backwar
 - Standard RNNS have probelm:
 ![CS3237-4-8.PNG]({{site.baseurl}}/img/CS3237-4-8.PNG)
 
+We will get this very long equation.. The problem here is that when we do our learning, we have to do our partial differential to get our weights. If we apply this chain rule, we will end up with a differential that looks like:
+![CS3237-4-9.PNG]({{site.baseurl}}/img/CS3237-4-9.PNG)
+
+
+- The gradient of signoid is always small, as we multiply this gradient through time... it eventually gets 0
+- When it becomes 0, it eventually stop learning
+
+To Solve this, we introduce a special RNN called long short term memory
+
+[10]
+
+### Input stage
+- The inputs are multiplied by weights and put through a tanh function to squeeze it to betweem -1 and 1
+- Input gate: Another neural network that is train to a value of 0 to 1, this controls the degree at which the input is allowed to pass to the next stage
+
 
 
 ## Architecture: Autoencoders (AEs)
