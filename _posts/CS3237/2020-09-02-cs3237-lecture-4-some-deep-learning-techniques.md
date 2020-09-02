@@ -148,6 +148,24 @@ To Solve this, we introduce a special RNN called long short term memory
 - The inputs are multiplied by weights and put through a tanh function to squeeze it to betweem -1 and 1
 - Input gate: Another neural network that is train to a value of 0 to 1, this controls the degree at which the input is allowed to pass to the next stage
 
+![CS3237-4-11.PNG]({{site.baseurl}}/img/CS3237-4-11.PNG)
+
+### Forgot stage
+- Forget gate: Learns the range from 0 to 1 and controls the influence of past and current input
+
+![CS3237-4-12.PNG]({{site.baseurl}}/img/CS3237-4-12.PNG)
+### Output stage
+- Output stage: Decides what output to pass and what to suppress
+
+### Hidden layer size
+- Each gate appears to be a single node but they are actually a collection of nodes
+- The number of nodes in each gate is called the hideen layer size
+
+Using the LSTM Cells:
+[13]
+
+The network is one column, at the horizontal axis is the netowork over time. 
+
 
 
 ## Architecture: Autoencoders (AEs)
