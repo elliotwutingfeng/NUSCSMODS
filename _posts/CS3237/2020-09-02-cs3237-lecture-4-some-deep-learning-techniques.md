@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3237 - Lecture 4: Some deep learning techniques'
 ---
 # Recap: Overfitting
