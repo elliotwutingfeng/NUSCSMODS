@@ -328,3 +328,76 @@ Lets say oracle say yes.
 - Wrong use of encryption: encryption is used to protect integrity
 
 ## Examples of attacks on block ciphers
+
+# Cryptography pitfalls: Attacks on cryptosystem implementation
+
+## Resuing IV, wrong choices of IV, one time pad key
+
+### Reusing and wrong choice
+- Some applications overlook IV generation
+- Same IV might be reused
+
+> For example, to encrypt a file F, the IV is derived from the filename. It is quite common to have files with the same file name
+
+### Reusing one time pad key
+- Verona project
+
+
+## Predicatable secret key generation
+
+### Random Number generation
+Scenario 1:
+- Coding program for simulation system
+- In program need a sequence of random numbers
+- How to get random numbers
+
+
+Scenario 2:
+- Coding program for security system
+- Need a random number for like a temp secret key
+- How to get these random numbers?
+
+##### Java shit
+
+## Design your own cipher
+Do not make ur own cryptosystem or make a slight modification to existing scheme unless you have in depth knowledge of the topic
+
+# Kerchjoff principle vs Security through Obscurity
+
+> A system should be secure even if everything about the systen except the secret key is a public knowledge
+
+Useful:
+- Easier to keep secret key vs secret algo
+- easeier to change secret key vs secret algo
+- Standardised algo allows easy deployment
+- Public scrutiny on open algo: Peer revie and security validation
+
+##### Security through obscurity
+- To hide the design of the system in order to achieve security
+> Is it good or bad?
+
+#### Examples
+- RC4: 
+	- Intro in 1987 and algo is trade secret
+    - 1994: Descp of algo was anonymously posted in mailing group
+- MIFARE Classic:
+	- A contactless smartcard widely used in Europe employed a set of protocols and algo
+    - Reversed engineered in 2007
+- Usernames:
+	- Not secrets
+    - Not advisable to publish all the usernames
+- Computer network structure and settings:
+	- Location of firewalls and rules
+    - These are not secrets and many users within org would have known the settings
+    - Still not advisable to them
+- The actual program used in a smart card:
+	- Not advisable to publish it
+    - If prog is published, an adversary may be able to identity vulnerability that is prev unknown or carry out side channel attacks
+    - A sophisticated advisory may be able to reverse engineer the code 
+
+> We should not use obscurity 
+
+- One layer in defense in depth strategy
+- Deter or discourage novice attackers but ineffective agaisnt attackers with high skill and motivation
+- System must remain secure even if everything about it except its key is known
+
