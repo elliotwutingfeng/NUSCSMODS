@@ -331,4 +331,8 @@ User can pass the password to another person | not possible
 
 
 # Multifactor authentication
+
+
+
+
 ## Case studies
