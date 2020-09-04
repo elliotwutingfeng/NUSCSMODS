@@ -2,6 +2,7 @@
 layout: post
 published: true
 title: 'CS2107 - Lecture 4: Authentication (Password)'
+subtitle: Week 4 - Week 5
 ---
 
 # Overview
@@ -130,6 +131,17 @@ Possible attacks:
 Attacker may interceot the password during bootstrapping
 
 > Attacker use default password
+> 
+> There are IOT devices which still has the default password
+
+
+> Question:  
+> - What are the implication of shipping all access with the same default password
+> - What are the implication of shipping each access point with its individual password
+>
+> Tutorial question
+
+
 
 
 ## Searching password
@@ -142,12 +154,15 @@ Password guessing:
 
 
 
-Exhastive search and dictionary attacks
+### Exhastive search and dictionary attacks
 
 - Attacker tries differnet password during login sessions
 - Attacker can employ exhastive search: tries all combo
 - Restrict the search space to large collection of probable passwords
 	- Words from dictionary 
+    
+![CS2107-3-10.PNG]({{site.baseurl}}/img/CS2107-3-10.PNG)
+
 ### Dictionary attacks
 Hybid attacks: It is possible to carry out exhastive search together with dictionary attack/
 
@@ -163,13 +178,16 @@ Hybid attacks: It is possible to carry out exhastive search together with dictio
 Captures/records the keystrokes and sends the info back to attacker via covert channel
 
 - By software: Some computer virus are designed as keylogger
-- By hardware: 
+- By hardware
+
 
 ### Login spoofing
 Fake loging screens
 
 Prevention:
-- Some system has a secure attention key
+- Some system has a secure attention key or secure attention sequence
+- When press, system starts the trusted login processing
+
 
 ### Phising
 - Same as login spoofing
@@ -190,7 +208,8 @@ Prevent phishing:
 
 ### Password caching
 - Shared workstation, password can be stolen
-- Prevention: Clear cache
+- Prevention: Clear browser cache
+
 
 ### Insider attack
 - Malicious system admin who steals password file
@@ -200,7 +219,7 @@ Prevent phishing:
 ## Preventive measures
 - Random
 	- Automated password generator
-    - High entropu but difficult to remember
+    - High entrophy but difficult to remember
 - Limited login attemps
 	- Add delay in login session
     - Add security questions
@@ -218,7 +237,13 @@ Prevent phishing:
 - Passwords should be hased and stored in password files
 - During authentication, the password entered by entitty is hased and compared with the value stored in the password file
 - Desired tthat the same password will be hased into two diff values for two diff userid
+![CS2107-3-11.PNG]({{site.baseurl}}/img/CS2107-3-11.PNG)
+
+
 - salt
+
+![CS2107-3-12.PNG]({{site.baseurl}}/img/CS2107-3-12.PNG)
+
 
 
 ### Security questions
@@ -255,6 +280,9 @@ Attacker can
 2) Obtain the pin
 
 
+
+
+
 ### Preventive measures
 - Instll anty skimmer device
 - Shield the keypad
@@ -268,7 +296,7 @@ Attacker can
 - Algo decides if to reject or accepts
 
 Diagram:
-
+![CS2107-3-13.PNG]({{site.baseurl}}/img/CS2107-3-13.PNG)
 
 
 ##### Differences
@@ -278,7 +306,7 @@ password | biometrics
 Can be changed (revoked) | Can't
 need to remember | Dont have to
 Zero non matched rate | probability of error
-User can pass the password to another person | not possibke
+User can pass the password to another person | not possible
 
 ### Matching algo: Similiarity
 - there might be noises in capturing data
