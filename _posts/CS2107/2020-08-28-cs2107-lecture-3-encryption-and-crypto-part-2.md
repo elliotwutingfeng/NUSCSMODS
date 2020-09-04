@@ -191,6 +191,10 @@ A cipher with good diffusion:
 - Block cipher: high diffusion
 - Stream: Low diffusion - Due to just xor
 
+
+> One bit flip can affect many parts of the cipher text
+
+
 ### Confusion
 An attacker shld not be able to predict what happen to the cipher when **one character** in the plain text or key changes
 
@@ -201,6 +205,10 @@ The input undergoes complex transformation during encryption
 
 A good cipher: 
 - Has complex functional relationship between the plaintext/key pair and the ciphertext
+
+
+> Cannot predict where the change was made or was going to be made (Make it hard for the attacker known the encription)
+
 
 ## Block cipher modes of operation
 - Block cipher can encrypt n bit plain text with n as the cipher block size
@@ -263,6 +271,8 @@ Compared to AES: The 3DES is less efficient:
     - Can only encrypt 64 bit blocks at time
 
 ### Padding Oracle attack
+AES CBC mode is not secure agaisnt this padding attack
+
 Attacker can send queries and Orcle will output the answer
 - Encruption oracle: On query containing plaintext x, oracle output ciphertext
 - Decryption: Query with plaintext c
@@ -285,6 +295,12 @@ Padding otacle:
 - Output: yes or no
 	- Yes, if the plaintext is in correct padding format
     - No, otherwise
+
+
+
+
+
+
 
 #### Padding format
 ![CS2107-2-18.PNG]({{site.baseurl}}/img/CS2107-2-18.PNG)
@@ -312,6 +328,11 @@ Attacker wants to find the value of X5:
     - if the attacker tries to get the key,
     they can make the inference that 07 = 04 xor 03
 
+WORKING:
+
+![CS2107-3-1.PNG]({{site.baseurl}}/img/CS2107-3-1.PNG)
+![CS2107-3-2.PNG]({{site.baseurl}}/img/CS2107-3-2.PNG)
+
 #### Additional remarks
 - Attack modifies iv to iv`
 
@@ -321,13 +342,40 @@ Lets say oracle say yes.
 	- X` = I xor IV`
 - We can find the X5 by working backwards
 	- Given the padding oracle
+- Extend the algo to find all the plaintext
+- Algo need to know plaintext length: It is possible to determine the length
+- The attack is practical, there are real world protocols between a client and server that performs this
+> If the client submits a ciphertext whose plaintext is not padded correctly, the server will reply with an error message
 
 
 #### Important lessons from padding oracle attack
 - There are ways for attacker to exploit seemingly useless infomation
 - Wrong use of encryption: encryption is used to protect integrity
 
-## Examples of attacks on block ciphers
+# Security analysis of a cipher (LECTURE 2)
+- Security analyisis of a cipher done to respect to:
+	- Treat mode:
+    	- Assumption about attacker capabilities
+        - Cat into black boxes
+
+Black box:
+- Query operation to the cipher
+- A query to a cipher: The operation taht sends input models
+- Attackers capabilities
+	- Ciphertext only
+    - Known plaintext
+
+![CS2107-3-3.PNG]({{site.baseurl}}/img/CS2107-3-3.PNG)
+
+Gray Box mdels:
+Attacker has access to cipher implementation.
+- Side channel:
+	- Source of info that dependens on the implementation
+    - Observer and measure analog characteristics of a cipher implementation
+    - Type side channel: Executive power consumption
+- Invasive attack
+  - More powerful
+  - More expensive: More sophisticated equipment
 
 # Cryptography pitfalls: Attacks on cryptosystem implementation
 
@@ -338,6 +386,10 @@ Lets say oracle say yes.
 - Same IV might be reused
 
 > For example, to encrypt a file F, the IV is derived from the filename. It is quite common to have files with the same file name
+
+
+The best is to get good values for IV
+
 
 ### Reusing one time pad key
 - Verona project
@@ -357,7 +409,10 @@ Scenario 2:
 - Need a random number for like a temp secret key
 - How to get these random numbers?
 
+
+> We need strong random numbers for cripto
 ##### Java shit
+![CS2107-3-4.PNG]({{site.baseurl}}/img/CS2107-3-4.PNG)
 
 ## Design your own cipher
 Do not make ur own cryptosystem or make a slight modification to existing scheme unless you have in depth knowledge of the topic
@@ -395,9 +450,12 @@ Useful:
     - If prog is published, an adversary may be able to identity vulnerability that is prev unknown or carry out side channel attacks
     - A sophisticated advisory may be able to reverse engineer the code 
 
-> We should not use obscurity 
+> We can use it but its only be use as one layer >_<
 
 - One layer in defense in depth strategy
 - Deter or discourage novice attackers but ineffective agaisnt attackers with high skill and motivation
 - System must remain secure even if everything about it except its key is known
 
+# Slides
+
+<iframe src="https://drive.google.com/file/d/1v9Exazq6MwuyWJ5wsX0cOZGlJU_p3_EG/preview" width="640" height="880"></iframe>
