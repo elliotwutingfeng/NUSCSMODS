@@ -301,7 +301,7 @@ Diagram:
 
 ##### Differences
 
-password | biometrics
+Password | Biometrics
 --------| --------
 Can be changed (revoked) | Can't
 need to remember | Dont have to
@@ -311,6 +311,7 @@ User can pass the password to another person | not possible
 ### Matching algo: Similiarity
 - there might be noises in capturing data
 - leads to error making matchinf decision
+![CS2107-3-15.png]({{site.baseurl}}/img/CS2107-3-15.png)
 
 
 
@@ -318,6 +319,7 @@ User can pass the password to another person | not possible
 - make decison based on adjustable threshold
 - Lower: More relax in accepting
 - Higher: More stringent 
+![CS2107-3-14.PNG]({{site.baseurl}}/img/CS2107-3-14.PNG)
 
 
 ### Other erros
@@ -325,6 +327,7 @@ User can pass the password to another person | not possible
 - Failure to enroll rate (FER): Some user biometric data cannot be captured during **enrollment**
 - Failer to capture rate (FTC): Users biometric data cannot be captured during **Authentication**
 
+![CS2107-3-16.PNG]({{site.baseurl}}/img/CS2107-3-16.PNG)
 
 
 # Multifactor authentication
