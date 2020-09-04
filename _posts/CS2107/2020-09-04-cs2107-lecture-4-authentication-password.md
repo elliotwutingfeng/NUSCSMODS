@@ -12,13 +12,14 @@ Types:
 	- For connection oriented communication
     - Communicating entity is an entity involved in communication
     - Mechanism: Password, challenge, response and biometrics
-- data origin authentication
+- Data origin authentication
 	- For connectionless communcation
     - Communicating entity is the origin of a piece of info
     - data origin authneticity implies data integrity 
     - Mechanisms: MAC or digital signature
     
 #### Threats
+![CS2107-3-5.PNG]({{site.baseurl}}/img/CS2107-3-5.PNG)
 
 ### Authenticity and integrity
 - Authentic: The claimed entity/origin is assured by supporting evidence
@@ -28,12 +29,20 @@ Types:
 Data origin authenticity implies data integrity
 - Authenticity is a stronger requriement than integrity
 
+But the reverse is not true: Data integrity does not imply data origin authenticity
+
 > - Some documents use the term integrity to mean authenticity
 > - Some claim that authenticity does not necessarity give integrity
 > - Pay attention to the context and the application involved
 
 
+
 ### Examples 
+
+Over different communication channels:
+
+![CS2107-3-6.PNG]({{site.baseurl}}/img/CS2107-3-6.PNG)
+
 
 - Alice get call
 - Claim to be from police
