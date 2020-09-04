@@ -62,23 +62,40 @@ Over different communication channels:
 
 # Password (Weak authentication)
 
-Stage 1: Bootstrapping
+**Stage 1: Bootstrapping**
 - Server and user establish common password
 - Server keeps track of a file recording the identity and corresponding password
 
+- The password is to be established during bootstrapping
+- This can be done
+	- Server choose password
+    - Default password
+> Question: Describe some bootstrapping mechanism that you have encountered
 
-Stage 2: Authentication
+
+
+**Stage 2: Authentication**
 - Server authenticates an entity
 - If entity gives the correct password corresponding to the claim identity, the entity is deemed authentic
+
+![CS2107-3-8.PNG]({{site.baseurl}}/img/CS2107-3-8.PNG)
+
+
+![CS2107-3-9.PNG]({{site.baseurl}}/img/CS2107-3-9.PNG)
 
 
 The identity does not need to be kept secret:
 - It could be: User name in computer system, bank accound no, customer id
 
 
-
 The password is a secret:
 - Only user and server knows
+
+> Question: Anaylyse a password system where no identity is involved
+> - Same password
+
+![CS2107-3-7.PNG]({{site.baseurl}}/img/CS2107-3-7.PNG)
+
 
 ### Identification, Authentication, Authorisation
 
@@ -89,7 +106,9 @@ Password system is classified as weak authentication system
 - Strong authenticaton:
 	- Info sniffed during process cant be used to impersonate the user
     - PKI
-    
+
+> Understand the difference between sniff and spoof
+
     
 Possible attacks:
 - Attacking bootstrapping
