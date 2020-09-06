@@ -37,3 +37,33 @@ Final flag: `flag{a$k_AnD_Y000uu_sH@Ll_93t_7h3_flAG_Fr0m_tH3_n0rAC1e!}`
 
 > This works because refer to the nor table.
 
+# Streaming
+
+![CS2107-3-17.png]({{site.baseurl}}/img/CS2107-3-17.png)
+
+2. Recieved
+ciphertext: 0x5043293d7eae13d76577e6b242bac1bca18d24b1a267caadeeeac9fa6618abb65bd4f4d98307b0e9
+encrytped flag: 0x362f485a05ea23882b47b2ed3089b489f2d26f82db38ac9d9cb59acd142bebdb04b7c589eb34c294
+
+
+Formula:
+k - key (Randomnised and hidden)
+A - My input (We have this) 
+Return cipher text: (A xor k) 
+Return Encripted: (F xor k)
+
+
+Getting the Flag:
+- Xor Ciphertext and Encrypted flag
+- Xor the answer ciphertext
+
+
+Reason:
+- (A XOR K)(F XOR K) => This will cancel out the K which results in (A XOR F XOR 0)..
+- Anything XOR 0 is itself, therefore we are left with (A XOR F)
+- We can get F by Xoring the (A XOR F) with A since A will cancel out with each other
+
+Flag: `flag{D0_N0T_r3u5S_K3y_f0r_S7r3@m_c1Ph3r}`
+
+
+
