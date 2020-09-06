@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: ''
+title: CS2107 - CTF 1
 ---
 # Hash it up
 1. `sha256sum hashItUp.png`
