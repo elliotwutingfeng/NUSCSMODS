@@ -66,4 +66,6 @@ Reason:
 Flag: `flag{D0_N0T_r3u5S_K3y_f0r_S7r3@m_c1Ph3r}`
 
 
+# Brute force
 
+# Prohpet
