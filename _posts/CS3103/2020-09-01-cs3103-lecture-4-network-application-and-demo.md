@@ -287,8 +287,36 @@ What are the additional components needed to send mail from Bob to Alice in the 
     - Not POP3/IMAP3 between mail to reciever at the end: HTTP
 
 ## SMTP Example
+- Connect: `telnet smtp.nus.edu.sg 25`
+- Details : `EMLO nus.edu.sg`
+- Login: `AUTH LOGIN <UserID IN BASE64 FORMAT` > `<PASSWORD IN BASE64>`
+- Write mail: 
+			   MAIL FROM: `<EMAILADD>`
+               RCPT to: `<RecieverADD>`
+               DATA
+               from: Alice
+               to: Bob - to another account
+               Hello this is a test mail
+               .
+
+
+
+- Close connection: `quit`
+
 ## POP example
 
+
+## POP3 and IMAP
+POP3:
+- Previous example use POP3 download and delete mode
+- POP3 download and keep copies of message on different client
+- POP3 is stateless across session
+
+
+IMAP:
+- Keeps all messages in one place, server
+- Allows user to org messages in folders
+- Keep user state accorss session
 
 # DNS (Domain Name Space)
 - The name consist of discrete elements that are related to each other usually using hierachical parent child semantics
