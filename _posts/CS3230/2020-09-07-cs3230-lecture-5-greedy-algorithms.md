@@ -209,3 +209,15 @@ Scan all edges in increasing order of weight and add the edge if both endpoints 
 
 ![CS3230-5-18.PNG]({{site.baseurl}}/img/CS3230-5-18.PNG)
 
+### Code
+![CS3230-5-19.PNG]({{site.baseurl}}/img/CS3230-5-19.PNG)
+
+### Analysis
+- After init sort which takes time O(mlogm), the complexity is dominated by teh total time taten UNION operation
+- Each time the component label a vertex changes, the component of F containing the vertex frows by at least the factor of 2, thus each vertex label changes at most O(lgn) times
+- It follows the total time spent updating vertex labels is only O(nlgn)
+
+> 2040s:
+> - Find and union are both logn
+
+
