@@ -160,4 +160,52 @@ Onegraph:
 - n = number of vertices
 - m = number of edges
 
+![CS3230-5-13.PNG]({{site.baseurl}}/img/CS3230-5-13.PNG)
+
+## Generic greedy algo
+Consider greedy algo for finding an MST of G = (V,E) that finds a spanning tree as follows
+
+- Initilised F = (V,E') where E' is empty
+- For i = 1 to n-1
+	- Let C1 .. Ck be the connected components of F
+    - Arbituarily chooe j in {1..k} and pick an edge e in E with minimum weight among edges with exactly endpoint in Cj
+    - Add e to E'
+
+> Graph F is a forest
+
+### Theory
+
+![CS3230-5-14.PNG]({{site.baseurl}}/img/CS3230-5-14.PNG)
+![CS3230-5-15.PNG]({{site.baseurl}}/img/CS3230-5-15.PNG)
+
+
+> Check it if the path e is e'
+
+### Prims algo
+There is only one non trivial component C which is a tree. Every other component contains one vertex.
+
+![CS3230-5-16.PNG]({{site.baseurl}}/img/CS3230-5-16.PNG)
+
+- Choose one random vertice
+- Check out going edges and select the one with least cost
+- See 2040s
+
+### Time complexity
+- Keep all the edges adjacent to C in a pq Q implemented using a min heap
+- At each step, extract the min weight edge (u,v) in Q
+	- if both vertices are in tree do nothing
+    - If only one, say u, is in the component C then we insert v into C and all edges from v into Q
+- Each edge (u,v) can be inserted into Q at most twice.
+	- Adding edges from u
+    -　Adding edges from v
+- The size of Q is at most M hence insertion is logm time
+
+- Time complexity O(mLogn)
+
+## Kruskal algorithm
+![CS3230-5-17.PNG]({{site.baseurl}}/img/CS3230-5-17.PNG)
+
+Scan all edges in increasing order of weight and add the edge if both endpoints are in different components
+
+![CS3230-5-18.PNG]({{site.baseurl}}/img/CS3230-5-18.PNG)
 
