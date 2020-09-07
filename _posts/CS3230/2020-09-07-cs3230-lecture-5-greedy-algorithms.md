@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3230 - Lecture 5 : Greedy Algorithms'
 ---
 Motivation: To figure out which of the option is the best and pick that wihtout making all recursive calls
