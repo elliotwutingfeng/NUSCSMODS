@@ -131,6 +131,7 @@ The goal is to satisfy client requests without involving origin server. Improve 
 # FTP
 FTP use the services of TCP, it needs two TCP connection.
 
+![CS3103-4-1.PNG]({{site.baseurl}}/img/CS3103-4-1.PNG)
 
 Port: 
 - 21 : Use for control connection
@@ -139,17 +140,86 @@ Port:
 
 > FTP server maintains the state about the user throughout the session: Current directory and earlier authentication
 
+The control command in the FTP is perm but for each file transfer, the current data connection will be close. A new data connection is needed to transfer the next file. 
+
+> Control commands: "Out of Band" 
+> Http is "In band"
+
+FTP is stateful: 
+- FTP maintains the user state until the user terminates the session
+
+- Resolving heterogeneity between client and server
+![CS3103-4-2.PNG]({{site.baseurl}}/img/CS3103-4-2.PNG)
+
+File type:
+- ASCII file 
+- Image file
+
+Data structure:
+- File strcuture, record structure and page structure
+
+Transmission modes:
+- Stream mode, block mode and compressed mode
+
+> Difference in file types, encryption types, datastrcuture between the client and server
+
+
+FTP would convert the files into the proper format for the server/client can read
+
 ## FTP connection
 
 ACTIVE MODE:
+1. Control connection to port 32
+2. client select arb port num
+3. Informs the server 
+4. Server use port 21 to connect to clients data port
+
+![CS3103-4-3.PNG]({{site.baseurl}}/img/CS3103-4-3.PNG)
+
+> However, sometimes incoming ports are blocked by firewalls.
+> 
+> - Let the client init the data connection instead of the server
+> - In this image you can see that the server makes the connection..
 
 
 PASSIVE MODE:
+1. Client informs the server passive mode
+2. Server open arb port for data connection
+3. Informs the client that it has open a port and waiting for its connection
+4. Client initaites the data connection
 
+![CS3103-4-4.PNG]({{site.baseurl}}/img/CS3103-4-4.PNG)
+
+> This solves the firewall
 
 ## DEMO
+1. Telnet to connect to ftp
+`telnet mirror.nus.edu.sg 21`
+- default ftp is 21
 
+Output
+![CS3103-4-5.PNG]({{site.baseurl}}/img/CS3103-4-5.PNG)
 
+2. Type in user and password 
+> In this case it can be anoymous since the sch server configured it too
+
+Response:
+`230 Login successful`
+
+3. Commands
+- `PWD` :  check current directory
+- `CWD /pub/apache` : CHange director
+
+> If there is a - it means there is a continuation for the status. the last part shld not have a -
+- `PASV`: tell server you want passive
+- `EPSV`: external passive mode, waiting for another connection to the given port num
+- `LIST`: File directory list transfer (passive or active must be configured first)
+
+4. Connect to using another 
+- `telnet mirror.nus.edu.sg <port given from 3.>`
+- `LIST`
+
+> Please note that the connection will close after awhile
 
 # Email protocols
 
@@ -164,15 +234,57 @@ Components:
 - Message access agents
 	- POP3 => Post office protocol v3
     - IMAP4 => Internet Mail Access Protocol V4
-  
+
+![CS3103-4-6.PNG]({{site.baseurl}}/img/CS3103-4-6.PNG)
+
+MTA client establish a connection to the server and pushes the message to the senders mail server. 
+- It is queued for transfer to destination
+- This follows smtp protocol
+- Client server connection between MTA server at the reciever server.
+- The message is psuh form the sender server to the reciever server
+
+
 #### Push vs pull
+![CS3103-4-7.PNG]({{site.baseurl}}/img/CS3103-4-7.PNG)
 
 - PULL: TCP connection is intitiated by the machine that wants to recieved the file
 - PUSH: TCP connection is initiated by the machine that wants to send a file
 
 > What is HTTP THEN?
-##### Format
+> - Can be classified as PULL as most of the time the client connects to the server to retrieve the file from the server
 
+
+What are the additional components needed to send mail from Bob to Alice in the image/
+
+#### User agent
+![CS3103-4-8.PNG]({{site.baseurl}}/img/CS3103-4-8.PNG)
+
+##### Format
+![CS3103-4-9.PNG]({{site.baseurl}}/img/CS3103-4-9.PNG)
+
+> why isnt there a format for FTP
+
+1. Envelopes (Yellow)
+- Location
+- Use to route to the reciever
+
+2. Message (blue)
+- header
+	- header name
+    - reciever name
+    - date
+- body
+	- Content to be sent to the reciever
+![CS3103-4-10.PNG]({{site.baseurl}}/img/CS3103-4-10.PNG)
+
+### Web based
+![CS3103-4-12.PNG]({{site.baseurl}}/img/CS3103-4-12.PNG)
+
+
+- Are actually http based
+- Changes
+	- Not SMTP from sender to mail server: HTTP
+    - Not POP3/IMAP3 between mail to reciever at the end: HTTP
 
 ## SMTP Example
 ## POP example
@@ -248,5 +360,3 @@ Changes must be made to the DNS master file. THe file must be updated dynamicall
 
 
 # P2P Applications
-
-
