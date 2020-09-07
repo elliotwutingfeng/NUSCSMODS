@@ -388,3 +388,126 @@ Changes must be made to the DNS master file. THe file must be updated dynamicall
 
 
 # P2P Applications
+- No always on server
+- arbitrary end system directly communicate and serve each other
+	- Each host runs both server and client processes
+
+Examples:
+- file distribution 
+- streaming
+- VoIP
+- multiplayer games
+
+
+> Question: What is the advantage of P2P?
+>
+> - Scalability
+
+
+> Question: How the host find the IP addresses of each other?
+
+## File distribution: Client server vs P2P
+> How much time to distribute file from one server to N peers
+
+- Server transmission: Must be sequentially send N file copies
+	- Time to send one copy: F/us
+    - Time to send N copies: NF/us
+    
+- Client: Each client must download file copy
+	- dmin = min client download rate
+    - min client download time: F/dmin
+    
+    
+## File distribution: P2P
+- Server transmission: Must upload at least one copy
+	- time to send one copy: F/us
+- Client: Each client must download file copy
+	- min cleint download time: F/dmin
+- clients: as aggregate must download NF bits
+	- max upload rate (limiting max download rate) is us + Sum of ui
+
+
+### Client server vs P2P: example
+
+## P2P file distribution: BitTorrent (BT)
+- file divided into 256Kb chunks
+- peers in torrent send/recieve file chunk
+
+
+
+As a leecher download pieces of the file, replicas of the pieces are created. More downloads means more replicas available. 
+
+
+As soon as a leecher has a complete piece, it can potentially share it with other downloaders. Eventually each leecher becomes a seeder by obtaining all the pieces and assembles the file. Verifies the checksum
+
+## BitTorrent: Requesting, sending file chunks
+Requesting chunks:
+- At any given time, different peers have different subset of file chunks
+- periodically, Alice ask each peer for list of chunks that they have
+- Alice requests missing chunks from peers
+- Requires - Piece selection policies:
+	- the order in which pieces are selected by different peers is criticals for good performance
+    - If an inefficient policy is used, then peers may end up in a situation where each has all identical set of easily available pieces and none of the missing ones.
+    - If the original seed is prematurely taken down, then the file cannot be completely downloaded
+    > What are good policies
+## Piece selection
+
+- Strictly priority 
+- Random first piece
+- Rarest first 
+- Endgame mode
+
+
+Random first piece
+
+- initally a peer has nothing to trade
+- important to get a complete piece asap
+- select random piece of the file and download it
+
+
+Rarest piece first
+- Determine the piece that are most rare among your peer, and download those first
+- Logically, the most commonly available piece are left till the end to download
+
+
+Endgame mode
+- Near the end, missing pieces are requested for every peer containing them
+- This ensures that a download is not prevented from completion due to a single peer with a slow transfer rate
+- Some bandwidth is wasted, but in practice this is not too much
+
+#### Choking
+- Choking is a temporary refusal to upload to free riders. It one of BT's most powerful idea to deal with free riders (those who only downlaod but never upload)
+- tit for tat strategy is based on game theoretic concepts
+
+## BitTorrent: Requesting, sending file chunks
+Sending chunks: tit for tat
+- Alice sends chunks to four peer currently sending her chunks at highest rate
+	- other peers are choked by Alice (do not recieve chunks from her)
+    - re-evaluate top 4 every10 secs
+- Every 30 secs: randomly selects another peer, starts sending chunks
+	- Optimisitcally unchoked this peer
+    - Newly chosen peer may join top 4
+
+### Tit for tat
+
+### Upload-Only mode
+- Once download is complete, a peer can only upload. The questions is, which nodes to upload to?
+- Policy: Upload to those with the best upload rate. The ensures that pieces get replicated fastern and new seeders are created fast
+
+
+### Simple database: DRe-centralised
+
+### HashTable: De centralised
+- More convenient to store and search on numerical representation of key
+- key = hash(original key)
+
+### Distributed Hash Table (DHT)
+- Distributed(key,value) pairs over millions of peer
+	- Pair are evenly distributed over peer
+- Any peer can query database with key
+	- database returns value for the key
+    - To resolve query, small number of messages exchanged among peer
+- Each peer only knows about a small number of other peers
+- Robust to peer coming and going (churn)
+
+
