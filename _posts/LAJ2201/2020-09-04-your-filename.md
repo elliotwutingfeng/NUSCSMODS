@@ -67,5 +67,11 @@ Flag: `flag{D0_N0T_r3u5S_K3y_f0r_S7r3@m_c1Ph3r}`
 
 
 # Brute force
+![CS2107-3-18.png]({{site.baseurl}}/img/CS2107-3-18.png)
+
+
+
+final flag: `flag{8405a020cb400c48515ec3e2f9d823af}`
+
 
 # Prohpet
