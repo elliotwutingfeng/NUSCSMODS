@@ -453,7 +453,13 @@ The sub domains which is inside but not taken care of in a zone, we called it "A
 
 > The zone might now be only one level.. it depends
 
+##### Domain and zone
+![CS3103-4-31.PNG]({{site.baseurl}}/img/CS3103-4-31.PNG)
 
+- The CA might choose to store other stuff in its zone
+
+##### A node in multiple zones
+![CS3103-4-32.PNG]({{site.baseurl}}/img/CS3103-4-32.PNG)
 
 ## Primary and secondary servers
 - Primary: Stores info about the zone in is an authority for
