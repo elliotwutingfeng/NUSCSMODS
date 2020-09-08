@@ -6,17 +6,23 @@ title: CS2107 - CTF 1
 # Hash it up
 1. `sha256sum hashItUp.png`
 
+![CS2107-CTF1-1.PNG]({{site.baseurl}}/img/CS2107-CTF1-1.PNG)
+
 Flag: `flag{fca92a7006aa0c356ede1d323652aa95f1029c86cdc77ac707a991e0f11a8ada}`
 
 # Decrypt me
 1. Just `openssl rsautl -decrypt -in flag.txt.enc -out decrypted.txt -inkey cs2107.pem`
 Flag: `flag{k33p_y0ur_pr1v473_k3y_2020deed}`
 
+
+
 # NORacle
 
 1. Asking to oracle:
 
-256Character
+- 256Character
+
+
 Question:
 `000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`
 
@@ -32,10 +38,15 @@ Ans:
 
 3. 
 Plug in the binary string into some online binary to ascii converter: [Link](https://www.rapidtables.com/convert/number/binary-to-ascii.html)
+
+
 Final flag: `flag{a$k_AnD_Y000uu_sH@Ll_93t_7h3_flAG_Fr0m_tH3_n0rAC1e!}`
 
 
 > This works because refer to the nor table.
+
+![CS2107-CTF1-2.PNG]({{site.baseurl}}/img/CS2107-CTF1-2.PNG)
+
 
 # Streaming
 
