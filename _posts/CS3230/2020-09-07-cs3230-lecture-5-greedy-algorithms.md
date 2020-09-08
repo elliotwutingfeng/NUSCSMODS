@@ -103,6 +103,8 @@ The goal of distance function is to show that G is optimal:
 ![CS3230-5-23.PNG]({{site.baseurl}}/img/CS3230-5-23.PNG)
 ![CS3230-5-24.PNG]({{site.baseurl}}/img/CS3230-5-24.PNG)
 
+In this case, we do not need the dist function since LOCAL SWAP gave a solution better than optimal.
+
 
 
 
@@ -168,8 +170,13 @@ Steps:
 
 ![CS3230-5-7.PNG]({{site.baseurl}}/img/CS3230-5-7.PNG)
 
+> The goal is to schedule as much classes as possible
+
+Naive: Just schedule everything and try everything
 
 ## Theory
+
+Which is the first class we should pick?
 
 - Think of how to make the first greedy choice
 - DO we want to include the class that is the shortest
@@ -179,13 +186,18 @@ Steps:
 For each of the strategies above, think of a counter example for which it will not a part of the solution or try to reason why it should be a valid strategy
 
 
-- If we pick the shortest one, might overlap with anotehr class with the starting time in between the S and F
+- If we pick the shortest one, might overlap with another class with the starting time in between the S and F
 - IF we pick class that start first, it might go on forever and conflict with every other class
 - If pick the class that ends first, seems like it has minimal conflict and scheduling it might be good idea
 
 > Pick the class that finish first and recurse over all classes that start after this one finishes
 
 ![CS3230-5-8.PNG]({{site.baseurl}}/img/CS3230-5-8.PNG)
+
+- Pick the class
+- Remove those that has the conflict
+- pick the next optimal one that has no conflict
+- repeat
 
 ## PsueudoCode
 - Sort the finishing time of all class from first to last
@@ -207,7 +219,42 @@ Time complexity: O(nlogn) for sort and O(n) for others
 				O'i+1' != g'i+1'
 
 
+Correctness:
 ![CS3230-5-9.PNG]({{site.baseurl}}/img/CS3230-5-9.PNG)
+
+
+- As long as we are able to keep the same number of classes, then its non conflicting
+
+
+Since there are multiple greedy solution, we pick the class with the smallest greedy time that does not conflict. We want to show that it is non conflicting:
+![CS3230-5-25.PNG]({{site.baseurl}}/img/CS3230-5-25.PNG)
+
+#### Prove the number class is the same for my optimal solution and the optimal solution G
+
+1) You can see the Os are an optimal solution
+![CS3230-5-26.PNG]({{site.baseurl}}/img/CS3230-5-26.PNG)
+
+
+2) Lets swap O1 with G1
+
+![CS3230-5-27.PNG]({{site.baseurl}}/img/CS3230-5-27.PNG)
+
+
+3) When we do the swap we realised that the dist become smaller each swap
+
+![CS3230-5-28.PNG]({{site.baseurl}}/img/CS3230-5-28.PNG)
+![CS3230-5-29.PNG]({{site.baseurl}}/img/CS3230-5-29.PNG)
+![CS3230-5-30.PNG]({{site.baseurl}}/img/CS3230-5-30.PNG)
+
+So we can see we will try to decrease dist to be 0
+
+
+> Notice that the number of classes in the origianl optimal is always the same.. it will not increase anymore becasuse we know that the first optimal solution has alr the max amount of classes needed.. thus there is no way the number of classes would increase during the swapping sequence (If it is then the original optimal solution would have already added that class in)
+
+
+
+
+
 
 # Graphs
 ![CS3230-5-11.PNG]({{site.baseurl}}/img/CS3230-5-11.PNG)
