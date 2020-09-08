@@ -1,7 +1,8 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3103 - Lecture 5: Socket API '
+subtitle: Week 5 lecture socket programming
 ---
 # Socket
 
