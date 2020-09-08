@@ -59,12 +59,51 @@ Steps:
 
 ![CS3230-5-3.PNG]({{site.baseurl}}/img/CS3230-5-3.PNG)
 
+> Our claim is that if our file is increasing order of length then or F(q) is in the minimal order.. so we have to do is to swap some value of p[2] and p[3] such that the value of P[3] is greater than p[2].. note that this would make the order not in increasing anymore
+
+We can see that the difference is smaller than 0 after we do the swap.. 
+
 Let greedy algo produce a permutation p such that 
 ![CS3230-5-4.PNG]({{site.baseurl}}/img/CS3230-5-4.PNG)
 
+![CS3230-5-22.PNG]({{site.baseurl}}/img/CS3230-5-22.PNG)
+
+
+
 > Observed that dist(q) = 0 if and only if p = q... why?
 > 
-> 
+> - Because it is the greedy solution
+
+
+![CS3230-5-20.PNG]({{site.baseurl}}/img/CS3230-5-20.PNG)
+
+##### Collary explaination:
+
+Proving that G is optimal: 
+We want to prove that the greedy is optimal.. if G is not optimal, then there must be another solution that is optimal. Picking O as the optimal solution by minimal distance where O is not G and dist(O) > 0
+- O is not optimal (Since O is not G and there exist a O* that is a more optimal solution)
+- O does not have the min distance among optimal solution
+
+> Therefore the condition where O is the optimal solution by minimal distance cannot hold
+
+Remember f is the function that we want to minimise. 
+- In this case, our length equation is our f
+
+In this image, let say G is our current greedy solution and lets say O is our optimal greedy solution by minimal distance..
+
+![CS3230-5-21.PNG]({{site.baseurl}}/img/CS3230-5-21.PNG)
+
+We want to try to get as close to the greedy solution as possible by changing the edges slowly
+
+
+The goal of distance function is to show that G is optimal:
+- if G was the only optimal solution then for any O that is not G, we will find O* such that f(O*) < f(O)
+- If there are many optimal solution, then we move closer to the greedy solution G to eventually show that G is optimal.
+
+![CS3230-5-23.PNG]({{site.baseurl}}/img/CS3230-5-23.PNG)
+![CS3230-5-24.PNG]({{site.baseurl}}/img/CS3230-5-24.PNG)
+
+
 
 
 ##### Why does this proof work?
@@ -94,6 +133,7 @@ So intuitvely, we need Li to be in increasing order and Fi to be in decreasing o
 
 
 
+
 # Local swap for maximiation problem
 We are given a problem where we are required to find an optimum solution O such that f(O) is max
 - Suppose greedy algo produce solution G
@@ -109,19 +149,8 @@ Steps:
 	- Either f(O*) > f(O)
     - or f(O*) = f(O) and dist(O*) < dist(O)
     
-![CS3230-5-20.PNG]({{site.baseurl}}/img/CS3230-5-20.PNG)
 
-##### Collary explaination:
 
-Proving that G is optimal: 
-We want to prove that the greedy is optimal.. if G is not optimal, then there must be another solution that is optimal. Picking O as the optimal solution by minimal distance where O is not G and dist(O) > 0
-- O is not optimal (Since O is not G and there exist a O* that is a more optimal solution)
-- O does not have the min distance among optimal solution
-
-> Therefore the condition where O is the optimal solution by minimal distance cannot hold
-
-Remember f is the function that we want to minimise. 
-- In this case, our length equation is our f
 
 
 
