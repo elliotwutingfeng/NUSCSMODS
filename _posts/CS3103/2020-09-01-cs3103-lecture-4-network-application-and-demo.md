@@ -333,6 +333,7 @@ What are the additional components needed to send mail from Bob to Alice in the 
 
 
 ## POP example
+![CS3103-4-20.PNG]({{site.baseurl}}/img/CS3103-4-20.PNG)
 
 
 ## POP3 and IMAP
@@ -348,11 +349,37 @@ IMAP:
 - Keep user state accorss session
 
 # DNS (Domain Name Space)
+
+![CS3103-4-21.PNG]({{site.baseurl}}/img/CS3103-4-21.PNG)
+
+Why its better for hierarchical name space:
 - The name consist of discrete elements that are related to each other usually using hierachical parent child semantics
 - Easy to avoid conflicts
+- Search faster
+- Node can have the same name if the node's parents is differnet
+
+#### Domain Name Space
+![CS3103-4-22.PNG]({{site.baseurl}}/img/CS3103-4-22.PNG)
+
+#### Domain Name Space in Internet
+![CS3103-4-23.PNG]({{site.baseurl}}/img/CS3103-4-23.PNG)
+
+> ARPA (Inverse domain) is for Ip to name mapping
+
+![CS3103-4-24.PNG]({{site.baseurl}}/img/CS3103-4-24.PNG)
+
+> Please do not forget the dot at the end.. it represents the root server. THe DNS server will not add the dot for us (Unlike our browsers)
+
 
 ## Domain
 A subtree of domain name space
+
+![CS3103-4-25.PNG]({{site.baseurl}}/img/CS3103-4-25.PNG)
+
+The infomation contained in the domain name space must be stored.
+
+![CS3103-4-26.PNG]({{site.baseurl}}/img/CS3103-4-26.PNG)
+
 
 DNS Components:
 - Distributed database implemented in hierarchy of many name servers
