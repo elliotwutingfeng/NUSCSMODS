@@ -461,12 +461,16 @@ The sub domains which is inside but not taken care of in a zone, we called it "A
 ##### A node in multiple zones
 ![CS3103-4-32.PNG]({{site.baseurl}}/img/CS3103-4-32.PNG)
 
+
+- It so happen that the nodes in NUS are stored in different zones
+
+
 ## Primary and secondary servers
 - Primary: Stores info about the zone in is an authority for
 	- Creates maintains and updates zone files
-- Secondary: Has complete info about a zone
+- Secondary: Has complete info about a zone (Transfer from primary or secondary server - **zone transfer**)
 	- Cannot create or update szone files
-- Primary and secondary servers are both authoritative for the zone they serve. They provide authoritative answer for their zone.
+- Primary and secondary servers are both **authoritative** for the zone they serve. They provide authoritative answer for their zone.
 	- An authroitative answer for a name server (Such as reading the data from disk) is guaranteed to be accurate
     - A non authoritative answer (Like from cache) may not be accurate
 ## Reource records
