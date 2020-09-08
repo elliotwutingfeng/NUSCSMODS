@@ -187,7 +187,117 @@ Take the output over time and perform a classification or regression.
 
 
 ## Architecture: Autoencoders (AEs)
+- Idea: Train a neural network to take an input x and generate the same output x. We will build a deep learning netwrok that does:
+
+- Achieving compression:
+	- if the code layer is substantially smaller than the input, we can feed the input and use the resultant code as a compressed version of the input
+    - We can feed this code into the decoder network to recover the original
+    - AE however are very bad at this: recovered data will be highly lossy and the AE can only reconstruct data of the type it was trained on
+- Detect anomalies:
+	- When AE sees typical data it was trained on, it can reconstruct the input with minimal error
+    - When the data becomes typical, reconstruction error rises. We can flag anomalies when this error exceeds a threshold.
+    
+### Simple
+
+
 ## Architecture: Generative Adversarial Netowrks (GANs)
+
+Motivation:
+- Often dont have enough training data
+- Want to build a neural network that will produce fake data from real data
+
+Consist of:
+- A generator network that learns how to counterfeit the data
+- A disciminator networks that learn how to differentiate betweem the real and fake data
+- We can use GANs to do things like: Producing images of people who dont exist
+
+
+##### What are they
+- Generator:
+	- Random noise is presented to the generator
+    - The generator uses this to create its fake data
+- Discriminator
+	- both fake and real data are presented to the discriminator
+    - discriminator is trained how to differentiate them
+
+##### How do they work
+- Training generator
+	- Weights for discriminator are froze
+    - The GAN is trained of the assumption that the fake data is real
+    - End result: The generator adjusts its weights to try to maximise the realness of the fake data
+    - The process repeats
+- Training alternates between:
+	- Maximising the discriminator ability to tell fake data from real
+    - Maximising the quality of the fake data to minimise the discriminator ability to differentiate
+    
+> This is why it is called an adversarial networks as both netoworks try to fight each other
+
+#### Generating
+{Check notes 48-56}
+
+### Training 
+- Create generator, discriminator and GAN networks and load the data
+- In each epoch for discriminator
+	- Generate fake data using random numbers
+    - Randomly choose real data and combine with fake data
+    - Tag the real data with 1 and fake with 0
+    - Train the discriminator
+- In each epoch, for the generator
+	- Freeze the discriminator weights
+    - Generate the fake data using random numbers
+    - Train the GAN with the assumption that the fake data is real
+    - This forces the generator to optimise its weights to maximise its score from the discriminator
+    - the discriminator itself is not affected since its weights are frozen
+
+> See slides for epoch example
+
+
 ## Architecture: Convulutional Neural Networks (CNNs)
+
+### Convolution layers
+The CNN primary distinguishing feature is the convulution layer. 
+	- Made up of kernals that convolve over the input and over each other
+
+
+The depth of the kernal is equal to the depth of the data.
+- E.g with colour images, there are 3 channels and the kernal is 3 layers deep:
+
+
+- The kernal function as feature extractors and the output from the convolution operation is called a feature map
+	- As training progresses the kernals become optimised to extract key infomation like edges, repeating patterns, etc in input data
+- Many kernals can be use on one layer
+	- This will produce a volume of feature maps instead of a single feature map
+    - Due to the randomness of the initial kernal, each feature map ends up extracting a different feature of the input.
+    
+    
+- You can convolve kernals over earlier kernals
+	- The feature maps generated will represent higher level features of the input
+    - E.g the lower kernal might extract lines, the higher kernal might extract shapes
+
+##### Parameters:
+
+
+
+##### Layers:
+
+
+### Pooling layer
+- The pooling layer takes a nxn region of the feature map and either picks the max of takes avg
+
+- pooling layers:
+	- reduce dimensionality and hence computing power
+    - Ewxtract the most dominant featueres (Max pool)
+    - Averages the features
+
+Hyperparameters:
+
+
+
+> Generally the first few layers of the CNN consist of alternating convolution and pooling layers
+> BUT, stacking to many pooling layers can result in loosing all data
+
+
+
+
 
 # Slides
