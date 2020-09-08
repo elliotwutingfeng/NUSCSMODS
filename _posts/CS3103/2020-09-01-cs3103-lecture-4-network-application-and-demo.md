@@ -475,6 +475,53 @@ The sub domains which is inside but not taken care of in a zone, we called it "A
     - A non authoritative answer (Like from cache) may not be accurate
 ## Reource records
 
+![CS3103-4-33.PNG]({{site.baseurl}}/img/CS3103-4-33.PNG)
+
+> Type NS can be use to get the authoritative server.
+
+![CS3103-4-34.PNG]({{site.baseurl}}/img/CS3103-4-34.PNG)
+
+- SOA: Can find out nthe authoritative and primary name server
+
+
+##### Example
+![CS3103-4-35.PNG]({{site.baseurl}}/img/CS3103-4-35.PNG)
+
+![CS3103-4-36.PNG]({{site.baseurl}}/img/CS3103-4-36.PNG)
+
+SOA Records:
+- Any slave that copies this data refresh for 3 hrs
+- Slave need to prior after 1 hr
+- Slave data will expire after 1 week
+- Any other internet server caching this data, lives for 1 day only
+
+
+NS:
+- Terminatpr
+- Wormhole
+
+![CS3103-4-37.PNG]({{site.baseurl}}/img/CS3103-4-37.PNG)
+
+- Worm hole has two because it is in multihome
+
+
+![CS3103-4-38.PNG]({{site.baseurl}}/img/CS3103-4-38.PNG)
+
+
+Reverse:
+![CS3103-4-39.PNG]({{site.baseurl}}/img/CS3103-4-39.PNG)
+
+> We read from arpa -> in-addr -> 15 -> 16 -> 192 -> 152
+
+
+Remember that in arpa, it is written in reverse order (Database):
+	- ipaddress: 15.16.192.152
+#### Client configuration
+- DNS client program must known the default DNS server
+
+- `cat etc/resolv.conf`
+
+
 ## Format of DNS replies
 
 ## Dynamic DNS
