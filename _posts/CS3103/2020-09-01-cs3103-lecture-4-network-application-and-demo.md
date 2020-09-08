@@ -380,26 +380,41 @@ The infomation contained in the domain name space must be stored.
 
 ![CS3103-4-26.PNG]({{site.baseurl}}/img/CS3103-4-26.PNG)
 
+Level by level:
+- Client queries a root server to find com DNS server
+- Client queries com DNS server to get amazon.com DNS server
+- Client queries amazon.com DNS server to get IP address for www.amazon.com
 
-DNS Components:
-- Distributed database implemented in hierarchy of many name servers
+
+
+> Name to Ip mapping only for the top servers 
+
+
+##### DNS Components:
+- Distributed database implemented in hierarchy of many name servers (Name space)
 - Application on top of UDP/TCP
 	- Client or resolver
     - DNS Server application
     - DNS server port 53
     
-> Why dont centralised DNS
+> Why dont centralised DNS?
+> 
+> - 
+
+
+> The size of response message is more that 512 bytes, a TCP connection is used instead of UDP 
+> THat is because it is to handle fragmentation
 
 
 If the size of the response message is more than 512 bytes, a TCP connection is used instead of UDP
 
 ## TLD
-Top level domain servers:
+##### Top level domain servers:
 - Responsible for com, org, net, edu ...etc 
 - Network solution maintains servers for .com TLD
 - Educause for .edu TLD
 
-Authoritative DNS servers:
+##### Authoritative DNS servers:
 - Organisation own DNS server providing authroitative host name to IP mappings for organisation named hosts
 - Can be maintain by organisation or service provider
 
@@ -411,11 +426,34 @@ Authoritative DNS servers:
     - Acts as a proxy and forwards query into hierarchy
 
 ## DNS name resolution example
+![CS3103-4-29.png]({{site.baseurl}}/img/CS3103-4-29.png)
+
+Iterated:
+- Contact server replies with name of server to contact
+
+
+Recrusive:
+![CS3103-4-28.PNG]({{site.baseurl}}/img/CS3103-4-28.PNG)
+
+- Puts burden of name resolutoin on contacted name server
+- Heavy loads at upper of hierachy
 
 ## Domain and zone
+
+![CS3103-4-30.PNG]({{site.baseurl}}/img/CS3103-4-30.PNG)
+
+
 The DNS server for a domain can either store info about every node in domain or divide the domain into subdomains and delegate part of its authoirity to other servers
 
 > What a server is responsible for or has authority over is called a zone
+
+
+The sub domains which is inside but not taken care of in a zone, we called it "Authority for the sub domains inside the domain are **delegated** to other DNS servers in the subdomain
+
+
+> The zone might now be only one level.. it depends
+
+
 
 ## Primary and secondary servers
 - Primary: Stores info about the zone in is an authority for
