@@ -83,6 +83,8 @@ SSL:
     - If server/client crashes, their views of state may be inconsistent
     
 - Default port: 80
+![CS3103-4-13.PNG]({{site.baseurl}}/img/CS3103-4-13.PNG)
+![CS3103-4-14.PNG]({{site.baseurl}}/img/CS3103-4-14.PNG)
 
 
 ##### Non Persistance 
@@ -112,6 +114,10 @@ img
 
 
 ### User state management: Cookies
+
+![CS3103-4-15.PNG]({{site.baseurl}}/img/CS3103-4-15.PNG)
+
+
 - HTTP is stateless
 - Use cookie to manage user identity
 - Components:
@@ -127,6 +133,15 @@ The goal is to satisfy client requests without involving origin server. Improve 
 - Browser sends all HTTP request to cache
 	- Objects in cache: Returns the object
     - Else cache request object from origin server and returns to client
+
+![CS3103-4-16.PNG]({{site.baseurl}}/img/CS3103-4-16.PNG)
+
+> How does the proxy server whether to make sure the infomation is the latest?
+> 
+> - Time out (Last modified)
+
+![CS3103-4-17.PNG]({{site.baseurl}}/img/CS3103-4-17.PNG)
+
 
 # FTP
 FTP use the services of TCP, it needs two TCP connection.
@@ -145,7 +160,7 @@ The control command in the FTP is perm but for each file transfer, the current d
 > Control commands: "Out of Band" 
 > Http is "In band"
 
-FTP is stateful: 
+FTP is **stateful**: 
 - FTP maintains the user state until the user terminates the session
 
 - Resolving heterogeneity between client and server
@@ -509,5 +524,3 @@ Sending chunks: tit for tat
     - To resolve query, small number of messages exchanged among peer
 - Each peer only knows about a small number of other peers
 - Robust to peer coming and going (churn)
-
-
