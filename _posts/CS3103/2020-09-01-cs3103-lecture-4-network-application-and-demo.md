@@ -157,7 +157,7 @@ Port:
 
 The control command in the FTP is perm but for each file transfer, the current data connection will be close. A new data connection is needed to transfer the next file. 
 
-> Control commands: "Out of Band" 
+> Control commands: "Out of Band", data is sent from a different band. 
 > Http is "In band"
 
 FTP is **stateful**: 
@@ -236,6 +236,10 @@ Response:
 
 > Please note that the connection will close after awhile
 
+
+![CS3103-4-18.PNG]({{site.baseurl}}/img/CS3103-4-18.PNG)
+
+
 # Email protocols
 
 Components:
@@ -258,6 +262,11 @@ MTA client establish a connection to the server and pushes the message to the se
 - Client server connection between MTA server at the reciever server.
 - The message is psuh form the sender server to the reciever server
 
+What are the additional components needed to send mail from Bob to Alice in the image?
+- Run MAA client plus the SMTP client
+- Run the SMTP Server
+> Notice in the image, at bob side.. the system has both MAA system and MTA server 
+
 
 #### Push vs pull
 ![CS3103-4-7.PNG]({{site.baseurl}}/img/CS3103-4-7.PNG)
@@ -269,7 +278,7 @@ MTA client establish a connection to the server and pushes the message to the se
 > - Can be classified as PULL as most of the time the client connects to the server to retrieve the file from the server
 
 
-What are the additional components needed to send mail from Bob to Alice in the image/
+
 
 #### User agent
 ![CS3103-4-8.PNG]({{site.baseurl}}/img/CS3103-4-8.PNG)
@@ -278,6 +287,7 @@ What are the additional components needed to send mail from Bob to Alice in the 
 ![CS3103-4-9.PNG]({{site.baseurl}}/img/CS3103-4-9.PNG)
 
 > why isnt there a format for FTP
+
 
 1. Envelopes (Yellow)
 - Location
@@ -317,6 +327,10 @@ What are the additional components needed to send mail from Bob to Alice in the 
 
 
 - Close connection: `quit`
+
+
+![CS3103-4-19.PNG]({{site.baseurl}}/img/CS3103-4-19.PNG)
+
 
 ## POP example
 
