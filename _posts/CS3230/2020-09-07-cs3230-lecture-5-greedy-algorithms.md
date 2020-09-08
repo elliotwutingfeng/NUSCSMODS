@@ -153,12 +153,6 @@ Steps:
     
 
 
-
-
-
-
-
-
 > For exam
 > - Define approporaite dist function
 > - Convince urself that dist(S) = 0 if and only if S = G and that dist takes only finitely many values (There is no need to prove this)
@@ -243,8 +237,15 @@ Since there are multiple greedy solution, we pick the class with the smallest gr
 3) When we do the swap we realised that the dist become smaller each swap
 
 ![CS3230-5-28.PNG]({{site.baseurl}}/img/CS3230-5-28.PNG)
+> swap 1
+
 ![CS3230-5-29.PNG]({{site.baseurl}}/img/CS3230-5-29.PNG)
+> Swap finish all
+
 ![CS3230-5-30.PNG]({{site.baseurl}}/img/CS3230-5-30.PNG)
+
+> Each swap is dist(O) - 1 since our optimal solution would be G where dist(G) = 0
+
 
 So we can see we will try to decrease dist to be 0
 
@@ -253,7 +254,10 @@ So we can see we will try to decrease dist to be 0
 
 
 
-
+## Conclusion
+- Try to prove by contradiction
+- Prove that the lennma for either local swap (min or max) is correct for the algo we have
+- Ensure that the dist is small because if the dist is large it means it is not a optimal solution
 
 
 # Graphs
