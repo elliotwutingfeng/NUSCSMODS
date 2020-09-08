@@ -18,17 +18,27 @@ Problem: Reaarange the files to minimize the avg cost
 ## Theory
 ![CS3230-5-1.PNG]({{site.baseurl}}/img/CS3230-5-1.PNG)
 
+- We want to permute the order of the files such that the avg cost of accessing the files are as small as possible.
+
+
 ![CS3230-5-2.PNG]({{site.baseurl}}/img/CS3230-5-2.PNG)
 
+> We want to try to permute 
 
-- Back trcking is to costly, there are n! permutation
+- Back trcking is to costly, there are n! (n^n/2) permutation
 - Dynamic programming does not help because we cannot find a small number of subproblems leading to the given problem.
 - Guess the solution with initution that Lp(n) > Lp(1)
 
+> Our inituition is to pick the smallest
+
 ## Algorithm
+If lets say our guess is correct, then just
 - Sort the records in increasing length
 
+> We can prove by using local swap/exchange algorithm
+
 ## Prooving (Local swap for minimisation problem)
+
 - Suppose we are given a problem where we are required to find an optimum solution O where f(O) is minimum
 - Suppose greedy algo produce solution G
 - We want to prove that for any optimum solution O That minimises f,
@@ -37,9 +47,12 @@ Problem: Reaarange the files to minimize the avg cost
 
 
 Steps:
-1. Define distance measure dist from any possible solution to a positive number that indicated the distance from greedy solution
-	- For any solution S, dist(S) = 0 if and only if S = G
+1. Define distance measure (Distance from the greedy solution) dist from any possible solution to a positive number that indicated the distance from greedy solution
+	- For any solution S, dist(S) = 0 if and only if S = G: This means that S is the greedy solution
 	- dist takes finitely many possible values for any valid solution
+
+> Intuitively far from greedy => Far from optimum
+ 
 2. Given any optimum solution O, different from G, find another solution O* such that 
 	- Either f(O*) < f(O)
     - or f(O*) = f(O) and dist(O*) < dist(O)
@@ -95,6 +108,25 @@ Steps:
 2. Given any optimum solution O, different from G, find another solution O* such that 
 	- Either f(O*) > f(O)
     - or f(O*) = f(O) and dist(O*) < dist(O)
+    
+![CS3230-5-20.PNG]({{site.baseurl}}/img/CS3230-5-20.PNG)
+
+##### Collary explaination:
+
+Proving that G is optimal: 
+We want to prove that the greedy is optimal.. if G is not optimal, then there must be another solution that is optimal. Picking O as the optimal solution by minimal distance where O is not G and dist(O) > 0
+- O is not optimal (Since O is not G and there exist a O* that is a more optimal solution)
+- O does not have the min distance among optimal solution
+
+> Therefore the condition where O is the optimal solution by minimal distance cannot hold
+
+Remember f is the function that we want to minimise. 
+- In this case, our length equation is our f
+
+
+
+
+
 
 > For exam
 > - Define approporaite dist function
@@ -219,5 +251,3 @@ Scan all edges in increasing order of weight and add the edge if both endpoints 
 
 > 2040s:
 > - Find and union are both logn
-
-
