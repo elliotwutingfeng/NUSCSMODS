@@ -189,15 +189,29 @@ Take the output over time and perform a classification or regression.
 ## Architecture: Autoencoders (AEs)
 - Idea: Train a neural network to take an input x and generate the same output x. We will build a deep learning netwrok that does:
 
+![CS3237-4-14.PNG]({{site.baseurl}}/img/CS3237-4-14.PNG)
+
+> The stuff at the center is actualy the compress version of the input
+
 - Achieving compression:
 	- if the code layer is substantially smaller than the input, we can feed the input and use the resultant code as a compressed version of the input
     - We can feed this code into the decoder network to recover the original
     - AE however are very bad at this: recovered data will be highly lossy and the AE can only reconstruct data of the type it was trained on
+    
+> But remember that because its a neural network, it is not really precise. (There might be some inaccuracy) Therefore the reconstructed data might be lossy (Noise and imperfection introduced)
+    
 - Detect anomalies:
 	- When AE sees typical data it was trained on, it can reconstruct the input with minimal error
-    - When the data becomes typical, reconstruction error rises. We can flag anomalies when this error exceeds a threshold.
+    - When the data becomes atypical, reconstruction error rises. We can flag anomalies when this error exceeds a threshold.
+    
+> Autoencoders are very good to spot defects in teh system
     
 ### Simple
+![CS3237-4-15.PNG]({{site.baseurl}}/img/CS3237-4-15.PNG)
+
+- F can be our throttle position sensor
+- Train the neural network to guess the acceleration base on the position of the trottle position
+
 
 
 ## Architecture: Generative Adversarial Netowrks (GANs)
@@ -205,6 +219,8 @@ Take the output over time and perform a classification or regression.
 Motivation:
 - Often dont have enough training data
 - Want to build a neural network that will produce fake data from real data
+
+
 
 Consist of:
 - A generator network that learns how to counterfeit the data
@@ -220,9 +236,12 @@ Consist of:
 	- both fake and real data are presented to the discriminator
     - discriminator is trained how to differentiate them
 
+![CS3237-4-16.PNG]({{site.baseurl}}/img/CS3237-4-16.PNG)
+
+
 ##### How do they work
 - Training generator
-	- Weights for discriminator are froze
+	- Weights for discriminator are frozen
     - The GAN is trained of the assumption that the fake data is real
     - End result: The generator adjusts its weights to try to maximise the realness of the fake data
     - The process repeats
