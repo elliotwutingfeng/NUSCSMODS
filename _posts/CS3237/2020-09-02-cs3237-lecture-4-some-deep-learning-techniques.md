@@ -251,8 +251,14 @@ Consist of:
     
 > This is why it is called an adversarial networks as both netoworks try to fight each other
 
+- We are trying to trick the discriminator that it  is real
+- The generator has to then try to generate better fakes
+
+
+
 #### Generating
 {Check notes 48-56}
+
 
 ### Training 
 - Create generator, discriminator and GAN networks and load the data
@@ -269,7 +275,11 @@ Consist of:
     - the discriminator itself is not affected since its weights are frozen
 
 > See slides for epoch example
-
+1) Take as input of the generator and discriminator
+2) Create input layer
+3) Pass the input layer over to the generator which will produce an output 
+4) Use this output as the input to the discriminator
+5) The output from the discriminator would be either true or false (Real or fake)
 
 ## Architecture: Convulutional Neural Networks (CNNs)
 
