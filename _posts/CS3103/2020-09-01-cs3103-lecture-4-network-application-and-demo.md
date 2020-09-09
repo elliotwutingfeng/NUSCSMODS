@@ -433,9 +433,14 @@ If the size of the response message is more than 512 bytes, a TCP connection is 
 - Network solution maintains servers for .com TLD
 - Educause for .edu TLD
 
+
 ##### Authoritative DNS servers:
 - Organisation own DNS server providing authroitative host name to IP mappings for organisation named hosts
 - Can be maintain by organisation or service provider
+- The primary server loads all info from the disk file, the second loads al infomation from the primary server
+- When the secondary downloads information from the primary, it is called zone transfer
+
+
 
 ## Local DNS name server
 - Does not strictly belong to hierachy
@@ -445,17 +450,24 @@ If the size of the response message is more than 512 bytes, a TCP connection is 
     - Acts as a proxy and forwards query into hierarchy
 
 ## DNS name resolution example
+
+### Iterated:
 ![CS3103-4-29.png]({{site.baseurl}}/img/CS3103-4-29.png)
 
-Iterated:
 - Contact server replies with name of server to contact
 
+Name resolution - iterative:
+![CS3103-4-41.PNG]({{site.baseurl}}/img/CS3103-4-41.PNG)
 
-Recrusive:
+
+### Recrusive:
 ![CS3103-4-28.PNG]({{site.baseurl}}/img/CS3103-4-28.PNG)
 
 - Puts burden of name resolutoin on contacted name server
 - Heavy loads at upper of hierachy
+
+Name resolution - recursive:
+![CS3103-4-40.PNG]({{site.baseurl}}/img/CS3103-4-40.PNG)
 
 ## Domain and zone
 
@@ -496,6 +508,8 @@ Please note that domain and zone are not the same.
 	- An authroitative answer for a name server (Such as reading the data from disk) is guaranteed to be accurate
     - A non authoritative answer (Like from cache) may not be accurate
 ## Reource records
+This is the types of records stored in the DNS server.
+
 
 ![CS3103-4-33.PNG]({{site.baseurl}}/img/CS3103-4-33.PNG)
 
@@ -503,8 +517,9 @@ Please note that domain and zone are not the same.
 
 ![CS3103-4-34.PNG]({{site.baseurl}}/img/CS3103-4-34.PNG)
 
-- SOA: Can find out nthe authoritative and primary name server
+- SOA: Can find out out the authoritative and primary name server
 
+> SOA stands of start of authority
 
 ##### Example
 ![CS3103-4-35.PNG]({{site.baseurl}}/img/CS3103-4-35.PNG)
@@ -538,6 +553,7 @@ Reverse:
 
 Remember that in arpa, it is written in reverse order (Database):
 	- ipaddress: 15.16.192.152
+    
 #### Client configuration
 - DNS client program must known the default DNS server
 
@@ -558,6 +574,51 @@ Changes must be made to the DNS master file. THe file must be updated dynamicall
 - DHCP configured host with a well known and fixed and fully qualified domain name
 
 ## DNS tools
+
+## DNS Example
+1. query `nslookup www.comp.nus.edu.sg`: Returns the details of the server
+- Name server
+- Address
+- Canonical name
+- Alias name
+
+2. `nslookup 137.132.80.57`: Returns the same as the top
+- arpa domain (reverse mapping)
+- name (canonical name)
+
+![CS3103-4-42.PNG]({{site.baseurl}}/img/CS3103-4-42.PNG)
+
+3. `host www.comp.nus.edu.sg` : Returns the ip address of the host
+
+4. `host 137.132.80.57` : return the host name of the arpa
+![CS3103-4-43.PNG]({{site.baseurl}}/img/CS3103-4-43.PNG)
+
+
+5. `dig -t a www.comp.nus.edu.sg`: Returns a list of records 
+- the `-t` stands for type while `a` stands for type a
+- Authority section: The authoritative name servers section for this domain
+- Additional section: ip address of the servers in the authoritative section
+- Response time
+- Server the response is coming from
+- Port 53
+- Date and time
+- Message size: `rcvd`
+
+6. `dig -t a www.comp.nus.edu.sg +trace`:Complete hierachy of the entire delegration
+- Makes an iterative query
+- Queries the top level dns server
+- Request one of the root servers and that root server also give reference to other root servers
+- The dns client then queries another top level `sg.` servers
+	- Sends a set of file reference
+- Queries one of those name server from above
+	- this server would return the answer for the the server we are looking for
+    - it also returns for others
+
+7. `dig -t a www.comp.nus.edu.sg +short`: Short reply version
+
+8. `dig www.comp.nus.edu.sg NS`: Finding out the name server for a particular domain
+- Query is for NS records
+
 
 
 # P2P Applications
