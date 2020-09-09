@@ -268,7 +268,7 @@ Consist of:
     - Tag the real data with 1 and fake with 0
     - Train the discriminator
 - In each epoch, for the generator
-	- Freeze the discriminator weights
+	- Freeze the discriminator weights (The discriminator does not become smarter)
     - Generate the fake data using random numbers
     - Train the GAN with the assumption that the fake data is real
     - This forces the generator to optimise its weights to maximise its score from the discriminator
@@ -281,15 +281,46 @@ Consist of:
 4) Use this output as the input to the discriminator
 5) The output from the discriminator would be either true or false (Real or fake)
 
+
+> To reduce the lost, we have to make the generator generate better data that tricks the discriminator
 ## Architecture: Convulutional Neural Networks (CNNs)
+Traditionally used to for image recogntion or be use for other stuff like sequences.
+
+![CS3237-4-17.PNG]({{site.baseurl}}/img/CS3237-4-17.PNG)
+
+- Convolution kernal scans the image and produce a feature map
+- We can have many conv filter and each filter will produce a feature map
+- The end result is we will have alot of feature maps
+- our feature maps will either be the same or larger than the image
+- We will do pooling to summarise the data 
+- From the output we will filter again and result with another set of feature maps
+- This will repeat
+
+
+Standard dense multilayer perceptrons (Classficiation)
+- Use softmax
+
 
 ### Convolution layers
+![CS3237-4-18.PNG]({{site.baseurl}}/img/CS3237-4-18.PNG)
+
+- Yellow window: Filter
+- Green: The original image
+
+The yellow window will travel over the image 
+
+
+
+
 The CNN primary distinguishing feature is the convulution layer. 
 	- Made up of kernals that convolve over the input and over each other
 
 
 The depth of the kernal is equal to the depth of the data.
 - E.g with colour images, there are 3 channels and the kernal is 3 layers deep:
+
+For colour image:
+![CS3237-4-19.PNG]({{site.baseurl}}/img/CS3237-4-19.PNG)
 
 
 - The kernal function as feature extractors and the output from the convolution operation is called a feature map
@@ -298,35 +329,78 @@ The depth of the kernal is equal to the depth of the data.
 	- This will produce a volume of feature maps instead of a single feature map
     - Due to the randomness of the initial kernal, each feature map ends up extracting a different feature of the input.
     
+ > They treat the kernals as weight and apply gradient descent on the kernal. 
+ 
+ ![CS3237-4-20.PNG]({{site.baseurl}}/img/CS3237-4-20.PNG)
+
     
 - You can convolve kernals over earlier kernals
 	- The feature maps generated will represent higher level features of the input
     - E.g the lower kernal might extract lines, the higher kernal might extract shapes
 
+![CS3237-4-21.PNG]({{site.baseurl}}/img/CS3237-4-21.PNG)
+
+
 ##### Parameters:
+1. Size
 
 
+Choosing kernal size:
+- Smaller: More refine but more computation cost and might be more sensitive to noise
+- Larger: Lower resolution but less expensive
+
+
+
+2. Stride
+- The number of steps the kernal moves to the right or down
+
+
+
+3. Padding
+- Decides what to do when we hit the end of the image
+- Can choose to let the kernal hang out outside (Convoluted to the last square)
+	- Feature map will be the same size of the image
+- Same padding: Allow part of the kernal to hang outside the image so that we can convolute outside the kernal
+
+![CS3237-4-22.PNG]({{site.baseurl}}/img/CS3237-4-22.PNG)
 
 ##### Layers:
+- Padding
+- Activation
+- Kernal_size
+- filters: How many kernals to make
+
+![CS3237-4-23.PNG]({{site.baseurl}}/img/CS3237-4-23.PNG)
 
 
-### Pooling layer
+### Pooling layer (To do a Summary)
 - The pooling layer takes a nxn region of the feature map and either picks the max of takes avg
 
+![CS3237-4-24.PNG]({{site.baseurl}}/img/CS3237-4-24.PNG)
+
+
 - pooling layers:
-	- reduce dimensionality and hence computing power
-    - Ewxtract the most dominant featueres (Max pool)
+	- reduce dimensionality and hence computing power: a 4 by 4 can go to a 2 by 2
+    - Extract the most dominant featueres (Max pool): Gives the model shift invariancy and less sensitvie to noise
     - Averages the features
 
 Hyperparameters:
+- Stride : How many pixels to jump to the right and down
+- Size: Dimensionality of our max pool
+- Keras pooling
+	- Pool size: The length or dimension of the pool
+    - Strides
 
+> If our stride is our max size, our feature map will reduce by 1/size in  each dimesnsion
 
 
 > Generally the first few layers of the CNN consist of alternating convolution and pooling layers
-> BUT, stacking to many pooling layers can result in loosing all data
+> - BUT, stacking to many pooling layers can result in loosing all data
 
-
-
+### Flatten layer
+- Convert the 2d feature map into a 1d vector
+- This will go into a standard multilayer perceptron
+- My output would have many classes
 
 
 # Slides
