@@ -190,5 +190,5 @@ A good way to fix is to partition the data.
 
 > Random noise introduce to the data makes the data looks like other data. (See noise layers)
 
-
-
+# Slide
+<iframe src="https://drive.google.com/file/d/1YJ6hzK8h9VsktjTo50W36_j7h-VWiwfo/preview" width="840" height="480"></iframe>
