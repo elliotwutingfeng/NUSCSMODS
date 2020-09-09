@@ -350,6 +350,23 @@ IMAP:
 
 # DNS (Domain Name Space)
 
+DNS defines:
+- Name space: How to name the systems
+- Name servers: How to store these names
+- How to resolves names and addresses
+
+> Do we store the mapping in one or multiple locations. 
+
+DNS services:
+- host name to IP address translation or IP address to Hostname translation
+- Host aliasing
+	- Canonical and alias names
+- Mail server alising
+- Load distribution
+	- Replicated web servers: set of Ip addresses for one canonical name
+
+
+
 ![CS3103-4-21.PNG]({{site.baseurl}}/img/CS3103-4-21.PNG)
 
 Why its better for hierarchical name space:
@@ -360,6 +377,8 @@ Why its better for hierarchical name space:
 
 #### Domain Name Space
 ![CS3103-4-22.PNG]({{site.baseurl}}/img/CS3103-4-22.PNG)
+
+> Read from leaf to the root
 
 #### Domain Name Space in Internet
 ![CS3103-4-23.PNG]({{site.baseurl}}/img/CS3103-4-23.PNG)
@@ -372,7 +391,7 @@ Why its better for hierarchical name space:
 
 
 ## Domain
-A subtree of domain name space
+A subtree of domain name space. 
 
 ![CS3103-4-25.PNG]({{site.baseurl}}/img/CS3103-4-25.PNG)
 
@@ -392,10 +411,10 @@ Level by level:
 
 ##### DNS Components:
 - Distributed database implemented in hierarchy of many name servers (Name space)
-- Application on top of UDP/TCP
+- Application **on top of UDP/TCP**
 	- Client or resolver
     - DNS Server application
-    - DNS server port 53
+    - DNS server port 53 (Common port)
     
 > Why dont centralised DNS?
 > 
@@ -403,7 +422,7 @@ Level by level:
 
 
 > The size of response message is more that 512 bytes, a TCP connection is used instead of UDP 
-> THat is because it is to handle fragmentation
+> That is because it is to handle fragmentation
 
 
 If the size of the response message is more than 512 bytes, a TCP connection is used instead of UDP
@@ -453,10 +472,13 @@ The sub domains which is inside but not taken care of in a zone, we called it "A
 
 > The zone might now be only one level.. it depends
 
-##### Domain and zone
+
 ![CS3103-4-31.PNG]({{site.baseurl}}/img/CS3103-4-31.PNG)
 
 - The CA might choose to store other stuff in its zone
+
+Please note that domain and zone are not the same.
+
 
 ##### A node in multiple zones
 ![CS3103-4-32.PNG]({{site.baseurl}}/img/CS3103-4-32.PNG)
