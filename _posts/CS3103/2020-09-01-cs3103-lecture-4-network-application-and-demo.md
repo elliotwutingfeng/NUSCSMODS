@@ -313,7 +313,7 @@ What are the additional components needed to send mail from Bob to Alice in the 
 
 ## SMTP Example
 - Connect: `telnet smtp.nus.edu.sg 25`
-- Details : `EMLO nus.edu.sg`
+- Details : `EHLO nus.edu.sg`
 - Login: `AUTH LOGIN <UserID IN BASE64 FORMAT` > `<PASSWORD IN BASE64>`
 - Write mail: 
 			   MAIL FROM: `<EMAILADD>`
