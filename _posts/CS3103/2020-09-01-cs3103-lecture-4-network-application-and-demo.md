@@ -316,6 +316,7 @@ What are the additional components needed to send mail from Bob to Alice in the 
 - Details : `EHLO nus.edu.sg`
 - Login: `AUTH LOGIN <UserID IN BASE64 FORMAT` > `<PASSWORD IN BASE64>`
 - Write mail: 
+
 			   MAIL FROM: `<EMAILADD>`
                RCPT to: `<RecieverADD>`
                DATA
