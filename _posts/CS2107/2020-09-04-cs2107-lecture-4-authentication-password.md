@@ -401,6 +401,7 @@ Security requirements:
 - Very often info on user identity, the secret k, and fingerprint template are not stored in the reader
 - The reader has a secure communication channel to a server that stores these info
 
+![CS2107-3-20.PNG]({{site.baseurl}}/img/CS2107-3-20.PNG)
 
 > In this case we also assume that the reader and server are secure. (Attackers are unable to access them)
 
@@ -410,7 +411,9 @@ Notes:
 2. What are the actual two factors
 3. What is the role of the secret 
 4. It is possible to eliminate the need of the server
-e.g By storing the fingerprint in the card and 
+e.g By storing the fingerprint in the card and storing a small secret key in the reader
+
+> How to achievement
 
 
 ## Case studies
