@@ -290,6 +290,26 @@ Popular Signature scheme:
 ### Birthday Paradox
 ![CS2107-4-28.PNG]({{site.baseurl}}/img/CS2107-4-28.PNG)
 
+### Birthday Paradox (HASH)
+- Two messages can have the same tag
+- if M>1.17 T^0.5 then with a prob of more than 0.5, there is a pair of messages tagged with the same value
+
+#### Attack
+- Suppose the digest of hash is 80 bits: T = ^2^80
+- Now attacker want find collision
+- If attacker randomly generate 2^41 messages
+- Hences with a prob more than 0.5, among the 2^41.. two of them give the same digest
+
+![CS2107-4-29.PNG]({{site.baseurl}}/img/CS2107-4-29.PNG)
+
+In general the prob that a collision occurs is around 1- exp(-M^2 / (2T))
+
+
+#### Implication
+- Serious consequences on the digest length required on hash function to be collision resistant
+- When key length for a symmetric key is 112, the corresponding recommended length for digest is at least 224
+- Why must the digest length be sig larger?
+> Birthday attack
 
 ## Use encryption for authenticity
 # Application of hash: Password file protection
