@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: 'CS2107 - Lecture 4: Authentication (Password)'
+title: 'CS2107 - Lecture 4/5: Authentication (Password)'
 subtitle: Week 4 - Week 5
 ---
 
@@ -330,9 +330,87 @@ User can pass the password to another person | not possible
 ![CS2107-3-16.PNG]({{site.baseurl}}/img/CS2107-3-16.PNG)
 
 
-# Multifactor authentication
+# Multifactor authentication (2FA)
+- Require at least 2 different authentication factors
+- Common factors:
+	- What you know: Password, pin
+    - What you have: Smart card, atm, mobile phone, OTP, 
+    - Who you are: biometrics
+- Possible factors:
+	- Where u are
+    - What u do
+- It is called 2 factor authentication if 2 factors are employed
+- MAS expects all banks in sg to provide 2fa for ebanking
+
+## What you have
+
+### OTP Token
+- A hardware that generates one time password
+- Each token and the server shared some secret
+- Types:
+	- Time base: Based on the shared secret and current time interval, a password k is generated
+    - Sequence based: An even triggers the change the password (Like user pressing the button)
+
+#### Password + OTP Token:
+Registration:
+- The server issues a OTP token to the uer which contains a secret key that the server knows
+- User set a password
 
 
+Authentication:
+1. User press the token which computes and display OTP
+2. User sends username and password and OTP to server
+3. Since the server has the secret key, the server can also compute the OTP
+4. Server verifies that both otp and password are correct
+
+#### Password + Mobile phone (SMS)
+Registration:
+- User gives the server his mobile phone number and password
+
+
+Authentitcation:
+1. User sends password and username to server
+2. Server verifies that the password is correct, server sends OTP to the user via sms
+3. User receives the SMS and enters the OTP
+4. Server verifies that the OTP is correct
+
+Examples:
+- Singpass, internet banking
+
+
+> SMS OTP is not secure
+>
+> Security threats:
+> - Interception of cellular network channel
+> - SMS messages are stored as plaintext by the short message service center
+> - Malware and trojan on smartphones
+
+
+### Smart card and Finger print (door access system)
+Registration:
+- THe server issues a smartcard to the user (which contains a secret key k)
+- The user enrolls his fingerprint
+
+Authentication:
+1. User insert smartcard to the reader.
+- The reader obtains the user identity and verifies whether the smart card is authentic. If so, continue
+2. User presents fingerprint to the reader
+- The reader performs matching to verify that it is authentic, if yes open door
+
+Security requirements:
+- Very often info on user identity, the secret k, and fingerprint template are not stored in the reader
+- The reader has a secure communication channel to a server that stores these info
+
+
+> In this case we also assume that the reader and server are secure. (Attackers are unable to access them)
+
+
+Notes:
+1. A smart card has this security feature: Even if an attacker has a physical access to card, it is extremly difficult if not impossible to extract a secret stored in a card
+2. What are the actual two factors
+3. What is the role of the secret 
+4. It is possible to eliminate the need of the server
+e.g By storing the fingerprint in the card and 
 
 
 ## Case studies
