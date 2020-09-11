@@ -68,10 +68,37 @@ Security requirement:
 - Suppose A wants to encrypt m for B
 	- Use A public key to encrypt  m
     - By property of PKC only A can decrypt
-- If we use SKC
+- If we use SKC then any two enties must share a secret key
+	- Many keys are required expecially if the no of entities is large
+    - Establishing all secret key is also difficult
 
+![CS2107-4-5.PNG]({{site.baseurl}}/img/CS2107-4-5.PNG)
+
+> But if we use the public key to encrypt, how do we make it such that someone cant just use the public key to decrypt and get the plaintext? What is the inner working of this such that the attacker needs the secret key since the encrypter only has access to one key (Not the private)
 
 ## RSA
+- Basic form 
+- Stil requires other stuff like padding
+- Integers represented in binary
+- When a key is 1024 bits, it means that it can be represented using 1024 bits under binary representation
+(3 bit int is a value from 0 to 7)
+
+### Set up
+1. Owner choose 2 large primes p and q and compute n = pq as the public composite modules
+	- Note that values of p and q is secret
+2. The owen rqndomly choose a encryption exponent e s.t gcd(e, fi(n)) = 1 and e is relatively prime to fi(n)
+	- fi(n) = (p-1)(q-1) is the euler totient function
+3. The owner determins the decryption exponent d where de = 1 (mod fi(n)) ie d = e^-1 (mod fi(n))
+	- p and q can throw away
+4. The owner publishes (n, e) as her public key and keep (n,d) as private
+
+### Encryption and decryption
+- Public key: (n,e)
+- Private: (n,d)
+- Encryption: Given message m, the ciphertext c is c = m^e (mod n)##
+
+
+
 ## Security of RSA
 ## Improper RSA usage
 
