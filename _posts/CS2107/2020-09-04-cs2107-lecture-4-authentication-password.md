@@ -416,4 +416,5 @@ e.g By storing the fingerprint in the card and storing a small secret key in the
 > How to achievement
 
 
-## Case studies
+# SLides
+<iframe src="https://drive.google.com/file/d/1ueRCNAp8KaequfSn6ur8uaflKYr9yEmU/preview" width="840" height="680"></iframe>
