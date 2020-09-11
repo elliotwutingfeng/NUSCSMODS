@@ -127,7 +127,8 @@ Algo Efficiently issues:
 > 700 bit number is no longer safe/
 
 ![CS2107-4-11.PNG]({{site.baseurl}}/img/CS2107-4-11.PNG)
-![]({{site.baseurl}}/img/CS2107-4-12.PNG)
+![]({{site.baseurl}}/img/CS2107-4-12.PNG)![CS2107-4-12.PNG]({{site.baseurl}}/img/CS2107-4-12.PNG)
+
 
 ### Post Quantum cyptography
 - In quantum computer can factosize and perfrom discrete log in polytime
@@ -138,11 +139,52 @@ PKC Schems that are secure agaisnt quantum computer
 
 - Multivariate crypto
 
+### Padding RSA
+- IV is required
+- Addiitional mechanism must be use
+- Homomorphic property
+
+![CS2107-4-13.PNG]({{site.baseurl}}/img/CS2107-4-13.PNG)
+
 
 ## Improper RSA usage
+Consider a sample scenario:
+" For his final year project, bob is tasked to write an app that employs an end to end encryption to send images from a mobile phone to another mobile phone over wifi. The sender and recipient use SMS to establish the required symmetric key.:
+
+- Bob feels that RSA is cool
+- Instead of employing AES, Bob employs RSA as the encryption schem: The publick seceret key pair is treated as symmetric key
+- Bob claims rsa is more secure than aes, it can be proved to be difficult as factorisation which is believe to be hard
+- RSA implementation: To encrypt a large image, bob dividese the files into chunks and apply RSA to each chunk
+- Implmentation diagram:
+
+
+### Efficiency and performance
+- RSA is slower than AES
+
+
+### ECB with RSA
+- Dividing the plaintext into piece and independently apply encryption to each of them could leak important info
+-Suppose the image below is divided into blocks and encrypted with some deterministic encryption scheme using the same key
+- SInce it is deterministic, any two plaintext blocks that are exactly the same will be encryption into the same ciphertext
+
+### Security of RSA
+- Not necessarily more secure than AES
+- It can be shown that getting the private key from the publick key is difficulkt as factorisation
+- But it is not known whether the prblem of getting the plaintext from the ciphertext and public key
+- RSA has to be modified so that different encryptions of the same plaintext lead to different ciphertext
+- Factorisation can be done by a quantum computer
+	- RSA is broken by quantum computer
+    - It is not clear how a quantum computer can be used to break AES
+    
 
 # Crypto background 2: Hash and keyed-hash
-## Hash 
+## (Unkeyed) Hash 
+- A functin that takes an arbitrarily ling message as input and outputs a fixed size (160 bits) digest
+- Note that a hash function takees no key
+- A cryptographic has must meet some secuirty requiremetns
+- Do not use non cryptographoc has function such as:
+	- Taking selected bits from the data
+    - CRC checksum
 ## Keyed hash
 
 
