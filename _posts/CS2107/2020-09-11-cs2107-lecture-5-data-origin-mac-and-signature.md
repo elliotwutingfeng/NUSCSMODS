@@ -156,22 +156,39 @@ Consider a sample scenario:
 - Bob claims rsa is more secure than aes, it can be proved to be difficult as factorisation which is believe to be hard
 - RSA implementation: To encrypt a large image, bob dividese the files into chunks and apply RSA to each chunk
 - Implmentation diagram:
+![CS2107-4-14.PNG]({{site.baseurl}}/img/CS2107-4-14.PNG)
 
+> What is wrong?
 
 ### Efficiency and performance
 - RSA is slower than AES
+
+Solution:
+> Use AES first (For a large file)
+
+![CS2107-4-15.PNG]({{site.baseurl}}/img/CS2107-4-15.PNG)
+
 
 
 ### ECB with RSA
 - Dividing the plaintext into piece and independently apply encryption to each of them could leak important info
 -Suppose the image below is divided into blocks and encrypted with some deterministic encryption scheme using the same key
 - SInce it is deterministic, any two plaintext blocks that are exactly the same will be encryption into the same ciphertext
+![CS2107-4-16.PNG]({{site.baseurl}}/img/CS2107-4-16.PNG)
+
 
 ### Security of RSA
+1)
 - Not necessarily more secure than AES
 - It can be shown that getting the private key from the publick key is difficulkt as factorisation
 - But it is not known whether the prblem of getting the plaintext from the ciphertext and public key
+
+
+2)
 - RSA has to be modified so that different encryptions of the same plaintext lead to different ciphertext
+
+
+3)
 - Factorisation can be done by a quantum computer
 	- RSA is broken by quantum computer
     - It is not clear how a quantum computer can be used to break AES
@@ -179,7 +196,7 @@ Consider a sample scenario:
 
 # Crypto background 2: Hash and keyed-hash
 ## (Unkeyed) Hash 
-- A functin that takes an arbitrarily ling message as input and outputs a fixed size (160 bits) digest
+- A function that takes an arbitrarily ling message as input and outputs a fixed size (160 bits) digest
 - Note that a hash function takees no key
 - A cryptographic has must meet some secuirty requiremetns
 - Do not use non cryptographoc has function such as:
