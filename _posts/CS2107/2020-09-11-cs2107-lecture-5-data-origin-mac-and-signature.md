@@ -217,7 +217,8 @@ Examples:
 
 ## Keyed hash
 A keyed hash is a function that takes an arb long message and secret key as input and outputs a fixed size. MAC
-{IMG}
+![CS2107-4-31.png]({{site.baseurl}}/img/CS2107-4-31.png)
+
 
 
 ![CS2107-4-19.PNG]({{site.baseurl}}/img/CS2107-4-19.PNG)
