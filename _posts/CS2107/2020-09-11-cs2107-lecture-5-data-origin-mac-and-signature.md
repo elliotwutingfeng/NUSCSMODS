@@ -267,9 +267,29 @@ Example:
 
 ![CS2107-4-25.PNG]({{site.baseurl}}/img/CS2107-4-25.PNG)
 
+> MAC: We cannot force ALICE to admit that the MAC come from her, she can argue that it come from BOB
 
+> DIgital signature: It is confirm from ALICE, to generate the signature.. only ALICE can generate it thus it can only be from her
+
+Most signature scheme consist of two components:
+- AN unkey hased and sign/verify algo
+
+![CS2107-4-26.PNG]({{site.baseurl}}/img/CS2107-4-26.PNG)
+![CS2107-4-27.PNG]({{site.baseurl}}/img/CS2107-4-27.PNG)
+
+Popular Signature scheme:
+- Sign(): Private key encryption
+- Verify(): Decryption
 
 # Some attacks and pitfalls
 ## Birthday attack on hash
+- Hash function are designed to make a collision difficult to find
+- Collision involves two different messages that give the same digest
+- But all hash function are subjected to birthday attack (Similiar to exhastive search on encryption scheme)
+
+### Birthday Paradox
+![CS2107-4-28.PNG]({{site.baseurl}}/img/CS2107-4-28.PNG)
+
+
 ## Use encryption for authenticity
 # Application of hash: Password file protection
