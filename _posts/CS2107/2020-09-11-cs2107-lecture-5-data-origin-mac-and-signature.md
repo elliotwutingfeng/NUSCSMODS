@@ -196,22 +196,80 @@ Solution:
 
 # Crypto background 2: Hash and keyed-hash
 ## (Unkeyed) Hash 
+![CS2107-4-17.PNG]({{site.baseurl}}/img/CS2107-4-17.PNG)
+
 - A function that takes an arbitrarily ling message as input and outputs a fixed size (160 bits) digest
 - Note that a hash function takees no key
 - A cryptographic has must meet some secuirty requiremetns
 - Do not use non cryptographoc has function such as:
 	- Taking selected bits from the data
     - CRC checksum
+
+![CS2107-4-18.PNG]({{site.baseurl}}/img/CS2107-4-18.PNG)
+
+> One way - It is easy to get one direction but is hard to go the other way
+
+Examples:
+- SHA-1
+- SHA-3
+
+
+
 ## Keyed hash
+A keyed hash is a function that takes an arb long message and secret key as input and outputs a fixed size. MAC
+{IMG}
 
 
-# Data integrity
+![CS2107-4-19.PNG]({{site.baseurl}}/img/CS2107-4-19.PNG)
+
+Examples:
+- CBC - MAC
+- HMAC
+
+
+
+# Data integrity: Hash without secret key
+Example:
+- Someone download a software
+- Someone software hosted by 3rd party
+- How do we known the autentictiy of the file
+
+![CS2107-4-21.PNG]({{site.baseurl}}/img/CS2107-4-21.PNG)
+
+- We need the digest to check if its correct
+![CS2107-4-22.PNG]({{site.baseurl}}/img/CS2107-4-22.PNG)
+
+> Attacker can find another F' that givves the same digest
+
+- Integrity is not about authenticity
+
+
+
 
 # Data Authenticity (Mac, signature)
 ## MAC
+- MAC might be also modified by attacker
+![CS2107-4-23.PNG]({{site.baseurl}}/img/CS2107-4-23.PNG)
+
+- Typically MAC is appended to F, then they are stored as a single file or transmitted together through a communication channel, hence MAC is also called authenticity tag
 ## Signature
+![CS2107-4-24.PNG]({{site.baseurl}}/img/CS2107-4-24.PNG)
+
+- Signing the private key is used
+- Verification the public key is used
+
+### What is special about signaure
+- We can view digital signature as the counterpart of handwritten signature in legal document
+	- Document is authentic or certified if it has the correct handwritten signature
+    - No one except the authentic signer can forge the signaure
+- In addition to authenticity, signature scheme also achieves non repudiation:
+	- Assurance that soemone cannot deny his or her previous commitments or actions
+
+![CS2107-4-25.PNG]({{site.baseurl}}/img/CS2107-4-25.PNG)
+
+
 
 # Some attacks and pitfalls
 ## Birthday attack on hash
 ## Use encryption for authenticity
-# Application of hash: Password file protection 
+# Application of hash: Password file protection
