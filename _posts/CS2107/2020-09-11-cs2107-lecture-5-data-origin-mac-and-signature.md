@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS2107 - Lecture 5 : Data Origin, MAC and signature'
 ---
 Authentication: The process of assuring that the communicating entity or the origin of piece of infomation is one that it claims to be
