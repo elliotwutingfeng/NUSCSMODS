@@ -95,11 +95,50 @@ Security requirement:
 ### Encryption and decryption
 - Public key: (n,e)
 - Private: (n,d)
-- Encryption: Given message m, the ciphertext c is c = m^e (mod n)##
+- Encryption: Given message m, the ciphertext c is c = m^e (mod n)
+- Decryption: Given a cipher text c, the plaintext m is m= C^d (mod n)
 
+![CS2107-4-6.PNG]({{site.baseurl}}/img/CS2107-4-6.PNG)
+
+### Correctness
+![CS2107-4-7.PNG]({{site.baseurl}}/img/CS2107-4-7.PNG)
+
+### Example
+![CS2107-4-8.PNG]({{site.baseurl}}/img/CS2107-4-8.PNG)
+
+### Note
+- RSA has a property where we can use the decryption of key d to encrypt and then the encryption key e to decrypt
+- This property is not the same in other public key scheme
+
+
+Algo Efficiently issues:
+![CS2107-4-9.PNG]({{site.baseurl}}/img/CS2107-4-9.PNG)
 
 
 ## Security of RSA
+- There is a factorisation problem
+- The problem of finding private key from publick key is as difficult as the factorisation.
+> We need p and q to derive d
+
+- RSA problem: Finding the plaintext from ciphertext and publick key
+
+![CS2107-4-10.PNG]({{site.baseurl}}/img/CS2107-4-10.PNG)
+
+> 700 bit number is no longer safe/
+
+![CS2107-4-11.PNG]({{site.baseurl}}/img/CS2107-4-11.PNG)
+![]({{site.baseurl}}/img/CS2107-4-12.PNG)
+
+### Post Quantum cyptography
+- In quantum computer can factosize and perfrom discrete log in polytime
+- Both RSA and discrete log based PKC will be broken with quantum computer
+- Post quantum cryptogrpahy
+PKC Schems that are secure agaisnt quantum computer
+- Lattice based crypto
+
+- Multivariate crypto
+
+
 ## Improper RSA usage
 
 # Crypto background 2: Hash and keyed-hash
