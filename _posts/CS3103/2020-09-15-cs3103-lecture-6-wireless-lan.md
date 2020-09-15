@@ -69,21 +69,41 @@ If the sender and the reciever are at far right, by time the signal reach them, 
 ![CS3103-6-6.PNG]({{site.baseurl}}/img/CS3103-6-6.PNG)
 
 
+
+
 Station B and C are hidden from each other wrt A
 -  B transmission to A may overlap with C transmission to A
 - What happens while B is transmitting to A, C senses the carrier to start transmission?
+	- There will be a collision in the yellow area
 
 > Hidden nodes reduce the capacity of the network as they increase the possibility of collision
 
 
 #### MAC LAYER (CSMA/CA)
 
+![CS3103-6-7.PNG]({{site.baseurl}}/img/CS3103-6-7.PNG)
 
 #### Reservation scheme (CTS) prevents hidden station problem
 
+1. Source Send a RTS to Dest
+2. Dest CTS (clear to send) to source to both side
+3. The other nodes would go into NAV time where they will not send anything
 
+> The other ndoes will know that something else is happening in the link even if the RTS didnt reach 
+
+
+![CS3103-6-8.PNG]({{site.baseurl}}/img/CS3103-6-8.PNG)
+
+4. Send the data
+5. Return back to 1
+![CS3103-6-9.PNG]({{site.baseurl}}/img/CS3103-6-9.PNG)
+![CS3103-6-10.PNG]({{site.baseurl}}/img/CS3103-6-10.PNG)
 
 #### interframe space types (IFS)
+There is different priority for each reply
+
+![CS3103-6-11.PNG]({{site.baseurl}}/img/CS3103-6-11.PNG)
+
 
 Values:
 - DIFS (Distributed coordination function IFS)
@@ -100,11 +120,23 @@ Values:
 - Point coordination function IFS (PIFS)
 	- Mid length IFS
     - USed by centralised controller in PCF scheme when using poll
-    - Takes precedence over nomal contentin traffic
+    - Takes precedence over normal contentin traffic (DIFS)
+  
 
 ## Exposed node porblem
+![CS3103-6-12.PNG]({{site.baseurl}}/img/CS3103-6-12.PNG)
+
+1. A send RTS to B and C
+2. B send CTS
+3. Data transmitted
+
+
+Why cant C send data to D? C can send to D because the area is free but it will erronously think that it cannot send because of the recived RTS
+- Waste the channel capacity
 
 > What if C sends an RTS immediaately after timeout for CTS from B and no data in channel?
+
+
 
 
 ### RTS/CTS do not solve Exposed node problem
