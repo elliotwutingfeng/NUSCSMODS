@@ -33,6 +33,14 @@ h = Omega(nlgn) where n!>=(n/2)^n/2
 - Sorting must be stable too : If two entries have same value then their order shld not change
 
 Pictorial:
+![CS3230-6-3.PNG]({{site.baseurl}}/img/CS3230-6-3.PNG)
+
+1. Go through the original array A and store the count of the numbver in array C where the index is the number and the value is the number of times that number is encountered in A
+2. Recal C such that each C[i] = C[i] + C[i-1]
+3. Fill up B (the sorted array) where C array value is keeping track of the last position of where the value shld be place
+	- C[i] = last position where i should be place
+![CS3230-6-4.PNG]({{site.baseurl}}/img/CS3230-6-4.PNG)
+
 
 ## Code
 - Init B[1..n]
