@@ -202,14 +202,23 @@ AP will use PIFS sometimes and then use DIFS sometimes. AP will do this repeated
 
 ## Basic service set (BSS) or cell
 - Building Block of a wireless lan
-- A set of station cotnrolled by a single coordiantion function, the logical function that determines when a station can transmit or recieve
+- A set of station cotnrolled by a **single coordiantion function**, the logical function that determines when a station can transmit or recieve
 - A BSS without an AP is called an ad hoc netowrk or IBSS (independent Basic service set)
 - A BSS with an AP is called infrastructure network
+
+![CS3103-6-18.PNG]({{site.baseurl}}/img/CS3103-6-18.PNG)
+
 
 ## Extended service set (ESS)
 - A set of one or more basic service set interconnected by a distributed system(DS)
 - Traffic always flow via Access point
 - DIameter of the cell is double the coverage distance between two wireless stations
+
+> Why not a single big bss
+> 
+> - There will be lots of collision so the efficiency will decrease
+
+A single BSS with access point can be called a ESS
 
 ### DS
 - A system to interconnect a set of basic service sets
