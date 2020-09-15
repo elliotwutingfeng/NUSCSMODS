@@ -5,9 +5,15 @@ title: 'CS3103 - Lecture 6 : Wireless Lan'
 ---
 # MAC Sublayer - CSMA/CA
 #### Characteristics
+![CS3103-6-1.PNG]({{site.baseurl}}/img/CS3103-6-1.PNG)
 
-
+Application (5G)
+- IOT devices might need a few bytes of data
+- Need to done very fast
+- Low latency
+- Bandwidth
 #### Standards
+![CS3103-6-2.PNG]({{site.baseurl}}/img/CS3103-6-2.PNG)
 
 
 
