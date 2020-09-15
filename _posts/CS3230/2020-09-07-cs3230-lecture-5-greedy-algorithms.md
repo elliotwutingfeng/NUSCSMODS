@@ -403,6 +403,10 @@ Scan all edges in increasing order of weight and add the edge if both endpoints 
 
 ![CS3230-5-18.PNG]({{site.baseurl}}/img/CS3230-5-18.PNG)
 
+- Label: Labelling the component (Label is given as the name of the largest component)
+	- Every time we merge, we are changing the label of the smaller component to be that of the larger component
+
+
 ### Code
 ![CS3230-5-19.PNG]({{site.baseurl}}/img/CS3230-5-19.PNG)
 
@@ -413,12 +417,13 @@ Scan all edges in increasing order of weight and add the edge if both endpoints 
 - Each time the component label a vertex changes, the component of F containing the vertex frows by at least the factor of 2, thus each vertex label changes at most O(lgn) times
 - It follows the total time spent updating vertex labels is only O(nlgn)
 
-Adding n edges:
-- each edge each time, we change the label of O(n) vertices
-- When we do a merge, the count of the component will +1 
-- The label will only change when the number increase x2 of the previous
-- Label change is lgn
+Union is lgn:
+- Everytime we merge, we are changing the smaller components with the lkabel of the larger 
+- The size of this component will be at x2 of the previous 
+- The next time this component is being merge (And the smaller component value changed to the alrgest) again would be when the component is to be at least x2 
+- Therefore it would change at most lgn because each time the size of the component will x2 
 
+> CHanging one component's label is O(1) but changing all the components in the set is at least Olgn since the larger component would be at most x2 of the previous
 
 
 
