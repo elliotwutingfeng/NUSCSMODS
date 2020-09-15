@@ -223,27 +223,44 @@ A single BSS with access point can be called a ESS
 ### DS
 - A system to interconnect a set of basic service sets
 	- Intergrated (SIngle AP), Wired, Wireless
+Wired with the cost is to be low, wireless is quite good also.
+
+![CS3103-6-19.PNG]({{site.baseurl}}/img/CS3103-6-19.PNG)
+
 
 ## SSID
 - Service set identifier or Extended SSID
-- Network name
+- Network name 
 - 32 octets long
 - One network (ESS or IBSS) has one SSID
 
 ## BSSID
 - Basic service set identifier
 - cell identifier
-- 6 octec long (mac address format)
+- 6 octets long (mac address format)
 - one bss has one BSSID
-- Value of BSSID is the same as the MAC address of the radion in the access poinnt
+- Value of **BSSID is the same as the MAC address of the radion in the access poinnt**
 - IN an IBSS, the BSSID is a locally adminsitered MAC address generated from a 48 bit random number
 
 ## Frame formats
+In normal frames, we only have source and destination but for this we have 4
+
+![CS3103-6-20.PNG]({{site.baseurl}}/img/CS3103-6-20.PNG)
 
 ## Field type desc
+![CS3103-6-21.PNG]({{site.baseurl}}/img/CS3103-6-21.PNG)
+
+> What is the purpose of the beacons?
+> When reassociation is done and how?
 
 #### Why 4 adddresses
 
+![CS3103-6-22.PNG]({{site.baseurl}}/img/CS3103-6-22.PNG)
+
+- Ap - 3 Or 4 address 
+
+The addresses changes depending on who is the sender and who is the destination
+![CS3103-6-23.PNG]({{site.baseurl}}/img/CS3103-6-23.PNG)
 
 
 
@@ -253,5 +270,5 @@ Questions:
 - What are WEP and WPA2
 
     
-
-# LAB
+# Slides
+<iframe src="https://drive.google.com/file/d/1lFgoBz6_WckurwAxnBiD_aWR4fYjth1H/preview" width="840" height="880"></iframe>
