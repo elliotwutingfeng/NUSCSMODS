@@ -184,13 +184,18 @@ How does PC (AP) gets access to media
 
 Another IFS value is introduce PIFS. It is shorter than DIFS. AP use this to gain access to media
 > How?
+> - It is shorter
 
 
 What happens if AP always uses PIFS?
-> Startvation of DCF based stations
+> Starvation of DCF based stations (Since AP always has priority)
 
 
 #### AP use reptition interval
+AP will use PIFS sometimes and then use DIFS sometimes. AP will do this repeatedly.. this is to give chance to other nodes.
+
+![CS3103-6-17.PNG]({{site.baseurl}}/img/CS3103-6-17.PNG)
+
 
 
 # Lab Notes
