@@ -19,6 +19,9 @@ Application (5G)
 
 # MAC Sublayer = DCF and PCF
 ##### Recall: Eternet MAC layer (Listen while you talk)
+
+![CS3103-6-3.PNG]({{site.baseurl}}/img/CS3103-6-3.PNG)
+
 - Send packet
 - Listens
 	- If detect collision:
@@ -31,28 +34,39 @@ Application (5G)
     	- Packet?
 
 ## MAC layer Protocol (CSMA/CA)
+
+![CS3103-6-4.PNG]({{site.baseurl}}/img/CS3103-6-4.PNG)
+
 > What is the purpose of IFS
-> 
+>  Make sure those just start transmission time is detected
+> - If someone already started transmission, it might look idle but actually someone is still transmitting. So we will wait
 > 
 > What is the purpose of cotention window
->
+> - Avoid multiple channels transmitting the same time
 > Then is collision avoidance achieved
 
 ### Why collision avoidance
 - CSMA/CA looks more inefficient than CSMA/CD (Waiting times and ack)
 - But we cant use CSMA/CD for wireless
 
-> Why? (If cannot see each other, do they no its collision)
-> 
+> Why is collision avoidance harder for wireless? (If cannot see each other, do they no its collision)
+> - Hidden nodes
+
 
 ### Collision detection is hard in wireless networks
 - Enery level during transmission, idleness or collision
+![CS3103-6-5.PNG]({{site.baseurl}}/img/CS3103-6-5.PNG)
+
+If the sender and the reciever are at far right, by time the signal reach them, it might not be strong enough for the reciever to detect it.
+
+
 - Other requirements:
 
 
 ### Hidden node probelm
 - CSMA/CA suffers from this
 - Picture:
+![CS3103-6-6.PNG]({{site.baseurl}}/img/CS3103-6-6.PNG)
 
 
 Station B and C are hidden from each other wrt A
