@@ -346,6 +346,19 @@ We are just replacing e' with another edge e
 
 ![CS3230-5-34.PNG]({{site.baseurl}}/img/CS3230-5-34.PNG)
 
+- Choose one random vertice
+- Check out going edges and select the one with least cost
+- Form many components
+- Find the outgoing edges one component and see if it can connect to another component 
+- Choose the smallest edge and merge the two compoennts
+
+![CS3230-5-35.PNG]({{site.baseurl}}/img/CS3230-5-35.PNG)
+
+
+- Algo has to choose the edge
+- Proof is given the edge
+> No matter how you pick the edge, the answer is the same
+
 
 ### Prims algo
 There is only one non trivial component C which is a tree. Every other component contains one vertex.
@@ -354,8 +367,12 @@ There is only one non trivial component C which is a tree. Every other component
 
 - Choose one random vertice
 - Check out going edges and select the one with least cost
-- Check that the edge's vertice is not in our tree already
+- Check that the connected component is not added
+- Add it to our list of components
 - Repeat
+
+
+
 - See 2040s
 
 ### Time complexity
@@ -366,24 +383,44 @@ There is only one non trivial component C which is a tree. Every other component
 - Each edge (u,v) can be inserted into Q at most twice.
 	- Adding edges from u
     -　Adding edges from v
-- The size of Q is at most M hence insertion is logm time
+- The size of Q is at most M hence insertion/deletion is logm time
 
-- Time complexity O(mLogn)
+- Time complexity O(mLogn) because n^2 is larger than m
+
+> Fib heap: O(nlgn + m) time
 
 ## Kruskal algorithm
 ![CS3230-5-17.PNG]({{site.baseurl}}/img/CS3230-5-17.PNG)
 
 Scan all edges in increasing order of weight and add the edge if both endpoints are in different components
 
+1. Start with the smallest edge
+2. Add the edge into the set
+3. Check the next smallest edge
+4. Check there is no cycle
+5. If no cycle, add the edge
+6. Repeat with 3
+
 ![CS3230-5-18.PNG]({{site.baseurl}}/img/CS3230-5-18.PNG)
 
 ### Code
 ![CS3230-5-19.PNG]({{site.baseurl}}/img/CS3230-5-19.PNG)
 
-### Analysis
+#### Analysis
 - After init sort which takes time O(mlogm), the complexity is dominated by teh total time taten UNION operation
+- For loop vertex: O(n)
+- For loop edge: O(M)
 - Each time the component label a vertex changes, the component of F containing the vertex frows by at least the factor of 2, thus each vertex label changes at most O(lgn) times
 - It follows the total time spent updating vertex labels is only O(nlgn)
+
+Adding n edges:
+- each edge each time, we change the label of O(n) vertices
+- When we do a merge, the count of the component will +1 
+- The label will only change when the number increase x2 of the previous
+- Label change is lgn
+
+
+
 
 > 2040s:
 > - Find and union are both logn
