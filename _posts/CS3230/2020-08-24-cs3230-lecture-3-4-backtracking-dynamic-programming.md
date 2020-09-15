@@ -602,3 +602,6 @@ Memorisation:
 ## Greedy algo
 - make the choice locally without having to solve the subproblem
 - Looks at one branch of the recursion tree
+
+# Slide
+<iframe src="https://drive.google.com/file/d/12cGF3zHFGpacyeCjb2bJD5g92EvxOuKd/preview" width="840" height="880"></iframe>
