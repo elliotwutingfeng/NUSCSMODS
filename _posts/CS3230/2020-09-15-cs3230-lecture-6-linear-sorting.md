@@ -55,17 +55,24 @@ Time complexity is O(n+k)
 
 # Radix sort
 - Suppose we want to sort a list of d digit numbers and do it digit by digit
-- We intuitively want to sort num based on their most significant bit then recusively sort based on the next sig digt
+- We intuitively want to sort num based on their most significant bit then recusively sort based on the next sig digit
 - But This require maintaining 10 different list of numbers while sorting the 2nd digit, 100 different list while sorting the 3rd digit etc
 
 > Radix sort solves the problem of card sorting by counterintuitively by sorting on the **least significant bit** first
 
 
-Pcitorial:
+Pictorial:
+![CS3230-6-5.PNG]({{site.baseurl}}/img/CS3230-6-5.PNG)
+
+We are using counting sort to sort each digit where counting sort is stable. This means that we will not change the order of the two numbers if they are equal. Thus radix is able to work.
+
 
 For d digit numbers, we need d counting sort operations. The only requirement is that the counting sort algorithm is stable
 
 THe algo runs in O(d(n+10) = O(dn)
+
+![CS3230-6-6.PNG]({{site.baseurl}}/img/CS3230-6-6.PNG)
+![CS3230-6-7.PNG]({{site.baseurl}}/img/CS3230-6-7.PNG)
 
 
 ##### Remark
