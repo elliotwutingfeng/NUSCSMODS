@@ -429,3 +429,6 @@ Union is lgn:
 
 > 2040s:
 > - Find and union are both logn
+
+# SLide
+<iframe src="https://drive.google.com/file/d/1UluBjI-P0LvMbpGoFEBxbASBqdIC0Fam/preview" width="840" height="880"></iframe>
