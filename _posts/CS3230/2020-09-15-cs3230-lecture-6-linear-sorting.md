@@ -74,19 +74,30 @@ THe algo runs in O(d(n+10) = O(dn)
 ![CS3230-6-6.PNG]({{site.baseurl}}/img/CS3230-6-6.PNG)
 ![CS3230-6-7.PNG]({{site.baseurl}}/img/CS3230-6-7.PNG)
 
+> Given a n in a set of {0..n^2}, 
+	- Radix is O(n)
+    - counting is O(n^2)
+    - Merge is O(nlgn)
+    
+
 
 ##### Remark
 One doesnt need to write the numbers in base 10. Sometimes writing the numbers in different base and using radix sort will lead to faster algo
 
 
 # Bucket sort
-- Suppose we want to sort n numbers drawn randomly from a uniform distribution over an interval. Without loss of generality, let interval be `[0,1)`
-- Create n buckets `[0,1/n) , [1/n, 2/n),...[(n-1)/n,1)`
+- Suppose we want to sort n numbers drawn **randomly** from a uniform distribution over an interval. Without loss of generality, let interval be `[0,1)`
+- Create n buckets of equal size `[0,1/n) , [1/n, 2/n),...[(n-1)/n,1)`
 - Since inputs are uniformly distributed over `[0,1)`, we dont expect many numbers to fall into each bucket
 - Produce output: Sort the numbers in each bucket and then go through the buckets in order, listing the elements each
 - Use insertion sort to sort buckets
 
 Pictorial:
+![CS3230-6-8.PNG]({{site.baseurl}}/img/CS3230-6-8.PNG)
 
 
 ## Complexity analysis
+![CS3230-6-9.PNG]({{site.baseurl}}/img/CS3230-6-9.PNG)
+
+- Placing and collecting into different buckets
+- Combine them
