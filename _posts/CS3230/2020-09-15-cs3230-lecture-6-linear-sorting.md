@@ -5,11 +5,11 @@ title: 'CS3230 - Lecture 6: Linear sorting'
 ---
 # Comparison based sorting lower bound 
 - Suppose we don't know anything about the content of the input elements we want to sort
-- The only reasonable operation we can do to arrange in osrted order is to compare ai and aj for some i and j
+- The only reasonable operation we can do to arrange in sorted order is to compare ai and aj for some i and j
 - View any comparison based sorting algo as decision tree
 
 Pictorial:
-
+![]({{site.baseurl}}/img/CS3230-6-1.PNG)
 
 - Each leaf : Determine specific sorted order
 - Worst case complexity is the longest simple path
@@ -75,4 +75,3 @@ Pictorial:
 
 
 ## Complexity analysis
-
