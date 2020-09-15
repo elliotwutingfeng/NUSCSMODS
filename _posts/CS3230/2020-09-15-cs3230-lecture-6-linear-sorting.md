@@ -101,3 +101,7 @@ Pictorial:
 
 - Placing and collecting into different buckets
 - Combine them
+
+
+# Slides
+<iframe src="https://drive.google.com/file/d/1ySUN5-wRDlOxdUBK09cl8WPgKwH3_qAY/preview" width="840" height="880"></iframe>
