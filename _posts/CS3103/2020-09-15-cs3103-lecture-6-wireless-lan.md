@@ -130,16 +130,25 @@ Values:
 2. B send CTS
 3. Data transmitted
 
+![CS3103-6-14.PNG]({{site.baseurl}}/img/CS3103-6-14.PNG)
+
 
 Why cant C send data to D? C can send to D because the area is free but it will erronously think that it cannot send because of the recived RTS
 - Waste the channel capacity
 
 > What if C sends an RTS immediaately after timeout for CTS from B and no data in channel?
+> - C will send and it will collide with A's data
+> - From C point, it is getting CTF from D and recieving data from A.. 
+> - However, it will not affect A ability to send to B
+
+Unfortunately, there is no good solution that can make C send Data to D while being sent data from A
 
 
 
+### RTS/CTS do not solve Exposed node problem]
 
-### RTS/CTS do not solve Exposed node problem
+![CS3103-6-15.PNG]({{site.baseurl}}/img/CS3103-6-15.PNG)
+
 - C hears from RTS from A but not CTS from B
 - After timeout period it sends RTS to D
 - A is in sending state and not recieving
@@ -152,11 +161,13 @@ Why cant C send data to D? C can send to D because the area is free but it will 
 - Two types of mac layer protocols:
 	- DCF: Distributed coordination function
     	- Contention service (On top)
+        - Includes that the access points and the nodes are equal
     - PCF: POlling service
     	- Optinal access method for infrastructure network
         - Used for time sensitive transmission
 
 PCF is implemented on top of DCF
+![CS3103-6-16.PNG]({{site.baseurl}}/img/CS3103-6-16.PNG)
 
 
 ### PCF
