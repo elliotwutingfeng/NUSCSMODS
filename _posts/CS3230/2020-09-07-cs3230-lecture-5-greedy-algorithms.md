@@ -265,6 +265,19 @@ So we can see we will try to decrease dist to be 0
 
 ![CS3230-5-10.PNG]({{site.baseurl}}/img/CS3230-5-10.PNG)
 
+Proof:
+1. Every tree has a vertex of degree 1.
+2. Each node has at least 2 or 1 neighbours
+3. We can loop back
+4. We realised that we if we connect back to the previous node, it becoes a cucle
+> THis contradicts 
+![CS3230-5-31.PNG]({{site.baseurl}}/img/CS3230-5-31.PNG)
+
+Therefore, every Tree has at least 2 vertices of degree 1
+
+![CS3230-5-32.PNG]({{site.baseurl}}/img/CS3230-5-32.PNG)
+
+
 ## Minimum spanning tree
 ![CS3230-5-12.PNG]({{site.baseurl}}/img/CS3230-5-12.PNG)
 
@@ -274,24 +287,65 @@ Onegraph:
 
 ![CS3230-5-13.PNG]({{site.baseurl}}/img/CS3230-5-13.PNG)
 
+Weight of the tree is considered to be the sum of the weight of the edges of the smallest weight
+
+
 ## Generic greedy algo
+It is going to add edges and maintain a forest. 
+
+1. Start from an empty edge set
+2. Add one edge at a time without creating any cycle
+
+
 Consider greedy algo for finding an MST of G = (V,E) that finds a spanning tree as follows
 
 - Initilised F = (V,E') where E' is empty
 - For i = 1 to n-1
 	- Let C1 .. Ck be the connected components of F
-    - Arbituarily chooe j in {1..k} and pick an edge e in E with minimum weight among edges with exactly endpoint in Cj
+    - Arbituarily chooe j in {1..k} 
+    - pick an edge e in E with minimum weight among edges with exactly endpoint in Cj
     - Add e to E'
+
+
+The main idea is to pick the edge from each component (min) until all is taken
 
 > Graph F is a forest
 
 ### Theory
 
 ![CS3230-5-14.PNG]({{site.baseurl}}/img/CS3230-5-14.PNG)
+
+We assume we have some minimum spanning tree with the same number of edges {o1...on-1}. We can use local 
+1. Pick smallest index i +1 such that Oi+1 is not ei+1
+2. Look at the connected components form by the first i edges
+3. add ei+1 to our O (Optimum solution) 
+4. In O, where O is the minimum spanning tree, there must be a path from u to v. 
+5. Look at the first edge e' that leaves c1
+6. Look at the first edge where the vertice is not in c1
+
 ![CS3230-5-15.PNG]({{site.baseurl}}/img/CS3230-5-15.PNG)
 
+The claim is that the swap will either give less weight or be the same but at the same time, have more components then the previous solution.
+
+7. We removed e' and added e
+> Note that we might have disconnected the nodes, but there is another path from the other side
+
+8. Total weight is W(O) + W(e) - W(e')
+But notice that ![CS3230-5-33.PNG]({{site.baseurl}}/img/CS3230-5-33.PNG)
+
+We just need to get it such that for the optimum solution O*:
+- W(O*) < = W(O)
+- dist(O*) < dist(O)
 
 > Check it if the path e is e'
+
+##### Further explaination
+Lets say there is 3 component C1, C2 and C3. There is an edge u to v
+
+We are just replacing e' with another edge e
+
+![CS3230-5-34.PNG]({{site.baseurl}}/img/CS3230-5-34.PNG)
+
 
 ### Prims algo
 There is only one non trivial component C which is a tree. Every other component contains one vertex.
@@ -300,6 +354,8 @@ There is only one non trivial component C which is a tree. Every other component
 
 - Choose one random vertice
 - Check out going edges and select the one with least cost
+- Check that the edge's vertice is not in our tree already
+- Repeat
 - See 2040s
 
 ### Time complexity
