@@ -9,21 +9,21 @@ title: 'CS3230 - Lecture 6: Linear sorting'
 - View any comparison based sorting algo as decision tree
 
 Pictorial:
-![]({{site.baseurl}}/img/CS3230-6-1.PNG)
+![CS3230-6-2.PNG]({{site.baseurl}}/img/CS3230-6-2.PNG)
 
 - Each leaf : Determine specific sorted order
-- Worst case complexity is the longest simple path
+- Worst case complexity is the longest simple path from the root to the leaf
 
 Considering any sorting algo A:
-- Let height be decison tree corresponding to algo be h
-- Number of leaves in tree of height h is N<2^h
+- Let height be decison tree corresponding to algorithm be h
+- Number of leaves in tree of height h is N<=2^h
 - At each leaves, we must determine which of the n! permutations is the correct order. Thus n! < = N
 
-> COmbining we get n! < 2^h
+> Combining we get n! < 2^h
 
 
 ## Stirling approximation
-
+h = Omega(nlgn) where n!>=(n/2)^n/2
 
 
 # Counting sort
