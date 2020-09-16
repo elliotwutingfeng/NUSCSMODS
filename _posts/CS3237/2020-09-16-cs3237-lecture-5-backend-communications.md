@@ -75,7 +75,28 @@ E.g Content-Type: application/json
 ![CS3237-5-3.PNG]({{site.baseurl}}/img/CS3237-5-3.PNG)
 
 
-
 ##### See slides on how to use mosquitto
 
 # Databases
+- We want to store this data 
+	- As flat files: Difficult to search
+    - As a database - More complex solution, but easier to search for particular images or pieces of data. E.g data read from a certain range of dates
+
+## MySQL
+![CS3237-5-4.PNG]({{site.baseurl}}/img/CS3237-5-4.PNG)
+
+- Establish relationship between tables
+- Eastablish tight rules to govern the relationship
+	- ie, if parent is deleted, any data that is related can be deleted
+
+
+## NoSql
+![CS3237-5-5.PNG]({{site.baseurl}}/img/CS3237-5-5.PNG)
+
+# Securing MQTT
+- `masquitto_passwd -U <password file>`
+
+Check the slides to see more data
+
+# Slides
+<iframe src="https://drive.google.com/file/d/13F1_1iDAw7XVXJTM5SA3nNPOyNFySwkN/preview" width="840" height="880"></iframe>
