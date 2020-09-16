@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3237 - Lecture 5: Backend Communications'
 ---
 # Hypertext transfer protocl
