@@ -313,4 +313,27 @@ In general the prob that a collision occurs is around 1- exp(-M^2 / (2T))
 > Birthday attack
 
 ## Use encryption for authenticity
+- Encryption might give a false sense of security
+
+
+E.g:
+- Mobile phone and server shared a secret key 
+- Server can send instructions to the mobile phone via sms
+- Suppose the format of isntrcution is: X P
+- If an operation doesnt take in paremeter P will be ignored
+- There is a total of 16 valid instructions
+- An instruction is to be encrupted using AES 256 bits
+- It is send as SMS
+- After mobile phone recieves, it decrypts it. If inst is invalid, it ignored else it executes
+- Company claim that the communcation is secure: Even if attacker have compromised the based station they are unable to break the security
+> What is wrong with this
+
+
+- Encryption is designed to provide confidentiality
+- It does not guarentee integrity and authenticity
+- A secure design could use MAC instead of encryption
+
 # Application of hash: Password file protection
+- Password should be hashed and stored in password files
+- During authentication, the password entered by the entity is hashed and compared with teh value stored in password file
+- It is better to use salt, such that the same password is hashed into two different values for to different userid
