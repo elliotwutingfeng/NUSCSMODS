@@ -100,6 +100,66 @@ Responsibility:
 Check:
 - Domain validation (DV) SSL certificate: Issue if the purchaser can demostrate the right to adminsitratively manage a domain name
 - Organisation validation (OV) SSL certificate: Issued if purchaser additionally has an organisation actual existence as a legal entity
+- Extended Validation (EV) SSL Certificate: Issued if the purchaser can persuade the cert provider of its legal identity including manual verifiacation checks by a human
 
+
+#### Types
+
+
+
+- Root CA: Whose certifcate is self signed
+- Subordinate/intermediate CA: Tier 1, 2..
+- Leaf CA
+
+
+
+#### Certification revocation
+- Non expired certificates can be revoked:
+	- Private key was compromised
+    - Issuing CA was compromised
+    - Entity left an organisatiojn
+    - Business entity was closed
+- A verifier needs to check if a certificate in question is still valid although the certifcate is not expired yet
+- Approaches:
+	- Certificate revocation list (CRL): CA periodically signs and publishes a revocation list
+    - Online certificate status protocol (OCSP): OCSP responder validates a cert in question
+
+Problems:
+- Privacy: OCSP responder knows certificarte that you are validating
+- Soft failed validation: Some browser proceed in event of no reply to an OCSP request
+
+
+Solution:
+- OSCP stapling: Allows a cert to be accompanied or stabled by a OCSP responder signed by CA
+- Part of TLS handshake: CLients do not need to contact CA or OCSP responder
+- Drawback: Increased network cost
 
 # Limitiation/attacks on PKI
+- There are alot of CA: Some are malicious
+- Rogue CA can forge cert
+
+### Weak browser trust model
+- Preloaded list of widely used root CAs compiled by web browser developers
+- A form of Certificate trust list (CTL) approach, where a list of CA s cert are compiked by a trusted authority
+
+
+Security issue: 
+- Trust anchor: The union of all root CAs
+- Which root CA is the one used from the root CA list
+- Certification is only as strong as the weakest root CA
+
+
+Picture:
+
+
+### Null byte injection attack
+- Some browser ignores the substring in the entity identity/name but include them when verifiying the certificate
+1. The common name in the cert when its being verified: "www.comp.nus.edu.sg\0.hacker.com"
+2. The browser displays as "www.comp.nus.edu.sg"
+- User thinks they are connecting to the correct website but its not
+
+
+### Social engineering
+- Typosquatting
+
+Example:
