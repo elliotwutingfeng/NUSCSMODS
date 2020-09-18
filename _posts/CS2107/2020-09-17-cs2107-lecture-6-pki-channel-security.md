@@ -7,19 +7,29 @@ title: 'CS2107 - Lecture 6: PKI + Channel security'
 PKC-based method to assure the authenticity of the downloaded program:
 - The developer signed the file using his private key
 - A user who has downloaded the file from unverified source can verify the authenticity of the file using the developer's public key
+![CS2107-5-1.PNG]({{site.baseurl}}/img/CS2107-5-1.PNG)
+
+
 
 Motivation: 
+![CS2107-5-2.PNG]({{site.baseurl}}/img/CS2107-5-2.PNG)
+
+Someone intercepted bob and pretends to be Bob, thus the public key sent is from Mallory
 
 
-
-
-Securely distributed/broadcast public keys which we can use for encryption(confidentiality) and signature verfication (authentication)
+Securely distributed/broadcast public keys which we can use for encryption (confidentiality) and signature verfication (authentication)
 
 ### Secure channel requirement
+![CS2107-5-3.PNG]({{site.baseurl}}/img/CS2107-5-3.PNG)
 
+
+1)Broadcsting Keys 2)Publishing key 3) Timing requirement
+
+
+Compared to symmetric key setting, we do not need to broadcast the private key. It is okay if the public key is known.
 
 ### Possible public key distribution methods
-1. Public announcemnet
+1. Public annoncement
 2. Publicly available directory
 3. Public key infrastructure
 
@@ -30,25 +40,28 @@ Securely distributed/broadcast public keys which we can use for encryption(confi
 - Many ownders list their keys in blog
 
 Limitation:
-- Not standardized: Cannot verify the public key when needed
-- Need trust the entity distributing the PK
+- Not standardized: Cannot verify the public key when needed (Not everyone has the same medium)
+- Need trust the entity distributing the PK (Like the website)
+
+> How do we know the website can be trusted
 
 #### Publicy available directory
 - Search the public directory by query a server
+![CS2107-5-4.PNG]({{site.baseurl}}/img/CS2107-5-4.PNG)
 
 
 Limitation:
-- Anyone can post their pk to the server
+- Anyone can post their pk to the server (Need to be regulated)
 - Not easy to have secure public directory, how does server verify that the info sent to it is correct
-- Some entity needds to be entrusted
-	- Server
-    - User
+- Some entity needs to be entrusted
+	- Server: Giving the correct PK
+    - User: not an imposter
 
 #### PKI + certificate
 - PKI is a standardised system that distributed public keys
 - PKI Objectives:
 	- To make PK crypto deployable on large scale
-    - To make public keys verifiable without requireing any two communicating parties to directly trust eqach other
+    - To make public keys verifiable without requiring any two communicating parties to directly trust eqach other
     - To manage public and private key pairs throughout their entire key lifecycle
 - PKI is centered around two important components/notions
 	- Certificate
@@ -59,7 +72,7 @@ Limitation:
 # Public key infrastructure (PKI)
 ## Certificate
 
-CA:
+CA (Certificate Authority):
 - Issues and signs digital certificates
 - Keeps a directory of public keys
 - Has its own public private key pair: We assume that the CA public key has been securely distributed to all entities involved
