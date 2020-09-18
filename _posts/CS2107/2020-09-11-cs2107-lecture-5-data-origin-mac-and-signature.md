@@ -314,6 +314,7 @@ In general the prob that a collision occurs is around 1- exp(-M^2 / (2T))
 
 ## Use encryption for authenticity
 - Encryption might give a false sense of security
+- We should not use encryption for authenticity
 
 
 E.g:
@@ -323,17 +324,41 @@ E.g:
 - If an operation doesnt take in paremeter P will be ignored
 - There is a total of 16 valid instructions
 - An instruction is to be encrupted using AES 256 bits
-- It is send as SMS
+- It is send as SMS (Which is susceptible to attacks)
 - After mobile phone recieves, it decrypts it. If inst is invalid, it ignored else it executes
 - Company claim that the communcation is secure: Even if attacker have compromised the based station they are unable to break the security
 > What is wrong with this
+>
+> - Attackers can span with random instruction and possibily have one of the instruction be the corrct valid instruction
 
 
 - Encryption is designed to provide confidentiality
 - It does not guarentee integrity and authenticity
 - A secure design could use MAC instead of encryption
 
+Notes:
+- Mac to the instruction is not secure agaisnt replay attacks
+
+
+Some might argue that encryption is sufficient to protect:
+- Attacker doesnt know the plaintext and only knows the cipher
+- Change on the ciphertext result in change to plaintext
+
+
+What an attacker can do to the encrypter message
+- Ciphertext blocks reordering
+- Integrity attack on one time pad (What happen if 1 bit of the ciphertext get flipped)
+	- Modification has a predicatble impact on the plaintext
+    - Modification to the ciphertext can be undetected
+
+Because of the bridge of integrity, encryption alone is not enough...
+
+
+> A cipher is malleable if its possible to modify a ciphertext and cause a predictable change to the plaintext 
+
 # Application of hash: Password file protection
 - Password should be hashed and stored in password files
 - During authentication, the password entered by the entity is hashed and compared with teh value stored in password file
 - It is better to use salt, such that the same password is hashed into two different values for to different userid
+- Hashing is two way
+[]({{site.baseurl}}/img/CS2107-3-12.PNG)
