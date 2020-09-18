@@ -115,14 +115,14 @@ Responsibility:
 - Manual checking and thus could be costly
 
 
-Check:
+Before certificate issurance, these are checked:
 - Domain validation (DV) SSL certificate: Issue if the purchaser can demostrate the right to adminsitratively **manage a domain name**
 - Organisation validation (OV) SSL certificate: Issued if purchaser additionally has an organisation actual **existence as a legal entity**
 - Extended Validation (EV) SSL Certificate: Issued if the purchaser can persuade the cert provider of its legal identity including **manual verifiacation checks** by a human
 
 
 #### Types
-
+![CS2107-5-9.PNG]({{site.baseurl}}/img/CS2107-5-9.PNG)
 
 
 - Root CA: Whose certifcate is self signed
