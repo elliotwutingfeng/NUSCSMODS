@@ -88,19 +88,23 @@ Content and usage:
     - Signature of CA
     
 Without certificate:
-
-
+![CS2107-5-5.PNG]({{site.baseurl}}/img/CS2107-5-5.PNG)
 
 With certificate:
+![CS2107-5-6.PNG]({{site.baseurl}}/img/CS2107-5-6.PNG)
+
+Bob doesnt need to contact the CA..
 
 
-Role:
+Role of certificate(No required directory sever):
 - CA binds an entity with his public key prior to verfication point
 - User can obtain the dev;s PK can verifies its authenticity without a connection to the CA
 - BUT: THere is still a need to check that the cert has not been revoked
+	- OCSP responder (Online CRL distribution points)
 
 
 #### X.509 Digital certificate standard
+![CS2107-5-7.PNG]({{site.baseurl}}/img/CS2107-5-7.PNG)
 
 
 ## CA and Trust relationship
