@@ -105,6 +105,7 @@ Role of certificate(No required directory sever):
 
 #### X.509 Digital certificate standard
 ![CS2107-5-7.PNG]({{site.baseurl}}/img/CS2107-5-7.PNG)
+![CS2107-5-8.PNG]({{site.baseurl}}/img/CS2107-5-8.PNG)
 
 
 ## CA and Trust relationship
@@ -115,9 +116,9 @@ Responsibility:
 
 
 Check:
-- Domain validation (DV) SSL certificate: Issue if the purchaser can demostrate the right to adminsitratively manage a domain name
-- Organisation validation (OV) SSL certificate: Issued if purchaser additionally has an organisation actual existence as a legal entity
-- Extended Validation (EV) SSL Certificate: Issued if the purchaser can persuade the cert provider of its legal identity including manual verifiacation checks by a human
+- Domain validation (DV) SSL certificate: Issue if the purchaser can demostrate the right to adminsitratively **manage a domain name**
+- Organisation validation (OV) SSL certificate: Issued if purchaser additionally has an organisation actual **existence as a legal entity**
+- Extended Validation (EV) SSL Certificate: Issued if the purchaser can persuade the cert provider of its legal identity including **manual verifiacation checks** by a human
 
 
 #### Types
