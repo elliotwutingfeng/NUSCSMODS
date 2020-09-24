@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: CS2107 - Definitions
 ---
 # Important Definitions (For everything)
