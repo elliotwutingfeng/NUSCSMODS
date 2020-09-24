@@ -140,21 +140,19 @@ data for foreign intelligence and counterintelligence purposes, specializing in 
 - Retina scan: Retinal Scanning requires a very close encounter with a scanning device that sends a beam of light deep inside the eye to capture an image of the Retina.
 
 - Retina vs Iris scan:
-		  
-          Similarities:
+	- Similarities:
 
-          Low occurrence of false positives
-          Extremely low (almost 0%) false negative rates
-          Highly reliable because no two people have the same iris or retinal pattern
-          Speedy results: Identity of the subject is verified very quickly
-          The capillaries in the iris and retina decompose too rapidly to use a amputated eye to gain access
+		- Low occurrence of false positives
+        - Extremely low (almost 0%) false negative rates
+        - Highly reliable because no two people have the same iris or retinal pattern
+        - Speedy results: Identity of the subject is verified very quickly
+        - The capillaries in the iris and retina decompose too rapidly to use a amputated eye to gain access
 
-          Differences:
-
-          Retinal scan measurement accuracy can be affected by disease; iris fine texture remains remarkably stable
-          An iris scan is no different than taking a normal photograph of a person and can be performed at a distance; for retinal scanning the eye must be brought very close to an eyepiece (like looking into a microscope)
-          Iris scanning is more widely accepted as a commercial modality than retinal scanning
-          Retinal scanning is considered to be invasive, iris is not
+	- Differences:
+    	- Retinal scan measurement accuracy can be affected by disease; iris fine texture remains remarkably stable
+        - An iris scan is no different than taking a normal photograph of a person and can be performed at a distance; for retinal scanning the eye must be brought very close to an eyepiece (like looking into a microscope)
+        - Iris scanning is more widely accepted as a commercial modality than retinal scanning
+		- Retinal scanning is considered to be invasive, iris is not
 
 
 
