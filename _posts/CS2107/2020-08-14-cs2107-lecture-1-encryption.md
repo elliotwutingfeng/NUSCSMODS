@@ -41,6 +41,15 @@ title: 'CS2107 - Lecture 1/2: Encryption'
 - Decryption query: Takes cipher return plaintext
 - COA (Cipher text only attackers): Can see ciphertext only
 - KPA (Known-plaintext attacker): Can observe ciphertext and do know the associated plaintext
+- PRG (Pseudorandom generator): Takes a short random seed and output a long pseudorandom sequence
+- PRP (Pseudorandom Permutation): Key random mappings between plaintext and ciphertext, is a function that cannot be distinguished from a random permutation (that is, a permutation selected at random with uniform probability, from the family of all permutations on the function's domain) with practical effort.
+- SPN:  In cryptography, an SP-network, or substitution–permutation network, is a series of linked mathematical operations used in block cipher algorithms such as AES, 3-Way, Kalyna, Kuznyechik,
+- Block cipher:
+	- Diffusion: A change in plaintext will affect many parts of the ciphertexts
+    - Confusion: Attacker cannot predict what will happen to the ciphertext when one character in the plaintext or key changes
+- Mode of operation: A method of encrypting messages of arbitrary size using block cipher
+
+
 
 # Encryption
 An encryption scheme also known as cipher consist of encryption and decryption.
