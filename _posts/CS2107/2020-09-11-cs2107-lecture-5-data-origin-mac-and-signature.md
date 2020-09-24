@@ -240,13 +240,20 @@ Example:
 
 ![CS2107-4-21.PNG]({{site.baseurl}}/img/CS2107-4-21.PNG)
 
+Assuming that there is a secure channel to send a short piece of infomation, the steps are:
+1. Let F be original data file
+2. Alice obtains digest h(F) from secure channel
+3. Alice then obtain a file say F', whose origin claims the file is F
+4. Alice computes and compares the two digests h(F) and h(F')
+
+> Note that even if the hash are the same, does not means that it is 100 percent authentic, just that can say with high confidence it is authentic
+
 - We need the digest to check if its correct
 ![CS2107-4-22.PNG]({{site.baseurl}}/img/CS2107-4-22.PNG)
 
 > Attacker can find another F' that givves the same digest
 
-- Integrity is not about authenticity
-
+- Integrity is not about authenticity, digest can be forged
 
 
 
@@ -255,12 +262,25 @@ Example:
 - MAC might be also modified by attacker
 ![CS2107-4-23.PNG]({{site.baseurl}}/img/CS2107-4-23.PNG)
 
-- Typically MAC is appended to F, then they are stored as a single file or transmitted together through a communication channel, hence MAC is also called authenticity tag
+- Typically MAC is appended to F, then they are stored as a single file or transmitted together through a communication channel, hence MAC is also called authentication tag
+- If the MAC is the same, means someone knows the key (Could be genuine or bad)
+
+
+### Remarks
+- Attacker try forge a valid pair of file and MAC
+- No issues with confidentiality
+
 ## Signature
 ![CS2107-4-24.PNG]({{site.baseurl}}/img/CS2107-4-24.PNG)
 
 - Signing the private key is used
 - Verification the public key is used
+
+### Remarks
+- Signature is computed using private key and F
+- Computed signature is appended
+- Authenticity of F can be verified by anyone who knows the signer public key
+
 
 ### What is special about signaure
 - We can view digital signature as the counterpart of handwritten signature in legal document
@@ -286,6 +306,16 @@ Popular Signature scheme:
 - Verify(): Decryption
 
 # Some attacks and pitfalls
+Checking the chances: 
+								m > 1.17 * T^0.5
+                                
+- M: Entity
+- T: Trait we are comparing
+
+
+Answer evaluated by 1.17 * T ^ 0.5 is the minimum number of entities for there to be a clash.
+
+
 ## Birthday attack on hash
 - Hash function are designed to make a collision difficult to find
 - Collision involves two different messages that give the same digest
