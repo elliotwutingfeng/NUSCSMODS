@@ -152,13 +152,15 @@ Consider a sample scenario:
 " For his final year project, bob is tasked to write an app that employs an end to end encryption to send images from a mobile phone to another mobile phone over wifi. The sender and recipient use SMS to establish the required symmetric key.:
 
 - Bob feels that RSA is cool
-- Instead of employing AES, Bob employs RSA as the encryption schem: The publick seceret key pair is treated as symmetric key
-- Bob claims rsa is more secure than aes, it can be proved to be difficult as factorisation which is believe to be hard
+- Instead of employing AES, Bob employs RSA as the encryption scheme: The public secret key pair is treated as symmetric key
+- Bob claims RSA is more secure than AES, it can be proved to be difficult as factorisation which is believe to be hard
 - RSA implementation: To encrypt a large image, bob dividese the files into chunks and apply RSA to each chunk
 - Implmentation diagram:
 ![CS2107-4-14.PNG]({{site.baseurl}}/img/CS2107-4-14.PNG)
 
 > What is wrong?
+> 
+> - Its not true because RSA is still slower, it the seed is long, it will take very long.
 
 ### Efficiency and performance
 - RSA is slower than AES
@@ -168,6 +170,7 @@ Solution:
 
 ![CS2107-4-15.PNG]({{site.baseurl}}/img/CS2107-4-15.PNG)
 
+> IN practice, it is not commonly known to use RSA to encrypt large files
 
 
 ### ECB with RSA
@@ -216,7 +219,7 @@ Examples:
 
 
 ## Keyed hash
-A keyed hash is a function that takes an arb long message and secret key as input and outputs a fixed size. MAC
+A keyed hash is a function that takes an arb long message and secret key as input and outputs a fixed size, MAC (Message authentication code)
 ![CS2107-4-31.png]({{site.baseurl}}/img/CS2107-4-31.png)
 
 
@@ -224,8 +227,8 @@ A keyed hash is a function that takes an arb long message and secret key as inpu
 ![CS2107-4-19.PNG]({{site.baseurl}}/img/CS2107-4-19.PNG)
 
 Examples:
-- CBC - MAC
-- HMAC
+- CBC - MAC (Based on AES, A block cipher, under CBC mode)
+- HMAC (Hashed based Mac)
 
 
 
