@@ -34,7 +34,7 @@ Compared to symmetric key setting, we do not need to broadcast the private key. 
 3. Public key infrastructure
 
 
-#### public announcement
+#### Public announcement
 - Broadcast public key
 - e.g send via email or website
 - Many ownders list their keys in blog
@@ -98,7 +98,7 @@ Bob doesnt need to contact the CA..
 
 Role of certificate(No required directory sever):
 - CA binds an entity with his public key prior to verfication point
-- User can obtain the dev;s PK can verifies its authenticity without a connection to the CA
+- User can obtain the dev's PK can verifies its authenticity without a connection to the CA
 - BUT: THere is still a need to check that the cert has not been revoked
 	- OCSP responder (Online CRL distribution points)
 
@@ -129,7 +129,14 @@ Before certificate issurance, these are checked:
 - Subordinate/intermediate CA: Tier 1, 2..
 - Leaf CA
 
+#### Certification chain
 
+A list of certification 
+
+For each certificate (Except the last one):
+- The issuer matches the subject of the next cert in the list
+- It is signed by the privqte key of the next certificate in the list
+- The last certificate in the list is the root CA
 
 #### Certification revocation
 - Non expired certificates can be revoked:
