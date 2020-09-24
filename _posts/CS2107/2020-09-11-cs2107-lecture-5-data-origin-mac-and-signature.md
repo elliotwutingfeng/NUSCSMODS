@@ -45,7 +45,7 @@ A public key (Asymmetric key) scheme uses two different keys for encryption and 
 
 
 Requirements:
-- Correctness
+- Correctness: D(kd, E(ke,m)) = m
 - Efficientcy: Fast, polynomial tie
 - Security: "one way" function, the E() can be efficiently done but its inverse D() is infeasible without the private key (kd)
 
@@ -86,7 +86,7 @@ Security requirement:
 ### Set up
 1. Owner choose 2 large primes p and q and compute n = pq as the public composite modules
 	- Note that values of p and q is secret
-2. The owen rqndomly choose a encryption exponent e s.t gcd(e, fi(n)) = 1 and e is relatively prime to fi(n)
+2. The owen randomly choose a encryption exponent e, s.t gcd(e, fi(n)) = 1 and e is relatively prime to fi(n)
 	- fi(n) = (p-1)(q-1) is the euler totient function
 3. The owner determins the decryption exponent d where de = 1 (mod fi(n)) ie d = e^-1 (mod fi(n))
 	- p and q can throw away
