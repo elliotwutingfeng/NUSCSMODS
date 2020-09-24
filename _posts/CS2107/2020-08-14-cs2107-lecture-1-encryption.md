@@ -4,7 +4,7 @@ published: true
 title: 'CS2107 - Lecture 1/2: Encryption'
 ---
 
-# Important Definitions
+# Important Definitions (For everything)
 
 - Confidentiality: The infomation of the users
 - Authenticity: The sender, is it real
@@ -29,7 +29,18 @@ title: 'CS2107 - Lecture 1/2: Encryption'
 	- Ease of use: Security mechanism interfere with working patterns users originally familiar with
     - Performance: Security mechanisms consusmes more computing resouirces
     - Cost: Secuirty meachnism are expensive to develop
+    
+## Ciphers
 
+- Monoalphabetic cipher: THe substitution is fixed for each letter of the alphabet
+- Polyalphabetic cipher: The substituiton is not fixed for each letter of alphabet if there is more than one of the same...
+- Shift cipher: A type of substitution cipher
+- Ceaser cipher: A shift cipher with a shift of 
+- Transposition cipher: Apply a secret permutation to the characters in each block by shuffling
+- Encryption query: Takes plaintext return cipher
+- Decryption query: Takes cipher return plaintext
+- COA (Cipher text only attackers): Can see ciphertext only
+- KPA (Known-plaintext attacker): Can observe ciphertext and do know the associated plaintext
 
 # Encryption
 An encryption scheme also known as cipher consist of encryption and decryption.
@@ -116,7 +127,7 @@ Example: Known plain text scenario
 - Running time depends on size of key space S
 - On avg: 2^93 loops
 
-#### Better attack on know plain text
+#### Better attack on known plain text
 - Attacker can figure out the entries in the key as long as given a plaintext and cipher text
 - If the attacker has access to pais of ciphertext and their corresponding plaintext, they can guess the key
 - Substitution ciper is insecure under known plaintext attack
@@ -146,6 +157,7 @@ Example: Known plain text scenario
 
 ![CS2107-1-10.PNG]({{site.baseurl}}/img/CS2107-1-10.PNG)
 
+
 > They can map frequently occuring letters to the ciphertext to the frequently occuring letters of english
 
 ### Shift and Caesar ciphers
@@ -170,16 +182,16 @@ It is a polyalphabetic cipher
 - Tabula recta
 
 #### Security
-- Easier agaisnt known plaintext attack
-- Not that agaisnt cipher only attack
+- Weak agaisnt known plaintext attack
+- Not that weak agaisnt cipher only attack (Need find good attack technique)
 
 Suppose we know k = length/period of the keyword
 
 Obv: All letters of the plaintext whose index is i (mod k ), for i = 0..k-1.. get shifted by the same key character. We can use **frequency analysis** technique and this cipher turns into a monoalphabetic ciper again
 
 - Kasiski method: 
-	- Repetition in the xipher text give clues to period
-    - Having the same letter block at period apart result in the zame letter block in the cipher texte
+	- Repetition in the cipher text give clues to period
+    - Having the same letter block at period apart result in the same letter block in the cipher text
     - Example: **WBL**BXYLH**WBL**WYH
     - Period: 9 (From the start to the next start)
     - Hence if we find repeated pattern with distance m, guess the period k where k/m
@@ -190,7 +202,7 @@ Obv: All letters of the plaintext whose index is i (mod k ), for i = 0..k-1.. ge
 
 Known as transposition cipher
 
-- Group plaitext into blocks of t characters
+- Group plaintext into blocks of t characters
 - Apply a secret "permutation" to the character in each block by shuffeling the character
 - the block size t would be part of the key: t shld be kept secret
 ![CS2107-1-11.PNG]({{site.baseurl}}/img/CS2107-1-11.PNG)
@@ -243,8 +255,8 @@ Permutation cipher can be broken easily if plaintext is an english text
     - E: Encruption algo
     - D: Decryption ALgo
 - Requirements
-	- Correctness
-    - Efficient: Fast generation
+	- Correctness: For all m in M and k in K, output by G, D(E(m)) = m
+    - Efficient: G, E, D, Fast generation
     - Security: Attackers cannot recover the secret key or plaintext
 - Perfect security/Secrecy: Regardless of any prior infomation that attackers has about plaintext, the ciphertext should leak no additional infomation about the plaintext
 
@@ -261,7 +273,7 @@ Permutation cipher can be broken easily if plaintext is an english text
 - Impacts:
 	- Security may fail with tiny probability
     - Agaisnt computationally bounded attackers:
-			- If one key istested per clock cycle, a supercomputer canc heck 2^80 keys per year
+			- If one key is tested per clock cycle, a supercomputer can check 2^80 keys per year
             - A super computer since big bang can check ~2^112 keys
             - Key space size of modern ciphers >= 2^128
 
@@ -272,12 +284,16 @@ Computational assumption is important:
 
 ### Exhastive search and key length
 - See work factor
-- Quantify the security of an excruption scheme by the length of the key
+- Quantify the security of an excryption scheme by the length of the key
 
 - Some schemes such as RSA have known attacks that are more efficient that exhastively searching all the keys
 - In those cases we want to quantify the security by the equivalent exhastive search
 
 ![CS2107-1-17.PNG]({{site.baseurl}}/img/CS2107-1-17.PNG)
+
+
+### Security analysis of cipher
+- 
 
 # Modern ciphers
 Modern ciphers generally refers to schemes that use computer to encrupt and decrypt
@@ -292,6 +308,7 @@ Designs of modern cipher consider known sttacks:
 - RC4
 - A5/1
 - AES
+- A5/3
 
 ![CS2107-1-18.PNG]({{site.baseurl}}/img/CS2107-1-18.PNG)
 
