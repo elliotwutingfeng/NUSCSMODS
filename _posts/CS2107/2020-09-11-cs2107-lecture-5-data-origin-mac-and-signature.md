@@ -111,7 +111,7 @@ Security requirement:
 - This property is not the same in other public key scheme
 
 
-Algo Efficiently issues:
+### Algo Efficiently issues:
 ![CS2107-4-9.PNG]({{site.baseurl}}/img/CS2107-4-9.PNG)
 
 
@@ -140,7 +140,7 @@ PKC Schems that are secure agaisnt quantum computer
 - Multivariate crypto
 
 ### Padding RSA
-- IV is required
+- IV is required so that encryption is randomised
 - Addiitional mechanism must be use
 - Homomorphic property
 
