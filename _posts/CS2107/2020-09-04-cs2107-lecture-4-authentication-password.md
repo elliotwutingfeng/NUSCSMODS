@@ -177,7 +177,7 @@ Hybid attacks: It is possible to carry out exhastive search together with dictio
 - Shoulder surfing: Look over the shoulder attack
 - Sniffing: Listening/intercepting the communication channel:
 	- Some system and protocol simply send the password over a public network in clear
-    - FTP, Telnet, HTTP
+    - FTP, Telnet, HTTP/
     
 ### Key-Logger
 Captures/records the keystrokes and sends the info back to attacker via covert channel
@@ -328,9 +328,9 @@ User can pass the password to another person | not possible
 
 
 ### Other erros
-- Equal error rate (EER): When FNMR = FNR
-- Failure to enroll rate (FER): Some user biometric data cannot be captured during **enrollment**
-- Failer to capture rate (FTC): Users biometric data cannot be captured during **Authentication**
+- **Equal error rate** (EER): When FNMR = FNR
+-**Failure to enroll rate** (FER): Some user biometric data cannot be captured during **enrollment**
+- **Failer to capture rate**(FTC): Users biometric data cannot be captured during **Authentication**
 
 ![CS2107-3-16.PNG]({{site.baseurl}}/img/CS2107-3-16.PNG)
 
