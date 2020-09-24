@@ -64,6 +64,7 @@ Over different communication channels:
 # Password (Weak authentication)
 
 **Stage 1: Bootstrapping**
+
 - Server and user establish common password
 - Server keeps track of a file recording the identity and corresponding password
 
@@ -128,7 +129,7 @@ Possible attacks:
 
 ## Intercepting password while bootstrapping
 
-Attacker may interceot the password during bootstrapping
+Attacker may intercept the password during bootstrapping
 
 > Attacker use default password
 > 
@@ -137,8 +138,11 @@ Attacker may interceot the password during bootstrapping
 
 > Question:  
 > - What are the implication of shipping all access with the same default password
-> - What are the implication of shipping each access point with its individual password
+>	- With same password, attacker can access the device if the common default password
 >
+> - What are the implication of shipping each access point with its individual password
+>	- Expensive: Database and printing
+> 	- Usability will decrease for users when they cannot find the password (Bad product review)
 > Tutorial question
 
 
@@ -174,6 +178,7 @@ Hybid attacks: It is possible to carry out exhastive search together with dictio
 - Sniffing: Listening/intercepting the communication channel:
 	- Some system and protocol simply send the password over a public network in clear
     - FTP, Telnet, HTTP
+    
 ### Key-Logger
 Captures/records the keystrokes and sends the info back to attacker via covert channel
 
