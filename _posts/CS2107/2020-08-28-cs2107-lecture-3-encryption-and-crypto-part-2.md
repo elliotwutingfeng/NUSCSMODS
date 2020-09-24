@@ -250,7 +250,7 @@ This is because of "two key problem":
 
 - Borrow the output from the previous round as the IV for the next round
 
-### Mode of operation: CTC (counter)
+### Mode of operation: CTR (counter)
 ![CS2107-2-16.PNG]({{site.baseurl}}/img/CS2107-2-16.PNG)
 
 ### Double DES and meet in the middle attack
@@ -258,7 +258,8 @@ This is because of "two key problem":
 	- Encrupt key one and then kley 2
     - Key length: 112 bits (Hard to brute force)
 
-BUT, there is the meet in the middle attack
+BUT, there is the meet in the middle attack.
+Just get two computer and try to crack the code from the plaintext side and the encryped side. Then compare the two to see if it matches (Meet in the middle)
 
 ### Triple DES
 - 3 keys use: 3 independent keys
@@ -267,26 +268,26 @@ BUT, there is the meet in the middle attack
 ![CS2107-2-17.PNG]({{site.baseurl}}/img/CS2107-2-17.PNG)
 
 Compared to AES: The 3DES is less efficient:
-	- Sluggish in software
-    - Can only encrypt 64 bit blocks at time
+- Sluggish in software
+- Can only encrypt 64 bit blocks at time
 
 ### Padding Oracle attack
 AES CBC mode is not secure agaisnt this padding attack
 
-Attacker can send queries and Orcle will output the answer
-- Encruption oracle: On query containing plaintext x, oracle output ciphertext
-- Decryption: Query with plaintext c
+Attacker can send queries and Oracle will output the answer
+- Encryption oracle: On query containing plaintext x, oracle output ciphertext
+- Decryption: Query with ciphertext c
 
 
 The attacker have:
-- A cipher text with IV and c
-- Access to padding poracle
+- A cipher text with IV and C
+- Access to padding oracle
 
 Goal:
 - Get the plaintext
 
 Notes about secret key:
-- The ciphertext is encrupted with k
+- The ciphertext is encrypted with k
 - Padding oracles knows k
 - The attacker does not know k
 
@@ -295,9 +296,6 @@ Padding otacle:
 - Output: yes or no
 	- Yes, if the plaintext is in correct padding format
     - No, otherwise
-
-
-
 
 
 
@@ -313,6 +311,8 @@ Padding otacle:
 ### AES CBC Mode
 - Not secure agaisnt padding oracle attack
 - Attacker has IV\\C: 1 block of IV and 1 block of c
+- In this example, attacker already knows the size of the plaintext padding : 3
+- Generate some t:
 ![CS2107-2-21.PNG]({{site.baseurl}}/img/CS2107-2-21.PNG)
 
 
@@ -323,6 +323,7 @@ Attacker wants to find the value of X5:
 ![CS2107-2-23.PNG]({{site.baseurl}}/img/CS2107-2-23.PNG)
 
 > Rexoring the padding gives us a fix value
+>
 	- Imagine the padding is 03
     - Encrypting this padding with the key 04 gives 07
     - if the attacker tries to get the key,
@@ -339,7 +340,7 @@ WORKING:
 Lets say oracle say yes.
 
 - What is the produce accepted plaintext?
-	- X` = I xor IV`
+	- `X = I xor IV`
 - We can find the X5 by working backwards
 	- Given the padding oracle
 - Extend the algo to find all the plaintext
