@@ -362,3 +362,8 @@ Because of the bridge of integrity, encryption alone is not enough...
 - It is better to use salt, such that the same password is hashed into two different values for to different userid
 - Hashing is two way
 []({{site.baseurl}}/img/CS2107-3-12.PNG)
+
+
+
+# Slides
+<iframe src="https://drive.google.com/file/d/1f_1nSdU2imhJ-So2Xt37T9RAcGKVJo30/preview" width="840" height="880"></iframe>
