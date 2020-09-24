@@ -4,17 +4,39 @@ published: true
 title: 'CS2107 - Lecture 1/2: Encryption'
 ---
 
-- Confidentiality - The infomation of the users
-- Integrity -  Modification of process/infomation
-- Availability - Availability of the services for the user
-- non-repudiation - Gurantees only the specific person can access 
+# Important Definitions
 
-# Definition
-An encryption scheme also known as cipher consist of envryption and decryption.
+- Confidentiality: The infomation of the users
+- Authenticity: The sender, is it real
+- Integrity:  Modification of process/infomation
+- Availability:  Availability of the services for the user
+- non-repudiation: Gurantees only the specific person can access 
+- Threat: A set if circumstances that has the potential to cause loss or harm
+- Security is the protection of assets:
+	- Hardware
+    - software
+    - data 
+    - infomation
+    - Reputation: Which is intangible
+- Vulnerability: A weakness in the system
+- Control: A control, countermeasure, security mechanism is a mean to counter threats
+	- Physical control: Facilities protection, security guards, locks, monitoring, environmental controls, intrusion detection
+    - Technaical control: Logical access control, encryption, security devices, identification and authentication
+    - Administrative controls: Policies, standards procedures, guidelines, screening personnnel, security-awareness training
+
+
+- Trade of in securiyt:
+	- Ease of use: Security mechanism interfere with working patterns users originally familiar with
+    - Performance: Security mechanisms consusmes more computing resouirces
+    - Cost: Secuirty meachnism are expensive to develop
+
+
+# Encryption
+An encryption scheme also known as cipher consist of encryption and decryption.
 ![]({{site.baseurl}}/img/CS2107-1-1.PNG)
 
 Requirements:
-- Correctness: For any plaintext x and Key
+- Correctness: For any plaintext x and Key, D(E(x)) = x
 - Security: Given the ciphertext, it is difficult to derive usefull infomation of the key and plain text
 - Performance requirements: Efficiently computed
 ![CS2107-1-2.PNG]({{site.baseurl}}/img/CS2107-1-2.PNG)
