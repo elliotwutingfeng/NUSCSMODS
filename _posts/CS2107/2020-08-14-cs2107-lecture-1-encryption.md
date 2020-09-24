@@ -182,7 +182,7 @@ It is a polyalphabetic cipher
 - Tabula recta
 
 #### Security
-- Weak agaisnt known plaintext attack
+- Weak against known plaintext attack
 - Not that weak agaisnt cipher only attack (Need find good attack technique)
 
 Suppose we know k = length/period of the keyword
@@ -348,6 +348,8 @@ Focus on IV:
 
 > - We need to make the generator randomnised
 > - IV is part of the cipher text
+
+For decryption, IV can be extracted from the ciphertext. 
 
 #### Why IV?
 - Suppose there is no IV, IV is set to a string of 0
