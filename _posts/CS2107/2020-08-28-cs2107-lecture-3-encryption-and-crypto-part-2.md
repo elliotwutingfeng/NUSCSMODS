@@ -354,10 +354,13 @@ Lets say oracle say yes.
 
 # Security analysis of a cipher (LECTURE 2)
 - Security analyisis of a cipher done to respect to:
-	- Treat mode:
-    	- Assumption about attacker capabilities
-        - Cat into black boxes
-
+	- Threat model:
+    	- Assumption about attacker's capabilities
+        - Categorise into black boxes
+- Goal/Security guarentee:
+	- What is the attacker trying to do
+    - What does he want
+    
 Black box:
 - Query operation to the cipher
 - A query to a cipher: The operation taht sends input models
@@ -374,7 +377,7 @@ Attacker has access to cipher implementation.
     - Observer and measure analog characteristics of a cipher implementation
     - Type side channel: Executive power consumption
 - Invasive attack
-  - More powerful
+  - More powerful that side channel attacks
   - More expensive: More sophisticated equipment
 
 # Cryptography pitfalls: Attacks on cryptosystem implementation
