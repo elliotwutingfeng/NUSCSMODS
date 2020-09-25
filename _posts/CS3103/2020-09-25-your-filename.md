@@ -114,5 +114,30 @@ Time difference = recieve timestamp - (Original timestamp field + oneway time du
 
 ![CS3230-lab-5-5.PNG]({{site.baseurl}}/img/CS3230-lab-5-5.PNG)
 
+# Debugging tools
+- Ping
+- Traceroute/Tracert(Windows)
+	- Use time exceeded and destiantion unreachable (2) ICMP packets
 
+# ICMP Package
+![CS3230-lab-5-6.PNG]({{site.baseurl}}/img/CS3230-lab-5-6.PNG)
+
+## Input model
+- Handle all ICMP messages **recives**
+- Invoke when ICMP pakcet is deliever to it IP layer
+- Request: creates replu
+- Redirect: Update routing table
+- Error: Infoms the protoccol
+
+## Output model
+- Creating request, solicitation, or error messages
+- Module receives a demand from IP, UDP, TCP
+- Check if its allowed request
+	- Cannot be created for:
+    	- ICMP error
+        - Fragmentaed IP packe
+        - Multicst IP packet
+        - IP packet having IP address 0.0.0.0 or 127.X.Y.Z
+ 
+    
 
