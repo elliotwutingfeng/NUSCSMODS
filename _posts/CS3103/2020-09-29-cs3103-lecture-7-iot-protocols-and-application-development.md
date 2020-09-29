@@ -32,7 +32,8 @@ Various name, one concept
 - Internet of everything
     
 
-# IOT Protocols and Standards and Applucation
+# IOT Protocols and Standards and Application
+
 
 The impact if IOT
 - Billions of devices
@@ -48,34 +49,82 @@ Challenges:
 
 
 TOP IOT Tech
-1. Secuirty
+1. Security
 2. Analysitcs
 3. Device management
 4. Low power short range IOT
 5. Lower power 5G
 6. IOT Processes
 
+
+
+
+## Why don't use the original protocols
 ![CS3103-7-1.PNG]({{site.baseurl}}/img/CS3103-7-1.PNG)
 
-![CS3103-7-2.PNG]({{site.baseurl}}/img/CS3103-7-2.PNG)
+> Why more protocols?
+>
+> Why Not TCP/IP
 
+The existing technology is good but the issue lies 
+- data usage
+- Optimised IP access
+
+such examples:
+- XML : Inefficient content encoding
+- HTTP: Huge overload , difficult parsing
+- TLS/TCP/IPV6: Requires full internet devices
+
+
+
+![CS3103-7-2.PNG]({{site.baseurl}}/img/CS3103-7-2.PNG)
+- UDP: No security layer thus relies on DTLS
+- REST API: Lies on top of HTTP
+- JSON: Not sufficient enough (Text based), this results in CBOR which includes binary data
 
 
 # Co-AP , MQTT
 
-## Co-AP
+## CoAP
+
 ![CS3103-7-3.PNG]({{site.baseurl}}/img/CS3103-7-3.PNG)
+Constrained application protcol
+
+- Provides bluetooth
+- 6lowPan: Adopting layer between bluetooth and upper layer
+
+
+
+IOT devices will use CoAp to communicate to the proxy which will in term communcate to the server using HTTP.
+The reason why we do not use the IOT device to connect direct to the server using CoAP is also due to the cost of maintaining a network for such a small device
+
+
+>  There can be many multihop protocols before reaching the proxy.. but most IOT is single hop. 
+
 
 Provides a restful environement.
 - End to end is restful
 - There can be a proxy 
 - Proxy can convert the COAP to http
 
-> If we have a single IOT device to connect to internet, it is kinda expensive..
-![CS3103-7-4.PNG]({{site.baseurl}}/img/CS3103-7-4.PNG)
-
 
 ![CS3103-7-5.PNG]({{site.baseurl}}/img/CS3103-7-5.PNG)
+- CoAP server is a light device
+- HTTP Client gets the light infomation
+- Proxy converts the outgoing CoAP to http, and incoming http to CoAp
+- Can cache the value for 30 sec
+- Reply returned is the from the cache, this is to prevent the requerying
+
+
+> Proxy can be edge router.. (IOT Gateway)
+
+
+#### HTTP vs COAP
+
+![CS3103-7-11.PNG]({{site.baseurl}}/img/CS3103-7-11.PNG)
+
+
+
 
 
 Functionalities:
@@ -89,19 +138,77 @@ Functionalities:
 
 ![CS3103-7-6.PNG]({{site.baseurl}}/img/CS3103-7-6.PNG)
 
+> It is better to have a public ip addressable so that the outside server can connect (that is why its pv6)
+
+6LowPan: Only for ipv6
+
+Expectation is that every IOT device will have a public address..
+
+
 ### Types
 ![CS3103-7-7.PNG]({{site.baseurl}}/img/CS3103-7-7.PNG)
+
+Transaction here are considered peer to peer. Transaction are identified by a ID (TID)
+
+
 
 ### Methods
 ![CS3103-7-8.PNG]({{site.baseurl}}/img/CS3103-7-8.PNG)
 
+
 ### Message format
 ![CS3103-7-9.PNG]({{site.baseurl}}/img/CS3103-7-9.PNG)
+
 ![CS3103-7-10.PNG]({{site.baseurl}}/img/CS3103-7-10.PNG)
 
+![CS3103-7-12.PNG]({{site.baseurl}}/img/CS3103-7-12.PNG)
+
+
+> If theres a loss, whjat happens to the data?
+>
+> If its a Confirmable request, there is a way to apply reliability
+
+### Examples
+Client servers:
+![CS3103-7-13.PNG]({{site.baseurl}}/img/CS3103-7-13.PNG)
+
+- URI path: /Temperature
+
+
+Confirmable:
+![CS3103-7-14.PNG]({{site.baseurl}}/img/CS3103-7-14.PNG)
+- Response ID and Send ID is the same. Data is piggy backed wiht the response (ACK)
+- If data is not ready, the data can be sent later..but the ID is different. In the seperate sending, the client sends the ACK
+
+
+Using token:
+![CS3103-7-15.PNG]({{site.baseurl}}/img/CS3103-7-15.PNG)
+
+- Data is not ready, so a token is sent.
+- When the data is ready, the server will send a CON message (Which have different ID) but includes the same Token ID that was prev sent
+
+
+
+Non-confirmable
+![CS3103-7-16.PNG]({{site.baseurl}}/img/CS3103-7-16.PNG)
+- It is independent
+- It is possible for the client to ask for a NON but the server sends a CON in reply.. (This depends on our application)
+
+> Is there a time out? 
+>
+> Yes, it is the time between the CON and ACK .. see RST
+
+
+Reset:
+![CS3103-7-17.PNG]({{site.baseurl}}/img/CS3103-7-17.PNG)
+- Data receives at the client, but the client does not know when it had made the request
+- It sends RST to reset
+
+
 ### Reliability
-- Handle at applucation layer
-- Congestion control (retransmit increase
+- Handle at applucation layer (Different application requires different waiting time)
+- Congestion control (retransmit increase exponentially up to 247s): Might be improved
+- This features can be disabled if we need more speed
 
 
 ## MQTT
