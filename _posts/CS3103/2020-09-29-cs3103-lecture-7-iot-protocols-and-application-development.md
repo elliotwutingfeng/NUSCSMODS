@@ -225,10 +225,11 @@ Client servers:
 
 ![CS3103-7-19.PNG]({{site.baseurl}}/img/CS3103-7-19.PNG)
 
-- State what you want to observe
+- State what you want to observe, `observe = 0`
 - Server will register
 - Server will continue send data over a period of time
 - Observe number will be random generated at first but will be increasing order afterwards
+- Token sent will be the same throughout
 
 ### Block transfer
 - Extension added to CoAP Spec
@@ -254,9 +255,19 @@ Client servers:
 
 
 ![CS3103-7-22.PNG]({{site.baseurl}}/img/CS3103-7-22.PNG)
-
+- Code 2.05 means HTTP
+- MID: Message ID
+- Payload: Data
+- Token: (See token in examples)
 
 ## MQTT
+![CS3103-7-23.PNG]({{site.baseurl}}/img/CS3103-7-23.PNG)
+
+Example:
+![CS3103-7-24.PNG]({{site.baseurl}}/img/CS3103-7-24.PNG)
+
+- Publishing can be data or command
+- Subscribing to this data means you will get this command
 
 
 # Slides
