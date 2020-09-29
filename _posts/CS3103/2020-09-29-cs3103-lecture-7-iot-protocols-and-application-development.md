@@ -175,13 +175,13 @@ Client servers:
 - URI path: /Temperature
 
 
-Confirmable:
+**Confirmable**:
 ![CS3103-7-14.PNG]({{site.baseurl}}/img/CS3103-7-14.PNG)
 - Response ID and Send ID is the same. Data is piggy backed wiht the response (ACK)
 - If data is not ready, the data can be sent later..but the ID is different. In the seperate sending, the client sends the ACK
 
 
-Using token:
+**Using token:**
 ![CS3103-7-15.PNG]({{site.baseurl}}/img/CS3103-7-15.PNG)
 
 - Data is not ready, so a token is sent.
@@ -189,7 +189,7 @@ Using token:
 
 
 
-Non-confirmable
+**Non-confirmable**
 ![CS3103-7-16.PNG]({{site.baseurl}}/img/CS3103-7-16.PNG)
 - It is independent
 - It is possible for the client to ask for a NON but the server sends a CON in reply.. (This depends on our application)
@@ -199,16 +199,61 @@ Non-confirmable
 > Yes, it is the time between the CON and ACK .. see RST
 
 
-Reset:
+**Reset:**
 ![CS3103-7-17.PNG]({{site.baseurl}}/img/CS3103-7-17.PNG)
 - Data receives at the client, but the client does not know when it had made the request
 - It sends RST to reset
 
+**Packet Loss*
+- Use the CON and ACK to determined which packet has been lost
+- If one side recieves another CON, means the packet was lost
+
 
 ### Reliability
-- Handle at applucation layer (Different application requires different waiting time)
+- message reliability is handled at application layer (Different application requires different waiting time)
 - Congestion control (retransmit increase exponentially up to 247s): Might be improved
 - This features can be disabled if we need more speed
+![CS3103-7-18.PNG]({{site.baseurl}}/img/CS3103-7-18.PNG)
+
+> If you disable congestion control: We need to handle it at application layer.
+
+### Observing resources
+- Protcol extension
+- Client intereseted in a resource over period of time
+- Observer pattern
+- Server to client (constrained devices acts as a server)
+
+![CS3103-7-19.PNG]({{site.baseurl}}/img/CS3103-7-19.PNG)
+
+- State what you want to observe
+- Server will register
+- Server will continue send data over a period of time
+- Observe number will be random generated at first but will be increasing order afterwards
+
+### Block transfer
+- Extension added to CoAP Spec
+- Transfers large resource representations
+
+![CS3103-7-20.PNG]({{site.baseurl}}/img/CS3103-7-20.PNG)
+- Maybe get /light gives a very large amount of data
+- Split the data into segments
+- Sends them using the M to state the number of blocks that are following
+- This continues until m = 0
+> Note that for each send, the client must ack back
+
+
+**This is a proposal now that just accepted so not all vendors has it**
+
+
+### Caching
+![CS3103-7-21.PNG]({{site.baseurl}}/img/CS3103-7-21.PNG)
+
+- Focus on Max age, proxy uses this data to see if can resent the data
+- Proxy would cache the data and when the HTTP client calls again, it can use the cache provided that the Max age has not timed out
+
+
+
+![CS3103-7-22.PNG]({{site.baseurl}}/img/CS3103-7-22.PNG)
 
 
 ## MQTT
