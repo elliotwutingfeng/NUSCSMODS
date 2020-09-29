@@ -62,3 +62,50 @@ TOP IOT Tech
 
 
 # Co-AP , MQTT
+
+## Co-AP
+![CS3103-7-3.PNG]({{site.baseurl}}/img/CS3103-7-3.PNG)
+
+Provides a restful environement.
+- End to end is restful
+- There can be a proxy 
+- Proxy can convert the COAP to http
+
+> If we have a single IOT device to connect to internet, it is kinda expensive..
+![CS3103-7-4.PNG]({{site.baseurl}}/img/CS3103-7-4.PNG)
+
+
+![CS3103-7-5.PNG]({{site.baseurl}}/img/CS3103-7-5.PNG)
+
+
+Functionalities:
+- Addressable URI
+- Low Header overhead and parsing complexity
+- GET/PUT/POST/DELETE
+- COntent type support
+- Built in discovery
+- Designed to be extensible
+- Allows rest artuccute
+
+![CS3103-7-6.PNG]({{site.baseurl}}/img/CS3103-7-6.PNG)
+
+### Types
+![CS3103-7-7.PNG]({{site.baseurl}}/img/CS3103-7-7.PNG)
+
+### Methods
+![CS3103-7-8.PNG]({{site.baseurl}}/img/CS3103-7-8.PNG)
+
+### Message format
+![CS3103-7-9.PNG]({{site.baseurl}}/img/CS3103-7-9.PNG)
+![CS3103-7-10.PNG]({{site.baseurl}}/img/CS3103-7-10.PNG)
+
+### Reliability
+- Handle at applucation layer
+- Congestion control (retransmit increase
+
+
+## MQTT
+
+
+# Slides
+<iframe src="https://drive.google.com/file/d/1F_CLho9h0bG3M2zZGEuaivxDR8HP0LOP/preview" width="640" height="480"></iframe>
