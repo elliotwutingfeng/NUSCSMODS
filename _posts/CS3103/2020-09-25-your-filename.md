@@ -138,6 +138,3 @@ Time difference = recieve timestamp - (Original timestamp field + oneway time du
         - Fragmentaed IP packe
         - Multicst IP packet
         - IP packet having IP address 0.0.0.0 or 127.X.Y.Z
- 
-    
-
