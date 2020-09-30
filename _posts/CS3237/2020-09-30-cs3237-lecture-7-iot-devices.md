@@ -86,15 +86,36 @@ title: 'CS3237: Lecture 7 - IOT Devices'
 	- Example: LED
     - Informs the presence of logic 0 or logic 1 at a specific pin of a microcontroller
 - Analog actuators
+	![CS3237-7-10.png]({{site.baseurl}}/img/CS3237-7-10.png)
+
 
 ## Pulse width modulation (PWM)
 - Method to create an analoig signal from a digital processor
 - The main idea is to keep the signal high for an amt of time proportianl to the aplitude of the required analog sigals
 
+![CS3237-7-8.PNG]({{site.baseurl}}/img/CS3237-7-8.PNG)
+
+
 Example
 ![CS3237-7-7.PNG]({{site.baseurl}}/img/CS3237-7-7.PNG)
 - During the period, the pulses are on for a certain period of time
 - What is different is how many percentage of the time is the pulse on.
+
+![CS3237-7-9.PNG]({{site.baseurl}}/img/CS3237-7-9.PNG)
+
+## Sensor/Actuators interface with microcontoller
+- Sensor data has to be processed and transmitted
+- Sensor connect to a microcontller through established I/O interfaces and communication system
+- Video system need much faster I/0 such as MIPI, USB, UCB expresee
+
+## I2C communcation protocol
+- Reqyures 2 wires
+- Serial interace
+- Sending one bit at a time
+- Use for short distance communication
+
+![CS3237-7-11.PNG]({{site.baseurl}}/img/CS3237-7-11.PNG)
+
 
 
 
