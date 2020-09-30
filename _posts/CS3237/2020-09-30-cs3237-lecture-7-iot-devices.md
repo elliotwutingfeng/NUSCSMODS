@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3237: Lecture 7 - IOT Devices'
 ---
 # IOT Architecture
@@ -83,6 +83,18 @@ title: 'CS3237: Lecture 7 - IOT Devices'
 
 ## Output devices and actuators
 - Digital Output
+	- Example: LED
+    - Informs the presence of logic 0 or logic 1 at a specific pin of a microcontroller
+- Analog actuators
+
+## Pulse width modulation (PWM)
+- Method to create an analoig signal from a digital processor
+- The main idea is to keep the signal high for an amt of time proportianl to the aplitude of the required analog sigals
+
+Example
+![CS3237-7-7.PNG]({{site.baseurl}}/img/CS3237-7-7.PNG)
+- During the period, the pulses are on for a certain period of time
+- What is different is how many percentage of the time is the pulse on.
 
 
 
