@@ -116,7 +116,21 @@ Example
 
 ![CS3237-7-11.PNG]({{site.baseurl}}/img/CS3237-7-11.PNG)
 
+# Sensor
+![CS3237-7-12.PNG]({{site.baseurl}}/img/CS3237-7-12.PNG)
 
+- Ambient light sensor
+- Infrared Tempt sensor
+- Humidity and temperature sensor
+- Barametric pressure sensor
+- Motion sensor
+- 3D accelerometer and gyroscope
+- Bungee Jump Acceleration
+
+# Summary
+- IOT device consist of sensor actuators and microcontroller
+- Variery of sensor connect to the cyber world to the physical world
+- ADC And DAC perform transformation between analog and digital
 
 
 # Slides
