@@ -214,7 +214,8 @@ A good cipher:
 - Block cipher can encrypt n bit plain text with n as the cipher block size
 - Mode of operation: A method of encrypting messages of arbitrary size using block cipher
 
-#### Insecure
+#### ECB
+- Simple but insecure
 - Just apply and concat
 ![CS2107-2-13.PNG]({{site.baseurl}}/img/CS2107-2-13.PNG)
 
