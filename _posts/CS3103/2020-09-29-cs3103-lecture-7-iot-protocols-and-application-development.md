@@ -269,6 +269,29 @@ Example:
 - Publishing can be data or command
 - Subscribing to this data means you will get this command
 
+### MQTT Model
+The core elements of MQTT are client, servers (brokers) , session , subsciption and topics
+
+### Message format
+
+Session options:
+
+
+Publish:
+
+
+Subsribe:
+
+### MQTT QoS
+- Provides typical delivery quality of services levels of message oriented middleware
+- Even thou TCP/IP provides guaranteed data delivery, data loss can still occur if a TCP connection breaks down and messages are lost in transit 
+- MQTT adds 3 QoS levels on top of TCP
+
+
+### Example
+
+
+
 
 # Slides
 <iframe src="https://drive.google.com/file/d/1F_CLho9h0bG3M2zZGEuaivxDR8HP0LOP/preview" width="640" height="480"></iframe>
