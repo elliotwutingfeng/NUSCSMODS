@@ -69,13 +69,27 @@ Area in autonomus system
 Any arisement come to the network or from, it is applicable for both router
 
 
-# Transient
+## Transient
 
 ![CS3103-8-8.PNG]({{site.baseurl}}/img/CS3103-8-8.PNG)
 
 
 - Network have multiple router
 - Packet enter and leave through any rotuer
+
+### Designated Router (DR)
+Our network sending infomation to the router but the subnet cannot speak for itself. For a broadcast domain with N router, its LSA Message complexity could be O(n^2)
+
+- Designated router and backup router are elected to represent the subnet and broadcast subnet info (Using HEllo protocol)
+- All advisement/info will be done by designation router
+- ANy router that find changes, will communicate to DR
+- DR will broadcast to everyone
+- Backup will take over if the DR is not operating
+- Each router will only have DR and BDR as neighbour
+
+
+![CS3103-8-9.PNG]({{site.baseurl}}/img/CS3103-8-9.PNG)
+
 
 
 
