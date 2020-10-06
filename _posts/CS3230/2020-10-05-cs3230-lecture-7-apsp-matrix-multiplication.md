@@ -176,14 +176,22 @@ Time: O(n^3)
 
 ![CS3230-7-11.PNG]({{site.baseurl}}/img/CS3230-7-11.PNG)
 
+Notice that:
+![CS3230-7-13.PNG]({{site.baseurl}}/img/CS3230-7-13.PNG)
+such that
+![CS3230-7-12.PNG]({{site.baseurl}}/img/CS3230-7-12.PNG)
 
 
-> Recursive algo for computing C with 8 multiplcation of M*M matrices where m = n/2
+> Recursive algo for computing C with *8 multiplcation* of M*M matrices where m = ceil(n/2)
 
 Time complexity: T(n) = 8T(n/2) + O(n^2) = O(n^3)
+- We have 8 n/2 multiplications
+- n^2 additions
 
 ## Straseen idea - karatsuba style
 
+
+- 7 magic products
 
 ## Improving APSP
 - No
