@@ -45,16 +45,34 @@ Idea:
 
 
 - It is not clear whether there exist a function f such that w'(x->y) is not negative for all x and y
-- Notice that f(x) = dist(x), where dist(x) is the distance from some source s satisfies this. (If nt, we shld be able to relax the edge x->y)
+- Notice that f(x) = dist(x), where dist(x) is the distance from some source s satisfies this. (If nt, we shld be able to relax the edge x->y):
+		![CS3230-7-23.PNG]({{site.baseurl}}/img/CS3230-7-23.PNG)
+
 - The graph might not have a vertex s from which every vertex is reachable
 - we don't want to subtract infinity
 
-### How? (Ghost node)
+### How? 
 - Add vertex s to graph and add edges s->v to all v in V, with w(s->v)=0
-- Every vertex is reachable frm S
+		![CS3230-7-24.PNG]({{site.baseurl}}/img/CS3230-7-24.PNG)
+
+- Every vertex is reachable frm S (We cannot let them use S as a path)
 - For any u, v in V, we dont create a new path since there are no incoming edges to s. Thus dist(u,v) remains unchanged.
 
+Take note:
+![CS3230-7-27.PNG]({{site.baseurl}}/img/CS3230-7-27.PNG)
+
+#### Why is it always greater than 0
+![CS3230-7-28.PNG]({{site.baseurl}}/img/CS3230-7-28.PNG)
+
+The value of p2 is always smaller than the sum of p1 + weight.
+
+
 ### Algo
+
+![CS3230-7-25.PNG]({{site.baseurl}}/img/CS3230-7-25.PNG)
+
+![CS3230-7-26.PNG]({{site.baseurl}}/img/CS3230-7-26.PNG)
+
 
 
 ### Time complexity
