@@ -195,6 +195,5 @@ Router infomation maintained at Router
 
 > AD: Defines which protocol has a higher priority for portocol, this is to choose whether to use OSPF or RIP protocl
 
-
-
-
+# Slide
+<iframe src="https://drive.google.com/file/d/18Qpp3zs_OOC-Ft6DiTrxLer6UUT2PSoD/preview" width="840" height="680"></iframe>
