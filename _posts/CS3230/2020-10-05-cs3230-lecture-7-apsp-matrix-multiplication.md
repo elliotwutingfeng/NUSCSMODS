@@ -58,13 +58,16 @@ Idea:
 - Every vertex is reachable frm S (We cannot let them use S as a path)
 - For any u, v in V, we dont create a new path since there are no incoming edges to s. Thus dist(u,v) remains unchanged.
 
+
+The function gurantees that the new weight is always not negative and it will not affect the accuracy of the sum of weights (Ie, adding the constant does not change the total sum in relation to each path)
+
 Take note:
 ![CS3230-7-27.PNG]({{site.baseurl}}/img/CS3230-7-27.PNG)
 
 #### Why is it always greater than 0
 ![CS3230-7-28.PNG]({{site.baseurl}}/img/CS3230-7-28.PNG)
 
-The value of p2 is always smaller than the sum of p1 + weight.
+The value of p2 is always smaller than the sum of p1 + weight. Ths must always hold true that p2 is smaller because if not the sum of p1 + weight will be choosen as the smallest path already 
 
 
 ### Algo
