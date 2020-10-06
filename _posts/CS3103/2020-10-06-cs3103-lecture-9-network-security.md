@@ -20,3 +20,62 @@ THe cost can be anything depending on the protcol (like latency)
 
 Reading the table:
 ![CS3103-8-4.PNG]({{site.baseurl}}/img/CS3103-8-4.PNG)
+
+
+# OSPF
+The open shortest path first protocol is an intradomain routing protocol based on link state routing. Its domain is also an Autonomous system
+
+Key elements:
+- Topology dissemination
+- Usses link state routing to compute shortest routes
+
+- Open pub available
+- Uses link state algo
+	- LSA dissemination
+    - Topology map at each node
+    - route computation using dikjstra algo
+- LSA flood throughout the entire AS
+	- Does not use any transport layer
+    - Directly over IP (Not UDP OR TCP)
+
+Area in autonomus system
+ ![CS3103-8-5.PNG]({{site.baseurl}}/img/CS3103-8-5.PNG)
+
+- Within an OSPF area, all router maintain the same topoly database. They have no knowledge of netowrk topolgies outside the area
+- There is always one router connected to the outside
+- There is two types of router
+	- Area border router: Lets network knows about the outside
+    - Backbone router
+    - AS boundary router: Carry infopmation of the network and send outside
+    
+
+![CS3103-8-6.PNG]({{site.baseurl}}/img/CS3103-8-6.PNG)
+
+# Types of Links
+- Point to point
+- Transient
+- Stub
+- Virtual
+
+## Point to point
+
+![CS3103-8-7.PNG]({{site.baseurl}}/img/CS3103-8-7.PNG)
+
+
+- Connect router direct (The two router must be connected to each other)
+- Can be backbone
+- Can be for any area
+
+Any arisement come to the network or from, it is applicable for both router
+
+
+# Transient
+
+![CS3103-8-8.PNG]({{site.baseurl}}/img/CS3103-8-8.PNG)
+
+
+- Network have multiple router
+- Packet enter and leave through any rotuer
+
+
+
