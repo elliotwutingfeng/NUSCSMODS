@@ -266,3 +266,8 @@ Variance:
 
 ## algo
 ![CS3230-7-19.PNG]({{site.baseurl}}/img/CS3230-7-19.PNG)
+
+
+
+# Slides 
+<iframe src="https://drive.google.com/file/d/1gZJzJGQL3-nhrmk7tgwCL4I-XdSCCPh4/preview" width="840" height="680"></iframe>
