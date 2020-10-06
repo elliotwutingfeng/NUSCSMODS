@@ -164,12 +164,37 @@ Our network sending infomation to the router but the subnet cannot speak for its
 - Hello
 - Database description
 - Link state request
-- Lin state advertisment
+- Link state advertisment: Sending link state to the router
 	- Router link
     - Network link
     - Summary link to network
-    - SUmmary link to AS boundary router
+    - Summary link to AS boundary router
     - Extrernal link
 - Link state acknowledgement
+
+> Hello messages and LSA are encapsulated in OSPF packets for transmission
+
+![CS3103-8-15.PNG]({{site.baseurl}}/img/CS3103-8-15.PNG)
+
+
+# Database synchronisation
+- LSA Database initalisation when a new router is added to the segment
+	- DR send summary of its database of LSA to the new router - database descp pckts
+    - New router responds with a list of LSA that it does not have or that are outdated: Link state request pcks
+    - DR forwards the full LSA in the lsit to the new router: Link state update or advertisement pckts
+    
+
+Router infomation maintained at Router
+- Router maintains much more infomation than a host system
+
+![CS3103-8-16.PNG]({{site.baseurl}}/img/CS3103-8-16.PNG)
+
+
+- Some sub subnet destination network
+- Observe that the network mask is stored as part of the infomation
+
+> AD: Defines which protocol has a higher priority for portocol, this is to choose whether to use OSPF or RIP protocl
+
+
 
 
