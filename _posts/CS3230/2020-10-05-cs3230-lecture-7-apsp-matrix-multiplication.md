@@ -190,8 +190,12 @@ Time complexity: T(n) = 8T(n/2) + O(n^2) = O(n^3)
 
 ## Straseen idea - karatsuba style
 
+![CS3230-7-15.PNG]({{site.baseurl}}/img/CS3230-7-15.PNG)
 
 - 7 magic products
+- Each M is n/2 * n/2 matrix products
+
+
 
 ## Improving APSP
 - No
