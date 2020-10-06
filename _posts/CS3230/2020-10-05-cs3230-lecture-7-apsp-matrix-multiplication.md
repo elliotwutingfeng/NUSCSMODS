@@ -12,22 +12,36 @@ Obvious algorthims: Run single source algo on all v in V
 - Acyclic: Does not have cycles
 
 
-
-
-
 ## Reweighting
+Negative weights means running bellman ford.
+
+- No neg weight : O(n(m+nlgn))
+- Neg weight: O(n^2m) = O(n^3)
+
+
+
 Negative edges slow us down signifiantly. Can we rid them?
+
+> WE cannot add constant because it will change our shortest path due to the possible difference in number of edges (IF we add constant, the weight will change depending on the number of edges)
+
+
 Johnson idea: We want to reweight the graph in a way that the total weight of any path from s to t changes by the same amount.
 
 Idea:
 - Suppose for for function f: V -> R, we change the weight of the edge x->y as follows:
-	(nsert ur img>
+	![CS3230-7-22.PNG]({{site.baseurl}}/img/CS3230-7-22.PNG)
+
 
 > Current weight of e (x->y)
+
+
+![CS3230-7-20.PNG]({{site.baseurl}}/img/CS3230-7-20.PNG)
+
 
 - Such that, for any path, the value is just sum the edges w(k->m)
 - for each w'(k->m), substitute with the above formula
 - We realised that we are cancelling out the repeats:
+![CS3230-7-21.PNG]({{site.baseurl}}/img/CS3230-7-21.PNG)
 
 
 - It is not clear whether there exist a function f such that w'(x->y) is not negative for all x and y
@@ -188,12 +202,16 @@ Time complexity: T(n) = 8T(n/2) + O(n^2) = O(n^3)
 - We have 8 n/2 multiplications
 - n^2 additions
 
+> If the number is not too large, multiplication does not take much time. In this case, the multiplcations are not matrices which is why it is faster.
+
 ## Straseen idea - karatsuba style
 
 ![CS3230-7-15.PNG]({{site.baseurl}}/img/CS3230-7-15.PNG)
 
 - 7 magic products
 - Each M is n/2 * n/2 matrix products
+
+![CS3230-7-16.PNG]({{site.baseurl}}/img/CS3230-7-16.PNG)
 
 
 
@@ -202,6 +220,7 @@ Time complexity: T(n) = 8T(n/2) + O(n^2) = O(n^3)
 - Strassen algo use subtraction - there is unfortunately no similiar inverse for min
 - It is an open question whether APSP can be improve to O(n^2.99) It is widely believe that this impossible
 
+![CS3230-7-17.PNG]({{site.baseurl}}/img/CS3230-7-17.PNG)
 
 
 # Flyod-Warshall
@@ -209,7 +228,20 @@ Time complexity: T(n) = 8T(n/2) + O(n^2) = O(n^3)
 - Let the vertices in the graph be numberred 1,..n
 - We define dist(u,v,r) to be the shortest path from u to v that only goes through vertices numbered 1..r
 
+> This dist is not the same as the prev
+
 ## Recurance relation 
-[Img]
+![CS3230-7-18.PNG]({{site.baseurl}}/img/CS3230-7-18.PNG)
+
+- Either use the one 1 to n-1 or use the node r.
+- The path using r include the path of 1 to n-1 before choosing r
+- We are doing a constant number of recursive calls
+
+Variance:
+- n: 1 to n
+- u: 1 to n
+- r: 1 to n
+
 
 ## algo
+![CS3230-7-19.PNG]({{site.baseurl}}/img/CS3230-7-19.PNG)
