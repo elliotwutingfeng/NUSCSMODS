@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3103 - Lecture 8: OSPF'
 ---
 # Link state routing
