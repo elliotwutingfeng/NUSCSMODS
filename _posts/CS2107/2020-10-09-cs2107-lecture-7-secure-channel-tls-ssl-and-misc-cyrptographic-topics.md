@@ -133,10 +133,12 @@ Requirements:
 > Establish a secure channel between Alice and Bob such that we can protect the authenticity, integrity and confidentialy of the communciation
 
 
+![CS2107-6-10.PNG]({{site.baseurl}}/img/CS2107-6-10.PNG)
 
 
 ## Secure channel
 
+![CS2107-6-11.PNG]({{site.baseurl}}/img/CS2107-6-11.PNG)
 
 
 1. ALice and Bob carry out a unilateral authenticated key exchange using Bob's private and public key
@@ -148,6 +150,7 @@ After authentication both bob and alice known two randomly selected session keys
 2. Subsequest communcation between Alice and Bob will be protected by k,t and sequence number i
 
 Suppose m1, m2,m3 are sequences of message exchange, the actual data to be sent for mi will be:
+		![CS2107-6-12.PNG]({{site.baseurl}}/img/CS2107-6-12.PNG)
 
 where i is the sequence number, `||` is concat
 
@@ -171,8 +174,10 @@ Example:
 - TLS/SSL sits in betweeen TCP transport and app layers
 
 ## TLS protocol
+![CS2107-6-13.PNG]({{site.baseurl}}/img/CS2107-6-13.PNG)
 
 ## Tls Handshake
+![CS2107-6-14.PNG]({{site.baseurl}}/img/CS2107-6-14.PNG)
 
 
 #### What is a protocol
@@ -180,6 +185,8 @@ Example:
 - A prtocol is often descibe as a set of actions to be carried by entities and data to be transmitted
 
 E.g
+![CS2107-6-15.PNG]({{site.baseurl}}/img/CS2107-6-15.PNG)
+
 
 
 # Authenticated Encryption
