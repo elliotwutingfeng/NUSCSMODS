@@ -194,3 +194,6 @@ E.g
 # Birthday attack variant
 # Other interesting cryptography topics
 #
+
+# Slides
+<iframe src="https://drive.google.com/file/d/1BvL_RFHsxR194ZdtZ2sa-QXBlCPxnPax/preview" width="640" height="480"></iframe>
