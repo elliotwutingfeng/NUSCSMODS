@@ -127,7 +127,7 @@ Before certificate issurance, these are checked:
 
 - Root CA: Whose certifcate is self signed
 - Subordinate/intermediate CA: Tier 1, 2..
-- Leaf CA
+- Leaf CA: Issues the certificate
 
 #### Certification chain
 
@@ -137,6 +137,23 @@ For each certificate (Except the last one):
 - The issuer matches the subject of the next cert in the list
 - It is signed by the privqte key of the next certificate in the list
 - The last certificate in the list is the root CA
+
+The user should anticpate that the reciever might not have the public key of the certificate given, thus the user should send their public key as well as the public key of the CA.
+
+
+Diagram and verification:
+![CS2107-5-10.PNG]({{site.baseurl}}/img/CS2107-5-10.PNG)
+- THe last certificate: The CA serve as the trust anchor
+- Each CA refers to the previous
+- We need to verify the certificate in the second last in the list and then to the third all the way until we reach the entity
+
+> "The certificate is not trusted because the issue certificate is unknown"
+> - This is dangerous, there are many security implications such as malware and bot net etc....
+> 
+> "Package server certificate verification failed"
+
+
+
 
 #### Certification revocation
 - Non expired certificates can be revoked:
@@ -158,26 +175,33 @@ Solution:
 - OSCP stapling: Allows a cert to be accompanied or stabled by a OCSP responder signed by CA
 - Part of TLS handshake: CLients do not need to contact CA or OCSP responder
 - Drawback: Increased network cost
+>  IF we have one million verifiers, there could be a performance issue when OCSP responder response to them. But these verfiers most likely wants to verifies the server cert, thus OCSP does not need to handle verifiers 
+
 
 # Limitiation/attacks on PKI
 - There are alot of CA: Some are malicious
 - Rogue CA can forge cert
 
 ### Weak browser trust model
+
+Browser trust model:
 - Preloaded list of widely used root CAs compiled by web browser developers
-- A form of Certificate trust list (CTL) approach, where a list of CA s cert are compiked by a trusted authority
+- A form of Certificate trust list (CTL) approach, where a list of CA's cert are compiked by a trusted authority
 
 
 Security issue: 
 - Trust anchor: The union of all root CAs
-- Which root CA is the one used from the root CA list
+- Which root CA is the one used from the root CA list => As long as there is one root CA that can be use to verify, the browser will use that.
 - Certification is only as strong as the weakest root CA
 
 
-Picture:
-
+MITM attack by a rouge CA
+![CS2107-5-11.PNG]({{site.baseurl}}/img/CS2107-5-11.PNG)
+- Mallory pretends to be Alice
+- Mallory can see Alice's details
 
 ### Null byte injection attack
+
 - Some browser ignores the substring in the entity identity/name but include them when verifiying the certificate
 1. The common name in the cert when its being verified: "www.comp.nus.edu.sg\0.hacker.com"
 2. The browser displays as "www.comp.nus.edu.sg"
@@ -187,4 +211,7 @@ Picture:
 ### Social engineering
 - Typosquatting
 
-Example:
+1. Hacker can register a domain name which looks like another website and obtain the valid certificate of the name
+2. Attacker employs a phishing attack tricking a victim to click on this spoof site
+3. The address bar correctly displays but the user doesnt notcie that and log in using the victim's credentials
+
