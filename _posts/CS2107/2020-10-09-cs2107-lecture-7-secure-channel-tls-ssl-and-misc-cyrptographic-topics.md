@@ -10,6 +10,7 @@ Password is weak authentication: Any eavesdropper can get the password and repla
 - The password: The secret shared and exchanged between Alice and Bob
 - Is it possible to have a mechanism that ALice can prove to Bob that she knows the secret without revealing the secret
 
+![CS2107-6-1.PNG]({{site.baseurl}}/img/CS2107-6-1.PNG)
 
 ## SKC Bashed Challenge response
 Suppose Alice and Bob have a shared secret key k, and both of them agree on an encryption scheme say AES
@@ -69,17 +70,23 @@ Using a key exchange protocol such that eve is unable to extract any info of the
     - Encrypt k using ke
     - Send ciphertext c to Alice
 4. Alice use her private key kd to decrupt and obtain k
+![CS2107-6-2.PNG]({{site.baseurl}}/img/CS2107-6-2.PNG)
 
 
 ## Basic/Unauthenticated DIffie hellman Key Exchange
 Assunming Bob and Alice have agreed on two publicly known parameters: A generator g and a large prime p 
 
-### Example
+![CS2107-6-3.PNG]({{site.baseurl}}/img/CS2107-6-3.PNG)
 
+#### Example
+![CS2107-6-4.PNG]({{site.baseurl}}/img/CS2107-6-4.PNG)
+![CS2107-6-5.PNG]({{site.baseurl}}/img/CS2107-6-5.PNG)
+![CS2107-6-6.PNG]({{site.baseurl}}/img/CS2107-6-6.PNG)
 
 
 ### Is Basic/Unautenticated DH key Exchange secure
 
+![CS2107-6-7.PNG]({{site.baseurl}}/img/CS2107-6-7.PNG)
 
 DH does not achieve entity authentication
 
@@ -103,6 +110,10 @@ Sol:
 ## Station to station protocol (STS)
 - Add signatures to DH: Authenticated key exchange based on DH
 
+Unilateral authentication: Alice want to authenticate Bob
+![CS2107-6-8.PNG]({{site.baseurl}}/img/CS2107-6-8.PNG)
+
+
 ## Mutual Authenticated Key exchange
 - Unilateral authentication protocol extended to a mutual authentication: Make alice sign her message in step 2 -a 
 
@@ -120,6 +131,9 @@ Requirements:
 - A secure channel establised between 2 programs, a data channel that has confidentiality, integrity, authenticity against a computationally bound network attack (Mallory)
 
 > Establish a secure channel between Alice and Bob such that we can protect the authenticity, integrity and confidentialy of the communciation
+
+
+
 
 ## Secure channel
 
