@@ -215,3 +215,5 @@ MITM attack by a rouge CA
 2. Attacker employs a phishing attack tricking a victim to click on this spoof site
 3. The address bar correctly displays but the user doesnt notcie that and log in using the victim's credentials
 
+# Slide
+<iframe src="https://drive.google.com/file/d/1NdVUwEsFRtO-WpGo0ScNEdgdrFr1ucxY/preview" width="640" height="680"></iframe>
