@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'cs2107 - Lecture 7: Secure channel, TLS/SSL and Misc Cyrptographic topics'
 ---
 # Strong authentication
