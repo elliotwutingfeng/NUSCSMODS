@@ -143,3 +143,21 @@ Application such as facilities location
 -  Best randomised algorthim: Simple algo using elementary geometric (Runs in O(N) time)
 
 
+# Example: Primality Testing
+Given an n-bit integer N, test whether N is a prime or not. 
+	- Application: RSA
+
+- Best deterministic algorthim:
+	- Complicated algo: Time complexity O(n^6), never use
+- Best randomised: 
+	- Simple algo O(n^2)
+
+# Example: Generate large prime
+Given k, sample a k-digit prime number
+	- Application: RSA
+- No deterministc algo
+- Obv randomise algo: 
+	- Sample a k digit number at random and use the density of primes (Prime number theorem)
+
+
+
