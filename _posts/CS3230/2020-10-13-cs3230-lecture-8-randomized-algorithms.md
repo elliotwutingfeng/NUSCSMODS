@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3230 - Lecture 8: Randomized Algorithms'
 ---
 Recap:
