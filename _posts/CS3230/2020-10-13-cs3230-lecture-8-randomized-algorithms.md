@@ -146,7 +146,7 @@ The probability of finding a matching pair as the pivot is 1/n
 ![CS3230-8-12.PNG]({{site.baseurl}}/img/CS3230-8-12.PNG)
 ![CS3230-8-13.PNG]({{site.baseurl}}/img/CS3230-8-13.PNG)
 
-This shows that T(N) is upper bounded by 4T(N)(lgn)
+This shows that T(N) is upper bounded by 4T(N+1)(lgn)
 
 # Randomised quicksort
 - Choose random element as pivot p
@@ -156,6 +156,8 @@ This shows that T(N) is upper bounded by 4T(N)(lgn)
 > Its similiar to matching nuts and bolts
 
 # Randomised Quick select
+Not sorting but finding the kth smallest element...
+
 - Choose a random element as pivot p
 - Partition elements smaller than p and larger than p as A[1..r-1] and A[r+1..n] where r is the rank of the pivot and A[r] = pivot
 - If k = r, return A[r]
