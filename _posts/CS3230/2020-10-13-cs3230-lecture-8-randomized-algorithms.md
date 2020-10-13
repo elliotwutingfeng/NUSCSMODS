@@ -12,19 +12,31 @@ Recap:
 # Determinstic vs Randomised Algothims
 
 The average case running time is defined by the expected value over all inputs X of a certain size, of the algorithms running time for input X:
+![CS3230-8-1.PNG]({{site.baseurl}}/img/CS3230-8-1.PNG)
 
+- There is an assumption on the input
 
 Worse case Input:
+![CS3230-8-2.PNG]({{site.baseurl}}/img/CS3230-8-2.PNG)
 
+We should still look at the randomnised algorthims worst case. But sometimes by introducing randomness, we can decrease the worse case time
 
 ## Determinisitc Algorithms
+
+![CS3230-8-3.PNG]({{site.baseurl}}/img/CS3230-8-3.PNG)
+
 
 The output as well as the running time are functions only of the input
 
 ## Randominised Algorthims
 
+![CS3230-8-3.PNG]({{site.baseurl}}/img/CS3230-8-3.PNG)
+
 
 The output as well as the running time are functions of the input and random bits
+
+- The output depends on the input as well as the randomness introduce by the algorthim
+
 
 # Example: Approximate Median
 
@@ -35,37 +47,59 @@ A random algo:
 2. Sort S
 3. Report the median of S
 
-Running time:
+Running time: ![CS3230-8-4.PNG]({{site.baseurl}}/img/CS3230-8-4.PNG)
 
-> The output is an e approximate median with probability n^-2
 
+> The output is an e approximate median with probability 1-n^-2
+
+
+
+If N is 10^9 and you sample a small number say 1000, the median would be very close to the actual median. This is a application of chennoffBound. 
 
 # Example: Nuts and Bolts
 
 Suppose there are n nuts and n bolts of different sizes, with each nut matching exactly one bolt
 
 - We cant tell which is bigger without comparing a nut with a bolt
-- How quickly can we match the nuts to the bolts
+- How quickly can we match the nuts to the bolts?
 
+Naive: Compare all nuts with all bolts : O(N^2) 
 
-## Consider
-- Test out bolt with every nut (Requires n-1 test in worst case)
+## Consider: Searching for a matching bolt
+
+- Naive: Test out bolt with every nut (Requires n-1 test in worst case)
 - Randomly sample (Succeed in half the number of test)
 
 ## Analysis
 
 - Look at the problem of finding a nut that matches a given bolt
-- Suppose we pick a random nut from untested nuts
+- Suppose we pick a random nut from **untested nuts**
 - So if k nuts are left to test, each is chosen w.p 1/k
 
-[IMG]
+> We are producing a random permutation
+
+![CS3230-8-5.PNG]({{site.baseurl}}/img/CS3230-8-5.PNG)
+
+- E[T(N)] is the expected running time
+- T(N): The num of test
+
+1/n is the probability of expectancy.
+
 
 ### Expected running time
+![CS3230-8-6.PNG]({{site.baseurl}}/img/CS3230-8-6.PNG)
+
+
+Using:
+![CS3230-8-7.PNG]({{site.baseurl}}/img/CS3230-8-7.PNG)
 
 
 ## Recursive algorithm
-- When 1, 0
+- When T(1), 0
 - Else recursively find:
+![CS3230-8-9.PNG]({{site.baseurl}}/img/CS3230-8-9.PNG)
+
+	- If we are unable to match the current bolt, we have to try out the other bolt from the remaining pile (Hence the n-1 in E)
 
 To get the solution, define a new function t(n) = nE[T(n)] and rewrite:
 	- t(1) = 0                  t(n) = n + t(n-1)
@@ -73,9 +107,13 @@ To get the solution, define a new function t(n) = nE[T(n)] and rewrite:
 
 Recurrance:
 
+![CS3230-8-8.PNG]({{site.baseurl}}/img/CS3230-8-8.PNG)
 
 
 ## Finding all matches
+
+We have n nuts and n bolts, we want to match all the pairs...
+
 - Trivial algorhtims requires n^2 comparisons
 - Choose a pivot bolt and test it agaisnt every nut
 - Then test the matching pivot nut against every other bolt
