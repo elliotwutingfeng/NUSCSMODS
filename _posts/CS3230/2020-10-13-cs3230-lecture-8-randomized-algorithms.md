@@ -223,7 +223,10 @@ if n is prime, x^n-1 = 1 mod n
 
 - Pick random a
 - Square it
-- Check if there is a -1
+- Check if there is a -1 or +1
+- IF there is no -1 or 1 and we end up with a 1, that means it is composite
+
+
 
 # Example: Generate large prime
 Given k, sample a k-digit prime number
