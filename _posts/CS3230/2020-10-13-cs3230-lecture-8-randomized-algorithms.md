@@ -115,26 +115,38 @@ Recurrance:
 We have n nuts and n bolts, we want to match all the pairs...
 
 - Trivial algorhtims requires n^2 comparisons
-- Choose a pivot bolt and test it agaisnt every nut
+- Choose a pivot bolt and test it against every nut
 - Then test the matching pivot nut against every other bolt
-- After 2n-1 comparisons, we have one matching pair and the remianing are partition into two sets: Smaller and larger than matching pair (quick sort)
+- After 2n-1 comparisons, we have one matching pair and the remaining are partition into two sets: Smaller and larger than matching pair (quick sort)
 - The worse case recurrence:
+![CS3230-8-10.PNG]({{site.baseurl}}/img/CS3230-8-10.PNG)
 
 
 > T(N) = O(N^2)
 
+The probability of finding a matching pair as the pivot is 1/n
+
 ### Equivilance to sorting
 - Matching nuts with bolts is similiar to sorting the bolts and nuts according to their sizes in a sense
-- If we can sort bolts in O(nlgn) time, we can just do binary search for each nut and match them all in O(nlogn) time
-- In the other direction, if we can match nuts with bolts in O(nlogn) time, we could use merge sort to sort them according to their sizes in O(nlogn) time.
+- If we can sort bolts in O(nlgn) time, we can just do binary search for each nut and match them all in O(nlogn) time (n * binary search)
+- In the other direction, if we can match nuts with bolts in O(nlogn) time, we could use merge sort to sort the nuts according to their sizes in O(nlogn) time.
 
-> We cannot use merge sort if they werrent matched since we are only allowerd to compared nuts with bolts and not nuts with nuts
+> We cannot use merge sort if they werent matched since we are only allowed to compared nuts with bolts and not nuts with nuts. We need to see the matching pairs of bolt and nuts in order to compare if a bolt matches a nut better than the other pair (Hence we cant do nut to nut comparison)
 
-- Pretend we are matching nuts and botls in nlgn time
-- Rqandomise quicksort algo (Which is similiar to nut and bolt matching) is much faster than mergesort and heapsort in practice
+- Pretend we are matching nuts and bolts in nlgn time
+- Merge sort and heap sort does not work in this case
+- Raandomise quicksort algo (Which is similiar to nut and bolt matching) is much faster than mergesort and heapsort in practice
 
 # Choosing pivot at random: Analysis
+![CS3230-8-11.PNG]({{site.baseurl}}/img/CS3230-8-11.PNG)
 
+- Tbar(n) is E[T(N)]
+
+
+![CS3230-8-12.PNG]({{site.baseurl}}/img/CS3230-8-12.PNG)
+![CS3230-8-13.PNG]({{site.baseurl}}/img/CS3230-8-13.PNG)
+
+This shows that T(N) is upper bounded by 4T(N)(lgn)
 
 # Randomised quicksort
 - Choose random element as pivot p
