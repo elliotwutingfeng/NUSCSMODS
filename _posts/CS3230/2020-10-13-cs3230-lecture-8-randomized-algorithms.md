@@ -202,6 +202,12 @@ Application such as facilities location
 - Determinisintc algorthms: Uses advance geometry and complicated (Runs in O(N) time)
 -  Best randomised algorthim: Simple algo using elementary geometric (Runs in O(N) time)
 
+![CS3230-8-17.PNG]({{site.baseurl}}/img/CS3230-8-17.PNG)
+
+- Remove one point
+- test if the remaining is within the circle
+- If i have 3 points on the boundary, we known there is a unique circle that pass in these 3 points
+- Random: We will find these 3 points randomly
 
 # Example: Primality Testing
 Given an n-bit integer N, test whether N is a prime or not. 
@@ -211,6 +217,13 @@ Given an n-bit integer N, test whether N is a prime or not.
 	- Complicated algo: Time complexity O(n^6), never use
 - Best randomised: 
 	- Simple algo O(n^2)
+
+if n is prime, x^n-1 = 1 mod n
+![CS3230-8-18.PNG]({{site.baseurl}}/img/CS3230-8-18.PNG)
+
+- Pick random a
+- Square it
+- Check if there is a -1
 
 # Example: Generate large prime
 Given k, sample a k-digit prime number
