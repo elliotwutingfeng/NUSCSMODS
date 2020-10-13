@@ -132,3 +132,21 @@ Private internet: Internet of private LAN and private WANs
     > One for each direction, this is enhance security
 3. Data transfer
 ![CS3103-9-7.PNG]({{site.baseurl}}/img/CS3103-9-7.PNG)
+
+SSL Handshake:
+1. Client send cryptography and hash algorithms it supports to server in client Hello message
+2. Server selects a symmetric key algo, public key algo and MAC algo. Sends choices to client with a certificate and server nonce
+3. Client verifies certificate, extracts server's public key and generates pre-master key (PreMS). Encrypts the preMS with server public key. Sends encrypted preMS to server
+4. Both client and server use the same key derivation fucntion to generate MS and the 4 keys from the MS
+5. Client sends MAC of all handshake messages
+6. Server sends MAC of all handshake messages
+
+Connection close:
+1. An SSL record with type filed set to close is send. Then tcp fin is send
+
+## Secure email and pretty good privacy (PGP)
+
+![CS3103-9-8.PNG]({{site.baseurl}}/img/CS3103-9-8.PNG)
+
+> Authenticated encryption
+- Use hash , symmetric key and pkc
