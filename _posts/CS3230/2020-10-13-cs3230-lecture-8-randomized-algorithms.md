@@ -166,12 +166,20 @@ Not sorting but finding the kth smallest element...
 
 > Analysis this to show that it is similiar to nuts and bolts
 
+- Change to less than on equal to handle even / odd numbers
+
+![CS3230-8-16.PNG]({{site.baseurl}}/img/CS3230-8-16.PNG)
+
+
 
 # Type of randomised Algorhitms
 - Randomised las vegas:
 	- Output is always correct
     - Running time is random variable
     - Example: Randomised quick sort, randomised quick select
+    
+(assignment problem)
+
 - Randomsied monte carlo algorhtims
 	- Output might be incorrect with some probability
     - Running time is deterministics
@@ -210,6 +218,3 @@ Given k, sample a k-digit prime number
 - No deterministc algo
 - Obv randomise algo: 
 	- Sample a k digit number at random and use the density of primes (Prime number theorem)
-
-
-
