@@ -127,7 +127,7 @@ Example:
 - Semiconductor devices for IoT are design for ultra low leakage
 - Residual leakage supports circuitry remembers the state of the device for quick resumption of activity once awakened
 
-## duty cycling
+## Duty cycling
 Always on sensing:
 ![CS3237-9-12.PNG]({{site.baseurl}}/img/CS3237-9-12.PNG)
 
@@ -148,6 +148,8 @@ Constraints:
 - Apply to some environmental sensor as measuremetns do nott need to be taken continously related phenomenon exhibit slower time constants
 ![CS3237-9-14.PNG]({{site.baseurl}}/img/CS3237-9-14.PNG)
 
+## Sensor power requirement
+- Data rate range required by various sensor and wireless power required to continously transmit data
 
 
 
