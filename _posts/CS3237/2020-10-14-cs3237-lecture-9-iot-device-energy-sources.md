@@ -109,6 +109,18 @@ Example:
 - Mechanical strains can be converted to energy through motion, vibration and even sound
 - These harvesters could be use in smart roadways an infrastructure to harvest and change system
 
+# Improving Sensor Node lifetime
+
+## Sleep, Sense, Connect
+- Typical IoT devices performs 3 basic function
+- Plot of supply current vs. time during wireless data transfer with distinct phases of operation
+
+
+## IOt node life time
+- The lower power required, the longer lifetime
+
+![CS3237-9-11.PNG]({{site.baseurl}}/img/CS3237-9-11.PNG)
+
 
 # Slides
 <iframe src="https://drive.google.com/file/d/1uRMjDWDpvft4B2oA1-9A3Ma1r0WHZeaQ/preview" width="640" height="480"></iframe>
