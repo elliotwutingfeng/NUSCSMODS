@@ -121,6 +121,37 @@ Example:
 
 ![CS3237-9-11.PNG]({{site.baseurl}}/img/CS3237-9-11.PNG)
 
+- Improving lifetimes means reducing avg powre
+- IoT node should perfrom active task infrequently
+- Avg power can be aggressively reduce by duty cycling IoT node operations
+- Semiconductor devices for IoT are design for ultra low leakage
+- Residual leakage supports circuitry remembers the state of the device for quick resumption of activity once awakened
+
+## duty cycling
+Always on sensing:
+![CS3237-9-12.PNG]({{site.baseurl}}/img/CS3237-9-12.PNG)
+
+- Wireless MCu gets interupt if the data comes in
+- Radio then wakes up and does the processing
+
+> This is an always on device and does active sensing.. It waits for inactivity then goes to sleep, the time requires to wait depends
+
+
+Duty cycle sensing:
+![CS3237-9-13.PNG]({{site.baseurl}}/img/CS3237-9-13.PNG)
+
+- Doesnt care if there is activity or not
+- Periodically does this
+
+Constraints:
+- Some sensor cannot be duty cycled
+- Apply to some environmental sensor as measuremetns do nott need to be taken continously related phenomenon exhibit slower time constants
+![CS3237-9-14.PNG]({{site.baseurl}}/img/CS3237-9-14.PNG)
+
+
+
+
+
 
 # Slides
 <iframe src="https://drive.google.com/file/d/1uRMjDWDpvft4B2oA1-9A3Ma1r0WHZeaQ/preview" width="640" height="480"></iframe>
