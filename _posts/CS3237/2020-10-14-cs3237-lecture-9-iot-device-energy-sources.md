@@ -48,5 +48,18 @@ title: 'CS3237 - Lecture 9: IoT Device Energy Sources'
 ![CS3237-9-2.PNG]({{site.baseurl}}/img/CS3237-9-2.PNG)
 
 
+## Simplified Battery life model
+![CS3237-9-5.PNG]({{site.baseurl}}/img/CS3237-9-5.PNG)
+
+- If its 2A, the Capacity will be lower
+- If its .1 A the capactity will be higher
+- Discharging at higher rates removes more power from the battery
+- Peukert effect helps predict the life of a battery where the capacity of a battery decreases at a different rate as discharge increases
+
+The larger the exponenet the battery is, the lesser time the battery surivives
+
+![CS3237-9-6.PNG]({{site.baseurl}}/img/CS3237-9-6.PNG)
+
+
 # Slides
 <iframe src="https://drive.google.com/file/d/1uRMjDWDpvft4B2oA1-9A3Ma1r0WHZeaQ/preview" width="640" height="480"></iframe>
