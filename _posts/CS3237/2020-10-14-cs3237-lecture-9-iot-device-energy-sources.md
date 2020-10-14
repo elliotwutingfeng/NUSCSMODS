@@ -42,6 +42,11 @@ title: 'CS3237 - Lecture 9: IoT Device Energy Sources'
 
 ## Battery specification terms
 - Capacity or Nominal capacity: The coulometric capacity, the total AMP hours available when the battery is dischaged at a certain discharged current from 100 percent state of change to the cut of voltage
+- Capacity is calculated by multiplying the dischaged current 
+- Capacity decreases with increasing C-rate
+
+![CS3237-9-2.PNG]({{site.baseurl}}/img/CS3237-9-2.PNG)
+
 
 # Slides
 <iframe src="https://drive.google.com/file/d/1uRMjDWDpvft4B2oA1-9A3Ma1r0WHZeaQ/preview" width="640" height="480"></iframe>
