@@ -234,3 +234,6 @@ Given k, sample a k-digit prime number
 - No deterministc algo
 - Obv randomise algo: 
 	- Sample a k digit number at random and use the density of primes (Prime number theorem)
+
+# Slides
+<iframe src="https://drive.google.com/file/d/1SnOOz2y_znQcE-2Mhdze1gODRNebQTCc/preview" width="640" height="480"></iframe>
