@@ -60,6 +60,10 @@ The larger the exponenet the battery is, the lesser time the battery surivives
 
 ![CS3237-9-6.PNG]({{site.baseurl}}/img/CS3237-9-6.PNG)
 
+### Example
+![CS3237-9-8.PNG]({{site.baseurl}}/img/CS3237-9-8.PNG)
+
+- 20C * 3000MAh = 60A (Discharge rate per hour running on 20C)
 
 # Slides
 <iframe src="https://drive.google.com/file/d/1uRMjDWDpvft4B2oA1-9A3Ma1r0WHZeaQ/preview" width="640" height="480"></iframe>
