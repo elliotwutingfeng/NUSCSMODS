@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: 'cs2107 - Lecture 7: Secure channel, TLS/SSL and Misc Cyrptographic topics'
+title: 'cs2107 - Lecture 7-8: Secure channel, TLS/SSL and Misc Cyrptographic topics'
 ---
 # Strong authentication
 
@@ -190,10 +190,82 @@ E.g
 
 
 # Authenticated Encryption
-# Time-memory tradeoff for dictionary attack
+
+Authenticated encryption is a symmetric encryption that returns both ciphertext and authentication tag
+
+- Combines cipher and MAC: Ensures confidentiality and authenticity
+- Authenticated encryption: AE(Kab, M) = (C,T)
+- Decryption process: AD(Kab,C,T) = M only if T is valid
+
+Different variants/approaches:
+- Encrypt and MAC
+- Mac then Encrypt
+- Encrypt then mac
+- Specialised authenticated cipher
+
+
+## Encrypt and Mac (E&M)
+- The sender computes ciphertext C and tag T seperately
+
+- Used in SSH
+> Issues: T may not be random looking and could leak info
+
+
+## MAC then Encrypt (MtE)
+- Sender first compute tag T = MAC(k2AB, M)
+- Generates the ciphertext C = E(K1AB, M || T)
+- Sends C
+
+
+- Used in SSL and TLS in ver 1.2
+
+> Issue: Decyption is still needed on a corrupted message
+
+
+## Encrypt then MAC (EtM)
+- Sender generates ciphertext C = E(K1AB, M)
+- Computes tag T = MAC(K2AB, C)
+- Sends (C,T)
+
+
+- USed in IPsec
+- Feature: A decryption is not performed on a corrupted message
+
+## Authenticated cipher
+- returns an authenticated tag together with ciphertext
+
 # Birthday attack variant
+
+Birthday attack on hash
+- Suppose digest of hash is 80 bits: T = 2^80
+- Attacker wants find collision
+- Attacker randomly generates 2^41 messages (M=2^41)
+- Then M > 1.17 T^0.5
+- Hence the prob more than 0.5 among the 2^41 messages, two of them gives the same hash
+
+
+
+#### Variant
+- Let S be set of k distict elements where each element is a n bit binary string
+- Independently and randomly select m n bit binary string
+- Prob that at least one of the randomly chosen string is in S is (larger than):
+
+> Notice that the set S and the set of generated m strings are differnet
+
+
+
+
 # Other interesting cryptography topics
-#
+- Format preserving encryption:
+	- Basic cipher cdoes not care if the plaintext is an image
+    - Ciphertext is not viewable image
+    - A format preserving encryption sovle the issue: 
+    	- Ciphertext has the same format as the plaintext
+    - Other possible target plaintext types: IP address, zip code, credit card numbers
+- Fully Homorphic encryption
+	- Enables user to replace a cipher text C = E(K, M) with another ciphertext C' = E(K, F(M)) where F() is a function of M without ever decrypting the initial ciphertext C
+    - This is useful for cloud provider: Does not need to know the content of M in order to change
+    - However this is very slow
 
 # Slides
 <iframe src="https://drive.google.com/file/d/1BvL_RFHsxR194ZdtZ2sa-QXBlCPxnPax/preview" width="640" height="480"></iframe>
