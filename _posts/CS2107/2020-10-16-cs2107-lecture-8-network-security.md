@@ -107,10 +107,124 @@ Mallaory (attacker)
 
 
 # Denial of services attacks
+The prevention of authorised access to resources or the delaying of time critical operation
 
+Affects:
+- Availability: Property of being accessible and usable upon demand by authorized entity
+
+## Types
+- Local attacks: more easily tracked
+- Malform attacks: Does not usually work on updated OS
+- Packet flooding:
+	- Overwhelm victims with request or data
+    - Attacker amplify small traffic to obtain large traffic typically by using abailble public servers (Internet infrastructure) such as DNS, NTP, CharGen
+- ICMP/SMURF flood attack
+	- Sends ICMP ping request to router
+    - Instructs router to broadcast this request to all local nodes
+    - Request source IP is spoofed with victims IP address
+    - Router broadcast this echo request
+    - Entity that recieves the request replies to it by sending an echo reply to source which is the victim
+
+The victim is overwhelm with echo reply from the entire network, the attacker takes advatnage of the amplification effect
+
+
+## ICMP/SMURF preventive
+- Its not effective
+- Router now configured not to broadcast the request
+- Prevent: Disable the feature that is thought to be useful previously
+
+## HTTP GET Applicaation layer DOS attack
+- Flood a web server with HTTP request
+- Large number of attacker required
+- Dos is carried ot by large number of attackers which is called DDos (Distributed Denial of service)
+
+
+## Bot net
+- Zombie: a compromised machine
+- Botnet: A large collection of connected bots communicating via covert channels
+- Botnet has a command and control mechanism and thus can be controlled by individual to carry out DDOS
+- Possible uses:
+	- Flooding 
+    - Vulnerability scanning
+    - Anonymizing HTTP proxy
+    - Email address harvesting
+    - Cipher breaking
+> Why covert channels are use by botnets
 
 
 # Userful network security tools
+
+- Wireshark
+- Nmap (port scanner)
+
+
 # Protection: Securing the communication channel using cryptography
+
+Achieve:
+- Confidentiality (Encryption)
+- Authenticity (MAC, PKI, Strong authentication)
+
+Protocols:
+- TLS/SSL
+- WIFI protected acccess 2 (WPA2)
+- Internet protocol security (IPsec)
+
+Layers:
+
+
+> Some protection span across multiple layers or do not provide full protoction of the target layers
+
+- Analyse a attack: Figure out what layer the attacker resides
+- Complication: Some attacker span across multiple layers
+
+## Remarks
+- A secuirty protocol that protects layer k would protect infomation from that layer and aboce against an attacker sitting at layer k-1 and below
+
+E.g: What happens if attacker resides at layer 1 and there is a secuirty protcol that protects layer3?
+
+- What is protoected by secuirty protocol: The infomation generated in the layer 3 and above
+- Not protected: Infomation generated in layer 2
+
+## Protocols
+
+### SSL/TLS
+- Sits on top of transport layer
+- When application wants to send data to the other endpoint, it first pass the data and the destination IP address to SSL/TLS
+- TLS/SSL protects the data using encruption (Confidentiality) and MAC (AUthenticity) and then instructs the transport layer to send the protected data
+- End to end encryption is performed
+
+
+Usage:
+- ALice access Luminus to upload her file a.pdf 
+- Alice machine:
+	- Luminus client passes the file a.pdf to HTTPS and then to TLS
+	- TLS protects the data by encryption and MAC
+	- TLS passes the protoected data to the transport layer
+- Luminus:
+	- The transport layer passes the protected data to TLS
+	- TLS decrypt the data and verify the MAC for integrity
+    - TLS passes the decrypted data to luminus application
+    
+> Handshaking is also used here (Jus ommited)
+
+#### Attacker at physical layer
+- Mallory can sniff and spoof the pdf locally
+- 
+
+### WPA2
+- Wifi protected access 2:
+	- Employed in home wifi access point
+    - More secure than WEP (Broekn), WPA
+Protections:
+- Layer 2 (link)
+- Layer 1 (Physical)
+
+> Not all info in layer 2 is protected
+
+### IPsec
+- Provides integrity and authenticity protoection of IP address but not their confidentiality
+	- Attacker cant spoof source IP
+    - Can still learn source and destination 
+
 # Protection: Firewall
 # Protection: Network security management
