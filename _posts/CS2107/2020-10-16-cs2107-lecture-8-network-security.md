@@ -227,4 +227,40 @@ Protections:
     - Can still learn source and destination 
 
 # Protection: Firewall
+Protocols are not sufficient to protect
+	- Cant protect against Dos
+- Need to control the flow of traffic between networks especially between untrusted public network (internet) and trusted internal network
+
+Firewall:
+- Between two networks
+- Looks at addresses, services and other characteristics of traffic
+- Controls what traffix is allowed to enter the network(ingress filtering) or leave the network (egress filtering)
+
+Definition: 
+> Firewall are devices or programs that control the flow of network traffix between networks or hosts that employ differing security postures
+
+- DMZ (demilitarized zone)
+	- Small subnetwork
+    - Exposes org external service to untrusted internet
+## Setting
+
+## Design
+- Enforce a set of rules 
+- Examples
+	- Block HTTP
+    - ALlow from internal network to Mail server: SMTP, POP3
+
+Example:
+
+
+## Types
+1. Traditional packet filters:
+	- Filters packet based on infomation in packet headers
+2. Stateful inspection (Packet filters)
+	- Maintain a state table of all active connections
+    - Filters packets based on active connections states
+3. Application proxy
+	- Understands application logic
+    - Acts as a relay of application level traffic
+
 # Protection: Network security management
