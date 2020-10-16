@@ -204,8 +204,12 @@ Different variants/approaches:
 - Specialised authenticated cipher
 
 
+
 ## Encrypt and Mac (E&M)
 - The sender computes ciphertext C and tag T seperately
+
+![CS2107-6-16.PNG]({{site.baseurl}}/img/CS2107-6-16.PNG)
+
 
 - Used in SSH
 > Issues: T may not be random looking and could leak info
@@ -226,6 +230,7 @@ Different variants/approaches:
 - Sender generates ciphertext C = E(K1AB, M)
 - Computes tag T = MAC(K2AB, C)
 - Sends (C,T)
+![CS2107-6-17.PNG]({{site.baseurl}}/img/CS2107-6-17.PNG)
 
 
 - USed in IPsec
@@ -233,6 +238,9 @@ Different variants/approaches:
 
 ## Authenticated cipher
 - returns an authenticated tag together with ciphertext
+
+![CS2107-6-18.PNG]({{site.baseurl}}/img/CS2107-6-18.PNG)
+
 
 # Birthday attack variant
 
