@@ -274,6 +274,7 @@ Birthday attack on hash
 	- Enables user to replace a cipher text C = E(K, M) with another ciphertext C' = E(K, F(M)) where F() is a function of M without ever decrypting the initial ciphertext C
     - This is useful for cloud provider: Does not need to know the content of M in order to change
     - However this is very slow
+![CS2107-6-19.PNG]({{site.baseurl}}/img/CS2107-6-19.PNG)
 
 # Slides
 <iframe src="https://drive.google.com/file/d/1BvL_RFHsxR194ZdtZ2sa-QXBlCPxnPax/preview" width="640" height="480"></iframe>
