@@ -8,18 +8,20 @@ title: 'CS2107 - Lecture 8: Network Security'
 - Partions a complex communcation system into several abstraction layers
 - The peer entities at the same layer N communcate with each other by executing a protocol at that layer
 
+![CS2107-7-1.PNG]({{site.baseurl}}/img/CS2107-7-1.PNG)
 
 ## Why
 - Layer N protocol is built on top of virtual connection at layer N-1 below
 - Example of protocol at layer 5 (Authentication protocol):
 	- A -> B "Hello"
     - A <- B: certificate of B
-
+- The peer entities at the same layer N "Conceptually" communicate with each other by executing a protocol at that layer
 - The virtual connection at layer 4 sends the message "hello" from A to B in step 1 and sends B certificate in step2
 
 - At layer N:
 	- A message to be send is called layer N protocol data unit (PDU)
 	- Encapsulation of upper layer PDU
+![CS2107-7-2.PNG]({{site.baseurl}}/img/CS2107-7-2.PNG)
 
 ## Security weakness
 - Original network design does not account for intentional attacks
@@ -112,6 +114,8 @@ The prevention of authorised access to resources or the delaying of time critica
 Affects:
 - Availability: Property of being accessible and usable upon demand by authorized entity
 
+![CS2107-7-3.PNG]({{site.baseurl}}/img/CS2107-7-3.PNG)
+
 ## Types
 - Local attacks: more easily tracked
 - Malform attacks: Does not usually work on updated OS
@@ -124,6 +128,7 @@ Affects:
     - Request source IP is spoofed with victims IP address
     - Router broadcast this echo request
     - Entity that recieves the request replies to it by sending an echo reply to source which is the victim
+![CS2107-7-4.PNG]({{site.baseurl}}/img/CS2107-7-4.PNG)
 
 The victim is overwhelm with echo reply from the entire network, the attacker takes advatnage of the amplification effect
 
