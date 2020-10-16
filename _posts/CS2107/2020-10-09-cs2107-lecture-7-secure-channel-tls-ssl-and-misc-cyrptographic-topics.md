@@ -213,7 +213,7 @@ Different variants/approaches:
 
 ## MAC then Encrypt (MtE)
 - Sender first compute tag T = MAC(k2AB, M)
-- Generates the ciphertext C = E(K1AB, M || T)
+- Generates the ciphertext C = E(K1AB, M // T)
 - Sends C
 
 
