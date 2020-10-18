@@ -154,4 +154,15 @@ Fields:
     - SKEME: Key exchange (PKC)
 	- ISAKMP: Implements the exchanges define in IKE
     
-    
+## VPN
+- Private but virtual
+- Guarantees privacy inside the org
+- Virtual cos it doesnt use real private WAN
+- Network is physically private but virtually private
+- VPN uses ESP protocol of IPsec in tunnel mode
+- Private datagrame incl the header is encap in ESP packet
+- Router at border uses its own ip addrtess and add of arouter at the dest site in new datagram
+- Decipherings takes place at R2
+
+![CS3237-lab-8-11.PNG]({{site.baseurl}}/img/CS3237-lab-8-11.PNG)
+
