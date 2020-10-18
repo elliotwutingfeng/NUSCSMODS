@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3103 - Experiment 8: IPSEC'
 ---
 # Foruzan
