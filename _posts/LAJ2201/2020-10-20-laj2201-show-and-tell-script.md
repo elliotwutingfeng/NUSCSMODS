@@ -26,6 +26,8 @@ title: LAJ2201 - Show and Tell script　（しゅみ）
 ![LAJ2201-1-oral.jpg]({{site.baseurl}}/img/LAJ2201-1-oral.jpg)
 
 スピーチバブルをタップする：
+
+
 ![LAJ2201-1-oral2.PNG]({{site.baseurl}}/img/LAJ2201-1-oral2.PNG)
 
 
