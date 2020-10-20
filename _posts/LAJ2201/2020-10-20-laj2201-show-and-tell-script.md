@@ -38,7 +38,7 @@ title: LAJ2201 - Show and Tell script　（しゅみ）
 ![LAJ2201-1-oral5.jpg]({{site.baseurl}}/img/LAJ2201-1-oral5.jpg)
 
 
-
+## リズムのパート
 リズムのパートには、いろいろな曲を選ぶことができますよ。
 そして、協力ライブをすることができます。
 
