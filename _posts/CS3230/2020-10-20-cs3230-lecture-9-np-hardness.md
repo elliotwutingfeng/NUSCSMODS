@@ -225,9 +225,9 @@ Theorem:
 - For remain varaibles that are not set to true, pick a value arbituary 
 
 ### Reducing 3sat to independence sat
-- For any 3sat formula, construct an instance of independence sat which is G = (V,E) and number k
+- For any 3sat formula, construct an instance of independence sat which is G = (V,E) and INDEPDENENT SET OF SIZE k
 - Reduction is one direction only  (We are nt doing indep set to 3sat)
-- 
+- If have size k, then is reducable
 # General pattern
 ![CS3230-9-13.PNG]({{site.baseurl}}/img/CS3230-9-13.PNG)
 
