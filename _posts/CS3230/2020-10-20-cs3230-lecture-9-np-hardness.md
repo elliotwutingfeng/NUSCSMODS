@@ -169,11 +169,20 @@ So we can transform every gate into at most-3 clauses
 
 if a or B is true, this means that a or b or x is true AND a or v or notx is true
 
+For every clause, we introduce fresh auxilar variables. For each gate, we create a constant number of claises
 ### Example
 - For the following circuit:
+![CS3230-9-7.PNG]({{site.baseurl}}/img/CS3230-9-7.PNG)
 
 Our reduction will give the following 3-SAT formula
+- y1 = x1 and x4
+- y6 = x2 and y1
+- Until y8 = 1
 
+This is only larger than a factor of 5
+![CS3230-9-8.PNG]({{site.baseurl}}/img/CS3230-9-8.PNG)
+
+![CS3230-9-9.PNG]({{site.baseurl}}/img/CS3230-9-9.PNG)
 
 
 > 3-Sat is NP hard, since its in NP, it is NP complete
