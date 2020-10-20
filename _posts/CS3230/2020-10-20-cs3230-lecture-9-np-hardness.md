@@ -292,4 +292,5 @@ A proper k-coloring of a graph G = (V,E) is function C: V-> {1,2...k} that assig
 - For each clause of the form, say avbvnotc we introduce:
 ![CS3230-9-21.PNG]({{site.baseurl}}/img/CS3230-9-21.PNG)
 
-
+# Slides
+<iframe src="https://drive.google.com/file/d/1D2oISE2_4iDLF4r7P5Ji3qiJk1ZU4uzs/preview" width="640" height="480"></iframe>
