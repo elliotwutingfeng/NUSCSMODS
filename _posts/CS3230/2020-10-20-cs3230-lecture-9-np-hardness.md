@@ -164,6 +164,7 @@ CKTSAT -> 3 SAT
 
 So we can transform every gate into at most-3 clauses
 - Changing 1 clause and 2 clause to 3 clause with auxiliary variables
+
 ![CS3230-9-6.PNG]({{site.baseurl}}/img/CS3230-9-6.PNG)
 
 if a or B is true, this means that a or b or x is true AND a or v or notx is true
