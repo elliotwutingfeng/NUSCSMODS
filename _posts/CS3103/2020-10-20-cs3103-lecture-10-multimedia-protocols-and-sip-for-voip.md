@@ -237,4 +237,4 @@ Includes:
 ![CS3103-10-23.PNG]({{site.baseurl}}/img/CS3103-10-23.PNG)
 
 ## Flows 
-![]({{site.baseurl}}/img/CS3103-10-24.PNG)![CS3103-10-24.PNG]({{site.baseurl}}/img/CS3103-10-24.PNG)
+![CS3103-10-24.PNG]({{site.baseurl}}/img/CS3103-10-24.PNG)
