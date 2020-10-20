@@ -291,3 +291,5 @@ A proper k-coloring of a graph G = (V,E) is function C: V-> {1,2...k} that assig
 - This already indicate how the coloring will be related to the assignment
 - For each clause of the form, say avbvnotc we introduce:
 ![CS3230-9-21.PNG]({{site.baseurl}}/img/CS3230-9-21.PNG)
+
+
