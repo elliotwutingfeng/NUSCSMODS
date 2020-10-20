@@ -70,5 +70,4 @@ EN:
 ![LAJ2201-1-oral6.GIF]({{site.baseurl}}/img/LAJ2201-1-oral8.GIF)
 
 
-
 みんなさん、もし興味があったら、今度私と一緒にゲームしましょう！
