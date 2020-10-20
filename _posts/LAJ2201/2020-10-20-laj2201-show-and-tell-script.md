@@ -41,6 +41,8 @@ title: LAJ2201 - Show and Tell script　（しゅみ）
 ![moca.gif]({{site.baseurl}}/img/moca.gif)
 
 モカちゃんといちメートルのパン：
+
+
 ![LAJ2201-1-oral5.jpg]({{site.baseurl}}/img/LAJ2201-1-oral5.jpg)
 
 
