@@ -236,5 +236,15 @@ Includes:
 ## Protocol
 ![CS3103-10-23.PNG]({{site.baseurl}}/img/CS3103-10-23.PNG)
 
-## Flows 
+## Flows - Via gateway
 ![CS3103-10-24.PNG]({{site.baseurl}}/img/CS3103-10-24.PNG)
+
+## SIP and H323 communcication
+- Needs another gateway from SIP user agent to H323 terminal 
+Choose who?
+- SIP is newer than H323
+- SIP provides a similiar set of services to h323 but provides far lower complexity, rich extensibility and better scalabilitiy
+- Use of SIP is rapidly increased in Telco networks with IP multimedia ssubsystem (IMS). IMS uses many existing IETF protocols
+
+# SLides
+<iframe src="https://drive.google.com/file/d/1C7aL_tdDl_27NKilRZog_psGfMuSflGw/preview" width="640" height="480"></iframe>
