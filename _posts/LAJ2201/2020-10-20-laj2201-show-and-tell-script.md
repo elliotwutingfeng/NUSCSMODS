@@ -10,6 +10,7 @@ title: LAJ2201 - Show and Tell script　（しゅみ）
 
 # 私の趣味
 私の趣味はゲームすることです。私はいろいろなゲームしました。
+
 例えば「league of legends」は一番好きなPCゲームです。最近は宿題とプロジェクが多かったですから、「league of legends]のすることができませんでした。
 ![LAJ2201-1-oral4.jpg]({{site.baseurl}}/img/LAJ2201-1-oral4.jpg)
 
