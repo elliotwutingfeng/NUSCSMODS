@@ -190,6 +190,7 @@ This is only larger than a factor of 5
 # SAT
 - A canoical example: Consider the formula satifiability problem, usually just called SAT. The input to SAT is a boolean formula like
 
+> Remark: 2 Sat is solvablein polynomial time
 
 A 3-SAT function is a special case of general SAT formula. So there is a trivial reduction from 3SAT to SAT. Just return the original formula
 
@@ -199,6 +200,7 @@ Conl: SAT is NP-hard
 - Let G = (V,E) be arbitrary undirected graph
 - An independent set in G is set of vertices V' is a subset of V such that there is no edge between any two vertices in V'
 - MaxIndSet Problem: Given G = (V,E) and k>0 as input, does there exist an independent set of size of least k.
+- the proof here is the set of vertices
 
 Prove NP-hardness by reducing 3-SAT
 
@@ -207,9 +209,17 @@ Prove NP-hardness by reducing 3-SAT
 Two vertices in G are connected by an edge if they either 
 	- Correspond to literals within the same clause
     - Are negation of each others
+![CS3230-9-10.PNG]({{site.baseurl}}/img/CS3230-9-10.PNG)
+
+- take the first clause and create a 3 cnf
+- Connect a vertex to varaible and its negation
 
 Theorem:
 - The graph has an independent set of size k, if and only if the the 3-CNF is satisfiable
+
+![CS3230-9-11.PNG]({{site.baseurl}}/img/CS3230-9-11.PNG)
+
+![CS3230-9-12.PNG]({{site.baseurl}}/img/CS3230-9-12.PNG)
 
 # General pattern
 
