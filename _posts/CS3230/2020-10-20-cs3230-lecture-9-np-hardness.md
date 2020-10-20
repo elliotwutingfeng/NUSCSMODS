@@ -221,7 +221,15 @@ Theorem:
 
 ![CS3230-9-12.PNG]({{site.baseurl}}/img/CS3230-9-12.PNG)
 
+- For each of these vertices, set the corresponding literals to true, this will nto cause conflict because the vertices are not connected
+- For remain varaibles that are not set to true, pick a value arbituary 
+
+### Reducing 3sat to independence sat
+- For any 3sat formula, construct an instance of independence sat which is G = (V,E) and number k
+- Reduction is one direction only  (We are nt doing indep set to 3sat)
+- 
 # General pattern
+![CS3230-9-13.PNG]({{site.baseurl}}/img/CS3230-9-13.PNG)
 
 
 
