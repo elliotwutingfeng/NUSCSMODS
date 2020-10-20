@@ -166,12 +166,75 @@ Server types:-
 
 > NOtice in 7, the communication is direct.. the sip server only using for directing
 
-
+REGISTER WITH THE SERVER
 - SIP clients always connect to a sip server which in turn connects to destination by converting SIP address to IP address
+
+
 - All clients should register with SIP server with its current IP address when they login. 
 	- SIP server should have REGISTRAR compoennt
+
+### Log in to two devices
+- If someone calls me, server knows that you are log in
+- Which device does the server forward to
+- Answer: All
 
 
 ### SIP flows via proxy: Tracking the callee
 
-# SDP
+As client base increases, we want to divide the functionalities, the proxy server will be the one that does the lookup to the registra isntead of caller direclty to the register
+
+![CS3103-10-17.PNG]({{site.baseurl}}/img/CS3103-10-17.PNG)
+
+> There is also security we have to worry about
+
+#### SIP Trapezoid
+
+- To which the proxy server us ocnnect
+- find from dns (potentional proxy search)
+- send to porxy
+![CS3103-10-18.PNG]({{site.baseurl}}/img/CS3103-10-18.PNG)
+
+Registra is a service that tells the infomatin of the user using the database
+> Registra is a process and the data is stored int he location server
+
+#### SIP triangle
+![CS3103-10-19.PNG]({{site.baseurl}}/img/CS3103-10-19.PNG)
+
+## SIP flows: Gateway
+![CS3103-10-20.PNG]({{site.baseurl}}/img/CS3103-10-20.PNG)
+
+- message goes through a gateway before reaching the other side
+
+> This is for crossing to another protocol, but the router needs to have this installed already
+
+# SDP: Session description protocol
+- Indetended for describing multimedia session for the purpose of session announcement session ivnitation and other forms of multimedia session initiation
+
+Includes:
+- Types of media
+- Transport protocol
+- Format of the media 
+- Infomation to recieve those media (Address ports formats and so on)
+
+# CODEC
+![CS3103-10-21.PNG]({{site.baseurl}}/img/CS3103-10-21.PNG)
+
+# H323
+- Telco companies use this and not SIP
+- Recommendation covers the technical requriements for multimedia communciation system in a packet based network
+- Defined for video conferencing 
+	- Terminals: Endpoints that enable real time voice or video communcation
+    - MCU/MC/MPs: Multipoints controller units which includes multipoint controller and one or severalk multipoints processors that enable managed multipoint conferences
+    - Gateways: Intercommuncation between ip networks and legacy switch circuit networks such as ISDN and PSTN
+    - Gatekeepers: Perform the roles of central managersw of voIP services to the aend points, Mandatory functionalities includes address resolution, authentiation, service authentication
+
+## Architecture
+![CS3103-10-22.PNG]({{site.baseurl}}/img/CS3103-10-22.PNG)
+
+- Gatekeeper: Register that keep track which ip address is to which device
+
+## Protocol
+![CS3103-10-23.PNG]({{site.baseurl}}/img/CS3103-10-23.PNG)
+
+## Flows 
+![]({{site.baseurl}}/img/CS3103-10-24.PNG)![CS3103-10-24.PNG]({{site.baseurl}}/img/CS3103-10-24.PNG)
