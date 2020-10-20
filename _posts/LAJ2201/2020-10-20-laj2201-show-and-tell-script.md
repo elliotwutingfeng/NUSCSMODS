@@ -51,6 +51,8 @@ title: LAJ2201 - Show and Tell script　（しゅみ）
 
 今日本のアプリには２ひゃくきゅうじゅうぐらい曲があります。
 ![LAJ2201-1-oral6.GIF]({{site.baseurl}}/img/LAJ2201-1-oral6.GIF)
+
+
 ゲームにはオリジナルとアニメからの曲があります。
 
 そして、協力ライブをすることができます。
