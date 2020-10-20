@@ -38,10 +38,140 @@ In the past: Can only stream data but cannot rewind forward etc etc.
 
 ## Streaming live vs Stored audio/video
 - Stream live audio and video
--
+	- Broadcasting of audio and video by radio and tv stations
+- There are several similarities between streaming stored audio/video and streaming live audio/video
+	- Sensitive to delay
+    - Neither can accept retransmission
+    - There is a difference wherer in the first applicaiton, the communication is unicast and on demand. In the second the communication is multicast and live
 
-# RTP
-# RTCP
-# RTSP
+## Streaming real time interactive audio and video
+- In real time, interactive audio/video, people communicate with one another in real time
+	- the internet phone or voice over IP is an example of this type of application
+    - Video conferencing is another example that allows people to communciate visually and orally
+    - Cloud games
+## Streaming: Arrive time = playtime
+![CS3103-10-6.PNG]({{site.baseurl}}/img/CS3103-10-6.PNG)
+
+- Play as soon as packet comes
+- This looks perfect
+
+## Streaming: Arrive time = playtime and jitter
+![CS3103-10-7.PNG]({{site.baseurl}}/img/CS3103-10-7.PNG)
+
+- THis is the accurate way
+- Jitter is introduce in real time data by the delay between packets
+> The jitter cause the playback to not be constant, the play time cannot be the same as arrive time
+
+Jitter: variation in delay
+
+## Streaming: Handling jitter with playback buffer in client
+To hide and prevent jitter:
+- Timestamp the packets and separate the arrival time from the playback time
+- Use client side playback buffer
+- Add sequence number to packets
+
+Question: How long to buffer? How to decide
+- Delay
+- Jitter
+- distance from server
+- packet loss
+
+## UDP and RTP
+UDP:
+- More suitable than TCP for interactive traffic
+- RTP is used another transport layer protocol to make up for deficiencies of UDP
+
+RTP:
+- Designed to handle real time traffic on the internet
+- RTP does not have delivery mechanism (Multicasting, port numbers etc)
+- Must be use with UDP
+- The main contribution of RTP are time stamping,seqeuncesing and mixing facilities
+- RTP uses a temp even number UDP port
+
+> RTP also uses a companion protocol RTCP which enables the sender to monitor hte netowrk condition and react
+![CS3103-10-8.PNG]({{site.baseurl}}/img/CS3103-10-8.PNG)
 # SIP
+
+## VOip with SIP
+- Session initiation protcol: APplication layer signalling protocl for creating mdofiying and terminating session with one or more participants.
+- Can be use for voice video and isntant messaging, gaming
+- Follows on HTTP
+	- Text base messaging
+    - URI
+    
+    
+![CS3103-10-9.PNG]({{site.baseurl}}/img/CS3103-10-9.PNG)
+    
+Components:
+- Client: Make request
+- Servers: Accepts request
+
+Server types:-
+- Redirect server
+- Proxy server
+- Registrar server
+- Location server
+- Session border controller
+
+## Peer to peer
+![CS3103-10-10.PNG]({{site.baseurl}}/img/CS3103-10-10.PNG)
+
+- Which is the audio video code
+- What is the codac
+## MEthod messages
+![CS3103-10-12.PNG]({{site.baseurl}}/img/CS3103-10-12.PNG)
+
+- Invite: Request a session
+- ACK: Final response to the invite
+- Option: What kind of codac
+- Cancel
+- Bye
+- Register
+
+## Responses
+![CS3103-10-13.PNG]({{site.baseurl}}/img/CS3103-10-13.PNG)
+
+- 302: Redirection
+- 5xx: Server issues
+- 6xx: Global failure
+
+## Address format
+![CS3103-10-14.PNG]({{site.baseurl}}/img/CS3103-10-14.PNG)
+
+- the registra will register all these under your account
+- People can call you using the email address, phone number etc
+
+## Simple flows
+
+- SDP infomation is present in the initial invite
+- RTP session can be establish using this
+
+![CS3103-10-15.PNG]({{site.baseurl}}/img/CS3103-10-15.PNG)
+
+> Normally the SIP may or not have content
+
+## SIP flows Via proxy
+
+![CS3103-10-16.PNG]({{site.baseurl}}/img/CS3103-10-16.PNG)
+
+1. When a client sends invitiation
+2. If we know ip, we can send directly, but most we dont know the ip address of the other side
+	- Prob email id
+    - Number
+3. Packet cannot be transmitted directly
+4. Takes the email if the user is login, send a registra command to register the ip address
+5. Establish the connection to the other side (Server)
+6. Ring will foward to the user A
+7. User a ack and just call directly
+
+> NOtice in 7, the communication is direct.. the sip server only using for directing
+
+
+- SIP clients always connect to a sip server which in turn connects to destination by converting SIP address to IP address
+- All clients should register with SIP server with its current IP address when they login. 
+	- SIP server should have REGISTRAR compoennt
+
+
+### SIP flows via proxy: Tracking the callee
+
 # SDP
