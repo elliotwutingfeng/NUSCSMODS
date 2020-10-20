@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3103 - Lecture 10: Multimedia protocols and SIP for VOIP'
 ---
 # Streaming audio/video
