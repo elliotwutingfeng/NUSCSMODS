@@ -237,12 +237,33 @@ Theorem:
 - MAXCLIQUE: Given undirected G = (V,E) and positive integer k does there exist a subset of vertices V' of size at least k that forms a clique (All pairs of vertices in V' connected by an edge)
 - Vertex cover: Given undirected G = (V,E) and postiive integer k, does there exist a subset of vertices V' of size at most k, such that for all edges (u,v) in E either u or v is V'
 
+![CS3230-9-14.PNG]({{site.baseurl}}/img/CS3230-9-14.PNG)
+
+We know that Max independent is already NP hard, can we reduce max independence sat to this problem as well
+- Take the complement graph
 
 ## MAXCLIQUE IS NP HARD
 - Just consider the complement graph. If G jas an independent set of k then G' has a clique of size k
 
+![CS3230-9-16.PNG]({{site.baseurl}}/img/CS3230-9-16.PNG)
+
+
 ## Vertex cover is NP-hard
 - If V1 is a subset of V, is an independent set in G = (V,E) then V' = V\V1 is a vertex cover
+- Refer to the picture, thje vertex in this graph is the complement of maxclqie
+
+CLAIM: G has an independent set of size k if and only if G has a vertex cover of size n-k
+- v1 to vk are independent
+- remaining vertex u1 to u1k, is a vertex cover
+- Consider any edge (x,y), both x, y are not in V1. 
+- This implies that edge (x,y) is covered by v2
+
+Other direction:
+- If this is vertex cover
+- Consider that any pair of vertices vi, vj in v1
+- CLaim: They cannot be connected by the edge because we say that they are in vertex cover
+
+![CS3230-9-17.PNG]({{site.baseurl}}/img/CS3230-9-17.PNG)
 
 
 # Graph 3 - coloring
@@ -253,10 +274,20 @@ A proper k-coloring of a graph G = (V,E) is function C: V-> {1,2...k} that assig
 
 ## Reduction
 - Before looking at 3-sat intances, we begin by creating a triangle (3-Clique) and label the vertices T,F,X. Note that in any proper 3 coloring, these will be assigned different colour
+- We want to find an assignment if an only if there exist the coloring, the coloruing must satisfy all the different edges
 - Without loss of generality, we assume the colours are shown below
-
+![CS3230-9-18.PNG]({{site.baseurl}}/img/CS3230-9-18.PNG)
+	- for each clause, we will create a small graph g*
+    - The clause is only true if and only if g* is 3 colour label
+    - Look at a or b: This is true when one of a, b is coloured green
+    ![CS3230-9-19.PNG]({{site.baseurl}}/img/CS3230-9-19.PNG)
+	- the center two nodes is either red or yellow but both cannot be same colour
+    - At least one of a,b is green
+    
 
 - Introduce the following 3 cliques in our graphs
+	![CS3230-9-20.PNG]({{site.baseurl}}/img/CS3230-9-20.PNG)
 
 - This already indicate how the coloring will be related to the assignment
 - For each clause of the form, say avbvnotc we introduce:
+![CS3230-9-21.PNG]({{site.baseurl}}/img/CS3230-9-21.PNG)
