@@ -8,12 +8,14 @@ title: 'CS3230 - Lecture 9: NP Hardness'
 - Sales man tell you that the state of the light bulb is controlled by a complex boolean circuit and a collection of AND, OR and NOT gates connected by wires, with one input wire for each switch and a single output wire for the bulb
 
 Can you set the switches so that the light bulb turns on?
-
+- Try different combination
+- Say if there is existance combination
 
 > No matter what the answer, the salesman can produce a circuit that is inconsistent with our answer unless we had tried all 2^n
 
 
 #### Showing you the circuit
+![CS3230-9-1.PNG]({{site.baseurl}}/img/CS3230-9-1.PNG)
 
 
 - No
@@ -21,8 +23,12 @@ Can you set the switches so that the light bulb turns on?
 - Given X1.. Xn, it is easy to check whether they satisfy the circuit in time linear in the number of gates
 - But no one knows any algo that givern the circuit as inpyt tells whether there exist x1..xn satisfying the circuit
 
+> No one knows if this is impossible either
 
 # Recalling reduction
+
+Reduction: Input for A -> Input for problem B -> Use algo for B to solve -> Solution for A
+
 - Problem A reduces to B if efficient algo for B implies an efficient algo for A.
 	- Squaring integers reduces to multiplying integers
     - Median finding reduces to finding kth smallest element given k
@@ -32,9 +38,14 @@ Can you set the switches so that the light bulb turns on?
     - If A is hard then B is hard
 
 ## polynomial time is efficient
-- Efficient means polynomial time
+
+1. A - n^2 -> B - n^3 -> C
+2. A - n^c -> C
+
+
+- Efficient means polynomial time, meaning the input
 - Computational complexity theory:
-	- A reduces to B in poly time and B reduces to C in poly time then A reduces to C in poly time
+	- Compososable: A reduces to B in poly time and B reduces to C in poly time then A reduces to C in poly time
     - In practice, an n^100 algo for any realistic problem usually means another n^c time algo for some small constant c
 
 ## P vs NP
@@ -42,9 +53,15 @@ A decision problem is a prob whose output is a single boolean value: Ues or no
 
 - P: Set of decision problems that can be solved in polynomial time. Intuitively, P is the set of problems that can be solve quickly
 - NP: Set of decision problems with the following property:
-	- If the answer is yes, then there is a proof of this fact that can be checked in polynomial time
+	- If the answer is yes, then there is a **proof of this fact** that can be checked in polynomial time
+    	- Given a circuit, decide if ther exist x1 to xn such that C(x1..Xn) = 1
+        - In this case, x1..xn is the proof
     - NP is the set of decision problems where we can verify a Yes answer quickly if we have the solution in front of us
 - co-NP: The opposite of NP. If the answer to a problem in co-NP is No, then there is a proof of this fact that can be checked in polynomial time
+	- for all forall x_1 to x_n, --> C(x_1 to x_n) = 0?
+
+> We do not know if ckk-sat is co-NP:
+	- There is no other way than to check every single combination
 
 
 It is easy to see circuit-sat is in NP: a satisfying assignment is a proof.
@@ -52,23 +69,50 @@ It is easy to see circuit-sat is in NP: a satisfying assignment is a proof.
 - We dont know if its in co-NP either
 > There is no proof that tell us that the circuit is not satisfiable
 
+## NP and CO NP
+- P is contain in NP
+- NP is contain in CoNP
+
+Given n, k does there exist a factor of m that is less than or equal to k
+- This is similiar to the factorial problem
+- The proof:
+	- Yes: (NP) factorisation of factor n
+> We dont know if its P
+
+![CS3230-9-2.PNG]({{site.baseurl}}/img/CS3230-9-2.PNG)
+
+
 # NP hardness and NP completeness
 - A problem P is NP-hard if it is at least as hard as any problem A in NP
 - Problem P is NP hard if for any problem A in NP
 	- There is an efficient reduction from A to P
+    - If we can solve P, then every problem in NP can be solvable
 - If P is NP hard and P is in NP then P is NP-complete
 
+![CS3230-9-3.PNG]({{site.baseurl}}/img/CS3230-9-3.PNG)
 
 > Circuit SAT is NP-complete
+
+- Start with arb problem A in NP and show efficient reduction from A to circuit Sat
+- Proof is difficult
+
 
 # Prove NP-hardness
 - If there is an efficient reduction from P to A and 
 	- We know P is NP-hard, then this means that A is NP-hard
 
-> Reduce Cicuit-sat to A, then a polynomial time algo for A will imply a polynomial time algo for cuircuit-sat
+TO prove the problem A is NP-Hard, reduce a known NP-Hard problem to A
+
+> Reduce Cicuit-sat to A, then a polynomial time algo for A will imply a polynomial time algo for circuit-sat
 
 - Which imples a polynomial time algo for all of NP
 Hence shows that A is NP-hard
+
+## Hardproblems
+- Circuit Sat is harder than any problem in NP
+- P, reduce circuit sat to P
+- This establish P is hard
+- Q, reducing P to Q establish that Q is hard 
 
 ### Analogy
 - Wresting competition among all problem sin NP and each problem is trying to prove that they are the best (read hardest)
@@ -90,16 +134,30 @@ REMARK: All NP - Complete problems can be reduces to one another and are hence e
 - We will not worry about this distinction, all reduction we will see are actually KARP reduction though.
 
 # 3-SAT
-A boolean function is inconjunctive normal form (CNF) if its a conjuction of several clauses, each of which is the disjunction (or) of several literals, each of which is either a variable or its negation. 
+A boolean function is inconjunctive normal form (CNF) if its a conjuction of several clauses, each of which is the disjunction (or) of several literals, each of which is either a variable or its negation. (This is an and of ors)
 
-- A 3CNF is a CNF where each clause has exactly three literals
-- The above is not a 3-CNF since 1st clause has 4 literals and last has two literals
+![CS3230-9-4.PNG]({{site.baseurl}}/img/CS3230-9-4.PNG)
+
+
+- A 3CNF is a CNF where each clause has **exactly three literals**
+- The above is not a 3-CNF since 1st clause has 4 literals and last has two literals (The brackets must have 3)
+- Check if there is a value of a,b,c,d such that the entire statement reduces to 1
 
 > 3-SAT problem: Given a 3-CNF, is there an assignment (Values of the boolean variables) that makes the fomula evalute to TRUE
+
+
+CKTSAT -> 3 SAT
+- If 3-sat is easy, this means that we can use that algo to solve circuit sat
+- Ckt - sat is hard means that 3sat is hard
+
+> Contrapostive are always true if the positive is true
+
+3-sat is NO hard and "" in NP = > 3 sat is NP complete
 
 ## Circuit-SAT to 3-SAT reduction
 - We express x=y as a boolean formula in CNF as follows:
 
+![CS3230-9-5.PNG]({{site.baseurl}}/img/CS3230-9-5.PNG)
 
 So we can transform every gate into at most-3 clauses
 - Changing 1 clause and 2 clause to 3 clause with auxiliary variables
@@ -168,9 +226,3 @@ A proper k-coloring of a graph G = (V,E) is function C: V-> {1,2...k} that assig
 
 - This already indicate how the coloring will be related to the assignment
 - For each clause of the form, say avbvnotc we introduce:
-
-
-
-
-
-
