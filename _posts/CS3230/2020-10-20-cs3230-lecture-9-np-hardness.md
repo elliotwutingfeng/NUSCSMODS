@@ -155,12 +155,18 @@ CKTSAT -> 3 SAT
 3-sat is NO hard and "" in NP = > 3 sat is NP complete
 
 ## Circuit-SAT to 3-SAT reduction
+- Given c, construct 3-cnf Q such that there exist an x such that c(x) = 1 if and only fi there exist an x such that Q(x) = 1
 - We express x=y as a boolean formula in CNF as follows:
+
+> x = y if and only if (x or notY) and (notx or y)
 
 ![CS3230-9-5.PNG]({{site.baseurl}}/img/CS3230-9-5.PNG)
 
 So we can transform every gate into at most-3 clauses
 - Changing 1 clause and 2 clause to 3 clause with auxiliary variables
+![CS3230-9-6.PNG]({{site.baseurl}}/img/CS3230-9-6.PNG)
+
+if a or B is true, this means that a or b or x is true AND a or v or notx is true
 
 ### Example
 - For the following circuit:
