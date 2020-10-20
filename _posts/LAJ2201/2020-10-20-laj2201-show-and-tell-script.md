@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: LAJ2201 - Show and Tell script　（しゅみ）
 ---
 
