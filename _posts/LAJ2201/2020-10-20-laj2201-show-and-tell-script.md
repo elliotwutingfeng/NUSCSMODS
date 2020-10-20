@@ -61,7 +61,11 @@ title: LAJ2201 - Show and Tell script　（しゅみ）
 
 そして、協力ライブをすることができます。
 
+EN:
+![LAJ2201-1-oral6.GIF]({{site.baseurl}}/img/LAJ2201-1-oral7.GIF)
 
+JP:
+![LAJ2201-1-oral6.GIF]({{site.baseurl}}/img/LAJ2201-1-oral8.GIF)
 
 
 
