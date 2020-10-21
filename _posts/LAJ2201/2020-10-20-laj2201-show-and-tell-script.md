@@ -59,6 +59,8 @@ title: LAJ2201 - Show and Tell script　（しゅみ）
 
 と申します。
 
+わたしの大好きなバンドはRASとAfterglowです。
+
 ## 好きなカーラー
 わたしの一番好きなカーラーはモカちゃんです。
 ![LAJ2201-1-oral3.jpg]({{site.baseurl}}/img/LAJ2201-1-oral3.jpg)
@@ -72,6 +74,7 @@ title: LAJ2201 - Show and Tell script　（しゅみ）
 
 ![LAJ2201-1-oral5.jpg]({{site.baseurl}}/img/LAJ2201-1-oral5.jpg)
 
+モカちゃんはAfterglowで演奏します。
 
 ## リズムのパート
 リズムのパートには、いろいろな曲を選ぶことができますよ。
