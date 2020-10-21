@@ -33,7 +33,31 @@ title: LAJ2201 - Show and Tell script　（しゅみ）
 
 ![LAJ2201-1-oral2.PNG]({{site.baseurl}}/img/LAJ2201-1-oral2.PNG)
 
+## カーラーたち
+いまばんどりには七バンドがあります。
+そのバンドは
+- Popipa 
+	![LAJ2201-1-oral11.png]({{site.baseurl}}/img/LAJ2201-1-oral11.png)
 
+- Roselia
+	![LAJ2201-1-oral13.png]({{site.baseurl}}/img/LAJ2201-1-oral13.png)
+
+- Afterglow
+	![LAJ2201-1-oral10.png]({{site.baseurl}}/img/LAJ2201-1-oral10.png)
+
+- Pastle paletes
+	![LAJ2201-1-oral12.png]({{site.baseurl}}/img/LAJ2201-1-oral12.png)
+
+- Hello Happy World
+	![LAJ2201-1-oral14.png]({{site.baseurl}}/img/LAJ2201-1-oral14.png)
+
+- Morfornica
+	![LAJ2201-1-oral15.png]({{site.baseurl}}/img/LAJ2201-1-oral15.png)
+
+- Raise a Suilen
+	![LAJ2201-1-oral16.png]({{site.baseurl}}/img/LAJ2201-1-oral16.png)
+
+と申します。
 
 ## 好きなカーラー
 わたしの一番好きなカーラーはモカちゃんです。
