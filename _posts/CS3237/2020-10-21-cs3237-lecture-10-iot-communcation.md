@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3237 - Lecture 10 : IOT Communcation'
 ---
 ![CS3237-10-1.PNG]({{site.baseurl}}/img/CS3237-10-1.PNG)
