@@ -74,6 +74,48 @@ State:
 
 ![CS3237-10-5.PNG]({{site.baseurl}}/img/CS3237-10-5.PNG)
 
+### BLE Profile - Generic access profile (GAP)
+- Controls connection and advertising in bluetooth
+- Device roles: Peripheral IOT Device and Centrea
+- Advertise data
+	- Peripheral wants to send data to more than one device to a time 
+
+### BLE Profile: Generic Attribute Profile (GATT) 
+- Defines the way that two BLE devices transfer data back and forth using concepts using Services and characteristics
+- Makes use of a generic data protocol: Attribute protocol (ATT)
+- ATT is used to store services, characteristics and related data in a simple lokuptable using 16 bit ID for each retry
+- GATT comes into play once the connection has been established
+
+### Server-client relationship
+- Peripheral is the GATT Server that holds ATT lookup data, services and characteristics
+- Phone is the GATT client that sends request to the server
+
+
+## GATT
+- Transaction are started by client who gets response by server
+- periphareal suggest a connection interval to the device during connection
+
+![CS3237-10-6.PNG]({{site.baseurl}}/img/CS3237-10-6.PNG)
+
+### Services
+- USe to break data up
+- Service can have more than one characteristics
+- Each service have a unique numeric ID called a UUID
+
+### Characteristics
+- Encapsulate a single data point
+- Each characterics has a predefined 16bit or 128 but UUID
+- Characteriics can read write notifry property
+
+	- Read: Central reads a data from a peripheral chara
+    - Notify: Peripheral infoms central device that a new data value is available in a specific chara
+    - Write: central writes a data in a peripheral chara
+
+### Transaction property
+- Read property: Read the temperature
+- Write property: How to react to the change
+- Notify property: Notify the change
+
 
 
 # Slides
