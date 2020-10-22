@@ -244,3 +244,60 @@ The `s` bit indicates that the privilege is escalated to the file owner (root) w
 - For process created by exe file:
 	- if set-uid is disable (permission bit is x), then process effective UID is same as real UID
     - if set-uid is enable (permision bit is s), then process effective UID is inherited from the UID of the file's owner
+    
+    
+### Examples
+
+## Process (Subject) want to read a file (object)
+- Effective UID of the process is treated as the "subject" and checked against the file permission to decide whether it will be granted or denied access
+
+Consider a file owned by the root:
+
+- If the effective UID of a process is alice, the the process will be denied reading the file
+- The effective UID of a process is root, then the process will be allowed to read the file
+
+## Use Case Scenario of 's' (set-UID)
+- Consider a scenarios where the file employee.txt containers personal information of the users
+- However users should be allowed to self view and even self edit some fields of their own profile
+- Since the file permission is set to `-` for all users except root, a process created by any user (accept root) cannot read/write it
+- Stuck: There are data in the file that we want to protect and data that we want the user to access
+
+## Access control and reference monitor
+
+
+Solution:
+- Create an executable file editprofile owned by root
+- The program is made world executable: Anyone can execute it
+- Set-UID bit is set("s"): When its executed, its effective UID will be root
+
+> If alice executes the file, the process real UID is alice but its effective UID is root: this process now can read/write the file employee.txt
+
+
+### Comparison: When setUID is disable
+
+If user ALICE invokes the executable, the process will has its effective ID as alice.
+- When process wants to read the file employee.txt, the OS will deny the acess
+
+### Comparison: When SetUID is enable
+Permission of the executable if `s` instead of `x`, then the invoke process will has root as its effective ID
+- OS grants the process to read the file
+- Now the process invoked by alice can access employee.txt
+
+## Elevated Privilege
+- In thisnexample, the process editprofile is temporarily elevated to superuser so as to access the sensitive data
+- View the elevated process as the interfaces where user can access the sensitive infomation
+	- Predefined bridges for the user to access the data
+    - The bridge can only be builts by root
+> Important that the bridges are correctly implemented and do not leak more info then needed
+
+### Gone wrong
+- not implemented: Contains exploitable vulnerabilitiy
+- An attacker by feeding the bridge with a carefully crafted input can cause it to perform malicious operations
+
+## Extra
+- OS maintains three ID for a process
+	- Real UID
+    - Effective UID
+    - Saved UID: a Temp container and is useful for a process running with elevated privileges to drop privilege temporarily
+- Process removes its priviledge user ID from its effective UID but stores it in its saved UID
+- Later the process may restore the priviledge by restoring the saved priviledge UID into its effective UID
