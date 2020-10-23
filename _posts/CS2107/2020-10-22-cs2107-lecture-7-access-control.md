@@ -5,6 +5,7 @@ title: 'CS2107 - Lecture 9: Access control'
 ---
 # Overview of layering model in conmputer design
 #### Layers in computer system
+![CS2107-8-2.PNG]({{site.baseurl}}/img/CS2107-8-2.PNG)
 
 
 #### Comparing to layers in communication network
@@ -20,6 +21,9 @@ Computer system:
 - Hence beside data confidentiality and integrity (E.g password file), there is also a concern of process "integrity" whether it deviates from its original path
 
 #### Attackers and system's layer
+![CS2107-7-8.PNG]({{site.baseurl}}/img/CS2107-7-8.PNG)
+
+
 - Suppose an attacker sneaks into layer 1
 - The attacker must not be able to directly manipulating object/data and processes in more priviledge Layer 0
 - Note that is is very difficult to ensure this requirement
@@ -45,12 +49,14 @@ Computer system:
     - Social media
     - Documents in an organisation (Document can be classified as restricted, confidential, secret,etc)
     - Physical access to different part of the building
-- The access control model/system gives a way to specify& enforce such restriction on the subject, objects and action
+- The access control model/system gives a way to specify & enforce such restriction on the subject, objects and action
 
 > Acess control is about selective restriction of access to a place or other resource
 
 ## Principal/Subject, operation, object
-- A principal wantss to access an object with some operation
+![CS2107-8-3.PNG]({{site.baseurl}}/img/CS2107-8-3.PNG)
+
+- A principal wants to access an object with some operation
 - The reference monitor either grants or denies the access
 - e.g
 	- Luminus: A student wants to submit a forum post
@@ -64,13 +70,19 @@ Computer system:
 	- Observe:	e.g reading a file
     - Alter: e.g writing a file, deleting a file, changing properties
     - Action: Executing a program
+    
+    
 ## Object access rights and ownership
-- Discretionary access control (DAC): The owner of the object decides the rights
-- Mandatory access control (MAC): A system wide policy decides the rights, which must be followed by everyone in the system must follow
+1.  Discretionary access control (DAC): The owner of the object decides the rights
+2.  Mandatory access control (MAC): A system wide policy decides the rights, which must be followed by everyone in the system must follow
 
 > Which file system is UNIX
 
 ## Access control representation
+
+![CS2107-8-4.PNG]({{site.baseurl}}/img/CS2107-8-4.PNG)
+![CS2107-8-5.PNG]({{site.baseurl}}/img/CS2107-8-5.PNG)
+
 - Access control matrix: Matrix of principals vs objects
 - The access control matrix can be represented in 2 way: Access Control List (ACL), or capabilities
 - Access control List (ACL): store the access rights to a particular object as a list
@@ -78,23 +90,23 @@ Computer system:
 	- A subject is given a list of capabilities, where each capability is the access rights to an object
     - A capability is an unforgeable token that gives the possessor certain rights to an object
 
-## Drawbacks of ACL and Capabilities
+### Drawbacks of ACL and Capabilities
 ACL:
 - Difficult to get an overview of which objects that a particular subject has access rights to
 - Example: In UNIX, the system admin wants to generate the list of file that the user ALICE has 'r' access to. How to generate this list?
 
 Capabilities:
-- Difficukt to get overview of the subject who have access rights to a particular object
+- Difficukt to get overview of the subject who have access rights to a **particular object**
 - E.g Given a particular object, which subject can access this object
 
 
 Both methods:
-- The size of the list can still to be too large to manage
+- The size of the list can still to be **too large** to manage
 - Hence we need to find some way to simplify the representation
 - One simple method is to group the subjects/objects and define the access rights on the defined groups
 - Need intermediate control
 
-## Intermediate control: Group
+### Intermediate control: Group
 In UNIX file permission, the ACL specifies the rights for the following user classes:
 	- User (owner)
     - Group (The owner's group)
@@ -102,7 +114,8 @@ In UNIX file permission, the ACL specifies the rights for the following user cla
 - Non-owner subject in the same group: have the same access rights
 - Some system demand that a subject is a single group, but some system don't put such restriction
 
-## User and groups: Illustration
+### User and groups: Illustration
+![CS2107-8-6.PNG]({{site.baseurl}}/img/CS2107-8-6.PNG)
 
 ## Intermediate control: Protection Rings
 - Here each object (Data) and subject (process) are assinged a number
@@ -173,7 +186,7 @@ Main purposes of UIDs and GIDs
 	- Use the command ps aux or ps -ef to display a list of running processes
 
 ## Selected issues: Search path
-- When a user types in the command to execute a program say "SU" without specifiying the full path, {INSERT}
+- When a user types in the command to execute a program say "SU" without specifiying the full path, `./su` will be executed
 - Program is search through the directories specified in search path
 - `echo $path`
 - Search stops when name found and program will execute
@@ -189,11 +202,18 @@ Main purposes of UIDs and GIDs
 
 ## Files
 ### FIle and file system permission
-### Changing the file permission bits
+#### Changing the file permission bits
+![CS2107-8-9.PNG]({{site.baseurl}}/img/CS2107-8-9.PNG)
 
 #### Chmod
+![CS2107-8-9.PNG]({{site.baseurl}}/img/CS2107-8-9.PNG)
+
 #### Symbolic mode notation
+![CS2107-8-7.PNG]({{site.baseurl}}/img/CS2107-8-7.PNG)
+
 #### Octal mode notation
+![CS2107-8-8.PNG]({{site.baseurl}}/img/CS2107-8-8.PNG)
+
 #### Additional
 - Directory permissions:
 	- r: ALlows the contents of teh directory to be listed if the x attribute is set
@@ -205,7 +225,7 @@ Main purposes of UIDs and GIDs
     - Sticky bit: If dir has this bit set, file can only be deleted by the owner of the file, the directory or by root
 
 ## Objects and their access control
-- Each filke is owned by user and group
+- Each file is owned by user and group
 - Each file is associated with 9bit permission
 - When non root user wants access the file:
 	1. If user is owner, the permission bit for owner decides the access rihgts
@@ -228,6 +248,7 @@ Control invokation provides a predefine set of operation in a superuser mode and
 - OS supports this solution using the set-UID bit of an exe
 
 Example:
+![CS2107-8-10.PNG]({{site.baseurl}}/img/CS2107-8-10.PNG)
 
 
 The `s` bit indicates that the privilege is escalated to the file owner (root) while user is running the processes
@@ -264,6 +285,7 @@ Consider a file owned by the root:
 
 ## Access control and reference monitor
 
+![CS2107-8-11.PNG]({{site.baseurl}}/img/CS2107-8-11.PNG)
 
 Solution:
 - Create an executable file editprofile owned by root
@@ -272,6 +294,8 @@ Solution:
 
 > If alice executes the file, the process real UID is alice but its effective UID is root: this process now can read/write the file employee.txt
 
+![CS2107-8-12.PNG]({{site.baseurl}}/img/CS2107-8-12.PNG)
+- Only can modify certain fields
 
 ### Comparison: When setUID is disable
 
