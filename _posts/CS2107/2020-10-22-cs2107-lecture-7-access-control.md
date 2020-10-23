@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: 'CS2107 - Lecture 7: Access control'
+title: 'CS2107 - Lecture 9: Access control'
 ---
 # Overview of layering model in conmputer design
 #### Layers in computer system
