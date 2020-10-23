@@ -298,16 +298,23 @@ Solution:
 - Only can modify certain fields
 
 ### Comparison: When setUID is disable
+![CS2107-8-13.PNG]({{site.baseurl}}/img/CS2107-8-13.PNG)
+
 
 If user ALICE invokes the executable, the process will has its effective ID as alice.
 - When process wants to read the file employee.txt, the OS will deny the acess
 
 ### Comparison: When SetUID is enable
+
+![CS2107-8-14.PNG]({{site.baseurl}}/img/CS2107-8-14.PNG)
+
+
 Permission of the executable if `s` instead of `x`, then the invoke process will has root as its effective ID
 - OS grants the process to read the file
 - Now the process invoked by alice can access employee.txt
 
 ## Elevated Privilege
+
 - In thisnexample, the process editprofile is temporarily elevated to superuser so as to access the sensitive data
 - View the elevated process as the interfaces where user can access the sensitive infomation
 	- Predefined bridges for the user to access the data
