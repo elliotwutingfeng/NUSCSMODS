@@ -92,9 +92,8 @@ Claim 3: V1 is a vertex cover
 ![CS3230-10-4.PNG]({{site.baseurl}}/img/CS3230-10-4.PNG)
 - This also meant that the sum of **2** * (4^0 + 4 + 4^2 ... 4^E-1) = 0 (Sum of E^e in E2) +  1 (Sum of E^e in E3) +  **2**(Sum of E^e in E4) +  3 (Sum of E^e in E5) 
 - This meant that only E4 has values and the rest is 0
-
-
-
+- This means that E4 is E
+- 2(sum of 4^e) where e is in E = (sum of 4^2, where e is in E1) + (sum of av, where v is in V1)
 
 
 - Why does NP hardness proof not imply that P=NP
