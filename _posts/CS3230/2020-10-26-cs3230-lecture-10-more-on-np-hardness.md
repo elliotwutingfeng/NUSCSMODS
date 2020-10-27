@@ -26,9 +26,77 @@ Corresponding:
 ## Reduction
 - Number the edges arbitrarily from 0 to E-1
 - Our set X contains the integer bi := 4^i for each edge i and the integer:
-			![CS3230-10-1.PNG]({{site.baseurl}}/img/CS3230-10-1.PNG)
+![CS3230-10-1.PNG]({{site.baseurl}}/img/CS3230-10-1.PNG)
 
 for each vertex c where the sum of v is the set of edges that have v has an endpoint
+
+> For every vertex look at the neigbouring and add 4^i to these vertices where i is the weight
+
+- 4 is an arb number large enough so that the contribution of different edges do not get ",mix up" when adding these number.. We could have choosen 10 as well
+
+![CS3230-10-2.PNG]({{site.baseurl}}/img/CS3230-10-2.PNG)
+
+- Should cover all edges
+- Each edges can only appear once or twice (Depending which vertices was added up)
+
+
+If the graph has an vertex cover of size k, then there exist a subset of x that adds to T
+
+X = {be : e exist as an Edge} U {av: v exist in V}, such that be = 4^e, a = e^E + sum of be
+
+
+T = k . 4^e + 2(4^0 + 4 + .... 4^E-1)
+
+- Let v1.. Vk be vertex cover
+- av1..avk is T
+- Notice that this means 4^E * k + summation of be + sum of be'
+	- There are some subset of the edges where we added them twice because both vertex are in the vertex cover (be')
+- Every edge has been added at least once
+
+![CS3230-10-3.PNG]({{site.baseurl}}/img/CS3230-10-3.PNG)
+
+
+#### Other direction
+
+Suppose there is a subset of X that adds to T
+
+- {av: v exist in V}
+- {be: e exist in E}
+- T = k * 4^E + 2 * sum of be
+
+Let X1 be a subset of X that adds to T
+- X1 =  {av: v is a set of V1} U {be: e exist in E1}
+
+Claim 1:
+- The size of V1 is **at most** k (V1 <=k)
+
+Proof: Suppose it is not k
+- Remeber that T = k*4^E + 2(4^0 + ...4^E-1)
+- Then sum of av is greater or equal to (k+1) * 4^E
+- then T = k * 4 + 2(4^E -1)
+- But then.. it is less than what we said.. which is not possible
+
+
+Claim 2: 
+- The size of V1 is **at least** k (V1 >= k)
+
+Proof:
+- Suppose V1 <= k -1
+- Then sum of av + sum of be where the values of v and e are in V1 and E1
+- Then we realised that (k-1) * 4^e + **3**(4^0 + 4 + ....4^E-1)
+
+Claim 3: V1 is a vertex cover
+- The sum of av  + sum of be where e and v are in E1 and V1
+- This equates to k*4^E + 2(4^0 + 4 + ... 4^E-1)
+- sum of av matches k*4^E
+![CS3230-10-4.PNG]({{site.baseurl}}/img/CS3230-10-4.PNG)
+- This also meant that the sum of **2** * (4^0 + 4 + 4^2 ... 4^E-1) = 0 (Sum of E^e in E2) +  1 (Sum of E^e in E3) +  **2**(Sum of E^e in E4) +  3 (Sum of E^e in E5) 
+- This meant that only E4 has values and the rest is 0
+
+
+
+
+
 - Why does NP hardness proof not imply that P=NP
 	- T is not polynomial in the size of our input
 
