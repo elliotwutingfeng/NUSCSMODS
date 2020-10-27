@@ -181,3 +181,68 @@ Programmabilitiy:
 	- Mamagement goals are express as policies
     - New control services for network providers
     - Detailed configuration are done by controller
+
+# Open flow
+- Allow seperation of control and data planes
+- Centralisation of control
+- FLow based control
+- Takes adv routing tables in ethernet switchs and routers (l2/l3)
+
+SDN Is not openflow
+- SDN is a concept of the physical seperation of the netwokr control plane from the forwarding plane and where a control plane controls several devices
+- OpenFlow is communication interfaces btween the control and dataplane of an SDN architecture
+	- Allows direct access to and manipulation of the forwarding plane of the network devices such as switches and routers: Both physiucal and virtual
+    - It is liike a protocol use in switching devices and controllers interfaces
+    
+## How does it work
+![CS3103-11-8.PNG]({{site.baseurl}}/img/CS3103-11-8.PNG)
+
+## The actual flow table looks like
+![CS3103-11-8.PNG]({{site.baseurl}}/img/CS3103-11-8.PNG)
+
+## Basic Action
+- All: To all interfces except incoming interface
+- Controller: Encapsulkate and send to controller
+- Local: Send toits local networking stack
+- Tabel: perfoming action in the next flow table
+- In_port: Send back to input port
+- Normal: Forward using traditional ethernet
+- Flood: Send along min spanning trr exceopt incomng interface
+
+![CS3103-11-9.PNG]({{site.baseurl}}/img/CS3103-11-9.PNG)
+
+![CS3103-11-10.PNG]({{site.baseurl}}/img/CS3103-11-10.PNG)
+
+## With packet
+- For eachpacket
+- Header and geader fikled
+- Ouoekube fuekds
+- Action
+
+![CS3103-11-11.PNG]({{site.baseurl}}/img/CS3103-11-11.PNG)
+![2105_10_1.PNG]({{site.baseurl}}/img/2105_10_1.PNG)
+
+
+Openflow is a communicaiton interface between the control adn data plane of an SDN acrhitecture
+- Openflow switch componenets: Flow table
+-A packet trhough open flow switch
+
+# Virtualisation
+- APplication of SDN
+- Virtualisation
+	- Abstraction between physical resource and logical representation
+- Can be implemented in various layers of computer system or network
+	- Storage
+    - Server
+    - Network
+
+## Server virtualisation
+- Partitioning of the resource of a single physical machine into multiple execution envriponement each pf whoich can host a different server
+
+## Network Virtualisation
+- ALlows heterogenous virtual networks that are isolated indepednently managed to coesit over shared physical netowkr infrastructure
+	- Making a physical network appear as a multiple logical ones (Network slicing)
+    
+![CS3103-11-13.PNG]({{site.baseurl}}/img/CS3103-11-13.PNG)
+
+
