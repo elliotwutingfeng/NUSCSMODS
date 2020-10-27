@@ -94,5 +94,90 @@ Application are like
 
 > A failure from an academic point of view
 
+# Why does networking lag behind
+- Use to simple: Ethernet, IP, TCP
+- New control requirements led to great complexitu
+	- Isolation: Vlan, acls
+    - Traffic engineering: MPLs
+    - Packet processing: Firewall, NATs
+    - Payload analysos: Deep packet inspection
+- Mechanisms designed and deployed independently
+	- Complicated control plane design, primitive functionality
+    - Starl contrast to the elegantly modular "data plane"
+- Ability to master complexity
+	- Extracting simplicity is needed to build a discipline
+- Getting system to work
+	- Focus on mastering complexity
+- Making system easy to use and understand
+	- Focus on extracting simplicity
+- Networking still focused on mastering complexity
+
+> Extracting simplicity builds intellectual foundations which is **Necessary for creating a discipline**, this is what networking lags behind
+
+## EXample: Programming
+- Mahine languages: No abstraction
+	- Mastering complexity is needed
+- Higher level languages: OS and other abstractions
+	- File system
+    - Virtual memory
+    - Abstract data types
+- Modern languages: Even more abstraction
+	- Object orientation
+    - Garbage collection
+    
+> Abstraction key to extracting simplicity
+
+# The power of abstraction
+- Layer only deal with data pplane
+	- Processing the delivery of packet
+    - Based on state in router and endpoints
+    - IP, TCP, Ethernet
+- There are no control plane abstraction
+	- Establish state in router
+    - Determines how and where packets are forwardwed
+    - Routting, traffic engineering, firewall state
+
+## Network control problem
+- Compute the configuration of each physical devices
+Operate without communciation guarantees
+- Operate within given network level protocol
+	- RIP, OSPF
+    
+Traditional Network Router in Summary
+![CS3103-11-4.PNG]({{site.baseurl}}/img/CS3103-11-4.PNG)
+
+Imagine if network is:
+![CS3103-11-5.PNG]({{site.baseurl}}/img/CS3103-11-5.PNG)
+
+- We juyst need to change the centralised control instead of changing every single one
 
 
+### Benefits of seperation
+- Independent evolution and development
+	- The software control of the network can evolve independently of the hardware
+- COntrol from high levle softrware program
+	- COntrol behavior using higer order programs
+    - Debug/check behavior more easily
+
+### Benefits of centralisation
+- Decision are easier to make
+	- OSPF
+    - Distributed system part
+    - Routing algo
+- Logicial vs physically centrallised
+
+# Open interfaces and programilities
+Open interfaces:
+![CS3103-11-6.PNG]({{site.baseurl}}/img/CS3103-11-6.PNG)
+
+Programmabilitiy:
+![CS3103-11-7.PNG]({{site.baseurl}}/img/CS3103-11-7.PNG)
+
+- Enable competitive tech
+	- Independent development
+    - Rapid innovation and fast evolution
+    - Cheap and better networks
+- Makes network management much easier
+	- Mamagement goals are express as policies
+    - New control services for network providers
+    - Detailed configuration are done by controller
