@@ -6,6 +6,7 @@ title: 'CS3230 - Lecture 10: More on NP-hardness'
 # Subset Sum
 Problem: Given a set X of n numbers, and a target T, decide whether there exist a subset of X that adds to T.
 - There is a dp solution
+- It is NP hardness because the runtime is not polynormial to the size of the input: n+logT, the dp solution is nT
 > We can show NP-hardness
 
 1. Reduce from vertex cover
@@ -15,9 +16,17 @@ Problem: Given a set X of n numbers, and a target T, decide whether there exist 
     - This implies that the set X has a subset that adds to T
     - There is a subset of X that adds to T implies that the graph has a vertex cover of size k
 
+
+Corresponding:
+- Vertex cover: _Subset of vertices_ that covers **all edges** of _size k_
+
+- Subset sum: Subset of _numbers_ that adds to **T**
+
+> Perhaps we can let one edge be a number and that T is the sum of these numbers. But then there might be many different ways to add up a number to get another number, so we can pick this edge to be a representation in different digits 
 ## Reduction
 - Number the edges arbitrarily from 0 to E-1
 - Our set X contains the integer bi := 4^i for each edge i and the integer:
+			![CS3230-10-1.PNG]({{site.baseurl}}/img/CS3230-10-1.PNG)
 
 for each vertex c where the sum of v is the set of edges that have v has an endpoint
 - Why does NP hardness proof not imply that P=NP
@@ -123,17 +132,3 @@ Problem: Given an undirected graph G = (V,E) find a subset of vertices V' that c
 - While there exist an edge (u to v) not covered by V'
 	- Add u,v to V'
 - Correctness is immediate from the fact that for any vertex cover V'', and for any pair of vertices u,v added to V' in any single step at least one of u, v must be in V''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
