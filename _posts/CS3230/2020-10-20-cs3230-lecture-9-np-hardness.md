@@ -272,6 +272,7 @@ A proper k-coloring of a graph G = (V,E) is function C: V-> {1,2...k} that assig
 - Graph colouring problem ask for a colouring of a graph with minimum number of colour
 - 3 Colouring problem: Given G = (V,E).. Does there exist a proper 3-coloring
 
+
 ## Reduction
 - Before looking at 3-sat intances, we begin by creating a triangle (3-Clique) and label the vertices T,F,X. Note that in any proper 3 coloring, these will be assigned different colour
 - We want to find an assignment if an only if there exist the coloring, the coloruing must satisfy all the different edges
@@ -291,6 +292,42 @@ A proper k-coloring of a graph G = (V,E) is function C: V-> {1,2...k} that assig
 - This already indicate how the coloring will be related to the assignment
 - For each clause of the form, say avbvnotc we introduce:
 ![CS3230-9-21.PNG]({{site.baseurl}}/img/CS3230-9-21.PNG)
+
+- If there is a valid colouring, At least one of the first 3 nodes are either green or pink (Never yellow)
+
+### Correctness
+Proof: If the formula is satisfiable, then there exist a valid 3 colouring..
+![CS3230-9-22.PNG]({{site.baseurl}}/img/CS3230-9-22.PNG)
+
+- For any satisfying assignment, True implies green, False implies Pink
+- This means at least one of the starting nodes will be green colour
+- There are 7 possibilies
+
+For example, we could have green, red, red
+Then the graph must look like this 
+![CS3230-9-23.PNG]({{site.baseurl}}/img/CS3230-9-23.PNG)
+> The centre's colouring is correct
+
+How is it related to SAT?
+- SAT: satisfy the formula where one of the variable is true
+- Colouring: Satisfy the same formula where one of the variable is green
+
+> In this case we are taking green to be the equivalent to true in SAT
+
+If we are force to have all be red,
+![CS3230-9-24.PNG]({{site.baseurl}}/img/CS3230-9-24.PNG)
+
+> It doesnt work
+
+If the graph has a valid 3 colouring then the formula must be satisfiable
+
+1. Get problem A's algo (3 Colouring algo)
+2. Run function F on this algo to get a graph (Change the graph to 3 colouring)
+3. Running problem B's algo on this graph to get the solution to A (Running 3 sat algo shows it to solve it to 3 Colouring)
+
+> This proofs
+
+
 
 # Slides
 <iframe src="https://drive.google.com/file/d/1D2oISE2_4iDLF4r7P5Ji3qiJk1ZU4uzs/preview" width="640" height="480"></iframe>
