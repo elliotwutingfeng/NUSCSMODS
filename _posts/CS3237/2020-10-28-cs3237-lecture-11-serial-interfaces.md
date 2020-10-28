@@ -34,6 +34,7 @@ title: 'CS3237: Lecture 11 - Serial Interfaces'
 ## Serial Interace:I2C
 - Syncrhonous
 - Follows the clk data
+- Both master and slave can send data
 - There are multiple slaves, address bits define which slave to communcate to
 - Read write bit: Show if the master wants to request or send data
 - All the slaves will look at the address and see ifits matches it address
