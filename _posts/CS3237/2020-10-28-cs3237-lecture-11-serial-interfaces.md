@@ -48,3 +48,5 @@ title: 'CS3237: Lecture 11 - Serial Interfaces'
 > - SPI: Can keep sending data
 > I2C: Based on data frame
 
+# Slide
+<iframe src="https://drive.google.com/file/d/1GeT_5lqr7YsZzvK7pNiovBN0P9Os4YL3/preview" width="640" height="480"></iframe>
