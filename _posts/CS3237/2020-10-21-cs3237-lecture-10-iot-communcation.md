@@ -117,6 +117,78 @@ State:
 - Notify property: Notify the change
 
 ## Zigbee
+- WPAN protocol based on IEEE 802.15.4 foundation targeted for commercial and residential IoT networking that is constrained by cost, power and space
+- Low power wireless mesg networking
+
+
+### Components
+- Single ZC
+- ZC can behave like ZR after connecting
+
+#### ZR (Zigbee router)
+- Not necessarily needed
+- Optional
+- Handles some load of mesh
+
+#### ZED (Zigbee end devices)
+- End point device
+- Can communcicate with router or controller
+- Cannout route
+- e.g light switch, thermostate
+
+### Data traffic
+- Periodic data: Delievered at a rate defined by application
+	- Sensor preiodically transmitting
+- Intermeittent data: Application or external stimulus occurs at random rate
+	- light switch
+- Repetitive low latency data: Allocate time slots
+	- computer mouse or keyboard
+    
+    
+### Topo
+![CS3237-10-7.PNG]({{site.baseurl}}/img/CS3237-10-7.PNG)
+
+# Benefits of IP
+- Ubiquity
+	- IP stacks are provided by nearly every operating system and every medium
+    - IP specifies the exact format for all data communications and the rules used to communicate, acknowldege
+- Standard basded
+- Scability
+	- IP has demostrated scale and adoption
+    - IPV6 could provided a unique IP address to every atom 
+- Reliable
+	- Assumes data is not guaranteed to be delivered
+    - Packet is treated as independent
+    - IP is connectionless because each packet is treated independently
+    - IP is best effort delivery
+
+## IP based WPAN
+- Low power RF communcation system doest not need high bandidth
+- Simplest of sensor can act as network citizen
+
+### 6LoWPan TOPO
+- Similiar to zigbee
+- Mesh netowkrs residing on the periphery of larger networks 
+- Topo are flexible
+- Can be connected to the backbone or internet using edge routers
+
+### Nodes movement
+- Nodes are free to move and reorganised/reassembled in a mesg
+- A node can move and associate with a different age router in a multi home scenario or even move between different 
+
+## WAN
+- Long range communication
+- Connects the local network containing the IoT devices to the internet
+- Long range communciation is usually a service, it has a subscription to a carrier providing cellular tower and infrastructure improvements
+
+
+### Cellular connectivity
+- Seperation of frequencies from neighbours neartest
+- honey comb structure: Make sure that each of the frquency cannot interfere with the other holes
+- No two similiar frquencies are within one hex space from each other
+- But there is possible to have intererences in hex spaces with different colour
+
+![CS3237-10-8.PNG]({{site.baseurl}}/img/CS3237-10-8.PNG)
 
 # Slides
 <iframe src="https://drive.google.com/file/d/1w-2Lrb6VESE1QaBbhJo8EbR14pht760D/preview" width="640" height="480"></iframe>
