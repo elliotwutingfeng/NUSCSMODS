@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3103 - Lecture 11: SDN (Software defined network)'
 ---
 # Overview
