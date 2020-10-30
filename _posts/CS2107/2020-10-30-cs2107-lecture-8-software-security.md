@@ -75,8 +75,10 @@ Serious implication:
 	- Can be called in many program location
 
 > How does the program knows where it should continue after it finished?
+> - The location is stored somewhere
 
 > Where are the function's arguments and local variable stored?
+> - On the heap
 
 ### Call stack
 - Call stack: A data structure in the memroy (Not in a sep hardware) that stores important infomation of a running processes
