@@ -195,8 +195,16 @@ Potential problem:
 - But attacker might send this string: `../cs2107report.pdf`
 - This would be read by the server as `/home/student/alice/public_html/../cs2107report.pdf`
 - Violates the intended file access containment
-
+- Blacklisting based filtering might be useless due to the flexibility of the encoding
 > TO prevent thism server ma add an input validation to ensure that `../` never appears as substring
+
+Vulnerable checks:
+1. Get string s from user
+2. Extract 4 int from string s, (a,b,c,d)
+	- If s doesnt follow correct inputm then quit
+3. call BL() to check that abcd is not in the black list, else quit
+4. Let ip = a * 2^24 + b * 2^16 + c * 2^8 + d  where ip is 32 bit integer
+5. Continue processing with filtered ip
 
 
 #### Security guidelines
