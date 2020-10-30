@@ -274,3 +274,5 @@ Vulnerable code:
 
 ## Undocumented access points
 # Defence and preventive measures
+# Slides
+<iframe src="https://drive.google.com/file/d/12bpGSoVRszagt61E_B8WV2tyyGe1GTBv/preview" width="640" height="480"></iframe>
