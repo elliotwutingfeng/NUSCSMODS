@@ -78,7 +78,7 @@ Serious implication:
 > - The location is stored somewhere
 
 > Where are the function's arguments and local variable stored?
-> - On the heap
+> - On the stack
 
 ### Call stack
 - Call stack: A data structure in the memroy (Not in a sep hardware) that stores important infomation of a running processes
@@ -93,13 +93,30 @@ Serious implication:
 
 > This is called call stack
 
+
+Function call:
+![CS2107-9-3.PNG]({{site.baseurl}}/img/CS2107-9-3.PNG)
+
+1. When test(5) is called, some values are pushed onto the stack
+	- Parameter
+    - Return address
+    - Prev frame pointer
+    - Local variable b
+2. The control flows jump into the code of test
+3. Execute test
+4. After test is completed, the stack frame is popped from the stack
+5. The control flows jumps into the restored return address
+
+
 ## Control flow integrity
 
 Treating code as data:
-- Call stack stores a return address as data in memory
+- Call stack stores a **return address** as data in memory
 - Instruction itself is stored as data in memory
 - Flexibility of treating code as daata is good but many security issue
-- Attacker could compromise a process execution integrity by either modifying the process code or the control flow
+- Attacker could c**ompromise a process execution integrity** by 
+	- modifying the process code 
+    - Modifying the control flow
 - It is difficult for the system to distinguised those malicious pieces of code from benign data
 
 ### Notes on memory integrity
@@ -107,8 +124,6 @@ Treating code as data:
 - Some restrictions:
 	- The attacker can only write to a small number of memory 
     - Can write a seq of consecuitve bytes
-    -
-
 
 # Attacks on software
 
