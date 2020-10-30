@@ -176,10 +176,16 @@ Comparision: Normal web spoofing attack
 > Hence the attack on the previous slide, is much more dangerous: It can trick all browsesr user!
 
 #### UTF-8 Character exploits
+UTF-8 is a character encoding capable of encoding all 1m valid code points in unicode using one to four 8 bit bytes
+
+Variable length encoding: Code points that tend to occur more frequently are encoding with lower numerical values thus fewer bytes are used.
+
+
 ![CS2107-9-7.PNG]({{site.baseurl}}/img/CS2107-9-7.PNG)
 ![CS2107-9-8.PNG]({{site.baseurl}}/img/CS2107-9-8.PNG)
 
-There is an incosistency between
+There is an inconsistency
+between
 - Character verification process
 - Chaaracter usuage: Operation using the character
 
@@ -197,6 +203,11 @@ Potential problem:
 - Violates the intended file access containment
 - Blacklisting based filtering might be useless due to the flexibility of the encoding
 > TO prevent thism server ma add an input validation to ensure that `../` never appears as substring
+
+
+Example: IP Address
+![CS2107-9-9.PNG]({{site.baseurl}}/img/CS2107-9-9.PNG)
+
 
 Vulnerable checks:
 1. Get string s from user
@@ -220,7 +231,7 @@ Vulnerable checks:
 
 ### Buffer Overflow/Overrun
 - The previous example illustrates buffer overflow
-- A data buffer: "A contiguous region of memory use to temporarily store data, while its is being moved from one place to another"
+- A data buffer: "A contiguous region of memory use to temporarily store data, while its is being moved from one place to another" (Like a array of characters)
 - In general, a buffer overflow referes to a situation where data is written beyond a buffer boundary
 - `strcpy()` is prone to overflow
 
@@ -228,10 +239,17 @@ Vulnerable checks:
 
 ### Stack smashing 
 - Stack overflow
-- Special case of buffer ocerflow
+- Special case of buffer overflow
 - return address is modify and the execution control flow will be changed
 - COuld also inkect the attackers shell code into the process memory and execute the shell code
 
+#### Example
+Vulnerable code:
+![CS2107-9-10.PNG]({{site.baseurl}}/img/CS2107-9-10.PNG)
+
+- If more characters are copy, the value will get over flow and the return address will get overwritten
+
+![CS2107-9-11.PNG]({{site.baseurl}}/img/CS2107-9-11.PNG)
 
 
 ## Code/script injection
