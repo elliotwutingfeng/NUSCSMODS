@@ -247,10 +247,13 @@ Vulnerable checks:
 Vulnerable code:
 ![CS2107-9-10.PNG]({{site.baseurl}}/img/CS2107-9-10.PNG)
 
-- If more characters are copy, the value will get over flow and the return address will get overwritten
 
 ![CS2107-9-11.PNG]({{site.baseurl}}/img/CS2107-9-11.PNG)
 
+- If more characters are copy, the value will get over flow and the return address will get overwritten
+- It will also can jump to the executed code section
+
+![CS2107-9-12.PNG]({{site.baseurl}}/img/CS2107-9-12.PNG)
 
 ## Code/script injection
 
