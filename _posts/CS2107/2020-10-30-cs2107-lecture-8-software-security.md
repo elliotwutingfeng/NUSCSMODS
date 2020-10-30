@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS2107 - Lecture 8: Software security'
 ---
 # Overview
@@ -13,6 +13,7 @@ Requirements:
 Targeted/Intended program functionality vs possible behavior:
 - A program may behave beyond its intended functionality!
 
+![CS2107-8-1.PNG]({{site.baseurl}}/img/CS2107-8-1.PNG)
 
 
 ### Possible Security Problems
