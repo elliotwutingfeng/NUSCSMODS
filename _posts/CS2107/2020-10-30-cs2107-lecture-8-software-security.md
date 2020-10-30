@@ -149,7 +149,9 @@ Treating code as data:
 	- The length is not explicitly stored
     - The first occurance of the null character (Byte with value 0) indicated the end of the string, thus implicity giving the length
     
-    
+![CS2107-9-4.PNG]({{site.baseurl}}/img/CS2107-9-4.PNG)
+
+
 #### Null Byte Injection
 - A CA may accept a host name containing null character
 - For example: luminus.nus.edu.sg\0.attacker.com
@@ -163,7 +165,9 @@ ATTACK:
 	- Find the web server in the certificate is valid: based on the non NULL termination representation
     - Compares and display the address as luminus.nus.edu.sg: based on NULL termination represesntation
     
-    
+![CS2107-9-5.PNG]({{site.baseurl}}/img/CS2107-9-5.PNG)
+![CS2107-9-6.PNG]({{site.baseurl}}/img/CS2107-9-6.PNG)
+
 Comparision: Normal web spoofing attack
 - What if its jus normal web spoofing attack scenario?
 - Even if the attacker manages to redirect the victim to the spoofed webserver a careful user would notice that either
@@ -172,9 +176,15 @@ Comparision: Normal web spoofing attack
 > Hence the attack on the previous slide, is much more dangerous: It can trick all browsesr user!
 
 #### UTF-8 Character exploits
+![CS2107-9-7.PNG]({{site.baseurl}}/img/CS2107-9-7.PNG)
+![CS2107-9-8.PNG]({{site.baseurl}}/img/CS2107-9-8.PNG)
+
 There is an incosistency between
 - Character verification process
 - Chaaracter usuage: Operation using the character
+
+> Browser actually accept different types of representation for the backslash charac
+
 
 Potential problem:
 - Files are typically organised inside a directory
