@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3230 - Lecture 11 : Amortized Analysis'
 ---
 Not tested in finals
