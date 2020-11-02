@@ -86,3 +86,5 @@ Proof:
 ## Potential method
 - Definet he potential to be the number oif elenments on teh stack
 
+# Slide
+<iframe src="https://drive.google.com/file/d/1g4khCEBcQ5jri-0Fi_0h_hE6m_bumPBH/preview" width="640" height="480"></iframe>
