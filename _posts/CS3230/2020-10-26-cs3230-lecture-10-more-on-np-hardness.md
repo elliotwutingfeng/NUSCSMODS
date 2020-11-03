@@ -131,6 +131,26 @@ Theorem: It is NP-hard
 - Reduce it from hamiltonian cycle
 - Given G = (V.E) choose arbitrary vertex v in G
 - Replace v by two vertices s and t and add (s to u) for every edge (v to u) in G and add (u to v).
+	- t represent incoming vertices to v
+    - s represent the outgoing edges from v
+
+
+## Reason
+If there is a hamiltonian cycle, lets look at one vertice in this cycle call v
+
+Our modified graph
+![CS3230-10-5.PNG]({{site.baseurl}}/img/CS3230-10-5.PNG)
+
+It will start at S because S is the start of the direction and it will end at t since its the last value.
+
+> There is a cycle
+
+
+## Remarks
+- NP-complete problems are poly time reducible to each others
+- Not all these reductin are easy to find
+
+
 
 # Undirected Hamilitonian Cycle Problem
 Problem: Given an undirected graph G = (V,E) does there exist a Hamilitonian cycle
@@ -139,6 +159,7 @@ Problem: Given an undirected graph G = (V,E) does there exist a Hamilitonian cyc
 - Reduce it from Directed Hamilitonaian Path
 - For each vertex v, we add tree vertices uin, umid, uout
 - For every edge, (u to v), we add the following edges
+![CS3230-10-6.PNG]({{site.baseurl}}/img/CS3230-10-6.PNG)
 
 Claim: The original undirected graph was a HamCycle iff the new undirected graph has a HamCycle
 
