@@ -143,7 +143,7 @@ Our modified graph
 
 It will start at S because S is the start of the direction and it will end at t since its the last value.
 
-> There is a cycle
+> There is a cycle because t is the ending vertex and it starts at s again. We show that this graph can be changed into jus a HamPath by transforming it into this new graph
 
 
 ## Remarks
@@ -158,8 +158,31 @@ Problem: Given an undirected graph G = (V,E) does there exist a Hamilitonian cyc
 ## Reduce
 - Reduce it from Directed Hamilitonaian Path
 - For each vertex v, we add tree vertices uin, umid, uout
-- For every edge, (u to v), we add the following edges
+- For every edge, (u to v), (outgoing) we add the following edges
 ![CS3230-10-6.PNG]({{site.baseurl}}/img/CS3230-10-6.PNG)
+
+#### This means any cycle that goes throguh the vertice it must be taking this path
+Proof to this:
+- There exist a ham cycle in this undirected graph
+- The ham cycle is v1in - v1mid -  v1out - v2in - v3 mid ...... vnin - vnmid - vnout - (go back) vin
+	> This is  cycle with 3n vertice
+
+Suppose there is a ham cycle in the modified graph G', 
+- For any v in V, 
+	- Notice that Vmid must be connected to Vin and Vout
+    - This implies that in the new graph, we must include vin, vmid and vout
+- We also know that v1out must be connected to a v2in
+	- All the out vertex must be connected to the in vertex
+- Since its a ham cycle, we know that v2mid must be connected to v2in and v2out,
+	- We can see it will continue connection until it reach vnin - vnmid - vnout
+    - Eventually it will reach back v1in
+    - Since its a ham cycle,m it must have exhasted all the vertex before coming to v1in
+    
+> Why need the mid vertice?
+>  - Imagine the construction of a graph that does not make use of vmid
+>  ![CS3230-10-7.PNG]({{site.baseurl}}/img/CS3230-10-7.PNG)
+>  - Mid vertex force that the graph looks like this 
+
 
 Claim: The original undirected graph was a HamCycle iff the new undirected graph has a HamCycle
 
