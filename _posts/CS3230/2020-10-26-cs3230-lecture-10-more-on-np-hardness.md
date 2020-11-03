@@ -188,7 +188,7 @@ Claim: The original undirected graph was a HamCycle iff the new undirected graph
 
 # Traveling Salesman problem
 Problem: Given a list of cities and the distance between each pair of cities, what is the shortest possible route that visit each city and returns to origin city
-
+- Does there exist a town of length less than or equal to k
 > This is similar to the Undirected Hamiltonian cycle problem, except that it is on a weighted graph
 
 Theorem: TSP is NP-Hard
@@ -196,15 +196,23 @@ Theorem: TSP is NP-Hard
 > reduce it from undirected Hamiltonian Cycle
 
 ## NP hardness of search Optimisation problem
+A search problem cannot be in NP but can be in NPhard
+- NP is define to be a class of decision problems
+
 - If a known NP-hard problem can be efficiently reduce to A (which is a search/optimisation problem) then this shows that A is NP-hard
 - A search/optimsation cannot be NP complete. For A to be NP-complete, it should be in NP which is only well defined for decision problems
 
 # Approximation Algorithm
-- we dont know how to solve them
+- we dont know how to solve np-complete
+- Get something close to this 
 - Approximate the solution
 	- Say find an assignment of a 3 SAT instance that satisfies 90 percent of the clauses
     - Or find a path for a traveling salesman that is 110 percent of the best path
 - This is good enough for most application
+
+
+> Even some problems, it is hard to get the approximate
+
 
 # TSP is NP hard to approximate
 - Consider edge weighted undirected graph G. Let the minimum length of a tour of the graph G starting with vertex v and ending with vertex v is M
@@ -215,14 +223,23 @@ Theorem: c-approximate TSP is NP-hard
 - reduce from undirected Hamilitonian cycle problem
 
 - Create a new complete G' = (V,E') with edge weight defined as w(x,y) = 1 if (x,y) is in E and w(x,y) = cn +1 otherwise
+	- Weight present in original, assign as 1 else assign as some hughe weight
 - G has a hamiltonian cycle iff G' has a cycle with total weight n iff G' has a cycle of total weight at most cn
+- Either we have 1 or cn+1, if we choose cn+1, then the weight will overexceed
+- Getting the solution is just as hard as apporoximating it
 
 
 
 # Euclidean TSP problem
 Problem: This is the TSP problem with the additional restriction that for any three vertices x,y,z, w(x,y) + w(y,z) >= w(x,z) ie the distance from x to z is at msot distance of going from x to y and then going from y to z
+![CS3230-10-8.PNG]({{site.baseurl}}/img/CS3230-10-8.PNG)
 
-## Efficient Algorithm for 2 approximate EuclideanTSP
+> This proof is hard
+
+
+## Efficient Algorithm for 2-approximate EuclideanTSP
+- Use min span tree
+
 To approximate the smallest tour P starting with vertex v.
 - Let T be the minimum spanning tree for G. Consider T as a tree rooted at v.
 - TSP(T,v)
@@ -232,6 +249,14 @@ To approximate the smallest tour P starting with vertex v.
         - Add v to P
 - Remove all repeated appearance of any vertex in P
 
+![CS3230-10-9.PNG]({{site.baseurl}}/img/CS3230-10-9.PNG)
+- Every edge is visited twice
+- w(path) is 2 * w(MST)
+- The claim is that the weight will only go down adn not up
+	- When we eliminate a vertex, we will replace a vertex w(2,1) + w(1,3) to w(2,3) where w(2,3) is less than or equal to  w(2,1) + w(1,3)
+    - If we keep doing these eli, the total weight is always decreasing
+    - This satisfy the euclidean property
+
 ## Why does it work
 Show the following observation that lead to the proof
 - The min spanning tree is the smallest connected graph spanning all vertices. So the total weight is less than the total tour weight of the travelling salesman
@@ -240,6 +265,8 @@ Show the following observation that lead to the proof
 
 ## 2 Approximation Algo for vertex cover
 Problem: Given an undirected graph G = (V,E) find a subset of vertices V' that covers each edge in G and is at most twice the size of the smallest vertex cover
+
+Algo:
 - While there exist an edge (u to v) not covered by V'
 	- Add u,v to V'
 - Correctness is immediate from the fact that for any vertex cover V'', and for any pair of vertices u,v added to V' in any single step at least one of u, v must be in V''
