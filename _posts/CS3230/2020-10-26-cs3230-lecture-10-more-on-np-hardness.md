@@ -270,3 +270,6 @@ Algo:
 - While there exist an edge (u to v) not covered by V'
 	- Add u,v to V'
 - Correctness is immediate from the fact that for any vertex cover V'', and for any pair of vertices u,v added to V' in any single step at least one of u, v must be in V''
+
+# Slide
+<iframe src="https://drive.google.com/file/d/181OQxAy7fbS02lf9fFwiKyrHloe1c5nX/preview" width="640" height="480"></iframe>
