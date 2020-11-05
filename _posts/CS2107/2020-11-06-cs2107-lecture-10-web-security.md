@@ -26,3 +26,16 @@ Overview:
 	- Web server: Scripting language is typically use as well
     - Database server: Interaction between webserver and database server via sql
 # Security issues and threat models
+## Complications
+Browser Operation:
+- Browser run with same prev as user: Browser can access user files
+- Multiple server could provide the content: Access isolation among sites is requried
+- Browser support rich command set and controls for content providers to render the content
+- For enhance funcitionality many browser support plugins, add-ons extensiion by third party
+
+Browser usage:
+- User info and secrets
+- User could update content in the server:
+	- Forum social media sites where names are to be displayed
+- More and more iusers sensitive data is stored in the web cloud
+- For PC, the browser is becoming the main/super applicaation, in some sense the browser is the OS
