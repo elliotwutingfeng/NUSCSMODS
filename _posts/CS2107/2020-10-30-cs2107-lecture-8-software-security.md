@@ -273,6 +273,121 @@ Vulnerable code:
 
 
 ## Undocumented access points
+- For debugging, many programmers insert undocumented access point to inspect states
+	- Press certain key combo, values of certain variables will be display
+    - Certain input string would branch to debug mode
+- These access points may mistakenly ramin in the final production system providing backdoors to the attackers
+- A backdor: A covert method of bypassing normal authentication
+- Such access points are easter eggs
+	- Some are fun
+    - Some are put there by unhappy programmers
+- Important: Logic bombs, easter eggs, backdoors
+
 # Defence and preventive measures
+- Many bugs and vulnerability are due to programmer innorance
+- It is diffucult to analysis a program to ensure that its bug free
+- THere is no fool proof method
+
+## Input validation and using filtering
+### Filtering
+- Input must follow expected format
+	- Length
+    - Cannot contain certain meta characters
+    - Does not contain negative numbers
+- Filter the input or validate it 
+
+Problems:
+- Difficult to ensure filter is complte
+	- e.g UTF: Input validation intend to detect the substring
+    - There are multiple representations of "../" that the programmer is not afraid of
+    - A filter that completely blocks all bad inputs and accepts all legitimate inputs is very difficult to design
+
+
+Approaches:
+1. White list
+	- List of items are allowed to pass
+    - Regex
+    - Bad: Some legitamate input might be block
+2. Black list
+	- A list of items that are known to be bad and has to be rejected
+    - To prevent SQL injects, if the input contains meta characters, reject it
+    - Malicious input may be pass
+
+> Which is more secure?
+
+### Safer functions
+- Avoid function that cause problems
+- For example, repolace strcpy with strncpy
+- There still might be a vul:
+	- combine strlen and strncpy
+
+### Bounds check and type safety
+Bounds check:
+- Some programming language perform bounds checking at run time
+- Checks upper and lower bounds
+- process halt if both checks fail
+- reduces efficiency but prevent buffer overflow
+
+Type safety:
+- Check to ensure args in operation get are always correct
+- e.g, if a= b but a is 8 bit while b is 64, type is wrong
+- Check done in runtime(dynamic type) or compiled (static type)
+
+
+## Memory protection
+## Canaries
+- Secret value inserted at carefully selected memory location ar runtime
+- Checks are carried ut at runtime to ensure that the values are not being modified
+- Canaries can detect overflow suhc as stack overflow:
+	- Typical bufferoverflow, consecutive mem location have to be over ran but canaries would be modified
+- Keep the values secret: If attacker knows, they can write the secret value to the canary while overrunning it
+
+## Memory randominisation
+- ASLR (Address space layout randomisation) is a prevention technique that helps decrease the attacker's chance
+- Randomly arranges the address space position of key data areas of a process including:
+	- THe base area of the executable and the position of the stack, heap and libraries
+
+## Code inspection
+- Manual checking: Manually check the progranm is tedious
+- Automated: Some automation and tools are posible
+- Taint analysis:
+	- Variables that contain input from potential malicious users are labeled as sources
+    - Critical functions are labeled as sinks
+    - Tain analysis checks whether any of the sinks arguments could potentially be affected by a source
+    - Source = user input
+    - Special check: Carried out
+    - Taint analysis can be static or dynamic
+## Testing
+- Vulnerability can be discovered via testing
+- Types:
+	- White box testing: Tester has access to application source code
+    - Black box: Does not have access to source code
+    - Grey box: Combination above, reverse engineered binary/executable
+- Security testing attempts to discover intentional attack and hence would test for inputs that are rarely occured under normal circumstance
+- Examples: Long name, names containing numeric values, string containing meta characters
+- Fuzzing is a technique that sends the malformed inputs to discovered vulnerability:
+	- Some techniques are btter then this for random inputs
+    - Fuzzing can be automated or semi auto
+## Principle of least priviledge
+- When writing a prob, be conservative in elevating the priviledge
+- When deploying software system, do not give the users more access rights than neccessary and do not activate unnecesarry options
+- 
+> Terminology: Hardening
+
+# Patching: Up to date
+- Life cycle of vulnerability:
+	1. Discovereed
+    2. Code fix
+    3. Revised tested
+    4. Patch made public
+    5. PAtch applied
+- Sometimes vulnerability can be announced without the techniqcal details
+- When patch release, the patch can be useful to attackers too: Inspect the patch and derive the vulnerability
+- Funnily, sometimes the number of successful attack increase when a patch is made
+- Cruicial to apply timely
+
+- Critical system: DOnt apply patch immediately before rigorous testing
+- Patches might affect the applications and thus affect an org operation
+
 # Slides
 <iframe src="https://drive.google.com/file/d/12bpGSoVRszagt61E_B8WV2tyyGe1GTBv/preview" width="640" height="480"></iframe>
