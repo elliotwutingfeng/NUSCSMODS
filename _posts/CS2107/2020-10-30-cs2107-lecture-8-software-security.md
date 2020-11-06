@@ -263,13 +263,20 @@ Vulnerable code:
 
 ### SQL and Query 
 - SQL is database query language
+- Code can be put as a string and executed in runtime
 - Consider a database (Which can be viewed as table): each column/field is associated with an attibute
 - Also allows variable:
 	- e.g a script may first get the user's inputs and stores it in the variable $userinput and subsequently runs:
     SELECT * FROM Client WHERE name = '$userinput'
+    
+> This can happen in login page, where the name is selected by the user
 
 #### Example
-
+In the example of the login page, web developers will take the user input and use the `SELECT` search query to retrieve the data
+- Attack can do this
+	- Bob' OR 1=1 --`
+    - this becomes `SELECT * FROM client WHERE name = 'bob' OR 1=1 --`
+    - All rows in this client table will be return this this case
 
 
 ## Undocumented access points
@@ -297,7 +304,7 @@ Vulnerable code:
 - Filter the input or validate it 
 
 Problems:
-- Difficult to ensure filter is complte
+- Difficult to ensure filter is complete
 	- e.g UTF: Input validation intend to detect the substring
     - There are multiple representations of "../" that the programmer is not afraid of
     - A filter that completely blocks all bad inputs and accepts all legitimate inputs is very difficult to design
@@ -336,11 +343,26 @@ Type safety:
 
 ## Memory protection
 ## Canaries
-- Secret value inserted at carefully selected memory location ar runtime
-- Checks are carried ut at runtime to ensure that the values are not being modified
-- Canaries can detect overflow suhc as stack overflow:
+- Secret value inserted at carefully selected memory location at runtime
+- Checks are carried at at runtime to ensure that the values are not being modified
+- Canaries can detect overflow such as stack overflow:
 	- Typical bufferoverflow, consecutive mem location have to be over ran but canaries would be modified
 - Keep the values secret: If attacker knows, they can write the secret value to the canary while overrunning it
+![CS2107-9-14.PNG]({{site.baseurl}}/img/CS2107-9-14.PNG)
+
+- If the buffer was overflow, the canary would be overwritten
+
+![CS2107-9-15.PNG]({{site.baseurl}}/img/CS2107-9-15.PNG)
+
+- `./program-too-wsp aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`
+
+If compiled with stack protector:
+- Stack smashing
+- Function exiting
+
+Without stack protector:
+- Function exit
+- Seg fault
 
 ## Memory randominisation
 - ASLR (Address space layout randomisation) is a prevention technique that helps decrease the attacker's chance
