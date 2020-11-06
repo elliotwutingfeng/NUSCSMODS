@@ -352,17 +352,36 @@ Type safety:
 
 - If the buffer was overflow, the canary would be overwritten
 
+#### Another example
 ![CS2107-9-15.PNG]({{site.baseurl}}/img/CS2107-9-15.PNG)
+- Buffer overflow occurs at strcpy
+- `./program-too-wsp aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`
+
+If compiled with stack protector:
+- Stack smashing
+- Function exiting
+- Aborted (core dumpted)
+
+Without stack protector:
+- Function exit
+- Seg fault but, the program might jump to a unwanted address
+
+#### Example 2
+
+![CS2107-9-16.PNG]({{site.baseurl}}/img/CS2107-9-16.PNG)
+
 
 - `./program-too-wsp aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`
 
 If compiled with stack protector:
 - Stack smashing
 - Function exiting
+- Aborted (core dumpted)
 
 Without stack protector:
 - Function exit
-- Seg fault
+- Seg fault but, the program might jump to a unwanted address
+- main() is exiting is shown
 
 ## Memory randominisation
 - ASLR (Address space layout randomisation) is a prevention technique that helps decrease the attacker's chance
@@ -373,9 +392,9 @@ Without stack protector:
 - Manual checking: Manually check the progranm is tedious
 - Automated: Some automation and tools are posible
 - Taint analysis:
-	- Variables that contain input from potential malicious users are labeled as sources
-    - Critical functions are labeled as sinks
-    - Tain analysis checks whether any of the sinks arguments could potentially be affected by a source
+	- Variables that contain input from potential malicious users are labeled as **sources**
+    - Critical functions are labeled as **sinks**
+    - Taint analysis checks whether any of the sinks arguments could potentially be affected by a source
     - Source = user input
     - Special check: Carried out
     - Taint analysis can be static or dynamic
@@ -392,9 +411,10 @@ Without stack protector:
     - Fuzzing can be automated or semi auto
 ## Principle of least priviledge
 - When writing a prob, be conservative in elevating the priviledge
-- When deploying software system, do not give the users more access rights than neccessary and do not activate unnecesarry options
-- 
+- When deploying software system, do not give the users more access rights than neccessary and do **not** activate unnecesarry options
+	- Like setUID
 > Terminology: Hardening
+> - hardening is usually the process of securing a system by reducing its surface of vulnerability, which is larger when a system performs more functions;
 
 # Patching: Up to date
 - Life cycle of vulnerability:
@@ -410,6 +430,9 @@ Without stack protector:
 
 - Critical system: DOnt apply patch immediately before rigorous testing
 - Patches might affect the applications and thus affect an org operation
+
+
+![CS2107-9-17.PNG]({{site.baseurl}}/img/CS2107-9-17.PNG)
 
 # Slides
 <iframe src="https://drive.google.com/file/d/12bpGSoVRszagt61E_B8WV2tyyGe1GTBv/preview" width="640" height="480"></iframe>
