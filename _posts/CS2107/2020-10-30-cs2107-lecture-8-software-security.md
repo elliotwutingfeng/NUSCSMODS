@@ -409,6 +409,8 @@ Without stack protector:
 - Fuzzing is a technique that sends the malformed inputs to discovered vulnerability:
 	- Some techniques are btter then this for random inputs
     - Fuzzing can be automated or semi auto
+    
+    
 ## Principle of least priviledge
 - When writing a prob, be conservative in elevating the priviledge
 - When deploying software system, do not give the users more access rights than neccessary and do **not** activate unnecesarry options
