@@ -172,5 +172,3 @@ Examples:
 
 # Slides
 <iframe src="https://drive.google.com/file/d/15bh62ptPmJ_gomBN2xky15cALtRLxOoJ/preview" width="640" height="480"></iframe>
-
-
