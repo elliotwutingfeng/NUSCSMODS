@@ -23,6 +23,8 @@ Corresponding:
 - Subset sum: Subset of _numbers_ that adds to **T**
 
 > Perhaps we can let one edge be a number and that T is the sum of these numbers. But then there might be many different ways to add up a number to get another number, so we can pick this edge to be a representation in different digits 
+
+
 ## Reduction
 - Number the edges arbitrarily from 0 to E-1
 - Our set X contains the integer bi := 4^i for each edge i and the integer:
