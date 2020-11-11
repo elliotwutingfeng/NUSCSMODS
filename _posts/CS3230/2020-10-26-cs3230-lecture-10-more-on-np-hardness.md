@@ -26,6 +26,7 @@ Corresponding:
 
 
 ## Reduction
+
 - Number the edges arbitrarily from 0 to E-1
 - Our set X contains the integer bi := 4^i for each edge i and the integer:
 ![CS3230-10-1.PNG]({{site.baseurl}}/img/CS3230-10-1.PNG)
