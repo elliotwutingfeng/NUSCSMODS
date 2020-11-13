@@ -170,5 +170,23 @@ Examples:
 - This is not a fullproof method
 - Attaditionally detect reflected XSS attack, some browsers employ a client side detection mechanism: XSS Auditor
 
+# Cross site request forgery attacks
+- Session riding
+
+Example
+- Click on url
+	- Alice is already authenticated by the website, S accepts the authentication token cookie
+    - All request from ALIC, the cookie will be attached to this reuqest
+    - Web server can then define which is Alice
+    - Bob trick alice to click on url of S whcih request for the service using the alice's cookie to transfer money
+- No click link
+	- Requriment: Bob must have a web server
+    - Alice is auth by website and S accepts the authenthenticaation cookie 
+    - Alice visit the attacker's site whose page contains `<IMG src = "www.bank.com/transfer?account=Alice&amount=1000&to=Bob" WIDTH = "1" HEIGHT = "1" BORDER = "0">`
+    - This is a subresource
+    - Alice browser would automatically try to get this request without Alice knowing it
+    - To the server, it seems as if Alice is just making a request although it is through Bob's website
+
+
 # Slides
 <iframe src="https://drive.google.com/file/d/15bh62ptPmJ_gomBN2xky15cALtRLxOoJ/preview" width="640" height="480"></iframe>
