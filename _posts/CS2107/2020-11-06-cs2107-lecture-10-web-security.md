@@ -195,7 +195,29 @@ Example
 - Distrubs the integrity
 - It exploits the server's trust of the client
 
+## Defences
+- Relative easier to prevent compared to XSS
+- SID sent by the browser is insufficient, server must issue and require extra dynamic info -> Anti CSRF Token
+
+Example:
+- Server includes a anti crfs token in the money transfer request page
+- The request will get the token attached where the token is dynamic
+- Bob cant prepare a working link for alice to click since the token is randomly generated
+- Alt, the token can be done for a hidden form field, it get transfer together with the post request and Bank.com will know if the request is real
+- HTTP request header field
+
+
+
+# Terminologies
+- Drive by download
+- Web Bug
+- Click jacking
+- Click fraud
 
 
 # Slides
 <iframe src="https://drive.google.com/file/d/15bh62ptPmJ_gomBN2xky15cALtRLxOoJ/preview" width="640" height="480"></iframe>
+
+
+# Final revision slide
+<iframe src="https://drive.google.com/file/d/1RqSazM4gdhb-ozWBSOVGKg4h0i9pncLL/preview" width="640" height="480"></iframe>
