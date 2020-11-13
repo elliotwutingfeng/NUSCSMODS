@@ -187,6 +187,15 @@ Example
     - Alice browser would automatically try to get this request without Alice knowing it
     - To the server, it seems as if Alice is just making a request although it is through Bob's website
 
+> The image size is small so it wont be notice by Alice
+
+## CSRF
+- An authorisation attack on web application
+-  Web sttacker attacks a web user by issuing a forged request to a vulnerable webserver on "behalf" of the victim
+- Distrubs the integrity
+- It exploits the server's trust of the client
+
+
 
 # Slides
 <iframe src="https://drive.google.com/file/d/15bh62ptPmJ_gomBN2xky15cALtRLxOoJ/preview" width="640" height="480"></iframe>
