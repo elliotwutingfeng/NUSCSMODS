@@ -135,9 +135,7 @@ Response time:
     - HTTP Response header (Every subsequent request by client)
     - Cookie file is maintain by the browser
     - Back end database at website
-    
-![CS3103-1-16.PNG]({{site.baseurl}}/img/CS3103-1-16.PNG)
-    
+        
 ### Web caches
 The goal is to **satisfy client requests without involving origin server. Improve response time and reduce traffic**
 - User sets browser
@@ -259,9 +257,10 @@ Components:
     - Outlook
     - Pine
     - Mozilla thunderbird
-- Message transfer agents
+- Message transfer agents (SMTP - port 25)
 	- SMTP: SImple main transfer protocol
-- Message access agents
+- Message access agents (POP - port 110 and IMAP4
+- port 143)
 	- POP3 => Post office protocol v3
     - IMAP4 => Internet Mail Access Protocol V4
 
@@ -430,7 +429,8 @@ Level by level:
     
 > Why dont centralised DNS?
 > 
-> - 
+> - Not scalable
+
 
 
 > The size of response message is more that 512 bytes, a TCP connection is used instead of UDP 
@@ -440,6 +440,7 @@ Level by level:
 If the size of the response message is more than 512 bytes, a TCP connection is used instead of UDP
 
 ## TLD
+
 ##### Top level domain servers:
 - Responsible for com, org, net, edu ...etc 
 - Network solution maintains servers for .com TLD
@@ -447,7 +448,7 @@ If the size of the response message is more than 512 bytes, a TCP connection is 
 
 
 ##### Authoritative DNS servers:
-- Organisation own DNS server providing authroitative host name to IP mappings for organisation named hosts
+- **Organisation own DNS server** providing authroitative host name to IP mappings for organisation named hosts
 - Can be maintain by organisation or service provider
 - The primary server loads all info from the disk file, the second loads al infomation from the primary server
 - When the secondary downloads information from the primary, it is called zone transfer
@@ -455,10 +456,10 @@ If the size of the response message is more than 512 bytes, a TCP connection is 
 
 
 ## Local DNS name server
-- Does not strictly belong to hierachy
+- **Does not strictly belong to hierachy**
 - Each ISP has one
 - When host makes DNS query, it is send to its local DNS server
-	- Local has cahce of recent name to address translation pairs but might be out of date
+	- Local has cache of recent name to address translation pairs but might be out of date
     - Acts as a proxy and forwards query into hierarchy
 
 ## DNS name resolution example
@@ -472,21 +473,23 @@ Name resolution - iterative:
 ![CS3103-4-41.PNG]({{site.baseurl}}/img/CS3103-4-41.PNG)
 
 
-### Recrusive:
+### Recursive:
 ![CS3103-4-28.PNG]({{site.baseurl}}/img/CS3103-4-28.PNG)
 
-- Puts burden of name resolutoin on contacted name server
+- **Puts burden of name resolution** on contacted name server
 - Heavy loads at upper of hierachy
 
 Name resolution - recursive:
 ![CS3103-4-40.PNG]({{site.baseurl}}/img/CS3103-4-40.PNG)
 
 ## Domain and zone
+**Domain is a subtree of the domain name space**
+
 
 ![CS3103-4-30.PNG]({{site.baseurl}}/img/CS3103-4-30.PNG)
 
 
-The DNS server for a domain can either store info about every node in domain or divide the domain into subdomains and delegate part of its authoirity to other servers
+The DNS server for a domain can either **store info about every node in domain** or **divide the domain into subdomains** and delegate part of its authority to other servers
 
 > What a server is responsible for or has authority over is called a zone
 
@@ -519,8 +522,9 @@ Please note that domain and zone are not the same.
 - Primary and secondary servers are both **authoritative** for the zone they serve. They provide authoritative answer for their zone.
 	- An authroitative answer for a name server (Such as reading the data from disk) is guaranteed to be accurate
     - A non authoritative answer (Like from cache) may not be accurate
-## Reource records
-This is the types of records stored in the DNS server.
+    
+## Resource records
+This is the types of records stored in the DNS server (RR).
 
 
 ![CS3103-4-33.PNG]({{site.baseurl}}/img/CS3103-4-33.PNG)
