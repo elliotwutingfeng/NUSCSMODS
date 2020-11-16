@@ -49,6 +49,7 @@ In the past: Can only stream data but cannot rewind forward etc etc.
 	- the internet phone or voice over IP is an example of this type of application
     - Video conferencing is another example that allows people to communciate visually and orally
     - Cloud games
+    
 ## Streaming: Arrive time = playtime
 ![CS3103-10-6.PNG]({{site.baseurl}}/img/CS3103-10-6.PNG)
 
@@ -90,7 +91,15 @@ RTP:
 
 > RTP also uses a companion protocol RTCP which enables the sender to monitor hte netowrk condition and react
 ![CS3103-10-8.PNG]({{site.baseurl}}/img/CS3103-10-8.PNG)
+
 # SIP
+Application layer control protocol for creating modifying and terminating session with one or more participants
+
+- Voice
+- Video
+- Instant message
+
+Follows http
 
 ## VOip with SIP
 - Session initiation protcol: APplication layer signalling protocl for creating mdofiying and terminating session with one or more participants.
