@@ -22,7 +22,7 @@ Motivation:
     - No: Get mac address with ARP
 - ARP
 - Demux it: Knows it ipv4 or ipv6
-- Sents to approp layer
+- Sents to approporiate layer
 - Put on input queue
 
 > Multicast must be registered to get the message but broadcast is already automatically sent no matter what
@@ -61,10 +61,10 @@ Arp cache contains address mapping for all host within a single LAN
 > Note that if i dont know the reciever MAC, i would leave as 0
 
 > Question: If they broadcast and the destination is not for me, would I update the arp cache?
-	- Yes, only if I already have a exisiting entry, i will update else i will throw
+> - Yes, only if I already have a exisiting entry, i will update else i will throw
 
 > Question: What is the purpose of having variable length address as Source/Target hardware address/Protocol
-	- For future expansion
+> - For future expansion
 
 ## Proxy ARP
 Host or router responds to ARP request that arrives from its connected networks for a host that is on another side of its connected networks
@@ -73,8 +73,8 @@ Host or router responds to ARP request that arrives from its connected networks 
 
 
 > Question: When will you use proxy arp?
-	- When we are moving the packet to another subnet, we can use a router as a proxy arp. 
-    - It is also used as a short cut to connect two different networks without changing it.
+> - When we are moving the packet to another subnet, we can use a router as a proxy arp. 
+> - It is also used as a short cut to connect two different networks without changing it.
 
 ## Things to know about ARP
 - What happens if an ARP request is made for a nonexisting host
