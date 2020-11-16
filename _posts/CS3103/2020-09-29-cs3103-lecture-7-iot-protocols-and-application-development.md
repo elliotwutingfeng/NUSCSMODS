@@ -323,10 +323,6 @@ The core elements of MQTT are client, servers (brokers) , session , subsciption 
 - MQTT adds 3 QoS levels on top of TCP
 
 
-### Example
-
-
-
 
 # Slides
 <iframe src="https://drive.google.com/file/d/1F_CLho9h0bG3M2zZGEuaivxDR8HP0LOP/preview" width="640" height="480"></iframe>
