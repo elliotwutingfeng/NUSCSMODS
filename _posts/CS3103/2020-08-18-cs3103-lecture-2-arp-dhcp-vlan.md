@@ -306,15 +306,15 @@ This archietecture is also very static, thus when someone wants to change to ano
 ## Lan VS VLAN
 
 LAN/SUBNET:
-- Lan is a broadcast domain under single switch
+- Lan is a broadcast domain under **single** switch
 - Group based on switch/hub (physically)
 - Traffic between LAN is routed using a router
 
 VLAN:
 - Broadcast domain created by one or more switches
-- Group based on logical function, department or application
-- 20 percent to 40 percent of work force mvoes every year
-- Traffic can be routed between VLAN with a router
+- Group based on **logical** function, department or application
+- 20 percent to 40 percent of work force moves every year
+- Traffic **can** be routed between VLAN with a router
 
 ![CS3103-2-26.PNG]({{site.baseurl}}/img/CS3103-2-26.PNG)
 
@@ -331,8 +331,8 @@ Switchs maintain a bridging table or VLAN table for each VLAN.
 ![CS3103-2-27.PNG]({{site.baseurl}}/img/CS3103-2-27.PNG)
 
 ## Vlan across backbone
-- Frame filtering: Examines particular infomaation about each frame (MAC address or layer 3 protocol type)
-- Frame Tagging: Places a unique indentifier in the header of each frame as it is being forwarded throughout the network backbone
+- **Frame filtering**: Examines particular infomaation about each frame (MAC address or layer 3 protocol type)
+- **Frame Tagging**: Places a unique identifier in the header of each frame as it is being forwarded throughout the network backbone
 ![CS3103-2-29.PNG]({{site.baseurl}}/img/CS3103-2-29.PNG)
 
 
@@ -366,8 +366,13 @@ PCP is the quality of service and tells the switches the priority of this frame.
 ### VLAN Routing
 Switches do not bridge traffic between different VLAN as this violates the integrity of the VLAN braodcast domain.
 - Traffic must be routed between VLAN
+- Routers can be use to route emails to other clients on other vlan
 
 ### VLAN implementation
+Methods in implementing Vlan:
+- Static: Port centric or port based
+- Dyn: Mac address based or Layer 3 protocol based
+
 
 ![CS3103-2-32.PNG]({{site.baseurl}}/img/CS3103-2-32.PNG)
 
@@ -402,7 +407,15 @@ Probelm:
 ![CS3103-2-37.PNG]({{site.baseurl}}/img/CS3103-2-37.PNG)
 ![CS3103-2-38.PNG]({{site.baseurl}}/img/CS3103-2-38.PNG)
 
-## Dynamic VLAN
+
+A trunk is a point-to-point link between two switches or between
+switches and routers. Trunks carry the traffic of multiple (all)
+VLANs found in a switch to another switch.
+
+## Dynamic VLAN 
+
+### MAC address Based
+- Switch port auto determins a user vlan assignmenent based on MAC address
 - LAN defined by list of MAC address
 - Centralised database 
 - Every switch will have the database
@@ -411,7 +424,7 @@ Probelm:
 - Requires computers to be preregister
 
 
-Problems: Too many address needs to be managaed
+Problems: Too many address needs to be managed
 
 
 ![CS3103-2-39.PNG]({{site.baseurl}}/img/CS3103-2-39.PNG)
@@ -426,8 +439,9 @@ We can manage the database by using CLI or some datamanagement software that com
 
 > This mapping stays until the device is disconnected
 
-### Layer-3 Based
+### Layer-3 Based Dynamic Vlan
 - Vlan membership implied by MAC layer protocol type field and subnet field
+- IP address only used in as mapping to determine the membership
 - VLAN config is learn by switches
 - Stations do not belong to VLAN, packets do
 - Multiprotocol station are put intp multiple VLAN
@@ -435,10 +449,12 @@ We can manage the database by using CLI or some datamanagement software that com
 
 ### Manage VLAN network wide
 
-- VLAN trunking protocol: Layer 2, maintains VLAN configuration consistency by managing the addition, deletion and renaming of VLANs. This protocol helps synchronise the database
-- AVTP domain: Vlan setting, managed by a single entities (e.g NUS), the protocol is only for within this domain
-- Switches can be VTP server or client or VTP transparent
-	- VTP server can modify the database
+- VLAN trunking protocol: **Layer 2**, maintains VLAN configuration consistency by managing the addition, deletion and renaming of VLANs. This protocol helps synchronise the database
+- A VTP domain: (also called a VLAN management domain) is made up of
+one or more network devices that share the same VTP domain name and
+that are interconnected with trunks.
+- Switches can be VTP server or client or VTP transparent mode
+	- VTP server mode: can modify the database
     - If its a client, it can only read but not change
     - VTP transparent switches do not participate in VTP but do forward VTP advertisment recieved through their trunk ports
 
