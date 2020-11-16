@@ -585,9 +585,9 @@ Remember that in arpa, it is written in reverse order (Database):
 
 ## Dynamic DNS
 There might be changes in DNS when
-	- Add new host
-    - Remove host
-    - CHange ip
+- Add new host
+- Remove host
+- CHange ip
 
 Changes must be made to the DNS master file. THe file must be updated dynamically.
 
@@ -595,6 +595,9 @@ Changes must be made to the DNS master file. THe file must be updated dynamicall
 - DHCP configured host with a well known and fixed and fully qualified domain name
 
 ## DNS tools
+- nslookup
+- dig
+- whois
 
 ## DNS Example
 1. query `nslookup www.comp.nus.edu.sg`: Returns the details of the server
