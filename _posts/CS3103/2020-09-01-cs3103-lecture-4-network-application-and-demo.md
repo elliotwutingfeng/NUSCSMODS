@@ -139,7 +139,7 @@ Response time:
 ![CS3103-1-16.PNG]({{site.baseurl}}/img/CS3103-1-16.PNG)
     
 ### Web caches
-The goal is to satisfy client requests without involving origin server. Improve response time and reduce traffic
+The goal is to **satisfy client requests without involving origin server. Improve response time and reduce traffic**
 - User sets browser
 - Browser sends all HTTP request to cache
 	- Objects in cache: Returns the object
