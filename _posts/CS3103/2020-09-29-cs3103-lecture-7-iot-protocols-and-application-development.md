@@ -124,21 +124,20 @@ Provides a restful environement.
 ![CS3103-7-11.PNG]({{site.baseurl}}/img/CS3103-7-11.PNG)
 
 
-
-
-
-Functionalities:
+Functionalities of CoAp:
 - Addressable URI
 - Low Header overhead and parsing complexity
 - GET/PUT/POST/DELETE
-- COntent type support
+- Content type support
 - Built in discovery
 - Designed to be extensible
-- Allows rest artuccute
+- Allows rest architecture
+- Simple proxy and caching
+- UDP binding (May use IPsec or DTLS)
 
 ![CS3103-7-6.PNG]({{site.baseurl}}/img/CS3103-7-6.PNG)
 
-> It is better to have a public ip addressable so that the outside server can connect (that is why its pv6)
+> It is better to have a public ip addressable so that the outside server can connect (that is why its ipv6)
 
 6LowPan: Only for ipv6
 
@@ -164,24 +163,27 @@ Transaction here are considered peer to peer. Transaction are identified by a ID
 ![CS3103-7-12.PNG]({{site.baseurl}}/img/CS3103-7-12.PNG)
 
 
-> If theres a loss, whjat happens to the data?
+> If theres a loss, what happens to the data?
 >
 > If its a Confirmable request, there is a way to apply reliability
 
 ### Examples
 Client servers:
+
 ![CS3103-7-13.PNG]({{site.baseurl}}/img/CS3103-7-13.PNG)
 
-- URI path: /Temperature
+- URI path: `/Temperature`
 
 
 **Confirmable**:
+
 ![CS3103-7-14.PNG]({{site.baseurl}}/img/CS3103-7-14.PNG)
 - Response ID and Send ID is the same. Data is piggy backed wiht the response (ACK)
 - If data is not ready, the data can be sent later..but the ID is different. In the seperate sending, the client sends the ACK
 
 
 **Using token:**
+
 ![CS3103-7-15.PNG]({{site.baseurl}}/img/CS3103-7-15.PNG)
 
 - Data is not ready, so a token is sent.
@@ -190,6 +192,7 @@ Client servers:
 
 
 **Non-confirmable**
+
 ![CS3103-7-16.PNG]({{site.baseurl}}/img/CS3103-7-16.PNG)
 - It is independent
 - It is possible for the client to ask for a NON but the server sends a CON in reply.. (This depends on our application)
@@ -200,6 +203,7 @@ Client servers:
 
 
 **Reset:**
+
 ![CS3103-7-17.PNG]({{site.baseurl}}/img/CS3103-7-17.PNG)
 - Data receives at the client, but the client does not know when it had made the request
 - It sends RST to reset
@@ -249,7 +253,8 @@ Client servers:
 ### Caching
 ![CS3103-7-21.PNG]({{site.baseurl}}/img/CS3103-7-21.PNG)
 
-- Focus on Max age, proxy uses this data to see if can resent the data
+- Freshness Model: Focus on Max age, proxy uses this data to see if can resent the data
+- Validation model: Check using Etag option
 - Proxy would cache the data and when the HTTP client calls again, it can use the cache provided that the Max age has not timed out
 
 
@@ -259,6 +264,8 @@ Client servers:
 - MID: Message ID
 - Payload: Data
 - Token: (See token in examples)
+
+> Deals with packet loss using token as an identifier
 
 ## MQTT
 ![CS3103-7-23.PNG]({{site.baseurl}}/img/CS3103-7-23.PNG)
@@ -271,6 +278,7 @@ Example:
 
 ### MQTT Model
 The core elements of MQTT are client, servers (brokers) , session , subsciption and topics
+![CS3103-1-27.PNG]({{site.baseurl}}/img/CS3103-1-27.PNG)
 
 ### Message format
 
