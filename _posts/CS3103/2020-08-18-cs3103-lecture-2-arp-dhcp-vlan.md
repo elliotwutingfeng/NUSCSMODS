@@ -6,6 +6,9 @@ title: 'CS3103 - Lecture 2/3: ARP, DHCP, VLAN'
 # ARP - Address Resolution Protocol
 ![CS3103-2-1.PNG]({{site.baseurl}}/img/CS3103-2-1.PNG)
 
+- ARP REQUEST: Broadcast
+- ARP REPLY: UNICAST
+
 Motivation:
 - Support hop to hop deliever
 
