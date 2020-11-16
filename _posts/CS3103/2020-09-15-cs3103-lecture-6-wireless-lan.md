@@ -120,17 +120,17 @@ Values:
 - DIFS (Distributed coordination function IFS)
 	- Longest IFS
     - Used as minimum delay of asynchronous frames contending for access
-    - Used for all ordinary asyncronous traffic
+    - Used for all ordinary asynchronous traffic
 - Short IFS (SIFS)
 	- Shortest IFS
-    - Ised for immediate response action. 
-    - Pritority is given for response messsages over another new message from other stations
+    - is used for immediate response action. 
+    - Priority is given for response messsages over another new message from other stations
     - Clear to send (CTS)
     - Ack
     - Poll response
 - Point coordination function IFS (PIFS)
 	- Mid length IFS
-    - USed by centralised controller in PCF scheme when using poll
+    - Used by centralised controller in PCF scheme when using poll
     - Takes precedence over normal contentin traffic (DIFS)
   
 
