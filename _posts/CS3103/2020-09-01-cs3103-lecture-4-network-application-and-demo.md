@@ -667,47 +667,77 @@ Examples:
 ## File distribution: Client server vs P2P
 > How much time to distribute file from one server to N peers
 
+us: Upload speed
+
 - Server transmission: Must be sequentially send N file copies
 	- Time to send one copy: F/us
-    - Time to send N copies: NF/us
+    - Time to send N copies: N * F/us
     
 - Client: Each client must download file copy
 	- dmin = min client download rate
     - min client download time: F/dmin
+    
+> The time to distribute F to N client would be the max of 
+>
+> - time to send N compies
+> - min client download time
     
     
 ## File distribution: P2P
 - Server transmission: Must upload at least one copy
 	- time to send one copy: F/us
 - Client: Each client must download file copy
-	- min cleint download time: F/dmin
-- clients: as aggregate must download NF bits
+	- min client download time: F/dmin
+- Clients: as aggregate must download NF bits
 	- max upload rate (limiting max download rate) is us + Sum of ui
-
+    
+> The time to distribute F to N client using **P2P** would be the max of 
+>
+> - Min client download time
+> - Time to send one copy
+> - N * F/(us + sum of ui)
 
 ### Client server vs P2P: example
+![CS3103-1-22.PNG]({{site.baseurl}}/img/CS3103-1-22.PNG)
+
+> The bottleneck in client server is the upload rate
 
 ## P2P file distribution: BitTorrent (BT)
+![CS3103-1-24.PNG]({{site.baseurl}}/img/CS3103-1-24.PNG)
+
 - file divided into 256Kb chunks
 - peers in torrent send/recieve file chunk
+- Torrent/swarm: group of peers
+exchanging chunks of a file.
+(exchanging the same file)
+- Churn: peers may come
+and go.
+once peer has entire
+file, it may (selfishly)
+leave or (altruistically)
+remain in the torrent
 
 
+![CS3103-1-23.PNG]({{site.baseurl}}/img/CS3103-1-23.PNG)
 
-As a leecher download pieces of the file, replicas of the pieces are created. More downloads means more replicas available. 
 
-
-As soon as a leecher has a complete piece, it can potentially share it with other downloaders. Eventually each leecher becomes a seeder by obtaining all the pieces and assembles the file. Verifies the checksum
+- As a leecher download pieces of the file, replicas of the pieces are created. **More downloads means more replicas available.**
+- As soon as a leecher has a complete piece, it can potentially share it with other downloaders. Eventually each leecher becomes a seeder by obtaining all the pieces and assembles the file. Verifies the checksum
 
 ## BitTorrent: Requesting, sending file chunks
 Requesting chunks:
-- At any given time, different peers have different subset of file chunks
-- periodically, Alice ask each peer for list of chunks that they have
+- At any given time, different peers have **different subset of file chunks**
+- periodically, Alice **ask each peer for list** of chunks that they have
 - Alice requests missing chunks from peers
 - Requires - Piece selection policies:
-	- the order in which pieces are selected by different peers is criticals for good performance
+	- the **order** in which pieces are selected by different peers is criticals for good performance
     - If an inefficient policy is used, then peers may end up in a situation where each has all identical set of easily available pieces and none of the missing ones.
     - If the original seed is prematurely taken down, then the file cannot be completely downloaded
-    > What are good policies
+    
+> What are good policies
+> - Small overlapp: Large overlap is bad -- wastes bandwidth
+    
+    
 ## Piece selection
 
 - Strictly priority 
@@ -716,37 +746,45 @@ Requesting chunks:
 - Endgame mode
 
 
-Random first piece
+**Random first piece**
 
 - initally a peer has nothing to trade
 - important to get a complete piece asap
 - select random piece of the file and download it
 
 
-Rarest piece first
+**Rarest piece first**
 - Determine the piece that are most rare among your peer, and download those first
 - Logically, the most commonly available piece are left till the end to download
 
 
-Endgame mode
-- Near the end, missing pieces are requested for every peer containing them
+**Endgame mode**
+- Near the end, **missing pieces are requested from every peer containing them**
 - This ensures that a download is not prevented from completion due to a single peer with a slow transfer rate
 - Some bandwidth is wasted, but in practice this is not too much
+
+
+Discourage free riding:
+- Choking
+- Optismistic unchoking
+
 
 #### Choking
 - Choking is a temporary refusal to upload to free riders. It one of BT's most powerful idea to deal with free riders (those who only downlaod but never upload)
 - tit for tat strategy is based on game theoretic concepts
 
-## BitTorrent: Requesting, sending file chunks
+#### BitTorrent: Requesting, sending file chunks
 Sending chunks: tit for tat
-- Alice sends chunks to four peer currently sending her chunks at highest rate
+- Alice sends chunks to **four peers** currently sending her chunks at highest rate
 	- other peers are choked by Alice (do not recieve chunks from her)
-    - re-evaluate top 4 every10 secs
+    - re-evaluate top 4 every 10 secs
 - Every 30 secs: randomly selects another peer, starts sending chunks
-	- Optimisitcally unchoked this peer
+	- **Optimisitcally unchoked** this peer
     - Newly chosen peer may join top 4
 
-### Tit for tat
+Tit for tat:
+![CS3103-1-25.PNG]({{site.baseurl}}/img/CS3103-1-25.PNG)
+
 
 ### Upload-Only mode
 - Once download is complete, a peer can only upload. The questions is, which nodes to upload to?
