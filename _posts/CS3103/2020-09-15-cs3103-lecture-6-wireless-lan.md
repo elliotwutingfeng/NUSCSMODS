@@ -3,6 +3,8 @@ layout: post
 published: true
 title: 'CS3103 - Lecture 6 : Wireless Lan'
 ---
+
+
 # MAC Sublayer - CSMA/CA
 #### Characteristics
 ![CS3103-6-1.PNG]({{site.baseurl}}/img/CS3103-6-1.PNG)
@@ -18,8 +20,10 @@ Application (5G)
 
 
 # MAC Sublayer = DCF and PCF
-##### Recall: Eternet MAC layer (Listen while you talk)
 
+##### Ethernet MAC sublayer - CSMA/CD
+
+- Listen while you talk
 ![CS3103-6-3.PNG]({{site.baseurl}}/img/CS3103-6-3.PNG)
 
 - Send packet
@@ -52,23 +56,22 @@ Application (5G)
 > Why is collision avoidance harder for wireless? (If cannot see each other, do they no its collision)
 > - Hidden nodes
 
+Why cant we use CSMA/CD for wireless?
+
 
 ### Collision detection is hard in wireless networks
-- Enery level during transmission, idleness or collision
+- Energy level during transmission, idleness or collision
+
 ![CS3103-6-5.PNG]({{site.baseurl}}/img/CS3103-6-5.PNG)
 
 If the sender and the reciever are at far right, by time the signal reach them, it might not be strong enough for the reciever to detect it.
 
 
-- Other requirements:
 
-
-### Hidden node probelm
+### Hidden node problem
 - CSMA/CA suffers from this
 - Picture:
 ![CS3103-6-6.PNG]({{site.baseurl}}/img/CS3103-6-6.PNG)
-
-
 
 
 Station B and C are hidden from each other wrt A
@@ -88,18 +91,26 @@ Station B and C are hidden from each other wrt A
 1. Source Send a RTS to Dest
 2. Dest CTS (clear to send) to source to both side
 3. The other nodes would go into NAV time where they will not send anything
+4. Send the data
+5. Return back to 1
 
 > The other ndoes will know that something else is happening in the link even if the RTS didnt reach 
 
 
 ![CS3103-6-8.PNG]({{site.baseurl}}/img/CS3103-6-8.PNG)
 
-4. Send the data
-5. Return back to 1
+Sending the data and return back to 1:
+
 ![CS3103-6-9.PNG]({{site.baseurl}}/img/CS3103-6-9.PNG)
+
+
+** RTS/CTS **
 ![CS3103-6-10.PNG]({{site.baseurl}}/img/CS3103-6-10.PNG)
 
-#### interframe space types (IFS)
+Set a timer and wait, if did not receive ack before time out then wait with increment of k. If k > limit, abort.
+
+
+#### Interframe space types (IFS)
 There is different priority for each reply
 
 ![CS3103-6-11.PNG]({{site.baseurl}}/img/CS3103-6-11.PNG)
