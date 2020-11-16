@@ -795,7 +795,7 @@ Tit for tat:
 ### Simple database: De-centralised
 - Key value pairs
 
-### HashTable: De-centralised
+### HashTable: De-centralised 
 - More convenient to store and search on numerical representation of key
 - key = hash(original key)
 
