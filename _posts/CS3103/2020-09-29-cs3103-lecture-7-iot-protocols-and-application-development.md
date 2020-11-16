@@ -282,15 +282,40 @@ The core elements of MQTT are client, servers (brokers) , session , subsciption 
 
 ### Message format
 ![CS3103-1-28.PNG]({{site.baseurl}}/img/CS3103-1-28.PNG)
-
-Session options:
 ![CS3103-1-29.PNG]({{site.baseurl}}/img/CS3103-1-29.PNG)
 
 
-Publish:
 
+#### Retain
+- Retains the message for the next client that subscribes
+- The new client would recieve the previous message
+- RETAIN=1 in a PUBLISH message instructs the server to keep the message for this topic. When a new client subscribes to the topic, the server sends the retained message.
+![CS3103-1-30.PNG]({{site.baseurl}}/img/CS3103-1-30.PNG)
 
-Subsribe:
+#### Connect
+
+![CS3103-1-31.PNG]({{site.baseurl}}/img/CS3103-1-31.PNG)
+![CS3103-1-32.PNG]({{site.baseurl}}/img/CS3103-1-32.PNG)
+
+#### Conack
+
+![CS3103-1-33.PNG]({{site.baseurl}}/img/CS3103-1-33.PNG)
+
+#### Publish
+![CS3103-1-34.PNG]({{site.baseurl}}/img/CS3103-1-34.PNG)
+
+#### PubAck
+![CS3103-1-35.PNG]({{site.baseurl}}/img/CS3103-1-35.PNG)
+
+#### Subscribe
+![CS3103-1-36.PNG]({{site.baseurl}}/img/CS3103-1-36.PNG)
+
+#### SubAck
+![CS3103-1-37.PNG]({{site.baseurl}}/img/CS3103-1-37.PNG)
+
+#### Unsubscribe
+![CS3103-1-38.PNG]({{site.baseurl}}/img/CS3103-1-38.PNG)
+
 
 ### MQTT QoS
 - Provides typical delivery quality of services levels of message oriented middleware
