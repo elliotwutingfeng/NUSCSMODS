@@ -7,7 +7,8 @@ title: 'CS3103 - Lecture 3: IP - Options, ICMP'
 ![CS3103-3-1.PNG]({{site.baseurl}}/img/CS3103-3-1.PNG)
 
 > Question: Why is there no Payload length?
-> - total length - header length  can be use to figure out the payload length. The IP packet also might not alwyas be 20 bytes
+> - total length
+> - header length  can be use to figure out the payload length. The IP packet also might not alwyas be 20 bytes
 
 The bits are transmissted row by row
 - First transmit bits 0-7
@@ -29,29 +30,35 @@ The transmission shld be have a minimum length requirement so that we will be ab
 #### Big datagram
 ![CS3103-3-2.PNG]({{site.baseurl}}/img/CS3103-3-2.PNG)
 
-There is a need for maximum length requirement for ethernet due to avoiding corruption. Too big, if there is a corruption.. it will take v long to retransmit it.
+There is a need for maximum length requirement for ethernet due to avoiding corruption. Too big, if there is a corruption.. it will take very long to retransmit it.
 
-## IP fragementation
+## IP fragmentation
 
 ![CS3103-3-4.PNG]({{site.baseurl}}/img/CS3103-3-4.PNG)
 
-- Takes placde because of physical level limitation
-- occurs at router or original sending host
+- Takes place because of physical level limitation
+- Frag occurs at router or original sending host
 - Reassembled at destination host
 
 ### Segmentation and Fragmentation
 
+TCP: 
 ![CS3103-3-5.PNG]({{site.baseurl}}/img/CS3103-3-5.PNG)
 
-TCP: 
+
+- Call TCP Segmentation at TCP layer
 - Divides them into segment base on the link layer 
 - To avoid Fragmentation in the other layers
 
 > Avoid fragmentation because if one fragment is corrupted, the entire thing must be retransmitted
 
-![CS3103-3-6.PNG]({{site.baseurl}}/img/CS3103-3-6.PNG)
+
 
 UDP:
+![CS3103-3-6.PNG]({{site.baseurl}}/img/CS3103-3-6.PNG)
+
+
+- Call IP Fragmentation
 - There is no segmentation
 - There is a max size 
 - It goes to IP layer, and it will check the link layer to see if need to ip layer fragementation
@@ -63,7 +70,7 @@ UDP:
 
 #### Question
 1) If a packet has arrived with an M bit value of 2 and a fragmentation offset of 0. Is this first feag, last or middle?
-> Middle, tseen through offset  = 0
+> First, seen through offset  = 0
 
 2) A packet has arrived in which offset is 100, the value of Hlen is 5 and value of the total length field is 100. What is the number of first byte and last byte of the IP payload
 
@@ -136,6 +143,7 @@ The packet can go to many other router before going to the ip written in this li
 
 #### IP components
 ![CS3103-3-14.PNG]({{site.baseurl}}/img/CS3103-3-14.PNG)
+
 
 # ICMP (IPV4)
 - What if router cannot route to deliever datagram
@@ -212,8 +220,8 @@ ICMP Packet:
 #### Example
 ICMP error messages are use by router and host to tell a device that sent a datagram about problems
 
-1) What if datagram carring ICMP cause another error
-> Nothing happne, it wont be sent again
+1) What if datagram carring ICMP error messages cause another error
+> Nothing happens, it wont be sent again
 
 2) Do we need ICMP error messages for each fragment of a fragmented datagram that cause the error
 > Only for first
@@ -224,7 +232,7 @@ ICMP error messages are use by router and host to tell a device that sent a data
 4) ICMP error messages will not be for a datagram whose source address is not a single host, 0.0.0.0, 127.X.X.X , broadcast or multicast add. why?
 > If source is any of those, it not meaningful
 >
-> - Broadcast/multicast: Not meaningfukl
+> - Broadcast/multicast: Not meaningful
 > - 0.0.0.0 : for starting out
 
 ![CS3103-3-19.PNG]({{site.baseurl}}/img/CS3103-3-19.PNG)
@@ -244,22 +252,23 @@ ICMP error messages are use by router and host to tell a device that sent a data
 - Send back to the source
 
 
-- Source quench message: Informs the source that a datagram has been discarded due to congestion in router or the destination host
+
+- Source quench message: Informs the source that a datagram has been discarded due to **congestion in router or the destination host**
 - Source must slow down sending of datagrams until congestion is relieved
 - One message sent for each datagram discarded
 
 ##### Time exceeded:
 ![CS3103-3-21.PNG]({{site.baseurl}}/img/CS3103-3-21.PNG)
 
-- When every a router decremenets a datagram with a TTL value to zero, it discard the datagram and sesnds the time exceeded message to original source
+- When every a router decremenets a datagram with a **TTL value to zero**, it discard the datagram and sesnds the time exceeded message to original source
 - When final destination does not recieved all the frag in a set time, discards the received frag and sends the ttl exceed message
 
-> A host usually starts with a small routing table that is gradually updated and augmented. 
+> A host usually starts with a small routing table that is gradually updated and augmented. ICMP redirection can be use to update this. 
 
 ##### Redirction:
 ![CS3103-3-22.PNG]({{site.baseurl}}/img/CS3103-3-22.PNG)
 
-The first router normally recieves a packet from an interface and sends it in another interfacfe. If the recieves the same packet from the same interface it recently sents.. it will sent redirection "RM", the host will then update its table base on this infomation
+The first router normally recieves a packet from an interface and sends it in another interface. If the **recieves the same packet from the same interface it recently sents**.. it will sent redirection "RM", the host will then update its table base on this infomation
 
 
 ## Query
@@ -269,6 +278,8 @@ ICMP can also diagnose some network problems through query messages, a group of 
 
 
 ### ICMP query messages - Examples
+
+Can be used to synchronise two clocks in two machine if the exact one way time duration is known
 
 ##### Timestamps:
 ![CS3103-3-23.PNG]({{site.baseurl}}/img/CS3103-3-23.PNG)
@@ -292,14 +303,15 @@ One way trip time: Transmit to return
 
 > If the two clocks are not in synch, will the RTT be correct
 > 
-> - Yes, the differences will cancel out
+> - Yes, the differences will cancel out.
 
 
 Sequence number is needed in case there are multiple packets and we ned to know which response is to be mapped to which request.
 
 
 #### Echo Request and Echo reply message
-Echo request and echo reply messages can test the reachibilitiy of the host. This is usally done by invoke the ping command.
+Echo request and echo reply messages can test the **reachability of the host**. This is usally done by invoke the **ping** command.
+
 ![CS3103-3-25.PNG]({{site.baseurl}}/img/CS3103-3-25.PNG)
 
 #### Example
