@@ -354,12 +354,12 @@ This under assumption that the port that is send is not open, it will fail if th
 	- Datagram = 40bytes
     - 12 bytes data = seq no, time sent
     - Sends more then one to get avg
-- Causes router to generate "time exceeded" ICMP error
+- Causes router to generate "**time exceeded**" ICMP error
 - Increment TTL progressively until final destination is reach
 - Terminating:
-	- UDP port chosen is a non existence port
-    - Destination sends ICMP "Port unreachable" error
-- For each TTL value, 3 datagrams (probes) are sent
+	- UDP port chosen is a **non existence port**
+    - Destination sends ICMP "**Port unreachable**" error
+- For each TTL value, 3 datagrams (probes) are sent: To calculate avg RTT
 
 > Question: Some firewalls disable UDP messages, is there an alt method?
 >
@@ -368,7 +368,7 @@ This under assumption that the port that is send is not open, it will fail if th
 
 > Question : Is there any diff between route info shown by Traceroute and IP record route?
 >
-> - 
+> - Not really, depends on the settings use for ip record
 
 
 #### Extra topics (Activly weekling)
