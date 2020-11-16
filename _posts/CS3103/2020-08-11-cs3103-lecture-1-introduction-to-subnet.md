@@ -130,17 +130,38 @@ Within each subnet, the first and last of the block cannot be used as well.
 
 Thus we use supernetting such that the routing table can group the entire subnet as one
 
+# Classless addressing
+- Classful address deals with a few fix class of predic lengths
+
+
+Sol:
+- classless addressing deals with any prefix length of any size
+- Each subnet can potentially have variable length subnet mask
+- Another approach is through the use of NAT and private IP address
 
 # Private IP address
 - Not gloabbaly routable 
 - Available freely
 - Use: For private use within homes etc
 
+# Ip address networking
+- The first and last network address in the block are not to be use
+
+# Private IP address
+- Not routed global
+- Does not have to be unique among other private ip but need to be unqique among its own
+
+
+
 # NAT
 ![CS3103-1-9.PNG]({{site.baseurl}}/img/CS3103-1-9.PNG)
 
 To route the private ip address to the internet.
 The router will swap the source of the outgoing packet and swap the destination of the incoming packet.
+
+
+![CS3103-1-12.PNG]({{site.baseurl}}/img/CS3103-1-12.PNG)
+
 
 LAN manages the simple table, the table shows the WAN side address and LAN side address.
 
