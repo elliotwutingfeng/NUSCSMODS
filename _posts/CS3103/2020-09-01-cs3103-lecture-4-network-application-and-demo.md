@@ -11,13 +11,13 @@ title: 'CS3103 - Lecture 4:  Network Application and Demo'
 Properties of server:
 - Always on host
 - Uses ephemeral ports
-- Uses perm IP address
+- Uses permenament IP address
 - init communication
 - Waits to be contacted
 
 #### P2P
 - No always on server
-- Arbituary end systems directly communication and serve each other
+- Arbituary end systems directly communicate and serve each other
 	- Each host runs both server and client processes
 
 
@@ -32,16 +32,19 @@ Properties of server:
 
 
 #### Socket
-- Interface between application layer and transport layer
+- Interface between **application layer and transport layer**
 - OS controlled interface ("door") into which application process can both send and recieve messages
 
 Addressing:
 - Host addr + process identifier
 - IP add + Port number
+	- HTTP: 80
+    - SMTP: 25
+    - FTP: 21
 
 > TOOL
 > 
-> - Use `ifconfig` (ubutun) or `ipconfig` (windows) to see edit your laptops IP address
+> - Use `ifconfig` (ubuntu) or `ipconfig` (windows) to see edit your laptops IP address
 > - Use `cat /etc/services` to see all well known port numbers
 
 Socket: Endpoint for comm. A combination of host ip address and port numbers
@@ -54,11 +57,12 @@ TCP | UDP
 Reliable transport between sending and recieving process | Unreliable data transfer between sending and recieving process
 Flow control, sender wont overwhelm reciever | Does not provide reliabitly, flow control, congestion control, timing, throughout guarantee, security or connection setup
 Does not providfe timing, minimum throughtput gurantee, security | 
-Connection oreiented: Set up required between client and server processes |
+Connection oriented: Set up required between client and server processes |
+
 
 > Question: Why bother? Why is there a UDP
 >
-> - 
+> - Fast?
 
 
 #### Securing TCP
@@ -78,13 +82,18 @@ SSL:
 
 # HTTP
 - Use TCP service
-- Stateless
+- **Stateless**
 	- Server maintains no info about past client requests
     - If server/client crashes, their views of state may be inconsistent
     
 - Default port: 80
 ![CS3103-4-13.PNG]({{site.baseurl}}/img/CS3103-4-13.PNG)
 ![CS3103-4-14.PNG]({{site.baseurl}}/img/CS3103-4-14.PNG)
+
+> Protocols that handles state are complex
+>
+> - if server/client crashes, their views of “state” may be
+inconsistent, must be reconciled
 
 
 ##### Non Persistance 
@@ -103,13 +112,14 @@ Response time:
 
 ##### Persistance
 - Server leaves the TCP connection open after sending the response
-- Subsequent requests between the same client and server will use the same connection
-- WIthout pipelineing: One RTT for each object
+- Subsequent requests between the same client and server will **use the same connection**
+- Without pipelining: One RTT for each object
 - With pipelining: as little as One RTT for all referenced object
 - Default in HTTP 1.1
 
 ### Message format
-img
+![CS3103-1-14.PNG]({{site.baseurl}}/img/CS3103-1-14.PNG)
+
 #### Request and response status line
 
 
