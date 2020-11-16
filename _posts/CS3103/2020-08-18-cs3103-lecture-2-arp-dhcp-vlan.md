@@ -70,11 +70,13 @@ Arp cache contains address mapping for all host within a single LAN
 Host or router responds to ARP request that arrives from its connected networks for a host that is on another side of its connected networks
 
 ![CS3103-2-6.PNG]({{site.baseurl}}/img/CS3103-2-6.PNG)
-
+- Note how the return mac address is the router's
 
 > Question: When will you use proxy arp?
 > - When we are moving the packet to another subnet, we can use a router as a proxy arp. 
 > - It is also used as a short cut to connect two different networks without changing it.
+
+
 
 ## Things to know about ARP
 - What happens if an ARP request is made for a nonexisting host
@@ -85,8 +87,8 @@ Host or router responds to ARP request that arrives from its connected networks 
 
 ## Vulnerabilities of ARP
 1. ARP does not authenticate request or replies, it can be forged
-2. ARP is stateless: It can be sent without a request
-3. All nodes when recieves a IP address that already has an entry, it should update
+2. ARP is **stateless**: It can be sent without a ARP request
+3. All nodes when recieves a IP address that already has an entry, it should update its cache with the infomation of its source field
 
 > ARP Poisoning, the arp cache is tainted with bad pairings
 
