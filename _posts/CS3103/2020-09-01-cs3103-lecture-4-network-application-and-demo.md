@@ -783,17 +783,19 @@ Sending chunks: tit for tat
     - Newly chosen peer may join top 4
 
 Tit for tat:
+
 ![CS3103-1-25.PNG]({{site.baseurl}}/img/CS3103-1-25.PNG)
 
 
 ### Upload-Only mode
 - Once download is complete, a peer can only upload. The questions is, which nodes to upload to?
-- Policy: Upload to those with the best upload rate. The ensures that pieces get replicated fastern and new seeders are created fast
+- Policy: Upload to those with the **best upload rate**. The ensures that pieces **get replicated faster** and new seeders are created fast
 
 
-### Simple database: DRe-centralised
+### Simple database: De-centralised
+- Key value pairs
 
-### HashTable: De centralised
+### HashTable: De-centralised
 - More convenient to store and search on numerical representation of key
 - key = hash(original key)
 
