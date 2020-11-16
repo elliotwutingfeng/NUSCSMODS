@@ -297,7 +297,7 @@ The core elements of MQTT are client, servers (brokers) , session , subsciption 
 ![CS3103-1-31.PNG]({{site.baseurl}}/img/CS3103-1-31.PNG)
 ![CS3103-1-32.PNG]({{site.baseurl}}/img/CS3103-1-32.PNG)
 
-#### Conack
+#### Connack
 
 ![CS3103-1-33.PNG]({{site.baseurl}}/img/CS3103-1-33.PNG)
 
@@ -319,8 +319,10 @@ The core elements of MQTT are client, servers (brokers) , session , subsciption 
 
 ### MQTT QoS
 - Provides typical delivery quality of services levels of message oriented middleware
-- Even thou TCP/IP provides guaranteed data delivery, data loss can still occur if a TCP connection breaks down and messages are lost in transit 
+- Even thou TCP/IP provides guaranteed data delivery,**data loss can still occur** if a TCP connection breaks down and messages are lost in transit 
 - MQTT adds 3 QoS levels on top of TCP
+
+![CS3103-1-39.PNG]({{site.baseurl}}/img/CS3103-1-39.PNG)
 
 
 
