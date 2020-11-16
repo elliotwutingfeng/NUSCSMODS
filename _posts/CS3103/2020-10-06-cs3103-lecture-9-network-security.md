@@ -104,7 +104,7 @@ Sent only:
 Every node will get to know the LSA of other nodes
 
 - Recieving the LSA, the router will update its table
-- If **suppose new node is joinin**g: 
+- If **suppose new node is joining**: 
 	- New router says hello to its neighbours
     - The subsequent will sent hello and spread to all its router in its table and continous
 
@@ -174,12 +174,8 @@ Our network sending infomation to the router but the subnet cannot speak for its
 
 
 
-## OPSF Packets
-- Hello message
-	- Router IP address for that interface
-    - Subnet mask
-    - Hello interval
-    - List of neighbours whose hellos the sender has already heard
+## OPSF Packets types
+- Hello 
 - Database description
 - Link state request
 - Link state advertisment: Sending link state to the router
@@ -189,18 +185,27 @@ Our network sending infomation to the router but the subnet cannot speak for its
     - Summary link to AS boundary router
     - Extrernal link
 - Link state acknowledgement
-
+- OSPF uses IP directly
 > Hello messages and LSA are encapsulated in OSPF packets for transmission
 
 ![CS3103-8-15.PNG]({{site.baseurl}}/img/CS3103-8-15.PNG)
 
 
 # Database synchronisation
-- LSA Database initalisation when a new router is added to the segment
-	- DR send summary of its database of LSA to the new router - database descp pckts
-    - New router responds with a list of LSA that it does not have or that are outdated: Link state request pcks
-    - DR forwards the full LSA in the lsit to the new router: Link state update or advertisement pckts
-    
+- LSA Database initalisation when a **new router is added to the segment**
+	- DR send summary of its database of LSA to the new router - database description packets
+    - New router responds with a list of LSA that it does not have or that are outdated: Link state request packets
+    - DR forwards the full LSA in the list to the new router: Link state update or advertisement packets
+
+
+#### LSA
+- Router link: Sent by normal router
+- Network Link: DR or BDR
+
+Others:
+- Summary link to network: Prov info on router or networks outside the area
+- Summary link to AS boundary router: Flooded to all routers by ABR (Area border router)
+- External Link: Info about networks outsides the AS
 
 Router infomation maintained at Router
 - Router maintains much more infomation than a host system
