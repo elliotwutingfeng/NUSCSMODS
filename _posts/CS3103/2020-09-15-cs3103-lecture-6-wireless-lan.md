@@ -134,7 +134,7 @@ Values:
     - Takes precedence over normal contentin traffic (DIFS)
   
 
-## Exposed node porblem
+## Exposed node problem
 ![CS3103-6-12.PNG]({{site.baseurl}}/img/CS3103-6-12.PNG)
 
 1. A send RTS to B and C
@@ -144,10 +144,10 @@ Values:
 ![CS3103-6-14.PNG]({{site.baseurl}}/img/CS3103-6-14.PNG)
 
 
-Why cant C send data to D? C can send to D because the area is free but it will erronously think that it cannot send because of the recived RTS
+Why cant C send data to D? C can send to D because the area is free but it will erronously think that it cannot send because of the received RTS
 - Waste the channel capacity
 
-> What if C sends an RTS immediaately after timeout for CTS from B and no data in channel?
+> What if C sends an RTS immediately after timeout for CTS from B and no data in channel?
 > - C will send and it will collide with A's data
 > - From C point, it is getting CTF from D and recieving data from A.. 
 > - However, it will not affect A ability to send to B
@@ -173,7 +173,7 @@ Unfortunately, there is no good solution that can make C send Data to D while be
 	- DCF: Distributed coordination function
     	- Contention service (On top)
         - Includes that the access points and the nodes are equal
-    - PCF: POlling service
+    - PCF: Polling service
     	- Optinal access method for infrastructure network
         - Used for time sensitive transmission
 
@@ -185,16 +185,16 @@ PCF is implemented on top of DCF
 - Provides a centralised contention free polling access method 
 - PC (point coordinator) module at AP performs polling
 	- Stations request AP register them on polling list
-    - AP regularly polls stations on polling list and delivers traffix
+    - AP regularly polls stations on polling list and delivers traffic
 - Both PCF and DCF operate simultaneously
 
 How does PC (AP) gets access to media
 - If 10 nodes are registered for polling and refrain from contention
 - 4 nodes are not registered and operate in DCF mode 
-- Hence AP will be contending with these 4 ndoes
+- Hence AP will be contending with these 4 nodes
 
 Another IFS value is introduce PIFS. It is shorter than DIFS. AP use this to gain access to media
-> How?
+> How PIFS helps AP get access to media?
 > - It is shorter
 
 
@@ -213,17 +213,17 @@ AP will use PIFS sometimes and then use DIFS sometimes. AP will do this repeated
 
 ## Basic service set (BSS) or cell
 - Building Block of a wireless lan
-- A set of station cotnrolled by a **single coordiantion function**, the logical function that determines when a station can transmit or recieve
-- A BSS without an AP is called an ad hoc netowrk or IBSS (independent Basic service set)
-- A BSS with an AP is called infrastructure network
+- A set of station controlled by a **single coordiantion function**, the logical function that determines when a station can transmit or recieve
+- A BSS without an AP is called an **ad hoc netowrk or IBSS (independent Basic service set)**
+- A BSS with an AP is called **infrastructure network**
 
 ![CS3103-6-18.PNG]({{site.baseurl}}/img/CS3103-6-18.PNG)
 
 
 ## Extended service set (ESS)
-- A set of one or more basic service set interconnected by a distributed system(DS)
+- A set of **one or more basic service set interconnected by a distributed system(DS)**
 - Traffic always flow via Access point
-- DIameter of the cell is double the coverage distance between two wireless stations
+- Diameter of the cell is double the coverage distance between two wireless stations
 
 > Why not a single big bss
 > 
@@ -233,7 +233,7 @@ A single BSS with access point can be called a ESS
 
 ### DS
 - A system to interconnect a set of basic service sets
-	- Intergrated (SIngle AP), Wired, Wireless
+	- Intergrated (Single AP), Wired, Wireless
 Wired with the cost is to be low, wireless is quite good also.
 
 ![CS3103-6-19.PNG]({{site.baseurl}}/img/CS3103-6-19.PNG)
@@ -251,7 +251,7 @@ Wired with the cost is to be low, wireless is quite good also.
 - 6 octets long (mac address format)
 - one bss has one BSSID
 - Value of **BSSID is the same as the MAC address of the radion in the access poinnt**
-- IN an IBSS, the BSSID is a locally adminsitered MAC address generated from a 48 bit random number
+- IN an IBSS, the BSSID is a locally administered MAC address generated from a **48 bit random number**
 
 ## Frame formats
 In normal frames, we only have source and destination but for this we have 4
@@ -262,7 +262,14 @@ In normal frames, we only have source and destination but for this we have 4
 ![CS3103-6-21.PNG]({{site.baseurl}}/img/CS3103-6-21.PNG)
 
 > What is the purpose of the beacons?
+>
+> - To announce the existance of that wireless
+
+
 > When reassociation is done and how?
+>
+> - Move to another AP
+> - BSS to BSS within an ESS
 
 #### Why 4 adddresses
 
