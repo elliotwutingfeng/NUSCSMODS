@@ -577,6 +577,7 @@ Remember that in arpa, it is written in reverse order (Database):
 
 
 ## Format of DNS replies
+![CS3103-1-17.PNG]({{site.baseurl}}/img/CS3103-1-17.PNG)
 
 ## Dynamic DNS
 There might be changes in DNS when
