@@ -96,11 +96,13 @@ Host or router responds to ARP request that arrives from its connected networks 
 # DHCP - Dynamic Host Configuration Protocol
 
 Allows allocation of IP address from a pool
-   - Static: For routerm server
+   - Static: For router, servers
    - Auto: indefinite time
    - Dynamic: Specific duration, loans IP addresses for a limited time
 
 It is a UDP base application
+- Server waits on port 67
+- Communicates on port 68
 
 #### ARP vs DHCP
 ![CS3103-2-7.PNG]({{site.baseurl}}/img/CS3103-2-7.PNG)
@@ -119,19 +121,19 @@ It is a UDP base application
 - DHCP server will select some ip address to give to the client
 
 > Question: What is the use of the ping probe
-	- To check if the IP address is being used by other nodes
+> - To check if the IP address is being used by other nodes
 
 ### DHCPOFFER
 ![CS3103-2-9.PNG]({{site.baseurl}}/img/CS3103-2-9.PNG)
 - Broadcast: Nodes cannot participate if it does not have its IP layer configured (ipaddresa)
 - Ip address
-- How long use
+- How long use the client can use the address
 
 ### DHCPREQUEST
 ![CS3103-2-10.PNG]({{site.baseurl}}/img/CS3103-2-10.PNG)
 
 > Question: Why is the request a broadcast?
-	- To let the other DHCP servers know that the IP address is taken
+> - To let the other DHCP servers know that the IP address is taken
 
 ### DHCPACK
 ![CS3103-2-11.PNG]({{site.baseurl}}/img/CS3103-2-11.PNG)
@@ -166,7 +168,7 @@ It is a UDP base application
 3. DNS server
 
 > DHCP Discover and DCP request are broadcasted only on LAN/subnet. Does this mean we need one DHCP server for every IP subnet?
-	- No, we use relay
+> - No, we use relay
 
 ## DHCP through Relay agent
 
