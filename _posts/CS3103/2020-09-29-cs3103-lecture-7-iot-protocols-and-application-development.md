@@ -281,8 +281,10 @@ The core elements of MQTT are client, servers (brokers) , session , subsciption 
 ![CS3103-1-27.PNG]({{site.baseurl}}/img/CS3103-1-27.PNG)
 
 ### Message format
+![CS3103-1-28.PNG]({{site.baseurl}}/img/CS3103-1-28.PNG)
 
 Session options:
+![CS3103-1-29.PNG]({{site.baseurl}}/img/CS3103-1-29.PNG)
 
 
 Publish:
