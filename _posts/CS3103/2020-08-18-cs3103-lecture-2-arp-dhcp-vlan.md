@@ -183,12 +183,13 @@ It is a UDP base application
 - DHCP server recognises this request is coming from router and not client
 	- Sends unicast reply to router
     - router replies to client
+    
 ### Non-router
 A relay agent can also be other nodes other than a router
 
 ![CS3103-2-16.PNG]({{site.baseurl}}/img/CS3103-2-16.PNG)
 
-    
+
 ## Implementing multiple DHCP servers
 ![CS3103-2-15.PNG]({{site.baseurl}}/img/CS3103-2-15.PNG)
 
@@ -201,15 +202,22 @@ A relay agent can also be other nodes other than a router
 
 - Hop count: Start from 0
 - flags: Indicating broadcast
+- Seconds: Number seconds since the client start to boot
 - Gateway Ip address: for relay agent to put its ip address
 - Field OP: Specifies if its request or reply
 - Htype and Hlen: Type of network hardware (ie ethernet) 
 
 
+- The client fill in much infomation and leave the rest with 0
+
+
 > Question: Why are there fields for client IP and your IP, when is it used?
-	- Client IP: When client renew its own ipaddress
-    - Server IP address: renewing, gateway might know the ipaddress
-    - Your IP: Filled by the server
+> - Client IP: When client renew its own ipaddress
+> - Server IP address: renewing, gateway might know the ipaddress
+> - Your IP: Filled by the server
+
+
+
 ### Flag
 - Unicast or broadcast: When the client cannot accept unicast (When it is not configured yet), it can ask the server to broadcast reply by setting this bit to 1
 - The remaining bit is 0
@@ -226,10 +234,10 @@ A relay agent can also be other nodes other than a router
 
 ![CS3103-2-20.PNG]({{site.baseurl}}/img/CS3103-2-20.PNG)
 
-## DHCP -server design
-- Stores a key value pai for each client
+## DHCP - server design
+- Stores a key value pair for each client
 - Key use to identify a client
-- Default key = IP submet number, hardware - address
+- Default key = (IP subnet number, hardware - address)
 
 - Address conflict avoidance
 	- Servers choose the least recently used address
@@ -239,21 +247,28 @@ A relay agent can also be other nodes other than a router
  ![CS3103-2-19.PNG]({{site.baseurl}}/img/CS3103-2-19.PNG)
 
 
-- Time 
+- Time value
 	- Time represents in seconds
     - Time express in relation to clients clock
     - Client lease expiration time = time when client sent DHCPREQUEST + Least duration in DHCPAck
     
-## DHCP - Client Design
+## DHCP - Client Design (Transition diagram)
 ![CS3103-2-21.PNG]({{site.baseurl}}/img/CS3103-2-21.PNG)
 
+Timer Values:
+- Renewal timer: PREREQUEST
+- Rebinding timer: PREREQUEST
+- Expiration timer
+
+
+
 > Why use DHCP? WHy not use MAC since its unique
-	- IP is hierieical
-    - Routing table would be huge
-    - MAC is manufacturer dependent, hence no grouping for routing
+> - IP is hierieical
+> - Routing table would be huge
+> - MAC is manufacturer dependent, hence no grouping for routing
 
 > What is DHCP FORCERENEW? (sent by server)
-	- RFC 3203
+> - RFC 3203
 
 # VLAN
 
