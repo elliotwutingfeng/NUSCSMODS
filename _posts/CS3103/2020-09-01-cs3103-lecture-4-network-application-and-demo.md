@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: 'CS3103 - Lecture 4:  IP Options and ICMP'
+title: 'CS3103 - Lecture 4:  Network Application and Demo'
 ---
 # Network application
 - Client to server
