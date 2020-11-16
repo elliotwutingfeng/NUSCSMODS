@@ -121,21 +121,22 @@ Response time:
 ![CS3103-1-14.PNG]({{site.baseurl}}/img/CS3103-1-14.PNG)
 
 #### Request and response status line
-
+![CS3103-1-15.PNG]({{site.baseurl}}/img/CS3103-1-15.PNG)
 
 ### User state management: Cookies
 
 ![CS3103-4-15.PNG]({{site.baseurl}}/img/CS3103-4-15.PNG)
 
 
-- HTTP is stateless
+- **HTTP Server** is stateless
 - Use cookie to manage user identity
-- Components:
+- Four Components:
 	- HTTP response header (By web server upon init request from client)
     - HTTP Response header (Every subsequent request by client)
     - Cookie file is maintain by the browser
     - Back end database at website
     
+![CS3103-1-16.PNG]({{site.baseurl}}/img/CS3103-1-16.PNG)
     
 ### Web caches
 The goal is to satisfy client requests without involving origin server. Improve response time and reduce traffic
