@@ -209,6 +209,7 @@ Others:
 
 Router infomation maintained at Router
 - Router maintains much more infomation than a host system
+- Network mask is stored as part of the infomation
 
 ![CS3103-8-16.PNG]({{site.baseurl}}/img/CS3103-8-16.PNG)
 
