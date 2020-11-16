@@ -581,6 +581,7 @@ Remember that in arpa, it is written in reverse order (Database):
 ![CS3103-1-19.PNG]({{site.baseurl}}/img/CS3103-1-19.PNG)
 ![CS3103-1-18.PNG]({{site.baseurl}}/img/CS3103-1-18.PNG)
 ![CS3103-1-20.PNG]({{site.baseurl}}/img/CS3103-1-20.PNG)
+![CS3103-1-21.PNG]({{site.baseurl}}/img/CS3103-1-21.PNG)
 
 ## Dynamic DNS
 There might be changes in DNS when
