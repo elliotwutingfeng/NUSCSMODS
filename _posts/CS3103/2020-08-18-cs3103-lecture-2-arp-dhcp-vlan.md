@@ -282,7 +282,7 @@ Timer Values:
 
 > What would happen if the company want to increase the number of host?
 
-If lets say we increase, we need to make more ipaddress for the new host. It (IPADDRESS blocks) wont be continous and very hard to manage
+If lets say we increase, we need to make **more** ipaddress for the new hosts. If (IPADDRESS blocks) wont be continous and very hard to manage
 
 This archietecture is also very static, thus when someone wants to change to another subnet (change office location), it is very hard to change to the other subnet
 
@@ -311,7 +311,7 @@ LAN/SUBNET:
 - Traffic between LAN is routed using a router
 
 VLAN:
-- Broadcasr domain created by one or more switches
+- Broadcast domain created by one or more switches
 - Group based on logical function, department or application
 - 20 percent to 40 percent of work force mvoes every year
 - Traffic can be routed between VLAN with a router
