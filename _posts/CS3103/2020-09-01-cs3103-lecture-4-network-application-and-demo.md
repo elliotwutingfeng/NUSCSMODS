@@ -807,3 +807,6 @@ Tit for tat:
     - To resolve query, small number of messages exchanged among peer
 - Each peer only knows about a small number of other peers
 - Robust to peer coming and going (churn)
+
+# Slide
+<iframe src="https://drive.google.com/file/d/1iU_UINEAgdYQ04eNWB7Yc5j1xrSDv1bE/preview" width="640" height="480"></iframe>
