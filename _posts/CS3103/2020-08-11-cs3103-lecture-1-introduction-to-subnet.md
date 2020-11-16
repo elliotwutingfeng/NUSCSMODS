@@ -150,6 +150,7 @@ Sol:
 # Private IP address
 - Not routed global
 - Does not have to be unique among other private ip but need to be unqique among its own
+![CS3103-1-13.PNG]({{site.baseurl}}/img/CS3103-1-13.PNG)
 
 
 
