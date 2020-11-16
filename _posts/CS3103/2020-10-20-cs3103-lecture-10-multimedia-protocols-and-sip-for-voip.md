@@ -111,11 +111,11 @@ Follows http
     
 ![CS3103-10-9.PNG]({{site.baseurl}}/img/CS3103-10-9.PNG)
     
-Components:
+SIP Components:
 - Client: Make request
 - Servers: Accepts request
 
-Server types:-
+Server types:
 - Redirect server
 - Proxy server
 - Registrar server
@@ -127,15 +127,9 @@ Server types:-
 
 - Which is the audio video code
 - What is the codac
-## MEthod messages
-![CS3103-10-12.PNG]({{site.baseurl}}/img/CS3103-10-12.PNG)
 
-- Invite: Request a session
-- ACK: Final response to the invite
-- Option: What kind of codac
-- Cancel
-- Bye
-- Register
+## Method messages
+![CS3103-10-12.PNG]({{site.baseurl}}/img/CS3103-10-12.PNG)
 
 ## Responses
 ![CS3103-10-13.PNG]({{site.baseurl}}/img/CS3103-10-13.PNG)
@@ -217,7 +211,7 @@ Registra is a service that tells the infomatin of the user using the database
 > This is for crossing to another protocol, but the router needs to have this installed already
 
 # SDP: Session description protocol
-- Indetended for describing multimedia session for the purpose of session announcement session ivnitation and other forms of multimedia session initiation
+- Intended for describing multimedia session for the purpose of session announcement session ivnitation and other forms of multimedia session initiation
 
 Includes:
 - Types of media
