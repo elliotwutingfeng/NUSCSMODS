@@ -150,3 +150,6 @@ Connection close:
 
 > Authenticated encryption
 - Use hash , symmetric key and pkc
+
+# Slide
+<iframe src="https://drive.google.com/file/d/1eqJWoFMpqRTyz5iJMkCDOjubkjnBDOLq/preview" width="640" height="480"></iframe>
