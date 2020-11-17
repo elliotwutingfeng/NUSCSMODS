@@ -227,7 +227,7 @@ Openflow is a **communication interface** between the control and data plane of 
 - Openflow switch componenets: Flow table
 - A packet through open flow switch
 
-# Virtualisation
+# Network Virtualisation
 - Application of SDN
 - Virtualisation
 	- Abstraction between physical resource and logical representation
@@ -237,10 +237,10 @@ Openflow is a **communication interface** between the control and data plane of 
     - Network
 
 ## Server virtualisation
-- Partitioning of the resource of a single physical machine into multiple execution envriponement each pf whoich can host a different server
+- Partitioning of the resource of a **single physical machine into multiple execution environment** each of which can host a different server
 
 ## Network Virtualisation
-- ALlows heterogenous virtual networks that are isolated indepednently managed to coesit over shared physical netowkr infrastructure
-	- Making a physical network appear as a multiple logical ones (Network slicing)
+- ALlows heterogenous virtual networks that are isolated indepednently managed to coexist over shared physical network infrastructure
+	- **Making a physical network appear as a multiple logical ones (Network slicing)**
     
 ![CS3103-11-13.PNG]({{site.baseurl}}/img/CS3103-11-13.PNG)
