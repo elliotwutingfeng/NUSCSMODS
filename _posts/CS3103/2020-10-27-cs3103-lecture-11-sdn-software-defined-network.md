@@ -178,7 +178,7 @@ Programmabilitiy:
     - Rapid innovation and fast evolution
     - Cheap and better networks
 - Makes network management much easier
-	- Mamagement goals are express as policies
+	- Management goals are express as policies
     - New control services for network providers
     - Detailed configuration are done by controller
 
@@ -189,8 +189,8 @@ Programmabilitiy:
 - Takes adv routing tables in ethernet switchs and routers (l2/l3)
 
 SDN Is not openflow
-- SDN is a concept of the physical seperation of the netwokr control plane from the forwarding plane and where a control plane controls several devices
-- OpenFlow is communication interfaces btween the control and dataplane of an SDN architecture
+- SDN is a concept of the physical seperation of the network control plane from the forwarding plane and where a control plane controls several devices
+- OpenFlow is **communication interfaces** btween the control and dataplane of an SDN architecture
 	- Allows direct access to and manipulation of the forwarding plane of the network devices such as switches and routers: Both physiucal and virtual
     - It is liike a protocol use in switching devices and controllers interfaces
     
@@ -223,12 +223,12 @@ SDN Is not openflow
 ![2105_10_1.PNG]({{site.baseurl}}/img/2105_10_1.PNG)
 
 
-Openflow is a communicaiton interface between the control adn data plane of an SDN acrhitecture
+Openflow is a **communication interface** between the control and data plane of an SDN acrhitecture
 - Openflow switch componenets: Flow table
--A packet trhough open flow switch
+- A packet through open flow switch
 
 # Virtualisation
-- APplication of SDN
+- Application of SDN
 - Virtualisation
 	- Abstraction between physical resource and logical representation
 - Can be implemented in various layers of computer system or network
