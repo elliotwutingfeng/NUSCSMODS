@@ -28,22 +28,22 @@ Openflow is communication interface/protocol between the control and data plane 
     - Independent, compatible (Innovation at each layer)
 - Only for network edges
 
-## Current Internet: Complicate router at teh core
+## Current Internet: Complicate router at the core
 - Router can be partition into control and data plane
 - Management plane: Configuration
-- COntrol plane: Devision: Run routing algo/protocols (RIP, OSPF, BGP)
+- Control plane: Decisions: Run routing algo/protocols (RIP, OSPF, BGP)
 - Dataplane: Forwarding- forwarding datagrams from incoming to outgoing link
 
 ![CS3103-11-2.PNG]({{site.baseurl}}/img/CS3103-11-2.PNG)
 
 ### Dataplane
-= Processing and delivery of packets
+- Processing and delivery of packets
 - Based on state in routers and endpoint
 - E,g IP, TCP, Ethernet etc
 - Fast timescles per packet
 
 ### Control plane
-= Estanlishing the state in rrouters
+- Estanlishing the state in rrouters
 - Determines how and where the packets are forwarded
 - Routing, traffic engineering, firewall state
 - Slow time scales(Per control event)
@@ -59,8 +59,8 @@ Application are like
 - Access control
 - VPN
 
-- An industry with a mainframe mentaility
-- Consequence: Buggy software in the equipment
+- An industry with a **mainframe mentaility**
+- Consequence: **Buggy software** in the equipment
 	- Cascading failures, vulnerabilities, etc
 
 ### Operating a network is expensive
@@ -70,7 +70,7 @@ Application are like
 ### Demand and complexity are increasing
 - Major ISPs: Upgrade their internal network infrastructure (router and switches) every 18 months to keep up with the current demands for network
 
-### other problems
+### Other problems
 - Close equipment 
 	- Software bundle with hardware
     - Vendor-specific interfaces
@@ -80,7 +80,7 @@ Application are like
 	- Equipment vendor write the code
     - Long delay to introduce new features
     
-> Even if you standardised something, every vendor must agree to it. This would take some time because most vendors would not change it as they need to retest everything. Once somethig is deploy, it is very hard to change the software
+> Even if you standardised something, every vendor must agree to it. This would take some time because most vendors would not change it as they need to retest everything. Once something is deploy, it is very hard to change the software
 
 # Networking as a discipline
 - Other fields in the system: OS, DB, DS
@@ -95,15 +95,15 @@ Application are like
 > A failure from an academic point of view
 
 # Why does networking lag behind
-- Use to simple: Ethernet, IP, TCP
-- New control requirements led to great complexitu
+- **Use to simple**: Ethernet, IP, TCP
+- New control requirements led to great complexity
 	- Isolation: Vlan, acls
     - Traffic engineering: MPLs
     - Packet processing: Firewall, NATs
     - Payload analysos: Deep packet inspection
 - Mechanisms designed and deployed independently
 	- Complicated control plane design, primitive functionality
-    - Starl contrast to the elegantly modular "data plane"
+    - Stark contrast to the elegantly modular "data plane"
 - Ability to master complexity
 	- Extracting simplicity is needed to build a discipline
 - Getting system to work
@@ -114,8 +114,8 @@ Application are like
 
 > Extracting simplicity builds intellectual foundations which is **Necessary for creating a discipline**, this is what networking lags behind
 
-## EXample: Programming
-- Mahine languages: No abstraction
+## Example: Programming
+- Machine languages: No abstraction
 	- Mastering complexity is needed
 - Higher level languages: OS and other abstractions
 	- File system
@@ -128,7 +128,7 @@ Application are like
 > Abstraction key to extracting simplicity
 
 # The power of abstraction
-- Layer only deal with data pplane
+- Layer only deal with data plane
 	- Processing the delivery of packet
     - Based on state in router and endpoints
     - IP, TCP, Ethernet
@@ -149,14 +149,14 @@ Traditional Network Router in Summary
 Imagine if network is:
 ![CS3103-11-5.PNG]({{site.baseurl}}/img/CS3103-11-5.PNG)
 
-- We juyst need to change the centralised control instead of changing every single one
+- We just need to change the centralised control instead of changing every single one
 
 
 ### Benefits of seperation
 - Independent evolution and development
 	- The software control of the network can evolve independently of the hardware
-- COntrol from high levle softrware program
-	- COntrol behavior using higer order programs
+- Control from high level software program
+	- COntrol behavior using higher order programs
     - Debug/check behavior more easily
 
 ### Benefits of centralisation
@@ -244,5 +244,3 @@ Openflow is a communicaiton interface between the control adn data plane of an S
 	- Making a physical network appear as a multiple logical ones (Network slicing)
     
 ![CS3103-11-13.PNG]({{site.baseurl}}/img/CS3103-11-13.PNG)
-
-
