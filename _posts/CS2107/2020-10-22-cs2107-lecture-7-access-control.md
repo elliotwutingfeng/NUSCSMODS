@@ -108,6 +108,9 @@ Both methods:
 - Need intermediate control
 
 ### Intermediate control: Group
+![CS2107-8-16.PNG]({{site.baseurl}}/img/CS2107-8-16.PNG)
+
+
 In UNIX file permission, the ACL specifies the rights for the following user classes:
 	- User (owner)
     - Group (The owner's group)
