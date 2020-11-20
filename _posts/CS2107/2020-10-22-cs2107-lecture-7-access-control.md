@@ -66,6 +66,7 @@ Computer system:
 - Principals vs Subjects
 	- Principal: the human users
     - Subject: The entities in the system that operates on behalf of the princpial, e.g process, request
+    - Reference monitor: Grants access to the system
 - Access to object can be classified to the following:
 	- Observe:	e.g reading a file
     - Alter: e.g writing a file, deleting a file, changing properties
