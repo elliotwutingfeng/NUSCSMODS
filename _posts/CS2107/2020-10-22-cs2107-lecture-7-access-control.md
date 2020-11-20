@@ -332,3 +332,6 @@ Permission of the executable if `s` instead of `x`, then the invoke process will
     - Saved UID: a Temp container and is useful for a process running with elevated privileges to drop privilege temporarily
 - Process removes its priviledge user ID from its effective UID but stores it in its saved UID
 - Later the process may restore the priviledge by restoring the saved priviledge UID into its effective UID
+
+# Slides
+<iframe src="https://drive.google.com/file/d/1_I5F0qExic4CgeuMfn6trYfeeopmXK7D/preview" width="640" height="480"></iframe>
