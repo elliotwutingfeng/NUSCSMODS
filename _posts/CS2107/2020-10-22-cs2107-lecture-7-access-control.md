@@ -108,8 +108,6 @@ Both methods:
 - Need intermediate control
 
 ### Intermediate control: Group
-![CS2107-8-16.PNG]({{site.baseurl}}/img/CS2107-8-16.PNG)
-
 
 In UNIX file permission, the ACL specifies the rights for the following user classes:
 	- User (owner)
@@ -206,6 +204,7 @@ Main purposes of UIDs and GIDs
 
 ## Files
 ### FIle and file system permission
+![CS2107-8-16.PNG]({{site.baseurl}}/img/CS2107-8-16.PNG)
 #### Changing the file permission bits
 ![CS2107-8-9.PNG]({{site.baseurl}}/img/CS2107-8-9.PNG)
 
