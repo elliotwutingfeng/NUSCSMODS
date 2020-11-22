@@ -59,6 +59,8 @@ Serious implication:
 
 
 ## Control flow
+![CS2107-8-17.PNG]({{site.baseurl}}/img/CS2107-8-17.PNG)
+
 - The program counter (Instruction pointer):
 	- A register (ie small & fast memory within the processor) that stored the address of the next instruction
 - After an instruction is completed, the processor fetches the next instruction from the address stored in the program counter
@@ -75,10 +77,10 @@ Serious implication:
 	- Can be called in many program location
 
 > How does the program knows where it should continue after it finished?
-> - The location is stored somewhere
+> - The location is stored on the call stack
 
 > Where are the function's arguments and local variable stored?
-> - On the stack
+> - On the call stack
 
 ### Call stack
 - Call stack: A data structure in the memroy (Not in a sep hardware) that stores important infomation of a running processes
