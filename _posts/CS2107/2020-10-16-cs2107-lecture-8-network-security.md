@@ -171,7 +171,9 @@ The victim is overwhelm with echo reply from the entire network, the attacker ta
 # Userful network security tools
 
 - Wireshark
+	- Sniff packets
 - Nmap (port scanner)
+	- Can scan for vulnerabilitiies
 
 
 # Protection: Securing the communication channel using cryptography
