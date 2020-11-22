@@ -207,10 +207,13 @@ E.g: What happens if attacker resides at layer 1 and there is a secuirty protcol
 ## Protocols
 
 ### SSL/TLS
-- Sits on top of transport layer
+
+![CS2107-7-9.PNG]({{site.baseurl}}/img/CS2107-7-9.PNG)
+
+- Sits on top of **transport layer**
 - When application wants to send data to the other endpoint, it first pass the data and the destination IP address to SSL/TLS
 - TLS/SSL protects the data using encruption (Confidentiality) and MAC (AUthenticity) and then instructs the transport layer to send the protected data
-- End to end encryption is performed
+- **End to end encryption** is performed
 
 Note: HTTPS employs ssl/tls
 
@@ -258,10 +261,11 @@ Protections:
 ![CS2107-7-7.PNG]({{site.baseurl}}/img/CS2107-7-7.PNG)
 
 
-At the WPA layer:
+If the attacker is at the physicl layer:
 > Can the attacker learn
 > - Report: No
-> - Alice visiting luminus
+>
+> Alice visiting luminus? No
 > - Mac (Not clear)
 
 ### IPsec
@@ -292,7 +296,6 @@ Definition:
 - DMZ (demilitarized zone)
 	- Small subnetwork
     - Exposes org external service to untrusted internet
-## Setting
 
 ## Design
 - Enforce a set of rules 
