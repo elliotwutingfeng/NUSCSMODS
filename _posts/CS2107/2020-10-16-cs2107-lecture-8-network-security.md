@@ -23,6 +23,17 @@ title: 'CS2107 - Lecture 8: Network Security'
 	- Encapsulation of upper layer PDU
 ![CS2107-7-2.PNG]({{site.baseurl}}/img/CS2107-7-2.PNG)
 
+Devices used in each layer are…
+
+- Physical layer or below : Hubs, Repeaters, Cables, Fibers, Wireless..
+- Data-link layer: Bridges, Modems, Network cards, 2-layer switches.
+- Network layer: Routers, Brouters, 3-layer switches.
+- Transport layer: Gateways, Firewalls.
+- Session layer: Gateways, Firewalls, PC’s.
+- Presentation layer : Gateways, Firewalls, PC’s.
+- Application layer: Gateways,Firewalls, all end devices like PC’s, Phones, Servers..
+
+
 ## Security weakness
 - Original network design does not account for intentional attacks
 - Possible threats:
