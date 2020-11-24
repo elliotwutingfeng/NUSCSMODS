@@ -15,7 +15,7 @@ Password is weak authentication: Any eavesdropper can get the password and repla
 ## SKC Bashed Challenge response
 Suppose Alice and Bob have a shared secret key k, and both of them agree on an encryption scheme say AES
 
-1. ALice sends Bob a hello message
+1. Alice sends Bob a hello message
 2. (Challenge) Bob randomly picks m and send to Alice:
 	y = Ek(m)
 3. (Response) ALice decrypt y to get m and then sends m to Bob
@@ -24,20 +24,20 @@ Suppose Alice and Bob have a shared secret key k, and both of them agree on an e
 
 - Even if Eve can obtain the communication between Alice and Bob, he cant get the secret key k
 - Eve cannot replay the response either: challenge m is randomly chosen and likely to be different in the next authentication session
-- The protocol only authenticates alice: Unilateral authentication
-- There are protocols to verify both parties: Mutual authentication
+- The protocol **only** authenticates alice: **Unilateral authentication**
+- There are protocols to verify both parties: **Mutual authentication**
 
 > What is freshness in the context of authentication protocol
 
 Using PKC:
-1. ALice sends Bob a hello message
-2. (Challenge) Bob choose random number r and send to Alice:
+1. Alice sends Bob a hello message
+2. (Challenge) Bob choose **random number r** and send to Alice:
 	 "ALice, here is your challenge, r"
 3. (Response) ALice use her private key to sign r and sends to bob: Sign(r), Alice's certificate
 4. Bob verifies Alice's certificate, extracts Alice's public key from the certificate then verifies that the signature is correct
 
-- Eve cant know nor derive Alice private key and replay the response because the challenge r is likely to be differtent
-- The value r is also known as cryptographic nonce
+- Eve cant know nor derive Alice private key and replay the response because the challenge r is likely to be different
+- The value r is also known as **cryptographic nonce**
 
 > The shown protocol have omitted many details, designing a secure authentication protocol is not easy
 
@@ -48,20 +48,23 @@ Using PKC:
 - After Bob is convinced that he is communicating with ALice, Mallory interrupts and takes over the channel whilst pretending to be Alice
 
 
-- Strong authentication: Assumes Mallory is unable to interrupt the session
+- Strong authentication: Assumes Mallory is **unable** to interrupt the session
 - For applications whereby Mallory can interrupt the session, we thus need something more
-- The outcome of the authentication process must be the new secret k (Session key) establisedd by Alice and Bob
+- The outcome of the authentication process must be the new secret k (Session key) established by Alice and Bob
 
 - The process of establishing a secret between Alice and Bob is called **key exchange, key agreement, key establishment**
-- Subsequent communication between Alice and Bob must be secure using the session key
+- Subsequent communication between Alice and Bob must be secure using the session key which is established by alice and bob
 
 
 
 # Key exchange and authenticated key exchange
 
-Using a key exchange protocol such that eve is unable to extract any info of the established key
+Using a key exchange protocol such that**eve is unable to extract any info of the established key**
+- Cipher
+- MAC
+> Consider only Eve who can sniff and not mallory who can modify the communication
 
-## PKC based Unautheticated Key exchange
+## PKC based Unauthenticated Key exchange
 
 1. Alice generates a pair of private and public key
 2. Alice sends the public key ke to bob
@@ -70,10 +73,11 @@ Using a key exchange protocol such that eve is unable to extract any info of the
     - Encrypt k using ke
     - Send ciphertext c to Alice
 4. Alice use her private key kd to decrupt and obtain k
+
 ![CS2107-6-2.PNG]({{site.baseurl}}/img/CS2107-6-2.PNG)
 
 
-## Basic/Unauthenticated DIffie hellman Key Exchange
+## Basic/Unauthenticated Diffie-hellman Key Exchange
 Assunming Bob and Alice have agreed on two publicly known parameters: A generator g and a large prime p 
 
 ![CS2107-6-3.PNG]({{site.baseurl}}/img/CS2107-6-3.PNG)
@@ -84,27 +88,28 @@ Assunming Bob and Alice have agreed on two publicly known parameters: A generato
 ![CS2107-6-6.PNG]({{site.baseurl}}/img/CS2107-6-6.PNG)
 
 
-### Is Basic/Unautenticated DH key Exchange secure
+### Is Basic/Unauthenticated DH key Exchange secure
 
 ![CS2107-6-7.PNG]({{site.baseurl}}/img/CS2107-6-7.PNG)
 
-DH does not achieve entity authentication
+- Mallory can just pretend to be Bob to Alice and Alice to Bob
+- Mallory becomes MitM
 
 With Mallory:
 
-- ALice mistakes Mallory for Bob
+- Alice mistakes Mallory for Bob
 - Since Communication from Alice is encrypted using Ka, Mallory can decrypt it using Ka and renecrypt it using kb
-- Mallory can see and modify messsages
+- Mallory can **see and modify** messsages
 
 > PKC based authenticated key exchange cna be easily obtained from existing key exchange
 
 
 ### Why
 Goals:
-- Key secrecy
+- Key secrecy (Confidentiality)
 - Entity Authenticity
 
-Sol:
+Solution:
 - Incorporate the key exchange process with authentication (Authenticated key exchange (AKE))
 
 ## Station to station protocol (STS)
@@ -115,10 +120,10 @@ Unilateral authentication: Alice want to authenticate Bob
 
 
 ## Mutual Authenticated Key exchange
-- Unilateral authentication protocol extended to a mutual authentication: Make alice sign her message in step 2 -a 
+- Unilateral authentication protocol extended to a mutual authentication: **Make alice sign her message in step 2 -a**
 
 Requirements:
-- Mutal authentication: Alice and Bob must have a way to know public key
+- Mutual authentication: Alice and Bob must have a way to know public key
 - Unilateral authentication: Only one party needs to have a public key
 - After the protocol has completed, a set of session keys is establised using a key derivation function (KDF) like HKDF
 	- 1 key for encrypt 1 key for MAC
@@ -143,9 +148,9 @@ Requirements:
 
 1. ALice and Bob carry out a unilateral authenticated key exchange using Bob's private and public key
 
-After authentication both bob and alice known two randomly selected session keys k,t
-- k: Secret key of symmetric key encryption(aes)
-- t: the secret key of MAC
+  After authentication both bob and alice known two randomly selected session keys k,t
+  - k: Secret key of symmetric key encryption(aes)
+  - t: the secret key of MAC
 
 2. Subsequest communcation between Alice and Bob will be protected by k,t and sequence number i
 
