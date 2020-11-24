@@ -15,8 +15,8 @@ Network:
 - A concern of data confidentiality and integrity
 
 Computer system:
-- The boundary is less well defined
-- Every layer has its own "processes" and "data" (although ultimately, the raw processes/data are handled by hardware)
+- The boundary is **less well defined**
+- Every layer has its own "**processes**" and "**data**" (although ultimately, the raw processes/data are handled by hardware)
 - The main security concern is about access to the process and memory storage
 - Hence beside data confidentiality and integrity (E.g password file), there is also a concern of process "integrity" whether it deviates from its original path
 
@@ -205,6 +205,7 @@ Main purposes of UIDs and GIDs
 ## Files
 ### FIle and file system permission
 ![CS2107-8-16.PNG]({{site.baseurl}}/img/CS2107-8-16.PNG)
+
 #### Changing the file permission bits
 ![CS2107-8-9.PNG]({{site.baseurl}}/img/CS2107-8-9.PNG)
 
