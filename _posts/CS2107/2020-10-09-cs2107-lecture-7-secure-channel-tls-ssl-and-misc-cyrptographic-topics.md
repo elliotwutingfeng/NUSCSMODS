@@ -199,8 +199,8 @@ E.g
 Authenticated encryption is a symmetric encryption that returns both ciphertext and authentication tag
 
 - Combines cipher and MAC: Ensures confidentiality and authenticity
-- Authenticated encryption: AE(Kab, M) = (C,T)
-- Decryption process: AD(Kab,C,T) = M only if T is valid
+- **Authenticated encryption**: AE(Kab, M) = (C,T)
+- **Decryption** process: AD(Kab,C,T) = M **only if T is valid**
 
 Different variants/approaches:
 - Encrypt and MAC
@@ -222,7 +222,7 @@ Different variants/approaches:
 
 ## MAC then Encrypt (MtE)
 - Sender first compute tag T = MAC(k2AB, M)
-- Generates the ciphertext C = E(K1AB, M // T)
+- Generates the ciphertext C = E(K1AB, M `||` T)
 - Sends C
 
 
