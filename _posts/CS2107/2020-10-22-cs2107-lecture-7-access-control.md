@@ -18,7 +18,7 @@ Computer system:
 - The boundary is **less well defined**
 - Every layer has its own "**processes**" and "**data**" (although ultimately, the raw processes/data are handled by hardware)
 - The main security concern is about access to the process and memory storage
-- Hence beside data confidentiality and integrity (E.g password file), there is also a concern of process "integrity" whether it deviates from its original path
+- Hence beside data **confidentiality and integrity** (E.g password file), there is also a concern of process "integrity" whether it deviates from its original path
 
 #### Attackers and system's layer
 ![CS2107-7-8.PNG]({{site.baseurl}}/img/CS2107-7-8.PNG)
@@ -30,7 +30,7 @@ Computer system:
 
 ## Security Mechanism
 - It insightful to figure out at what layer a security mechanism/attack resides
-- A lyer based security mechanism should have a well defined security perimeter/boundary
+- A layer based security mechanism should have a well defined security perimeter/boundary
 
 
 - Important design consideration:
@@ -51,7 +51,7 @@ Computer system:
     - Physical access to different part of the building
 - The access control model/system gives a way to specify & enforce such restriction on the subject, objects and action
 
-> Acess control is about selective restriction of access to a place or other resource
+> Access control is about selective restriction of access to a place or other resource
 
 ## Principal/Subject, operation, object
 ![CS2107-8-3.PNG]({{site.baseurl}}/img/CS2107-8-3.PNG)
