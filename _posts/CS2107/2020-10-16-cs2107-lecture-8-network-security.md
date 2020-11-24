@@ -54,7 +54,7 @@ Devices used in each layer are…
 ## Naming schemes and resolution
 - Peer entity use virtual connection in layer below to find the corresponding name mapping
 - E.g ip address of domain name
-- Protocols that perform name mappings are resolution protocols
+- **Protocols that perform name mappings are resolution protocols**
 - Many resolution protocol didnt take into account of security, attackers can manipulate the outcome
 
 
@@ -63,7 +63,7 @@ Devices used in each layer are…
 	- Maps domain name to IP address
     - Hierarchical decentralised naming system
     - Attacker can target the association of domain name with IP address
-- ARP (ADdress resolution protocol)
+- ARP (Address resolution protocol)
 	- Associates or Maps ip address (Logical) with Mac address (physical)
     - Use broadvase mechanism in local
     - Attacker on local can target the association
@@ -84,7 +84,7 @@ Devices used in each layer are…
 
 ### Local DNS Attack
 
-ALice:
+Alice:
 - Use free wifi to surf
 - wants visit a page something.com
 - types domain name into browsers address bar
@@ -166,7 +166,7 @@ The victim is overwhelm with echo reply from the entire network, the attacker ta
     - Email address harvesting
     - Cipher breaking
 > Why covert channels are use by botnets
-
+> - To stay hidden
 
 # Userful network security tools
 
@@ -197,11 +197,11 @@ Layers:
 - Complication: Some attacker span across multiple layers
 
 ## Remarks
-- A secuirty protocol that protects layer k would protect infomation from that layer and aboce against an attacker sitting at layer k-1 and below
+- A secuirty protocol that protects layer k would protect infomation from **that layer and above** against an attacker sitting at **layer k-1 and below**
 
-E.g: What happens if attacker resides at layer 1 and there is a secuirty protcol that protects layer3?
+E.g: What happens if attacker resides at layer 1 and there is a security protcol that protects layer3?
 
-- What is protoected by secuirty protocol: The infomation generated in the layer 3 and above
+- What is protoected by security protocol: The infomation generated in the layer 3 and above
 - Not protected: Infomation generated in layer 2
 
 ## Protocols
@@ -212,7 +212,7 @@ E.g: What happens if attacker resides at layer 1 and there is a secuirty protcol
 
 - Sits on top of **transport layer**
 - When application wants to send data to the other endpoint, it first pass the data and the destination IP address to SSL/TLS
-- TLS/SSL protects the data using encruption (Confidentiality) and MAC (AUthenticity) and then instructs the transport layer to send the protected data
+- TLS/SSL protects the data using encryption (Confidentiality) and MAC (Authenticity) and then instructs the transport layer to send the protected data
 - **End to end encryption** is performed
 
 Note: HTTPS employs ssl/tls
@@ -251,7 +251,7 @@ Usage:
 ### WPA2
 - Wifi protected access 2:
 	- Employed in home wifi access point
-    - More secure than WEP (Broekn), WPA
+    - More secure than WEP (broken), WPA
 Protections:
 - Layer 2 (link)
 - Layer 1 (Physical)
@@ -261,7 +261,7 @@ Protections:
 ![CS2107-7-7.PNG]({{site.baseurl}}/img/CS2107-7-7.PNG)
 
 
-If the attacker is at the physicl layer:
+If the attacker is at the physical layer:
 > Can the attacker learn
 > - Report: No
 >
@@ -302,9 +302,7 @@ Definition:
 - Examples
 	- Block HTTP
     - ALlow from internal network to Mail server: SMTP, POP3
-
-Example:
-
+    - Front end firewall: Allow from anywhere to Mail Server: SMTP only
 
 ## Types
 1. Traditional packet filters:
