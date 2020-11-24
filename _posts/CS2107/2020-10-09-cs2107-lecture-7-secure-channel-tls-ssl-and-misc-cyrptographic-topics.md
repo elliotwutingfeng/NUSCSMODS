@@ -157,16 +157,16 @@ Requirements:
 Suppose m1, m2,m3 are sequences of message exchange, the actual data to be sent for mi will be:
 		![CS2107-6-12.PNG]({{site.baseurl}}/img/CS2107-6-12.PNG)
 
-where i is the sequence number, `||` is concat
+where i is the sequence number, `||` is concatenation
 
 ## Secure channel and PKI usage
 - Still need distribute public keys
 - PKI is use to distribute public key
-- Likely involve certificate with the authenticated key exchange
+- Likely involve **certificate** with the authenticated key exchange
 
 Example:
-- Alice visit bob and wants to verify tat the entity she is talking to is Bob
-- ALicer then needs to know Bob.com public key
+- Alice visit bob and wants to verify that the entity she is talking to is Bob
+- ALice then needs to know Bob.com public key
 - Right in the beginnning of the authentication protocol, Bob.com directly sends it certificate which contain his public key to Alice
 
 # Putting all together: TLS/SSL
