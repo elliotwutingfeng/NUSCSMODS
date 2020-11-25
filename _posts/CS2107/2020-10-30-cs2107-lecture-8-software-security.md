@@ -284,7 +284,9 @@ Vulnerable code:
 
 - Mixing code and data is unsafe
 - Many attacks inject malicous code as data which will then gets executed by the target system
-- Considered SQL attack
+- Considered SQL injection attack
+- **Scripting languages**: Programming languages that can be interpreted by another program during runtime instead of being complied
+
 
 ### SQL and Query 
 - SQL is database query language
@@ -299,6 +301,7 @@ Vulnerable code:
 #### Example
 In the example of the login page, web developers will take the user input and use the `SELECT` search query to retrieve the data
 - Attack can do this
+	- Origin: `SELECT * FROM client WHERE '$userinput'`
 	- Bob' OR 1=1 --`
     - this becomes `SELECT * FROM client WHERE name = 'bob' OR 1=1 --`
     - All rows in this client table will be return this this case
