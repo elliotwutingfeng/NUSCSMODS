@@ -311,21 +311,21 @@ In the example of the login page, web developers will take the user input and us
 - For debugging, many programmers insert undocumented access point to inspect states
 	- Press certain key combo, values of certain variables will be display
     - Certain input string would branch to debug mode
-- These access points may mistakenly ramin in the final production system providing backdoors to the attackers
-- A backdor: A covert method of bypassing normal authentication
+- These access points may mistakenly remain in the final production system providing backdoors to the attackers
+- A backdoor: A covert method of bypassing normal authentication
 - Such access points are easter eggs
 	- Some are fun
     - Some are put there by unhappy programmers
 - Important: Logic bombs, easter eggs, backdoors
 
 # Defence and preventive measures
-- Many bugs and vulnerability are due to programmer innorance
+- Many bugs and vulnerability are due to programmer ignorance
 - It is diffucult to analysis a program to ensure that its bug free
-- THere is no fool proof method
+- There is no fool proof method
 
 ## Input validation and using filtering
 ### Filtering
-- Input must follow expected format
+- Input **must** follow expected format
 	- Length
     - Cannot contain certain meta characters
     - Does not contain negative numbers
@@ -346,9 +346,9 @@ Approaches:
 2. Black list
 	- A list of items that are known to be bad and has to be rejected
     - To prevent SQL injects, if the input contains meta characters, reject it
-    - Malicious input may be pass
+    - Malicious input may be passed
 
-> Which is more secure?
+> Which is more secure? 
 
 ### Safer functions
 - Avoid function that cause problems
