@@ -97,12 +97,17 @@ Componments:
 
 
 ### Misleading delimiter
+
+![CS2107-10-5.PNG]({{site.baseurl}}/img/CS2107-10-5.PNG)
+
+
 - There is no clear **visual distinction** between host name and path of URL
 - The supposed delimiter that seperates hostname and the path can be a chara in the host name or path
 - The displayed different intensities could help user spot the attack
 
 ### Address bar spoofing
 - webpage can render objects or popups in an arb location
+- malicious page to overlay a spoofed address bar on top of the actual address bar
 - Attack trick the user to visit bad url
 
 # Cookies and same origin policy
@@ -120,7 +125,10 @@ Componments:
 - Persistent: at specific date or after a specific length of time
 - Secure cookie: Can only be sent on HTTPS
 
-## TOken base authentication
+## Token base authentication
+
+![CS2107-10-6.PNG]({{site.baseurl}}/img/CS2107-10-6.PNG)
+
 1. Auth: Ask username and password
 2. Valid, server send token t
 3. Browser keeps token t
@@ -131,18 +139,18 @@ Componments:
 - Stored in cookie often
 - Using cookie is better approach than attching the SID as a url encoded parameter
 
-### Choice of cookie
+### Choice of token and storage requirement
 - t needs to be random and long
-- if t is a random chosen number, then server has to keep a table to store all tokens issued
+- if t is a **random chosen number**, then server has to keep a table to store all tokens issued
 - To avoid storing the table,
-	- (Insecure) Cookie is some meaningful infomation concat with predicatble seq number
-    	- Insecure because attacker can forge uit
+	- (Insecure) Cookie is some meaningful infomation concat with predictable seq number
+    	- Insecure because attacker can forge it
     - (Secure) Cookie is two parts, random chosen value or meaningful infomation (Expire data) AND concat with the message authentication code (MAC) computed with server secret key
-    	- relies on MAC
+    	- relies on MAC's security
 
-## Scripts and same origin policy
-- Which script can access which cookies
-- Can scripts in webpage A can access the cookies stored by webpage B iff both A and B have same origin
+## Scripts and same origin policy (SOP)
+- Browser employs same origin policy access control
+- Scripts in webpage A can access the cookies stored by webpage B iff both A and B have same origin
 - Origin is combi of
 	- Protocol
     - hostname
@@ -164,6 +172,9 @@ e.g `http://www.comp.nus.edu.sg/<script>alert("hehehehe");</script>`
 > Note that the attack wint work if the server performs html encoding which replace the character `<` with `&lt`
 
 ## The attack
+
+![CS2107-10-7.PNG]({{site.baseurl}}/img/CS2107-10-7.PNG)
+
 1. Tricks user to click on url which contains the target website and malicious scriot s
 2. Request sent to server
 3. Server construct a response html but does not check the request carefully
