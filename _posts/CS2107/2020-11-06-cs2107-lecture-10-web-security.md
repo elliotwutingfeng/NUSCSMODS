@@ -11,7 +11,7 @@ Overview:
 4. Browser renders the html files, which describe the layout to be rendered and presented to the user and any cookies are stored in the browser
 
 ## Sub-resource of a webpage
-- COntain subresoources (Images, multimedia files, css, scripts) including from external party
+- Contain subresoources (Images, multimedia files, css, scripts) including from external party
 - Browser will contact the respective server for the resources
 - Seperate http request for every singe file on a page
 ![CS2107-10-1.PNG]({{site.baseurl}}/img/CS2107-10-1.PNG)
@@ -34,6 +34,8 @@ Overview:
 - Validate user data
 - Access cookies
 - Interact with the server
+
+
 # Security issues and threat models
 ## Complications
 Browser Operation:
@@ -49,6 +51,7 @@ Browser usage:
 - More and more iusers sensitive data is stored in the web cloud
 - For PC, the browser is becoming the main/super applicaation, in some sense the browser is the OS
 
+#### Attackers on another end system
 ![CS2107-10-2.PNG]({{site.baseurl}}/img/CS2107-10-2.PNG)
 
 - 1A forum poster
@@ -61,8 +64,27 @@ Browser usage:
     - Can not intercept/read traffic for other sites
     - most commonly assumed attacker type
 
+#### Attacker as network attackers
+![CS2107-10-4.PNG]({{site.baseurl}}/img/CS2107-10-4.PNG)
+
+- 2A: Passive network attacker:
+	- Eve who can passively eavesdrop on network traffic, but cannot manipulate or spoof traffic
+	- Can additionally act as a web attacker
+- 2B: Active network attacker:
+	- Mallory who can launch active attacks on a network, e.g. MiTM
+	- Can additionally act as a web attacker
+	- The most powerful threat model
+    - Yet, it is not generally considered to be capable of presenting valid certificates for HTTPS sites that are not under his control: Why not?
+
 # Attacks on the secure communcation channel
-# Misleading web user
+Two pre-conditions of a MiTM attack:
+- The attacker is a MiTM in between the browser and web server
+- The attacker is able to sniff & spoof packets at the TCP/IP layers
+
+> If connection is HTTPS, MitM is unable to compromise both confidentiality and autenticity unless:
+> - Web user accept forged certificate or rouge ca
+
+# Misleading web user (UI)
 ## URL
 Componments:
 1. Scheme
@@ -71,11 +93,11 @@ Componments:
 4. Query
 5. Fragment
 
-> THe attacker will aim authrotiy and path
+> THe attacker will aim authority and path
 
 
 ### Misleading delimiter
-- There is no clear visual distinction between host name and path of URL
+- There is no clear **visual distinction** between host name and path of URL
 - The supposed delimiter that seperates hostname and the path can be a chara in the host name or path
 - The displayed different intensities could help user spot the attack
 
