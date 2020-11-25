@@ -9,6 +9,7 @@ title: 'CS2107 - Lecture 9: Access control'
 
 
 #### Comparing to layers in communication network
+
 Network:
 - The boundary is more well defined
 - Infomation/data flows from the topmost layer down to the lowest layer and is transmited from the lowest layer to the topmost layer
