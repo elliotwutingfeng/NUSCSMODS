@@ -125,28 +125,29 @@ Treating code as data:
 - Attacker could **compromise a process execution integrity** by 
 	- modifying the process code 
     - Modifying the control flow
-- It is difficult for the system to distinguised those malicious pieces of code from benign data
+- Difficult for the system to distinguised those malicious pieces of code from benign data
 
 ### Notes on memory integrity
 - Not so easy to comporomise memory
 - Some restrictions:
 	- The attacker can only write to a small number of memory 
-    - Can write a seq of consecuitve bytes
+    - Can write a seq of consecutive bytes
+    - Attacker has to trick the users
 
 # Attacks on software
 
 ## Integer overflow
 - The integer arithmetic in many programming language are actually modulo arithmetic
 - Suppose a is a single byte unsigned integer. 
-	In the following C or java statements, what would be the final value of a?
-    	- a = 254
-        - a = a +2
-- Its value is - since the addition is done in mod 256
-- Hende the following predicate is not always true
+  - In the following C or java statements, what would be the final value of a?
+      - a = 254
+      - a = a + 2
+- Its value is -> since the addition is done in mod 256
+- Hence the following predicate is not always true
 	- a < a + 1
 
 ## Data/string representation and security
-- Different oarts if a program/system adopts different data representations
+- Different parts if a program/system adopts different data representations
 - Inconsistencies could lead to vulnerability
 - String is a very important data representation type:
 	- It has variable length 
@@ -159,20 +160,21 @@ Treating code as data:
     
 ![CS2107-9-4.PNG]({{site.baseurl}}/img/CS2107-9-4.PNG)
 
+> There is a security risk for strings such as strncpy because the user can fill up the entire buffer without putting a null at the end of the string
 
 #### Null Byte Injection
 - A CA may accept a host name containing null character
-- For example: luminus.nus.edu.sg\0.attacker.com
+- For example: luminus.nus.edu.sg**\0**.attacker.com
 - The verifer who use both string representation convention to verify the cert might be vulnerable
 
 ATTACK:
-1. The attacker registered the following domain name, and purchased a valid certificate with the domain name from some CA: luminus.nus.edu.sg\0.attacker.com
-2. The attacker set up a spoof Luminus website on another web server
-3. The attacker directed a victims to the spoofed web server (e.g by controlling the physical layer or social engineering)
+1. The attacker registered the following domain name, and purchased a **valid certificate** with the domain name from some CA: luminus.nus.edu.sg\0.attacker.com
+2. The attacker set up a **spoofed Luminus website** on another web server
+3. The attacker **directed** a victims to the spoofed web server (e.g by controlling the physical layer or social engineering)
 4. When visiting the spoofed web server, the victim's browser:
 	- Find the web server in the certificate is valid: based on the non NULL termination representation
-    - Compares and display the address as luminus.nus.edu.sg: based on NULL termination represesntation
-    
+    - Compares and**display the address as luminus.nus.edu.sg**: based on NULL termination represesntation
+
 ![CS2107-9-5.PNG]({{site.baseurl}}/img/CS2107-9-5.PNG)
 ![CS2107-9-6.PNG]({{site.baseurl}}/img/CS2107-9-6.PNG)
 
@@ -180,8 +182,8 @@ Comparision: Normal web spoofing attack
 - What if its jus normal web spoofing attack scenario?
 - Even if the attacker manages to redirect the victim to the spoofed webserver a careful user would notice that either
 	- The address displayed in the browsers address bar is not luminus
-    - The address displays but TLS/SSL authentication protocol reject the connection
-> Hence the attack on the previous slide, is much more dangerous: It can trick all browsesr user!
+    - The address displays but **TLS/SSL authentication protocol reject the connection**
+> Hence the attack previously, is much more dangerous: It can trick all browsesr user!
 
 #### UTF-8 Character exploits
 UTF-8 is a character encoding capable of encoding all 1m valid code points in unicode using one to four 8 bit bytes
