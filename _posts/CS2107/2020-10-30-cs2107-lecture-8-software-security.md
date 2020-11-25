@@ -254,6 +254,10 @@ Vulnerable checks:
 
 > Avoid strcpy
 
+#### Defence
+- Avoid strcpy, use strncpy
+- However, strncpy might be still prone to vulnerabilities
+
 ### Stack smashing 
 - Stack overflow
 - Special case of buffer overflow
@@ -264,13 +268,17 @@ Vulnerable checks:
 Vulnerable code:
 ![CS2107-9-10.PNG]({{site.baseurl}}/img/CS2107-9-10.PNG)
 
+- Values are push into the stack
+- The buffer c grows **towards the return address**
+- If attacker manage to modify the return address, the control flow will jump to the address indicated by the attacker
 
 ![CS2107-9-11.PNG]({{site.baseurl}}/img/CS2107-9-11.PNG)
 
-- If more characters are copy, the value will get over flow and the return address will get overwritten
+- If more characters are copied, the value will get overflow and the return address will get overwritten
 - It will also can jump to the executed code section
 
 ![CS2107-9-12.PNG]({{site.baseurl}}/img/CS2107-9-12.PNG)
+
 
 ## Code/script injection
 
