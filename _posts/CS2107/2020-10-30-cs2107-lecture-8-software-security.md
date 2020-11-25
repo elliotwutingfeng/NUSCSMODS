@@ -373,7 +373,7 @@ Type safety:
 ## Canaries
 - Secret value inserted at carefully selected memory location at runtime
 - Checks are carried at at runtime to ensure that the values are not being modified
-- Canaries can detect overflow such as stack overflow:
+- Canaries can **detect** overflow such as stack overflow:
 	- Typical bufferoverflow, consecutive mem location have to be over ran but canaries would be modified
 - Keep the values secret: If attacker knows, they can write the secret value to the canary while overrunning it
 ![CS2107-9-14.PNG]({{site.baseurl}}/img/CS2107-9-14.PNG)
@@ -434,7 +434,7 @@ Without stack protector:
     - Grey box: Combination above, reverse engineered binary/executable
 - Security testing attempts to discover intentional attack and hence would test for inputs that are rarely occured under normal circumstance
 - Examples: Long name, names containing numeric values, string containing meta characters
-- Fuzzing is a technique that sends the malformed inputs to discovered vulnerability:
+- **Fuzzing** is a technique that sends the malformed inputs to discovered vulnerability:
 	- Some techniques are btter then this for random inputs
     - Fuzzing can be automated or semi auto
     
