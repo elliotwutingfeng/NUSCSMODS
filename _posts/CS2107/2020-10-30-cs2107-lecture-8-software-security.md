@@ -6,9 +6,11 @@ title: 'CS2107 - Lecture 8: Software security'
 # Overview
 
 Requirements:
-	- Correct
-    - Efficient
-    - Secure
+- Correct
+- Efficient
+- Secure
+
+![CS2107-8-18.PNG]({{site.baseurl}}/img/CS2107-8-18.PNG)
 
 Targeted/Intended program functionality vs possible behavior:
 - A program may behave beyond its intended functionality!
@@ -21,7 +23,7 @@ Targeted/Intended program functionality vs possible behavior:
 	- Many Programs are not implemeted properly, allowing attacker (The person who invokes the process)
     - Deviate from the programmer's intents
 - Unanticipated input:
-	- The attacker may supply inputs in a form that is not anticipated by the programmer which can unintendedlu cause process to:
+	- The attacker may supply inputs in a form that is **not anticipated** by the programmer which can unintendedly cause process to:
     	- Access sensitive resources
         - Execute some injected code; or 
         - Deviate from the original intended execution path
@@ -50,7 +52,7 @@ Root causes of security Problems
 # Computer architecture background
 ## Code vs data, program counter
 Modern computers are based on the von neumann computer architecture:
-	- The code and data are stored together in the memory
+	- The code and data are stored **together** in the memory
     - There is no clear distinction of code and data
     - This is in contrast to the Harvard architecture, which has hardware components that separately store code and data
 
@@ -67,13 +69,13 @@ Serious implication:
 - After the next instruction is fetched, the program counter automatically increase by 1 (Assuming a system with fixed-length instruction)
 - During execution, besides getting incremented, the program counter (PC) can also be changed, for example*, by:
 	1. Direct Jump:
-    	The PC is replacded with a constant value specified in the instruction
+    	The PC is replaced with a constant value specified in the instruction
     2. Indirect Jump:
     	The PC is replaced with a value fetched from the memory or stored in a general purpose register (Note that there are many different forms of indirect jump)
         
         
 ## Stack
-- Function: Break code iunto smaller pieces
+- Function: Break code into smaller pieces
 	- Can be called in many program location
 
 > How does the program knows where it should continue after it finished?
@@ -83,15 +85,19 @@ Serious implication:
 > - On the call stack
 
 ### Call stack
-- Call stack: A data structure in the memroy (Not in a sep hardware) that stores important infomation of a running processes
+- Call stack: A data structure in the memory (Not in a sep hardware) that stores important infomation of a running process
 - Last in, first out (LIFO): with push(), pop(), top() operations
-- The location of the top element is referred to by the stack pointer
+- The location of the top element is referred to by the **stack pointer**
 - During a program execution, a stack is used to keep tracks of:
 	- Control flow infomation: i.e address
     - Parameter passed to functions
     - Local variables of function
 
-- Each call of a function pushes an activiation record (stack frame) to stack, which contains: passed parameters, return address, pointer to the previous stack frame, adn function local variables
+- Each call of a function pushes an **activiation record** (stack frame) to stack, which contains: 
+	- passed parameters, 
+    - return address, 
+    - pointer to the previous stack frame, 
+    - adn function local variables
 
 > This is called call stack
 
@@ -116,7 +122,7 @@ Treating code as data:
 - Call stack stores a **return address** as data in memory
 - Instruction itself is stored as data in memory
 - Flexibility of treating code as daata is good but many security issue
-- Attacker could c**ompromise a process execution integrity** by 
+- Attacker could **compromise a process execution integrity** by 
 	- modifying the process code 
     - Modifying the control flow
 - It is difficult for the system to distinguised those malicious pieces of code from benign data
