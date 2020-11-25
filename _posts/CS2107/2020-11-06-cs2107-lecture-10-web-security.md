@@ -181,16 +181,26 @@ e.g `http://www.comp.nus.edu.sg/<script>alert("hehehehe");</script>`
 4. Browser renders the html page and runs the script s
 
 - Attacker can know the session id of the user
-- Can deface the original webpage
-- Steal cookies
-- Example of priviledge escalation: A malious script coming from attacker has priviledge of the web server and read the latter's cookie
-- The attack above the expoits the client trust of the server: The browser believes that the injected script is from the server
+- **Can deface the original webpage**
+- **Steal cookies**
+- Example of priviledge escalation: A malicious script coming from attacker has privilege of the web server and read the latter's cookie
+- The attack above the **expoits the client trust of the server**: The browser believes that the injected script is from the server
 
 ## Stored (Persistent) XXS
 - The script s is stored in target web server
 - More dangerous than reflected xss
--  The malicous script is rendered automaitcallyu
+- The malicous script is rendered automatically
 - The victim to script ratio is many to 1
+
+> XXS: "A type of injection attack on web apps,
+whereby a forum poster or web attacker attacks another
+web user by causing the latter run a (malicious) script from
+the former in the execution context of a page from
+an involved web server, thus subverting the Same Origin Policy”
+
+## Summary
+- Reflected: web server that returns a page reflecting the injected script
+- Persistent: web server that stores a page containing injected script
 
 ## Defences
 - Relies on server side
@@ -201,7 +211,7 @@ Examples:
 - Script filtering
 - Noscript region: do not allow javascript to appear in certain region of a webpage
 - This is not a fullproof method
-- Attaditionally detect reflected XSS attack, some browsers employ a client side detection mechanism: XSS Auditor
+- Additionally detect reflected XSS attack, some browsers employ a client side detection mechanism: XSS Auditor
 
 # Cross site request forgery attacks
 - Session riding
@@ -209,11 +219,11 @@ Examples:
 Example
 - Click on url
 	- Alice is already authenticated by the website, S accepts the authentication token cookie
-    - All request from ALIC, the cookie will be attached to this reuqest
+    - All request from Alice, the cookie will be attached to this request
     - Web server can then define which is Alice
     - Bob trick alice to click on url of S whcih request for the service using the alice's cookie to transfer money
 - No click link
-	- Requriment: Bob must have a web server
+	- Requirement: Bob must have a web server
     - Alice is auth by website and S accepts the authenthenticaation cookie 
     - Alice visit the attacker's site whose page contains `<IMG src = "www.bank.com/transfer?account=Alice&amount=1000&to=Bob" WIDTH = "1" HEIGHT = "1" BORDER = "0">`
     - This is a subresource
