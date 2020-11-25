@@ -194,55 +194,62 @@ Variable length encoding: Code points that tend to occur more frequently are enc
 ![CS2107-9-7.PNG]({{site.baseurl}}/img/CS2107-9-7.PNG)
 ![CS2107-9-8.PNG]({{site.baseurl}}/img/CS2107-9-8.PNG)
 
-There is an inconsistency
+There is an **inconsistency**
 between
 - Character verification process
-- Chaaracter usuage: Operation using the character
+- Character usuage: Operation using the character
 
-> Browser actually accept different types of representation for the backslash charac
+> Browser actually accept different types of representation for the backslash chara
 
 
 Potential problem:
 - Files are typically organised inside a directory
 
 
-- Client can be any remote piblic user
+- Client can be any remote public user
 - Original intention: Client can retrieved only files under the directory
 - But attacker might send this string: `../cs2107report.pdf`
 - This would be read by the server as `/home/student/alice/public_html/../cs2107report.pdf`
-- Violates the intended file access containment
+- **Violates** the intended file access containment
 - Blacklisting based filtering might be useless due to the flexibility of the encoding
-> TO prevent thism server ma add an input validation to ensure that `../` never appears as substring
+> TO prevent this, server may add an input validation to ensure that `../` never appears as substring
+> - But remember there are many different ways of representing `/`
 
 
-Example: IP Address
+**Example: IP Address**
 ![CS2107-9-9.PNG]({{site.baseurl}}/img/CS2107-9-9.PNG)
 
 
 Vulnerable checks:
 1. Get string s from user
 2. Extract 4 int from string s, (a,b,c,d)
-	- If s doesnt follow correct inputm then quit
+	- If s doesnt follow correct input then quit
 3. call BL() to check that abcd is not in the black list, else quit
 4. Let ip = a * 2^24 + b * 2^16 + c * 2^8 + d  where ip is 32 bit integer
 5. Continue processing with filtered ip
+
+> Why is this vulnerable?
+> Use a different representation of a,b,c,d since the decoding is different
 
 
 #### Security guidelines
 1. Never trust user input
 2. ALways convert to standard representation immediately
 3. Do not rely on the verification check done in the application
-4. try to make use of the udnerlying system access control verification
+4. try to make use of the underlying system access control mechanism
+
+
+
 ## Buffer overflow
 
 ### C/C+ and memory access
-- ALlows the programmers to manage the memroy: Pointer arithmetic, no array bounds chekcing
+- ALlows the programmers to manage the memory: Pointer arithmetic, no array bounds checking
 - Flexibility is useful but prone to bugs which in turns lead to vulnerability
 
 ### Buffer Overflow/Overrun
 - The previous example illustrates buffer overflow
-- A data buffer: "A contiguous region of memory use to temporarily store data, while its is being moved from one place to another" (Like a array of characters)
-- In general, a buffer overflow referes to a situation where data is written beyond a buffer boundary
+- A **data buffer**: "A contiguous region of memory use to temporarily store data, while its is being moved from one place to another" (Like a array of characters)
+- In general, a **buffer overflow** referes to a situation where data is written beyond a buffer boundary
 - `strcpy()` is prone to overflow
 
 > Avoid strcpy
