@@ -25,6 +25,9 @@ include:
 # List of links in the navigation bar
 navbar-links:
   CS Mods:
+    - CS4222: "CS4222"
+    - CS3235: "CS3235"
+    - CS3203: "CS3203"
     - CS2107: "CS2107"
     - CS3103: "CS3103"
     - CS3230: "CS3230"
@@ -37,6 +40,7 @@ navbar-links:
     - ST2334: "ST2334"
     - LAJ1201: "LAJ1201"
     - LAJ2201: "LAJ2201"
+    - LAJ2202: "LAJ2202"
   Original Site: "https://nusmods.blogspot.com/"
   Installation of Software: "https://nusmods.blogspot.com/p/installation-of-software.html"
   About Me: "aboutme"
