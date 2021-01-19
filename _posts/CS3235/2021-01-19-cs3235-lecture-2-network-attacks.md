@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3235 - Lecture 2 : Network Attacks'
 ---
 # Threat Model
