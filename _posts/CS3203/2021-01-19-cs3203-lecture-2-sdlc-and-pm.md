@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3203 - Lecture 2 : SDLC and PM'
 ---
 # Slides
