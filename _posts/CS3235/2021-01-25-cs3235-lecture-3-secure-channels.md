@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3235 - Lecture 3: Secure Channels'
 ---
 # Introduction to secure channels
