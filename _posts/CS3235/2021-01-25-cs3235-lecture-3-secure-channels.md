@@ -76,4 +76,6 @@ Blocks:
 
 
 # Slides
-<iframe src="https://drive.google.com/file/d/1umJw-6DuqqNLYDw7iIsaoR5f5d8k29Cu/preview" width="640" height="480"></iframe>
+<iframe src="https://drive.google.com/file/d/1umJw-6DuqqNLYDw7iIsaoR5f5d8k29Cu/preview" width="840" height="680"></iframe>
+
+<iframe src="https://drive.google.com/file/d/1Wev3kfNq7I10Oe_oeNXYmvz_b6rVLgVx/preview" width="840" height="480"></iframe>
