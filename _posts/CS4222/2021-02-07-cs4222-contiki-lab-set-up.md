@@ -27,3 +27,7 @@ Note: Change hello-world to the name of the c file.
 Setting&Utilities > Erase entire Flash
 
 3. Load Bin
+
+# Reading output
+
+`cat /dev/ttyACM0`
