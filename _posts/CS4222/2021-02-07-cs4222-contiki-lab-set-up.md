@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: CS4222 - Contiki Lab Set Up
 ---
 # Make file
