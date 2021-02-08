@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: 'CS3203 - Lecture 3: Design Decisions'
+title: 'CS3203 - Lecture 4: Design Decisions'
 ---
 # Design Decisons
 
