@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'LAJ2202 - Lecture 6: Chapter 26'
 ---
 # Summary
