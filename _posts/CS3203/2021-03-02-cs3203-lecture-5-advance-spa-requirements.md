@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS3203 - Lecture 5: Advance SPa Requirements'
 ---
 
