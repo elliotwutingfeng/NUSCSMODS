@@ -8,7 +8,7 @@ subtitle: Network Performance Models
 <iframe src="https://drive.google.com/file/d/1hZD620ZREU83nM7JIFZZdEi3BafGVRh1/preview" width="640" height="880" allow="autoplay"></iframe>
 
 
-## Addtional Notes 
+## Addtional Notes (First lecture introduction)
 Prerequisite 
 
 ### 2105
@@ -31,3 +31,15 @@ Prerequisite
 	- Resource allocation, content delivery netowrks and economics of the ecosystem, iter-domain routing
 
 
+### Tenative topics of CS4226
+- Internet Ecosystem
+	- Inter-Domain routing: BGP
+	- Economics and Governance
+- Netowrk Architecture
+	- Peer to peer networks
+    - Content delivery Network
+- Network management paradigm
+	- Software defined networking
+- Network Performance
+	- Queuing model and analysis
+    - Resource allocation and scheduling
