@@ -43,3 +43,9 @@ Prerequisite
 - Network Performance
 	- Queuing model and analysis
     - Resource allocation and scheduling
+    
+### Assignment
+- One written assignment 10%
+- One individual 20%
+- Midterm exam 30%
+- Final exam 40%
