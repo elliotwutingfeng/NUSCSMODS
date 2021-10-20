@@ -91,8 +91,39 @@ Login Credentials:
     ```
     
     ![CS4226_labsetup_6.png]({{site.baseurl}}/img/CS4226_labsetup_6.png)
-    
-    
+
+3. (OPTIONAL) SSH into mininet using putty
+	ip: (Check your `ifconfig`) `192.168.125.104`
+    port: 22
+    ![image_2021-10-20_232029.png]({{site.baseurl}}/img/image_2021-10-20_232029.png)
+
+4. Test Mininet
+	- Start Mininet
+    ```bash
+    $sudo mn
+    ```
+    - Check the nodes
+    ```bash
+    mininet> nodes
+    ```
+    - Check the network
+    ```bash
+    mininet> net
+    ```
+    - Check the nodes ifconfig
+    ```bash
+    mininet> h1 ifconfig
+    ```
+    - Quit MN
+    ```bash
+    mininet> quit
+    ```
+    - Clear settings
+    ```bash
+    $sudo mn -c
+    ```
+
+
 ## Check Configuration on both VM
 1. Run `ifconfig` on both VM
 	
@@ -101,7 +132,36 @@ Login Credentials:
     - Ubuntu
     ![image_2021-10-20_231515.png]({{site.baseurl}}/img/image_2021-10-20_231515.png)
 
+	From this, we can tell that Mininet is hosted at `192.168.125.104` and Ubuntu is located at `192.168.125.103`
 
+2. Ping both side
+	Run the following on both VM
+    - On Ubuntu VM
+    ```bash
+    ping 192.168.125.104
+    ```
+    - On Mininet
+    ```bash
+    ping 192.168.125.103
+    ```
+> If its correctly configured, it should be pinged successfully
+
+
+## POX
+
+Pox only runs on python2 so ensure that your not executing python3 at all times. The following test would determine if and if 
+
+1. Clone pox
+	```bash
+    git clone https://github.com/noxrepo/pox
+    ```
+
+2. Start Pox
+	```bash
+    git clone https://github.com/noxrepo/pox
+    ```
+    
+    
 
 
 
