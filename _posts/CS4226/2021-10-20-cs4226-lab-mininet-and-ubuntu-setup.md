@@ -177,6 +177,7 @@ Pox only runs on python2 so ensure that your not executing python3 at all times.
     This means that pox controller is located at 0.0.0.0 for our Ubuntu but accessing it from outside would use `<Ubuntu_IP>` which in this case is `192.168.125.103`
 
 3. Start mininet
+    
     Since Ubuntu is running at `192.168.125.103`, we would use it to connect our mininet vm with.
    	
     ```bash
@@ -185,7 +186,8 @@ Pox only runs on python2 so ensure that your not executing python3 at all times.
     > Ensure that theres no space between the commas
 
 4. Check your ubuntu
-	You should be able to see a new connection from your ubuntu pox controller. This means you have successfully connected both your mininet and your pox controller!
+	
+    You should be able to see a new connection from your ubuntu pox controller. This means you have successfully connected both your mininet and your pox controller!
 
 
 Sample Ubuntu output pox:
