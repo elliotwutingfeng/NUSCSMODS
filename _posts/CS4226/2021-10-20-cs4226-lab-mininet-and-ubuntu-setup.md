@@ -80,9 +80,10 @@ Login Credentials:
 	sudo dhclient eth1
 	```
     - Edit the /etc/network/interfaces file using nano
-	```bash
+	```console
 	sudo nano /etc/network/interfaces
-	```
+    ```
+	
     
     - Add the following lines below the code
     ```
