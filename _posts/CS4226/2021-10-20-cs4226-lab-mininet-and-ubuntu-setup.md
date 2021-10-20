@@ -65,8 +65,8 @@ Theres no need to do any advance configuration
 
 ## Mininet
 Login Credentials: 
-		Login: mininet
-        Password: mininet
+		- Login: mininet
+        - Password: mininet
 
 
 1. Check your configuration by running `ifconfig -a`
