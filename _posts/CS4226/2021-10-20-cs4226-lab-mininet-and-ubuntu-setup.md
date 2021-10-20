@@ -151,16 +151,21 @@ Login Credentials:
 
 Pox only runs on python2 so ensure that your not executing python3 at all times. The following test would determine if and if 
 
-1. Clone pox
+1. Clone pox and use the correct version
 	```bash
     git clone https://github.com/noxrepo/pox
+    cd pox
+    git checkout fangtooth
     ```
 
 2. Start Pox
 	```bash
-    git clone https://github.com/noxrepo/pox
+    ./pox.py log.level --DEBUG forwarding.l2_learning
     ```
-    
+    You should see the following sample output:
+    ![image_2021-10-20_232758.png]({{site.baseurl}}/img/image_2021-10-20_232758.png)
+
+3. 
     
 
 
