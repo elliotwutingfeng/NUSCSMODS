@@ -2,6 +2,7 @@
 layout: post
 published: true
 title: 'CS4226 - Lab: Mininet and Ubuntu Setup with Virtual Box'
+subtitle: A indept Guide on Setting up Mininet and ubuntu vm with Virtual Box
 ---
 # Setup Notes given
 
