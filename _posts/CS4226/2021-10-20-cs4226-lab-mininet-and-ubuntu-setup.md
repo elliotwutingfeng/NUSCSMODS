@@ -40,3 +40,29 @@ Setup overview:
 
 3. Ensure that it is enable
 ![CS4226_labsetup_3.png]({{site.baseurl}}/img/CS4226_labsetup_3.png)
+
+#### Ubuntu and Mininet Network Setup
+Ensure that the mininet and ubuntu both are connected using the network host adapter that was created the previous. **Note that the VM must not be running when creating this setting.**
+
+Right click the VM > Setting > Network > Adapter 2 
+- Enable Network Adapter
+- Attached to: Host-only Adapter
+- Name: **The name of the Network host adapter created**
+
+![CS4226_labsetup_4.png]({{site.baseurl}}/img/CS4226_labsetup_4.png)
+
+Theres no need to do any advance configuration
+
+
+
+
+
+
+
+
+
+
+
+
+
+
