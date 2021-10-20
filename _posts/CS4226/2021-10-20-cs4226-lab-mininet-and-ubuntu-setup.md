@@ -17,12 +17,14 @@ Setup overview:
     
 ## VM Setup
 
-#### Network Host Adapter Setup
+### Network Host Adapter Setup
 
 (If you already have this, you can skip this step)
 
 1. From your Oracle Virtual Box, Click on File > Host Network Manager
 	![CS4226_labsetup_1.png]({{site.baseurl}}/img/CS4226_labsetup_1.png)
+
+
 
 2. Click on create and follow the following settings
 	Adapter:
@@ -38,10 +40,17 @@ Setup overview:
   
   ![CS4226_labsetup_2.png]({{site.baseurl}}/img/CS4226_labsetup_2.png)
 
+
+
+
 3. Ensure that it is enable
 ![CS4226_labsetup_3.png]({{site.baseurl}}/img/CS4226_labsetup_3.png)
 
-#### Ubuntu and Mininet Network Setup
+
+
+
+
+### Ubuntu and Mininet Network Setup
 Ensure that the mininet and ubuntu both are connected using the network host adapter that was created the previous. **Note that the VM must not be running when creating this setting.**
 
 Right click the VM > Setting > Network > Adapter 2 
