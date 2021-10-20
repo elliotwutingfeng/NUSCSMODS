@@ -46,7 +46,7 @@ Setup overview:
 
 
 3. Ensure that it is enable
-   ![CS4226_labsetup_3.png]({{site.baseurl}}/img/CS4226_labsetup_3.png)
+![CS4226_labsetup_3.png]({{site.baseurl}}/img/CS4226_labsetup_3.png)
 
 
 
@@ -100,35 +100,35 @@ Login Credentials:
 
 4. Test Mininet
 	- Start Mininet
-    ```
+    ```bash
     $sudo mn
     ```
     - Check the nodes
-    ```
+    ```bash
     mininet> nodes
     ```
     - Check the network
-    ```
+    ```bash
     mininet> net
     ```
     - Check the nodes ifconfig
-    ```
+    ```bash
     mininet> h1 ifconfig
     ```
     - Ping h1 to h2
-    ```
+    ```bash
     mininet> h1 ping h2
     ```
     - Ping all
-    ```
+    ```bash
     mininet> pingall
     ```
     - Quit MN
-    ```
+    ```bash
     mininet> quit
     ```
     - Clear settings
-    ```
+    ```bash
     $sudo mn -c
     ```
 
