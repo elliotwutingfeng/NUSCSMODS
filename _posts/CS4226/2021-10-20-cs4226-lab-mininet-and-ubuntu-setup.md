@@ -29,11 +29,11 @@ Setup overview:
 
 
 2. Click on create and follow the following settings
-	Adapter:
+	- Adapter:
     	- Check Configure Adapter Manually
         - IPV4 Address: `192.168.56.1`
         - IPV4 Network Mask: `255.255.255.0`
-    DHCP Server:
+    - DHCP Server:
     	- Check Enable Server
     	- Server Address: `192.168.56.100`
         - Server Mask: `255.255.255.0`
@@ -46,7 +46,7 @@ Setup overview:
 
 
 3. Ensure that it is enable
-![CS4226_labsetup_3.png]({{site.baseurl}}/img/CS4226_labsetup_3.png)
+   ![CS4226_labsetup_3.png]({{site.baseurl}}/img/CS4226_labsetup_3.png)
 
 
 
@@ -100,35 +100,35 @@ Login Credentials:
 
 4. Test Mininet
 	- Start Mininet
-    ```bash
+    ```
     $sudo mn
     ```
     - Check the nodes
-    ```bash
+    ```
     mininet> nodes
     ```
     - Check the network
-    ```bash
+    ```
     mininet> net
     ```
     - Check the nodes ifconfig
-    ```bash
+    ```
     mininet> h1 ifconfig
     ```
     - Ping h1 to h2
-    ```bash
+    ```
     mininet> h1 ping h2
     ```
     - Ping all
-    ```bash
+    ```
     mininet> pingall
     ```
     - Quit MN
-    ```bash
+    ```
     mininet> quit
     ```
     - Clear settings
-    ```bash
+    ```
     $sudo mn -c
     ```
 
@@ -195,16 +195,3 @@ Sample Mininet output:
 ![image_2021-10-20_233440.png]({{site.baseurl}}/img/image_2021-10-20_233440.png)
 
 Note: 2 commands were used, `pingall` and `h1 ping h2`
-
-
-
-
-
-
-
-
-
-
-
-
-
