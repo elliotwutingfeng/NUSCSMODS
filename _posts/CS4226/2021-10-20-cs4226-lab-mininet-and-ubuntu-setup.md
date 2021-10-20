@@ -114,6 +114,14 @@ Login Credentials:
     ```bash
     mininet> h1 ifconfig
     ```
+    - Ping h1 to h2
+    ```bash
+    mininet> h1 ping h2
+    ```
+    - Ping all
+    ```bash
+    mininet> pingall
+    ```
     - Quit MN
     ```bash
     mininet> quit
