@@ -173,6 +173,7 @@ Pox only runs on python2 so ensure that your not executing python3 at all times.
     ```
     You should see the following sample output:
     ![image_2021-10-20_232758.png]({{site.baseurl}}/img/image_2021-10-20_232758.png)
+    
     This means that pox controller is located at 0.0.0.0 for our Ubuntu but accessing it from outside would use `<Ubuntu_IP>` which in this case is `192.168.125.103`
 
 3. Start mininet
