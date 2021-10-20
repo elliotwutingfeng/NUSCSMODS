@@ -22,6 +22,7 @@ Setup overview:
 (If you already have this, you can skip this step)
 
 1. From your Oracle Virtual Box, Click on File > Host Network Manager
+	![CS4226_labsetup_1.png]({{site.baseurl}}/img/CS4226_labsetup_1.png)
 
 2. Click on create and follow the following settings
 	Adapter:
@@ -30,9 +31,12 @@ Setup overview:
         - IPV4 Network Mask: `255.255.255.0`
     DHCP Server:
     	- Check Enable Server
-    	- Server Address:
-        - Server Mask:
-        - Lower Address Bound:
-        - Upper Address Bound: 
+    	- Server Address: `192.168.56.100`
+        - Server Mask: `255.255.255.0`
+        - Lower Address Bound: `192.168.56.101`
+        - Upper Address Bound: `192.168.56.254`
+  
+  ![CS4226_labsetup_2.png]({{site.baseurl}}/img/CS4226_labsetup_2.png)
+
 3. Ensure that it is enable
 ![CS4226_labsetup_3.png]({{site.baseurl}}/img/CS4226_labsetup_3.png)
