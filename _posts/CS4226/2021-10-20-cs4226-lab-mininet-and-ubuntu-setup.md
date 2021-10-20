@@ -1,7 +1,7 @@
 ---
 layout: post
 published: false
-title: 'CS4226 - Lab: Mininet and Ubuntu Setup'
+title: 'CS4226 - Lab: Mininet and Ubuntu Setup with Virtual Box'
 ---
 # Setup Notes given
 
@@ -14,6 +14,7 @@ Setup overview:
 	- [Ubuntu 18](https://releases.ubuntu.com/18.04.6/ubuntu-18.04.6-desktop-amd64.iso)
     - [Mininet 2.2.2](https://github.com/mininet/mininet/releases/download/2.2.2/mininet-2.2.2-170321-ubuntu-14.04.4-server-amd64.zip)
     - Putty (Optional)
+    - Virtual Box
     
 ## VM Setup
 
@@ -61,6 +62,47 @@ Right click the VM > Setting > Network > Adapter 2
 ![CS4226_labsetup_4.png]({{site.baseurl}}/img/CS4226_labsetup_4.png)
 
 Theres no need to do any advance configuration
+
+## Mininet
+Login Credentials: 
+		Login: mininet
+        Password: mininet
+
+
+1. Check your configuration by running `ifconfig -a`
+	![CS4226_labsetup_5.png]({{site.baseurl}}/img/CS4226_labsetup_5.png)
+
+
+
+2. Setup Virtual box Additional Setup
+	- Create dhclient
+	```bash
+	sudo dhclient eth1
+	```
+    - Edit the /etc/network/interfaces file using nano
+	```bash
+	sudo nano /etc/network/interfaces
+	```
+    
+    - Add the following lines below the code
+    ```
+    auto eth1
+ 	iface eth1 inet dhcp
+    ```
+    
+    ![CS4226_labsetup_6.png]({{site.baseurl}}/img/CS4226_labsetup_6.png)
+    
+    
+## Check Configuration on both VM
+1. Run `ifconfig` on both VM
+	
+    - Mininet
+    ![CS4226_labsetup_5.png]({{site.baseurl}}/img/CS4226_labsetup_5.png)
+    - Ubuntu
+    ![image_2021-10-20_231515.png]({{site.baseurl}}/img/image_2021-10-20_231515.png)
+
+
+
 
 
 
