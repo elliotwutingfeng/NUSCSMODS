@@ -46,7 +46,7 @@ Setup overview:
 
 
 3. Ensure that it is enable
-![CS4226_labsetup_3.png]({{site.baseurl}}/img/CS4226_labsetup_3.png)
+  ![CS4226_labsetup_3.png]({{site.baseurl}}/img/CS4226_labsetup_3.png)
 
 
 
