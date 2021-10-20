@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS4226 - Lab: Mininet and Ubuntu Setup with Virtual Box'
 ---
 # Setup Notes given
