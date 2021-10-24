@@ -7,6 +7,10 @@ subtitle: A indept Guide on Setting up Mininet and ubuntu vm with Virtual Box
 # Setup Notes given
 
 Note: Click on the view button to see the full size.
+<iframe src="https://drive.google.com/file/d/1clsoC7yDZmBGvjgDvL1Y7uf9hHOBCXHC/preview" width="640" height="480" allow="autoplay"></iframe>
+
+<iframe src="https://drive.google.com/file/d/1iCaOYKWabSo1A5uUipSLuzBqPlCQwso8/preview" width="640" height="480" allow="autoplay"></iframe>
+
 
 # In-depth Setup configuration
 
