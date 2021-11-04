@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'CS4226 - Lab: Running Mininet with SSH'
 ---
 # Setup Infomation
