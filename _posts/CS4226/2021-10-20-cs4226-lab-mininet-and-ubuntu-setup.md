@@ -12,7 +12,7 @@ Note: Click on the view button to see the full size.
 <iframe src="https://drive.google.com/file/d/1iCaOYKWabSo1A5uUipSLuzBqPlCQwso8/preview" width="640" height="480" allow="autoplay"></iframe>
 
 
-# In-depth Setup configuration
+# In-depth Setup configuration (1)
 
 Setup overview:
 - 2 VM
