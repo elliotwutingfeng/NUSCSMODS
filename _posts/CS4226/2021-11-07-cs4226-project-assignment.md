@@ -44,9 +44,9 @@ Output:
 # Task 5
 In order to understand what we are trying to do, we need to understand the code in question. The professor has already kindly gave us the needed code for us to our work
 
-```python3
+```python
 # Create QoS Queues
-os.system('sudo ovs-vsctl -- set Port [INTERFACE] qos=@newqos 
+os.system('sudo ovs-vsctl -- set Port [INTERFACE] qos=@newqos \
      -- --id=@newqos create QoS type=linux-htb other-config:max-rate=[LINK SPEED] queues=0=@q0,1=@q1,2=@q2 \
      -- --id=@q0 create queue other-config:max-rate=[LINK SPEED] other-config:min-rate=[LINK SPEED] \
      -- --id=@q1 create queue other-config:min-rate=[X] \
