@@ -78,6 +78,7 @@ The following code chunk would print out all the switches configured in the topo
     	print(switch)
 ```
 
+## Assigning the queue
 
 
 References:
