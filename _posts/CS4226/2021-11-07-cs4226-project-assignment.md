@@ -6,6 +6,10 @@ subtitle: Project Assignment
 ---
 Github Repository: Link
 
+Locations of files:
+- Controller: /pox/misc/controller.py
+- topology: main location as long as it is in the same directory as `topology.in`
+
 
 # Task 1 - Setting up the topology
 
