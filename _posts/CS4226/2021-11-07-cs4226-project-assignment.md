@@ -79,9 +79,9 @@ The following code chunk would print out all the switches configured in the topo
 ```
 
 ## Assigning the queue
+Queues can only be configured at switch ports. This is indicated by the black dots shown in the following image: 
+![CS4226_task5_2.png]({{site.baseurl}}/img/CS4226_task5_2.png)
 
 
 References:
 [[OpenFlow Docs](https://openflow.stanford.edu/display/ONL/POX+Wiki.html#POXWiki-Enqueue)], [[Some Slide from another school](http://csie.nqu.edu.tw/smallko/sdn/mySDN_Lab5.pdf)]
-
-
