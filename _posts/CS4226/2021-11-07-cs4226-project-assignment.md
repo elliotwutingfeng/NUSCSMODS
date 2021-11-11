@@ -86,11 +86,9 @@ Printing the ports:
 ![CS4226_task5_6.png]({{site.baseurl}}/img/CS4226_task5_6.png)
 
 
-
 Ports connected for each switch:
 ![CS4226_task5_3.png]({{site.baseurl}}/img/CS4226_task5_3.png)
 
-We would use the following code to print out the 
 
 ## Results
 ![CS4226_task5_4.png]({{site.baseurl}}/img/CS4226_task5_4.png)
