@@ -35,9 +35,13 @@ Setting up the topology using the topology.in file. The only file you need to en
 ```
 
 # Task 4 - Firewall
+Debug:
+Running the command `sh ovs-ofctl dump-flows s1` would let us see the current flow table.
+You can check if firewall is corrrectly set if it shows the `action=any` as the flow entry as shown in the following image
+![CS4226_task4_2.png]({{site.baseurl}}/img/CS4226_task4_2.png)
+
 
 Output:
-
 ![CS4226_task4_1.png]({{site.baseurl}}/img/CS4226_task4_1.png)
 
 
