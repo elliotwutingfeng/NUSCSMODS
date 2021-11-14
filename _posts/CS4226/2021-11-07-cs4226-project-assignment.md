@@ -34,6 +34,8 @@ Setting up the topology using the topology.in file. The only file you need to en
       self.addLink(host, switch, bw=bandwidth)
 ```
 
+# Task 2 - Learning switch
+
 # Task 3 - TTL 
 We should just set a TTL of 30 for each new entry flow as well as clear the table in our controller everytime a change is detected.
 
@@ -41,6 +43,7 @@ The following output from the controller will be shown every time a link is drop
 ![image_2021-11-14_191854.png]({{site.baseurl}}/img/image_2021-11-14_191854.png)
 
 Output:
+
 ![CS4226_task3_2.png]({{site.baseurl}}/img/CS4226_task3_2.png)
 
 
@@ -53,6 +56,7 @@ You can check if firewall is corrrectly set if it shows the `action=any` as the 
 
 
 Output:
+
 ![CS4226_task4_1.png]({{site.baseurl}}/img/CS4226_task4_1.png)
 
 
