@@ -4,11 +4,11 @@ published: true
 title: CS4226 - Project Assignment
 subtitle: Project Assignment
 ---
+
+# Github
 Github Repository: [Link](https://github.com/Deunitato/CS4226_Project)
 
-Locations of files:
-- Controller: /pox/misc/controller.py
-- topology: main location as long as it is in the same directory as `topology.in`
+
 
 
 # Task 1 - Setting up the topology
