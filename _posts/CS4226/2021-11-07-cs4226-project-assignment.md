@@ -40,6 +40,9 @@ We should just set a TTL of 30 for each new entry flow as well as clear the tabl
 The following output from the controller will be shown every time a link is dropped:
 ![image_2021-11-14_191854.png]({{site.baseurl}}/img/image_2021-11-14_191854.png)
 
+Output:
+![CS4226_task3_2.png]({{site.baseurl}}/img/CS4226_task3_2.png)
+
 
 
 # Task 4 - Firewall
